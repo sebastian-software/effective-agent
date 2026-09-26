@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import importlib.util
 import unittest
+import tempfile
 from pathlib import Path
 
 
@@ -53,13 +54,13 @@ class JsonLdInventoryValidationTests(unittest.TestCase):
                         "@type": "ListItem",
                         "position": 1,
                         "name": "One",
-                        "url": f"{VALIDATOR.SKILL_URL_PREFIX}one",
+                        "url": f"{VALIDATOR.SKILL_URL_PREFIX}one/",
                     },
                     {
                         "@type": "ListItem",
                         "position": 2,
                         "name": "Two",
-                        "url": f"{VALIDATOR.SKILL_URL_PREFIX}two",
+                        "url": f"{VALIDATOR.SKILL_URL_PREFIX}two/",
                     },
                 ],
             }
@@ -79,13 +80,13 @@ class JsonLdInventoryValidationTests(unittest.TestCase):
                         "@type": "ListItem",
                         "position": 1,
                         "name": "Two",
-                        "url": f"{VALIDATOR.SKILL_URL_PREFIX}two",
+                        "url": f"{VALIDATOR.SKILL_URL_PREFIX}two/",
                     },
                     {
                         "@type": "ListItem",
                         "position": 2,
                         "name": "One",
-                        "url": f"{VALIDATOR.SKILL_URL_PREFIX}one",
+                        "url": f"{VALIDATOR.SKILL_URL_PREFIX}one/",
                     },
                 ],
             }
@@ -111,14 +112,14 @@ class JsonLdInventoryValidationTests(unittest.TestCase):
                         "@type": "ListItem",
                         "position": 1,
                         "name": "One",
-                        "url": f"{VALIDATOR.SKILL_URL_PREFIX}one",
+                        "url": f"{VALIDATOR.SKILL_URL_PREFIX}one/",
                         "description": "An optional Schema.org property.",
                     },
                     {
                         "@type": "ListItem",
                         "position": 2,
                         "name": "Two",
-                        "url": f"{VALIDATOR.SKILL_URL_PREFIX}two",
+                        "url": f"{VALIDATOR.SKILL_URL_PREFIX}two/",
                     },
                 ],
             }
@@ -482,6 +483,40 @@ class ComparisonReviewFreshnessTests(unittest.TestCase):
 
         self.assertEqual(failures, [])
 
+
+
+
+class NestedPageLinkTests(unittest.TestCase):
+    def test_resolves_parent_links_and_cross_page_fragments(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            page = root / "skills" / "web" / "index.html"
+            page.parent.mkdir(parents=True)
+            page.write_text('<h1 id="title">Web</h1>')
+            (root / "index.html").write_text('<section id="library">Skills</section>')
+            (root / "styles.css").write_text("body {}")
+            parser = VALIDATOR.SiteParser()
+            parser.feed('<a href="../../index.html#library">All skills</a>'
+                        '<a href="#title">Title</a>'
+                        '<link rel="stylesheet" href="../../styles.css">')
+            failures = []
+            VALIDATOR.validate_page_links(page, parser, failures)
+            self.assertEqual(failures, [])
+
+    def test_reports_missing_cross_page_fragment_and_nested_asset(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            page = Path(directory) / "index.html"
+            page.write_text('<h1 id="title">Web</h1>')
+            sibling = Path(directory) / "other.html"
+            sibling.write_text('<h1 id="other">Other</h1>')
+            parser = VALIDATOR.SiteParser()
+            parser.feed('<a href="other.html#missing">Other</a>'
+                        '<link rel="stylesheet" href="missing.css">')
+            failures = []
+            VALIDATOR.validate_page_links(page, parser, failures)
+            self.assertEqual(len(failures), 2)
+            self.assertTrue(any("missing fragment" in failure for failure in failures))
+            self.assertTrue(any("missing asset" in failure for failure in failures))
 
 if __name__ == "__main__":
     unittest.main()

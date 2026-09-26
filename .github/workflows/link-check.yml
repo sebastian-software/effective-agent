@@ -7,6 +7,7 @@ on:
       - "site/**/*.html"
       - ".lycheeignore"
       - "lychee.toml"
+      - "scripts/check-links.py"
       - ".github/lychee-ci.toml"
       - "mise.toml"
       - "mise.lock"
@@ -34,5 +35,5 @@ jobs:
       # .github/lychee-ci.toml. The pre-push hook checks strictly.
       - name: Check Markdown and site links
         run: >-
-          lychee --config lychee.toml --config .github/lychee-ci.toml
+          python3 scripts/check-links.py lychee --config lychee.toml --config .github/lychee-ci.toml
           './**/*.md' './site/**/*.html'

@@ -2,123 +2,26 @@
 
 # Effective Marketing
 
-[![Maintained by Sebastian Software](https://img.shields.io/badge/Maintained%20by-Sebastian%20Software-0f172a.svg)](https://oss.sebastian-software.com/)
+**Turn real value into a reason to choose you.**
 
-**Take verified value to market — position it, say it, write it, distribute it,
-sell it, and learn from what the market answers.**
+Effective Marketing helps explain a supported capability to the right audience,
+reach that audience, and learn from the response. It connects positioning,
+proof, commercial copy, distribution, conversion, and sales without letting a
+persuasive story outrun the evidence.
 
-Effective Marketing is one of six disciplines in this collection. It turns
-stable product, customer, and career evidence into a position people
-understand, claims they can trust, copy that helps a decision, channels that
-reach the right reader, sales conversations that respect a buyer's decision,
-and a learning loop that can revise all of it. It keeps
-product evidence, market position, message expression, and channel tactic
-separately reviewable, so polished copy never becomes retroactive proof that the
-product works.
+**[Explore Effective Marketing →](https://skills.sebastian-software.com/skills/effective-marketing/)**
 
-It replaces the former `product-marketing`, `marketing-writing`,
-`conversion-optimization`, `create-social-content`, `linkedin-posts`,
-`linkedin-social-selling`, and `consultant-profile` skills, and absorbs the
-former standalone Service Growth System. See
-[MIGRATION.md](../../MIGRATION.md) for the full mapping.
+The website covers use cases, capabilities, example prompts, and how this skill
+connects with the other disciplines.
 
-## Seventeen Routes
-
-| Route | Owns |
-| --- | --- |
-| Positioning and Segmentation | segments, alternatives, category, differentiation |
-| Messaging and Proof | message architecture, claim-to-proof checks, objections |
-| Launch and Sales Enablement | launch scope, readiness, enablement, guardrails |
-| Market Learning | win/loss, adoption analysis, what changes the decision |
-| Marketing Copywriting | homepages, landing, product, pricing, campaign, sales, email |
-| Conversion Optimization | funnel diagnosis, experiment design, ship/stop decisions |
-| Service Business Growth | end-to-end service system, bottleneck, weekly priorities |
-| Outbound Prospecting | lead research, cold email, phone, mail, video follow-up, events |
-| Consultative Sales | inbound conversations, qualification, consultation, objections, follow-up |
-| Paid Campaigns | local lead campaigns, retargeting, spend-to-sale measurement |
-| CRM and Sales Operations | data model, pipeline, views, intake, automations |
-| Social Content | social programs; X, Threads, Bluesky, Instagram, Mastodon, video, podcasts |
-| LinkedIn Posts | LinkedIn ideas, drafting, formats, content calendars |
-| LinkedIn Social Selling | profile-to-pipeline acquisition systems |
-| Consultant Profile | CVs, profiles, bios, signature projects, structure |
-| Profile Voice and Localization | personality, boundaries, tone, market adaptation |
-| Profile Evidence and Interviews | source inventory, interview mode, provider fields |
-
-## What It Can Deliver
-
-- positioning briefs with rejected options and named non-goals
-- message hierarchies with claim-to-proof traceability and honest proof gaps
-- launch plans with readiness conditions, ownership, and rollout guardrails
-- win/loss and adoption reviews that say what the market actually answered
-- homepage, landing, product, pricing, campaign, sales, and email copy
-- funnel diagnoses, experiment designs, and ship, iterate, or stop decisions
-- service offer cards and a bottleneck diagnosis from offer to delivery
-- prospect lists, cold email and phone guides, and mail or event plans that
-  check the contact basis for the actual market first
-- qualification guides, consultation arcs, objection diagnoses, role-play
-  feedback, and follow-up messages with a real reason
-- paid campaign briefs, retargeting audiences, and spend-to-sale reports
-- CRM data models, pipelines with entry rules, saved views, and idempotent
-  automations
-- platform-native social content and evidence-labelled X strategies that can
-  be updated without starting from zero
-- LinkedIn posts, calendars, and end-to-end social-selling systems
-- consultant profiles that sell a thesis instead of listing a career
-- interview plans that close the evidence gaps a profile still has
-
-## Use It When
-
-Use this discipline when a real capability needs a market-facing decision: who
-it is for, what to claim, what proof supports it, how to say it on a page or a
-platform, why a funnel leaks, or how a consultant should be understood by a
-buyer. Use it when the answer must come from evidence rather than from
-confident wording.
-
-## Example Prompts
-
-```text
-We have three customer segments and no clear position. Give me two or three
-materially different options with the evidence and tradeoffs for each.
-
-Review these landing-page claims against the proof we actually have. Tell me
-which ones we cannot support and what evidence would close the gap.
-
-Signup drops 60% between the plan page and checkout. Diagnose it before
-proposing a test, and tell me if this is even an A/B test question.
-
-Rewrite this pricing page for a technical buyer. Keep the exact product terms
-and every constraint that keeps the claims true.
-
-Turn this migration write-up into posts for LinkedIn and Mastodon. Do not make
-the social version claim more than the source supports.
-
-Build a four-week X content strategy from this audience, offer, source material,
-and account baseline. Separate durable principles, current platform mechanics,
-and the hypotheses we should test.
-
-Audit my consultant profile. What is my thesis, which projects should be
-signature, and what evidence is still missing?
-
-We are a three-person IT service firm with enough inquiries but few sales.
-Find the bottleneck from inquiry to delivery and give me next week's plan.
-
-Write a first cold email and a phone guide for operations leads at mid-sized
-logistics firms in Germany. Check what contact basis we need first.
-
-Design our CRM pipeline with observable stage entry rules and an automation for
-new inquiries that cannot create duplicates.
-```
-
-See [SKILL.md](SKILL.md) for the workflow, evidence boundary, route table, and
-routing boundaries.
-
-## Install This Skill
+## Install
 
 ```sh
 npx skills add sebastian-software/skills.sebastian-software.com --skill effective-marketing
 ```
 
-Or follow the [DALO setup guide](../../docs/dalo.md) and select it explicitly:
+For pinned selections and multiple agent targets, follow the
+[DALO setup guide](../../docs/dalo.md):
 
 ```sh
 dalo init
@@ -129,42 +32,14 @@ dalo approve skill sebastian:effective-marketing
 dalo sync
 ```
 
-## Related Disciplines
+## Agent Instructions
 
-- [Effective Product](../effective-product/README.md) owns customer and market
-  research, the product decision itself, product and service pricing, service
-  pilots, and the
-  Architecture Decision Records that keep durable positioning and voice choices
-  from drifting.
-- [Effective Writing](../effective-writing/README.md) owns articles, essays,
-  newsletters, thought leadership, and editorial case studies — informing and
-  explaining, where this discipline owns the commercial choice — plus locale
-  typography and AI-pattern audits.
-- [Effective Web](../effective-web/README.md) owns page hierarchy, interface
-  copy, forms, analytics delivery, experiment implementation, accessibility,
-  performance, originality audits, and jurisdiction-aware web compliance.
-- [Effective Delivery](../effective-delivery/README.md) owns repository-derived
-  technical facts, executable examples, controlled-language documentation, and
-  people leadership such as delegation contracts.
+[SKILL.md](SKILL.md) contains the workflow, routing rules, and links to the
+focused references loaded by the agent. For former skill names, see the
+[migration guide](../../MIGRATION.md).
 
-## Scope
-
-This discipline works from supplied or verifiable evidence. It does not invent
-customer language, testimonials, outcomes, statistics, market size, competitor
-behavior, differentiation, or certainty; it does not authorize deceptive
-interfaces or dark patterns; and it does not replace legal, privacy, or
-specialist statistical review when risk and uncertainty exceed the available
-evidence. Drafting content is not permission to publish it, and drafting
-outreach is not permission to send it, call, spend, or change a CRM or ad
-account. Contact rules, tracking, and platform settings are checked for the
-actual market before they are relied on.
-
-## About Sebastian Software
-
-This skill is maintained by [Sebastian Software](https://oss.sebastian-software.com/),
-where we build and support open-source software. We also help teams design,
-modernize, and ship ambitious software products through
-[our consulting practice](https://sebastian-consulting.com/en).
+Maintained by [Sebastian Software](https://oss.sebastian-software.com/).
+We also help teams [design, modernize, and ship software](https://sebastian-consulting.com/en).
 
 ## License
 

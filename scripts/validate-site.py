@@ -11,7 +11,7 @@ from datetime import date, datetime
 from html import unescape
 from html.parser import HTMLParser
 from pathlib import Path
-from urllib.parse import urlparse
+from urllib.parse import unquote, urlparse
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -27,10 +27,7 @@ EXPECTED_COMPARISON_OG_IMAGE = "og-card.png"
 EXPECTED_COMPARISON_OG_IMAGE_URL = (
     f"https://{EXPECTED_DOMAIN}/assets/{EXPECTED_COMPARISON_OG_IMAGE}"
 )
-SKILL_URL_PREFIX = (
-    "https://github.com/sebastian-software/"
-    "skills.sebastian-software.com/tree/main/skills/"
-)
+SKILL_URL_PREFIX = f"https://{EXPECTED_DOMAIN}/skills/"
 EXPECTED_SKILLS_COMMAND = (
     "npx skills add sebastian-software/skills.sebastian-software.com "
     "--skill effective-web"
@@ -235,11 +232,67 @@ def validate_install_commands(parser: SiteParser, failures: list[str]) -> None:
     )
 
 
-def local_path(reference: str) -> Path | None:
+def local_path(reference: str, page: Path = INDEX) -> Path | None:
     parsed = urlparse(reference)
     if parsed.scheme or parsed.netloc or reference.startswith(("#", "mailto:", "tel:")):
         return None
-    return SITE / parsed.path.lstrip("/")
+    if not parsed.path:
+        return page
+    base = SITE if parsed.path.startswith("/") else page.parent
+    path = base / unquote(parsed.path.lstrip("/"))
+    return path / "index.html" if path.is_dir() else path
+
+
+def validate_page_links(page: Path, parser: SiteParser, failures: list[str]) -> None:
+    """Resolve nested pages and cross-page fragments against the checked-out site."""
+    for link in parser.links:
+        target = page if link.startswith("#") else local_path(link, page)
+        if target is None:
+            continue
+        require(target.is_file(), f"{page.name}: missing local link {link}", failures)
+        fragment = unquote(urlparse(link).fragment)
+        if fragment and target.is_file() and target.suffix == ".html":
+            linked = SiteParser()
+            linked.feed(target.read_text(encoding="utf-8"))
+            require(fragment in linked.ids, f"{page.name}: missing fragment {link}", failures)
+    for asset in parser.assets:
+        target = local_path(asset, page)
+        require(target is not None and target.is_file(), f"{page.name}: missing asset {asset}", failures)
+
+
+def validate_skill_pages(skills: list[str], homepage: SiteParser, failures: list[str]) -> None:
+    sitemap = (SITE / "sitemap.xml").read_text(encoding="utf-8")
+    for skill in skills:
+        page = SITE / "skills" / skill / "index.html"
+        canonical = f"{SKILL_URL_PREFIX}{skill}/"
+        require(page.is_file(), f"missing skill page: {skill}", failures)
+        if not page.is_file():
+            continue
+        text = page.read_text(encoding="utf-8")
+        parser = SiteParser()
+        parser.feed(text)
+        require(parser.lang == "en" and parser.h1_count == 1 and parser.main_count == 1,
+                f"{skill}: needs English language, one h1, and one main", failures)
+        require(parser.has_viewport and parser.has_description,
+                f"{skill}: missing viewport or description", failures)
+        require(len(parser.ids) == len(set(parser.ids)), f"{skill}: duplicate IDs", failures)
+        require(parser.canonical == canonical and parser.meta_properties.get("og:url") == canonical,
+                f"{skill}: incorrect canonical or social URL", failures)
+        metadata = extract_json_ld(text)
+        require(metadata is not None and metadata.get("url") == canonical,
+                f"{skill}: missing canonical structured data", failures)
+        require(f"<loc>{canonical}</loc>" in sitemap, f"{skill}: missing sitemap entry", failures)
+        require(f"skills/{skill}/index.html" in homepage.links,
+                f"{skill}: homepage must link its local detail page", failures)
+        require({"coverage", "workflow", "examples", "scope", "install", "related"}.issubset(parser.ids),
+                f"{skill}: missing detail-page section", failures)
+        require(parser.code_blocks.get("skill-command") == EXPECTED_SKILLS_COMMAND.replace("effective-web", skill),
+                f"{skill}: incorrect selective install command", failures)
+        require(any(target == "skill-command" and label for target, label in parser.copy_buttons),
+                f"{skill}: missing named install copy button", failures)
+        require(f"https://github.com/sebastian-software/skills.sebastian-software.com/blob/main/skills/{skill}/SKILL.md" in parser.links,
+                f"{skill}: missing agent-source link", failures)
+        validate_page_links(page, parser, failures)
 
 
 def extract_json_ld(html: str) -> dict[str, object] | None:
@@ -525,7 +578,7 @@ def validate_json_ld_inventory(
             "@type": "ListItem",
             "position": position,
             "name": name,
-            "url": f"{SKILL_URL_PREFIX}{skill}",
+            "url": f"{SKILL_URL_PREFIX}{skill}/",
         }
         for position, (skill, name) in enumerate(visible_inventory, start=1)
     ]
@@ -874,7 +927,7 @@ def main() -> int:
     require(bool(journey_html), "site must contain the connected workflow", failures)
     for skill in expected_skills:
         require(
-            f"/skills/{skill}\"" in journey_html,
+            f'"skills/{skill}/index.html"' in journey_html,
             f"connected workflow must link skill: {skill}",
             failures,
         )
@@ -907,6 +960,7 @@ def main() -> int:
             failures,
         )
 
+    validate_skill_pages(expected_skills, parser, failures)
     for link in parser.links:
         if link.startswith("#"):
             require(link[1:] in parser.ids, f"fragment target does not exist: {link}", failures)
@@ -1013,8 +1067,7 @@ def main() -> int:
 
     print(
         f"Validated dependency-free site: {len(expected_skills)} skills, "
-        f"{len(parser.ids) + len(comparisons_parser.ids)} unique IDs across 2 pages, "
-        f"{len(parser.links) + len(comparisons_parser.links)} links."
+        f"{len(expected_skills) + 2} pages with local links, assets, and skill metadata."
     )
     return 0
 

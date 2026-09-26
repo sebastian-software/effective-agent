@@ -18,4 +18,5 @@ pre-push:
         - "site/**/*.html"
         - ".lycheeignore"
         - "lychee.toml"
+        - "scripts/check-links.py"
       run: mise run links:check

@@ -1,0 +1,268 @@
+/* Skill detail pages extend the shared brand, type, and color tokens. */
+@layer layout {
+  .skill-hero {
+    padding-block: 8rem 4rem;
+  }
+
+  .skill-page .text-link {
+    color: var(--blue);
+  }
+
+  .breadcrumbs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin-bottom: 3.5rem;
+    color: var(--muted);
+    font-size: 0.85rem;
+  }
+
+  .skill-hero-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 20rem;
+    gap: clamp(2rem, 5vw, 5rem);
+    align-items: end;
+  }
+
+  .skill-hero h1 {
+    max-width: 14ch;
+    font-size: clamp(3rem, 5.8vw, 5.25rem);
+    overflow-wrap: anywhere;
+  }
+
+  .skill-lead {
+    margin-top: 1.5rem;
+    color: var(--blue);
+    font-size: clamp(1.25rem, 2vw, 1.6rem);
+    font-weight: 650;
+    line-height: 1.4;
+  }
+
+  .skill-intro {
+    max-width: 65ch;
+    margin-top: 1.25rem;
+    color: var(--muted);
+    font-size: 1.05rem;
+    line-height: 1.75;
+  }
+
+  .skill-start {
+    display: grid;
+    gap: 1.25rem;
+    padding: 1.75rem;
+    border: 1px solid var(--line);
+    border-top: 4px solid var(--blue);
+    border-radius: 4px;
+    background: var(--white);
+  }
+
+  .skill-start .eyebrow {
+    margin: 0;
+  }
+
+  .skill-start h2 {
+    font-size: 2rem;
+  }
+
+  .skill-start > p:not(.eyebrow) {
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  .skill-start .button {
+    width: 100%;
+    text-align: center;
+  }
+
+  .skill-reading {
+    display: grid;
+    grid-template-columns: 15rem minmax(0, 1fr);
+    gap: clamp(2rem, 5vw, 5rem);
+    padding-bottom: 5rem;
+    border-top: 1px solid var(--line);
+  }
+
+  .skill-toc {
+    display: flex;
+    position: sticky;
+    top: 7rem;
+    align-self: start;
+    flex-direction: column;
+    gap: 0.85rem;
+    padding-top: 2.5rem;
+  }
+
+  .skill-toc .eyebrow {
+    margin-bottom: 0.5rem;
+  }
+
+  .skill-toc a {
+    width: fit-content;
+    padding-block: 0.25rem;
+    color: var(--muted);
+    font-size: 0.9rem;
+    text-decoration: none;
+  }
+
+  .skill-toc a:hover {
+    color: var(--ink);
+    text-decoration: underline;
+  }
+
+  .skill-section {
+    padding-block: 3rem;
+    scroll-margin-top: 7rem;
+  }
+
+  .skill-section + .skill-section {
+    border-top: 1px solid var(--line);
+  }
+
+  .skill-section h2 {
+    max-width: none;
+    margin-bottom: 1.5rem;
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    overflow-wrap: anywhere;
+  }
+
+  .skill-section > p,
+  .skill-section li p,
+  .skill-coverage dd {
+    color: var(--muted);
+    line-height: 1.75;
+  }
+
+  .skill-section > p + p {
+    margin-top: 1rem;
+  }
+
+  .skill-section > .eyebrow {
+    color: var(--blue);
+  }
+
+  .skill-coverage {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.75rem 2.5rem;
+  }
+
+  .skill-coverage dt {
+    margin-bottom: 0.4rem;
+    font-weight: 750;
+  }
+
+  .skill-coverage dd {
+    margin: 0;
+  }
+
+  .skill-workflow {
+    display: grid;
+    gap: 1.5rem;
+    padding-left: 1.5rem;
+  }
+
+  .skill-workflow li {
+    padding-left: 0.75rem;
+  }
+
+  .skill-workflow li::marker {
+    color: var(--blue);
+    font-weight: 750;
+  }
+
+  .skill-workflow h3 {
+    margin-bottom: 0.4rem;
+  }
+
+  .skill-result {
+    margin-top: 2rem;
+    padding: 1.25rem 1.5rem;
+    border-left: 3px solid var(--blue);
+    background: var(--paper-soft);
+  }
+
+  .skill-prompts,
+  .skill-related {
+    display: grid;
+    gap: 1.25rem;
+    margin-block: 1.5rem;
+    padding: 0;
+    list-style: none;
+  }
+
+  .skill-prompts li {
+    padding: 1.25rem 1.5rem;
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: var(--white);
+  }
+
+  .skill-source {
+    font-size: 0.9rem;
+  }
+
+  .skill-section .code-block {
+    min-height: 7rem;
+    margin-block: 1.5rem;
+  }
+
+  .skill-related a {
+    display: inline-block;
+    margin-bottom: 0.35rem;
+    font-weight: 750;
+  }
+}
+
+@layer responsive {
+  @media (max-width: 1000px) {
+    .skill-hero {
+      padding-top: 10rem;
+    }
+
+    .skill-hero-grid {
+      grid-template-columns: minmax(0, 1fr) 17rem;
+      align-items: start;
+    }
+
+    .skill-reading {
+      grid-template-columns: minmax(0, 1fr);
+      gap: 0;
+    }
+
+    .skill-toc {
+      position: static;
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 0.5rem 1.5rem;
+    }
+
+    .skill-toc .eyebrow {
+      width: 100%;
+    }
+  }
+
+  @media (max-width: 700px) {
+    .skill-hero {
+      padding-top: 8.5rem;
+      padding-bottom: 2.5rem;
+    }
+
+    .breadcrumbs {
+      margin-bottom: 2.5rem;
+    }
+
+    .skill-hero-grid,
+    .skill-coverage {
+      grid-template-columns: minmax(0, 1fr);
+    }
+
+    .skill-start {
+      padding: 1.5rem;
+    }
+
+    .skill-section {
+      padding-block: 2.5rem;
+      scroll-margin-top: 10rem;
+    }
+  }
+}

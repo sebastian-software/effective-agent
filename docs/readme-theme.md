@@ -5,6 +5,18 @@ installation example, and links for users and contributors. The homepage owns
 detailed use cases, positioning, and inventory counts; `docs/dalo.md` owns the
 managed setup guide. Link to these owners instead of repeating their content.
 
+Each `site/skills/<skill>/index.html` owns that discipline's human-facing
+explanation: coverage, workflow, example prompts, scope, and connections.
+Edit these static HTML pages directly; `site/skill.css` supplies their shared
+layout on top of the site's brand styles. Keep homepage skill links and
+structured data pointed at these pages. Include new pages in `site/sitemap.xml`.
+
+Skill READMEs are compact repository entry points: a short introduction, a link
+to the skill's website page, installation, the agent interface, company links,
+and licensing. Do not copy the detailed explanation back into them.
+`skills/<skill>/SKILL.md` and its references remain the agent's instructions.
+These files are independent of the website and still install on their own.
+
 Edit `README.md.src`; `README.md` is committed output.
 Sebastian-Theme supplies the company badge in
 the existing badge row and a compact footer. Project content stays in this repo.

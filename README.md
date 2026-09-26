@@ -18,12 +18,12 @@ Use cases, example prompts, strengths, and the full scope live on the homepage.
 
 | Skill | Use it for |
 | --- | --- |
-| [`effective-product`](skills/effective-product/) | Research, product strategy and design, pricing, and naming |
-| [`effective-web`](skills/effective-web/) | Browser experiences: UI, React, CSS, accessibility, performance, and testing |
-| [`effective-engineering`](skills/effective-engineering/) | Architecture, APIs, data systems, Rust, backend TypeScript, and focused tests |
-| [`effective-delivery`](skills/effective-delivery/) | Repository improvements, PR reviews, dependencies, technical docs, and team delivery |
-| [`effective-writing`](skills/effective-writing/) | Articles, essays, editing, team communication, and locale typography |
-| [`effective-marketing`](skills/effective-marketing/) | Positioning, commercial copy, conversion, launches, social content, sales, and CRM |
+| [`effective-product`](https://skills.sebastian-software.com/skills/effective-product/) | Research, product strategy and design, pricing, and naming |
+| [`effective-web`](https://skills.sebastian-software.com/skills/effective-web/) | Browser experiences: UI, React, CSS, accessibility, performance, and testing |
+| [`effective-engineering`](https://skills.sebastian-software.com/skills/effective-engineering/) | Architecture, APIs, data systems, Rust, backend TypeScript, and focused tests |
+| [`effective-delivery`](https://skills.sebastian-software.com/skills/effective-delivery/) | Repository improvements, PR reviews, dependencies, technical docs, and team delivery |
+| [`effective-writing`](https://skills.sebastian-software.com/skills/effective-writing/) | Articles, essays, editing, team communication, and locale typography |
+| [`effective-marketing`](https://skills.sebastian-software.com/skills/effective-marketing/) | Positioning, commercial copy, conversion, launches, social content, sales, and CRM |
 
 Optional [instruction packs](https://skills.sebastian-software.com/#instructions)
 add standing guidance for request completion and documentation accuracy. Enable

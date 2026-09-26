@@ -1,5 +1,5 @@
 import assert from "node:assert/strict";
-import { existsSync } from "node:fs";
+import { existsSync, readdirSync } from "node:fs";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
 
@@ -10,6 +10,12 @@ const pageUrl = (name) => pathToFileURL(resolve(root, "site", name)).href;
 const pages = [
   { name: "index.html", url: pageUrl("index.html"), hasCapabilityExplorer: true },
   { name: "comparisons.html", url: pageUrl("comparisons.html"), hasCapabilityExplorer: false },
+  ...readdirSync(resolve(root, "site", "skills")).map((skill) => ({
+    name: `skills/${skill}/index.html`,
+    url: pageUrl(`skills/${skill}/index.html`),
+    hasCapabilityExplorer: false,
+    skill,
+  })),
 ];
 const mobileViewportMax = 400;
 const viewports = [320, 360, 375, 400, 768, 1024, 1440];
@@ -37,7 +43,10 @@ const assertLayout = async (page, site, width, colorScheme) => {
     const filter = document.querySelector(".filter-bar");
     const capabilityExplorer = document.querySelector(".capability-explorer");
     const codeBlocks = [...document.querySelectorAll(".code-block")];
+    const breadcrumb = document.querySelector(".breadcrumbs");
+    const header = document.querySelector(".site-header");
     return {
+      breadcrumbBelowHeader: !breadcrumb || breadcrumb.getBoundingClientRect().top >= header.getBoundingClientRect().bottom,
       capabilityExplorerContained: Boolean(
         capabilityExplorer &&
           capabilityExplorer.scrollWidth <= capabilityExplorer.clientWidth
@@ -55,6 +64,8 @@ const assertLayout = async (page, site, width, colorScheme) => {
     };
   });
   const context = `${site.name}, ${colorScheme}, ${width}px`;
+
+  assert.ok(layout.breadcrumbBelowHeader, `${context}: the header must not cover the breadcrumb`);
 
   assert.ok(
     layout.scrollWidth <= layout.clientWidth,
@@ -214,6 +225,41 @@ try {
       }
     }
   }
+
+  // Exercise the visitor journey, including the shared copy enhancement.
+  const context = await browser.newContext({ reducedMotion: "reduce" });
+  await context.addInitScript(() => {
+    Object.defineProperty(navigator, "clipboard", {
+      value: { writeText: async (text) => { window.copiedCommand = text; } },
+    });
+  });
+  const page = await context.newPage();
+  for (const site of pages.filter((site) => site.skill)) {
+    await page.goto(pageUrl("index.html"));
+    await page.locator(`[data-skill="${site.skill}"] a`).click();
+    assert.equal(page.url(), site.url, "skill cards must open the website detail page");
+    await page.locator('.skill-toc a[href="#install"]').click();
+    await page.locator('[data-copy-target="skill-command"]').click();
+    await page.waitForFunction(() => Boolean(window.copiedCommand));
+    assert.equal(await page.evaluate(() => window.copiedCommand),
+      `npx skills add sebastian-software/skills.sebastian-software.com --skill ${site.skill}`);
+    await page.locator(".breadcrumbs a").click();
+    assert.equal(page.url(), `${pageUrl("index.html")}#library`);
+  }
+  await context.close();
+
+  // Skill explanations, native anchor navigation, and install commands work without JS.
+  const staticContext = await browser.newContext({ javaScriptEnabled: false });
+  const staticPage = await staticContext.newPage();
+  for (const site of pages.filter((site) => site.skill)) {
+    await staticPage.goto(site.url);
+    assert.equal(await staticPage.locator("h1").count(), 1);
+    assert.equal(await staticPage.locator(".skill-prompts li").count(), 3);
+    await staticPage.locator('.skill-toc a[href="#install"]').click();
+    assert.equal(staticPage.url(), `${site.url}#install`);
+    assert.ok(await staticPage.locator("#skill-command").isVisible());
+  }
+  await staticContext.close();
 } finally {
   await browser.close();
 }

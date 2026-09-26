@@ -36,6 +36,11 @@ external host is down and blocks a push, skip that job once with
 Every Markdown and site link is checked on every run, not only the links a
 change touches.
 
+Both tasks call `scripts/check-links.py`, which maps URLs on
+`skills.sebastian-software.com` to the corresponding files in this checkout.
+This checks new skill pages before they are deployed, including links from
+READMEs. Other domains still receive the same network checks as before.
+
 - **Before a push**, `mise run links:check` applies `lychee.toml` strictly: any
   error fails, including 403, 5xx, and timeouts. Successful results are cached
   for a day in `.lycheecache` (ignored by Git), so repeated pushes take well

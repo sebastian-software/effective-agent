@@ -37,7 +37,7 @@ description = "Check every Markdown and site link strictly from this machine"
 shell = "bash -c"
 env = { MISE_OFFLINE = "true" }
 run = '''
-binary=$(mise which lychee) && "$binary" --config lychee.toml \
+binary=$(mise which lychee) && python3 scripts/check-links.py "$binary" --config lychee.toml \
   --cache --max-cache-age 1d --cache-exclude-status '300..' \
   --exclude 'https://oipc\.ab\.ca/' \
   './**/*.md' './site/**/*.html'

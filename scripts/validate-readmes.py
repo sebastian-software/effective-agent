@@ -797,6 +797,7 @@ def required_readme_fragments(name: str) -> dict[str, str]:
     """Return the public contract every independently installable skill exposes."""
     return {
         "collection backlink": "../../README.md",
+        "skill website": f"https://skills.sebastian-software.com/skills/{name}/",
         "agent interface": "[SKILL.md](SKILL.md)",
         "skills CLI install": f"--skill {name}",
         "DALO setup guide": "../../docs/dalo.md",
