@@ -205,7 +205,7 @@ too generic become hard to use correctly.
 
 - How to use components and visual styles
 - How to write clear interface text
-- Examples from the book:
+- Examples of useful interface conventions:
   - Indicate interactive elements using brand colour
   - Use sentence case
   - Left align buttons and text

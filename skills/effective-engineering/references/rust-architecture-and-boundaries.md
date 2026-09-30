@@ -35,7 +35,7 @@ Do not invent a stronger MSRV, a new runtime, a new crate, a target guarantee,
 or a performance budget because a design article used one. Tie each decision to
 the repository's actual contract.
 
-**Source:** [The Rust Programming Language – Packages, Crates, and Modules](https://doc.rust-lang.org/stable/book/ch07-00-managing-growing-projects-with-packages-crates-and-modules.html), [Effective Rust – Dependencies and Tooling](https://www.effective-rust.com/), and the parent skill's [Quality and Review](rust-quality-and-review.md).
+**Source:** [Rust modules and packages](https://doc.rust-lang.org/stable/book/ch07-00-managing-growing-projects-with-packages-crates-and-modules.html) and [Quality and Review](rust-quality-and-review.md).
 
 ### 1.2 State the boundary in one paragraph
 
@@ -90,7 +90,7 @@ Do not accept `&mut T` merely because interior mutability makes it convenient;
 make mutation part of the contract. Do not consume `T` if the operation only
 needs a short read.
 
-**Source:** [Rust Book – Ownership](https://doc.rust-lang.org/stable/book/ch04-00-understanding-ownership.html), [Effective Rust – Types](https://www.effective-rust.com/), [Rust Design Patterns – Borrowed types for arguments](https://rust-unofficial.github.io/patterns/idioms/coercion-arguments.html).
+**Source:** [Rust ownership guide](https://doc.rust-lang.org/stable/book/ch04-00-understanding-ownership.html) and [Rust API flexibility guidelines](https://rust-lang.github.io/api-guidelines/flexibility.html).
 
 ### 2.2 Accept the borrowed type, not the owned wrapper
 
@@ -109,7 +109,7 @@ assert!(contains_marker("rust", "us"));
 Keep an owned parameter when the operation must retain it beyond the call or
 when moving it avoids a copy at a meaningful boundary.
 
-**Source:** [Rust Design Patterns – Use borrowed types for arguments](https://rust-unofficial.github.io/patterns/idioms/coercion-arguments.html), PDF pages 5–7.
+**Source:** [Rust Design Patterns – Use borrowed types for arguments](https://rust-unofficial.github.io/patterns/idioms/coercion-arguments.html).
 
 ### 2.3 Use `Cow` when ownership depends on runtime content
 
@@ -117,11 +117,13 @@ Return `Cow<'a, T>` when valid inputs can be returned borrowed but exceptional
 inputs require an owned representation. Document when allocation occurs.
 
 ```rust
-fn normalized(input: &str) -> Cow<'_, str> {
-    if already_normalized(input) {
-        Cow::Borrowed(input)
+use std::borrow::Cow;
+
+fn display_label(input: &str) -> Cow<'_, str> {
+    if input.contains('_') {
+        Cow::Owned(input.replace('_', " "))
     } else {
-        Cow::Owned(normalize_to_string(input))
+        Cow::Borrowed(input)
     }
 }
 ```
@@ -129,7 +131,7 @@ fn normalized(input: &str) -> Cow<'_, str> {
 Do not use `Cow` merely to avoid deciding a clear ownership contract; its value
 comes from a real borrowed/owned runtime split.
 
-**Source:** [Rust for Rustaceans – Designing Interfaces, “Borrowed vs. Owned”](https://nostarch.com/download/samples/Rust_CID.pdf), pp. 45–46; public errata at [rust-for-rustaceans.com](https://rust-for-rustaceans.com/).
+**Source:** [`std::borrow::Cow`](https://doc.rust-lang.org/std/borrow/enum.Cow.html).
 
 ### 2.4 Return owned values across durable boundaries
 
@@ -145,15 +147,17 @@ data live longer and it does not justify leaking, global storage, `Arc` cloning,
 or unsafe lifetime extension.
 
 ```rust
-fn longest<'a>(left: &'a str, right: &'a str) -> &'a str {
-    if left.len() >= right.len() { left } else { right }
+fn header_value<'a>(headers: &'a [(String, String)], name: &str) -> Option<&'a str> {
+    headers.iter()
+        .find(|(key, _)| key.eq_ignore_ascii_case(name))
+        .map(|(_, value)| value.as_str())
 }
 ```
 
 Prefer elided lifetimes when they express the same contract. Add explicit
 lifetimes when the relationship is part of the API a caller must understand.
 
-**Source:** [Rust Book – Validating References with Lifetimes](https://doc.rust-lang.org/stable/book/ch10-03-lifetime-syntax.html), [Rust for Rustaceans – Foundations](https://nostarch.com/download/samples/Rust_CID.pdf), pp. 1–17.
+**Source:** [Rust lifetime guide](https://doc.rust-lang.org/stable/book/ch10-03-lifetime-syntax.html).
 
 ### 2.6 Diagnose `clone` before writing it
 
@@ -168,7 +172,7 @@ When a borrow-checker error suggests `clone`, first ask:
 Clone only when the duplicate ownership is part of the contract or is proven
 cheaper/safer than a redesign.
 
-**Source:** [Rust Design Patterns – Clone to satisfy the borrow checker](https://rust-unofficial.github.io/patterns/rust-design-patterns.pdf), pp. 14–16 and 65; [Effective Rust – Concepts](https://www.effective-rust.com/).
+**Source:** [`std::mem::take`](https://doc.rust-lang.org/std/mem/fn.take.html) and [Rust ownership guide](https://doc.rust-lang.org/stable/book/ch04-00-understanding-ownership.html).
 
 ### 2.7 Use RAII for resource lifetime, not for fallible shutdown
 
@@ -178,24 +182,34 @@ restoring state). Add an explicit `close`, `flush`, or `shutdown` method for
 operations that can fail or block; never hide required error handling in
 `Drop::drop`.
 
-**Source:** [Rust Design Patterns – RAII with guards](https://rust-unofficial.github.io/patterns/rust-design-patterns.pdf), pp. 41–42; [Rust API Guidelines – Dependability](https://rust-lang.github.io/api-guidelines/dependability.html); [Rust for Rustaceans – Fallible and Blocking Destructors](https://nostarch.com/download/samples/Rust_CID.pdf), p. 46.
+**Source:** [`Drop`](https://doc.rust-lang.org/std/ops/trait.Drop.html) and [Rust API dependability guidelines](https://rust-lang.github.io/api-guidelines/dependability.html).
 
 ## 3. Model domain invariants in types
 
 ### 3.1 Parse directly into a validated domain type
 
-Do not validate a raw string once and pass the string through every layer.
-Create a type whose constructor is the validation boundary and keep its
-representation private.
+Make the constructor or parser the validation boundary, then pass the validated
+domain type through downstream layers instead of repeatedly checking a raw
+string or number. Keep its representation private so ordinary code cannot bypass
+the invariant. This example applies that rule to a capacity of 1 through 4096;
+choose a bound from the actual workload.
 
 ```rust
-pub struct SubscriberEmail(String);
+use std::num::NonZeroUsize;
 
-impl TryFrom<String> for SubscriberEmail {
-    type Error = InvalidEmail;
+pub struct BatchLimit(NonZeroUsize);
 
-    fn try_from(value: String) -> Result<Self, Self::Error> {
-        validate_email(&value).then_some(Self(value)).ok_or(InvalidEmail)
+#[derive(Debug)]
+pub struct InvalidBatchLimit;
+
+impl TryFrom<usize> for BatchLimit {
+    type Error = InvalidBatchLimit;
+
+    fn try_from(value: usize) -> Result<Self, Self::Error> {
+        NonZeroUsize::new(value)
+            .filter(|limit| limit.get() <= 4096)
+            .map(Self)
+            .ok_or(InvalidBatchLimit)
     }
 }
 ```
@@ -203,7 +217,7 @@ impl TryFrom<String> for SubscriberEmail {
 After construction, downstream code may rely on the invariant. Preserve the
 raw input separately only when error reporting or auditing genuinely needs it.
 
-**Source:** [Zero To Production – Type-Driven Development and `SubscriberEmail`](https://www.zero2prod.com/assets/sample_zero2prod.pdf), Chapter 6, pp. 169–213; [Rust API Guidelines – Type Safety](https://rust-lang.github.io/api-guidelines/type-safety.html).
+**Source:** [`TryFrom`](https://doc.rust-lang.org/std/convert/trait.TryFrom.html), [`NonZeroUsize`](https://doc.rust-lang.org/std/num/type.NonZeroUsize.html), and [Rust API type-safety guidelines](https://rust-lang.github.io/api-guidelines/type-safety.html).
 
 ### 3.2 Use newtypes for stable semantic distinctions
 
@@ -215,7 +229,7 @@ provide only the conversions/operations that preserve the distinction.
 Do not wrap every primitive. Add a newtype when it supplies an invariant,
 meaning, trait behavior, or a future-compatible boundary.
 
-**Source:** [Effective Rust – Item 6, Newtype Pattern](https://www.effective-rust.com/); [Rust API Guidelines – C-NEWTYPE and C-NEWTYPE-HIDE](https://rust-lang.github.io/api-guidelines/type-safety.html).
+**Source:** [Rust API newtype guidelines](https://rust-lang.github.io/api-guidelines/type-safety.html).
 
 ### 3.3 Use enums for lifecycle states
 
@@ -242,7 +256,7 @@ structured error that identifies invalid combinations.
 Use `Default` for a meaningful safe baseline and keep a `new` constructor when
 an empty/default value is a conventional, useful starting point.
 
-**Source:** [Rust API Guidelines – C-BUILDER/C-COMMON-TRAITS](https://rust-lang.github.io/api-guidelines/type-safety.html), [Rust Design Patterns – Constructors and Default](https://rust-unofficial.github.io/patterns/rust-design-patterns.pdf), pp. 8–11.
+**Source:** [Rust API Guidelines – C-BUILDER/C-COMMON-TRAITS](https://rust-lang.github.io/api-guidelines/type-safety.html), [Rust Design Patterns – Constructors and Default](https://rust-unofficial.github.io/patterns/rust-design-patterns.pdf).
 
 ### 3.5 Choose `#[non_exhaustive]` for extensible public enums/structs
 
@@ -251,7 +265,7 @@ compatible evolution. Document the wildcard handling consumers need. Leave a
 public enum exhaustive only when the set is deliberately closed and changing it
 is a planned breaking release.
 
-**Source:** [Rust Design Patterns – `#[non_exhaustive]`](https://rust-unofficial.github.io/patterns/rust-design-patterns.pdf), pp. 26–28; [Rust API Guidelines – Future proofing](https://rust-lang.github.io/api-guidelines/future-proofing.html).
+**Source:** [Rust Design Patterns – `#[non_exhaustive]`](https://rust-unofficial.github.io/patterns/rust-design-patterns.pdf); [Rust API Guidelines – Future proofing](https://rust-lang.github.io/api-guidelines/future-proofing.html).
 
 ### 3.6 Use `bitflags` for independent flags
 
@@ -281,7 +295,7 @@ impl Parser {
 Treat every additional `pub` as a future compatibility obligation: it can
 freeze storage, algorithm choices, auto-traits, or error details.
 
-**Source:** [Effective Rust – Item 22, Minimize visibility](https://www.effective-rust.com/visibility.html); [Rust API Guidelines – C-STRUCT-PRIVATE](https://rust-lang.github.io/api-guidelines/future-proofing.html).
+**Source:** [Rust visibility and privacy](https://doc.rust-lang.org/reference/visibility-and-privacy.html).
 
 ### 4.2 Make names predict cost and ownership
 
@@ -327,7 +341,7 @@ your dependency directly and its version becomes an accidental API constraint.
 Avoid wildcard imports from dependencies you do not control; a minor release
 can add a trait or method that creates ambiguity.
 
-**Source:** [Effective Rust – Items 23–25](https://www.effective-rust.com/); [Rust API Guidelines – Necessities](https://rust-lang.github.io/api-guidelines/necessities.html).
+**Source:** [Rust API necessity guidelines](https://rust-lang.github.io/api-guidelines/necessities.html).
 
 ### 4.6 Make documentation part of the API
 
@@ -362,7 +376,7 @@ substitution. Add a generic parameter when callers choose a type and static
 dispatch is useful. Add a trait when substitution is a real boundary, not merely
 to mock a private one-method helper.
 
-**Source:** [Effective Rust – Item 12, Generics vs Trait Objects](https://www.effective-rust.com/); [Rust Design Patterns – YAGNI](https://rust-unofficial.github.io/patterns/patterns/index.html).
+**Source:** [Rust trait-object guide](https://doc.rust-lang.org/stable/book/ch18-02-trait-objects.html) and [Rust API flexibility guidelines](https://rust-lang.github.io/api-guidelines/flexibility.html).
 
 ### 5.2 Use generics for static dispatch and caller-selected types
 
@@ -396,7 +410,7 @@ pub struct PluginHost {
 Document object-safety, thread-safety, allocation, and dispatch costs. Do not
 turn every internal function into a trait object just to make tests convenient.
 
-**Source:** [Rust Book – Trait Objects](https://doc.rust-lang.org/stable/book/ch18-02-trait-objects.html); [Rust for Rustaceans – Compilation and Dispatch/Object Safety](https://nostarch.com/download/samples/Rust_CID.pdf), pp. 24–35 and 44; [Rust API Guidelines – C-OBJECT](https://rust-lang.github.io/api-guidelines/flexibility.html).
+**Source:** [Rust trait-object guide](https://doc.rust-lang.org/stable/book/ch18-02-trait-objects.html) and [Rust dyn compatibility](https://doc.rust-lang.org/reference/items/traits.html#dyn-compatibility).
 
 ### 5.4 Check object safety before publishing a trait
 
@@ -412,7 +426,7 @@ function rather than introducing a named strategy hierarchy. Promote it to a
 trait only when the policy is a stable reusable boundary or needs associated
 types/stateful behavior.
 
-**Source:** [Rust Design Patterns – Strategy/Policy](https://rust-unofficial.github.io/patterns/rust-design-patterns.pdf), pp. 43–45.
+**Source:** [Rust Design Patterns – Strategy/Policy](https://rust-unofficial.github.io/patterns/rust-design-patterns.pdf).
 
 ## 6. Design error and IO boundaries
 
@@ -420,7 +434,7 @@ types/stateful behavior.
 
 Define error layers with different consumers:
 
-1. **Domain/control-flow:** matchable variants such as `InvalidEmail` or
+1. **Domain/control-flow:** matchable variants such as `InvalidBatchLimit` or
    `AlreadyExists`.
 2. **Adapter:** source errors from SQL, HTTP, filesystem, or queues, preserving
    the cause and adding operation context.
@@ -430,7 +444,7 @@ Define error layers with different consumers:
 Do not make a single error enum carry every dependency's entire API or expose
 internal database details through a public protocol.
 
-**Source:** [Zero To Production – Error Handling](https://www.zero2prod.com/assets/sample_zero2prod.pdf), Chapter 8, pp. 333–371; [Rust for Rustaceans – Error Handling](https://nostarch.com/download/samples/Rust_CID.pdf), Chapter 4.
+**Source:** [`std::error::Error`](https://doc.rust-lang.org/std/error/trait.Error.html) and [Errors and Concurrency](rust-errors-and-concurrency.md).
 
 ### 6.2 Choose `thiserror` versus opaque application errors by consumer
 
@@ -476,7 +490,7 @@ Never depend on `Drop` to report a required failure. Expose explicit shutdown
 for flushing, network close, joining, or remote cleanup. Document whether the
 explicit method is idempotent and what happens if callers omit it.
 
-**Source:** [Rust API Guidelines – Dependability](https://rust-lang.github.io/api-guidelines/dependability.html); [Rust for Rustaceans – Fallible and Blocking Destructors](https://nostarch.com/download/samples/Rust_CID.pdf), p. 46.
+**Source:** [`Drop`](https://doc.rust-lang.org/std/ops/trait.Drop.html) and [Rust API dependability guidelines](https://rust-lang.github.io/api-guidelines/dependability.html).
 
 ### 6.7 Keep serialization at the protocol boundary
 
@@ -547,7 +561,7 @@ names such as `use-std` or negative features. Keep features additive and inspect
 the graph for accidental transitive coupling. Treat a dependency appearing in a
 public type as a deliberate design decision.
 
-**Source:** [Effective Rust – Dependencies](https://www.effective-rust.com/deps.html), Items 21–26; [Rust API Guidelines – C-FEATURE](https://rust-lang.github.io/api-guidelines/naming.html).
+**Source:** [Cargo features](https://doc.rust-lang.org/cargo/reference/features.html) and [Rust API feature naming](https://rust-lang.github.io/api-guidelines/naming.html).
 
 ## 8. Document negative invariants
 
@@ -644,7 +658,7 @@ protocols.
 Avoid duplicating the same contract at every level. Make the cheapest test the
 one that catches the defect.
 
-**Source:** [rust-analyzer Architecture – Testing](https://rust-analyzer.github.io/book/contributing/architecture.html); [Zero To Production – Integration and maintainable test suite](https://www.zero2prod.com/assets/sample_zero2prod.pdf), Chapters 3 and 7.
+**Source:** [rust-analyzer testing architecture](https://rust-analyzer.github.io/book/contributing/architecture.html).
 
 ### 10.2 Keep test input deterministic
 
@@ -670,7 +684,7 @@ operation name, entity identifiers, retry count, and duration across async
 boundaries. Redact secrets and avoid making `Debug` output a data-exfiltration
 path.
 
-**Source:** [Zero To Production – Telemetry](https://www.zero2prod.com/assets/sample_zero2prod.pdf), Chapter 4; [Rust API Guidelines – Debuggability](https://rust-lang.github.io/api-guidelines/debuggability.html).
+**Source:** [`tracing`](https://docs.rs/tracing/latest/tracing/) and [Rust API debuggability guidelines](https://rust-lang.github.io/api-guidelines/debuggability.html).
 
 ### 10.5 Profile before changing architecture for speed
 
@@ -682,7 +696,7 @@ retain a benchmark or regression check.
 Do not select `Arc`, boxing, smaller integer widths, `inline`, LTO, or a new
 collection solely from object size or a generic blog rule.
 
-**Source:** [Effective Rust – Item 20, avoid over-optimization](https://www.effective-rust.com/); [rust-analyzer Architecture – Performance Testing/Observability](https://rust-analyzer.github.io/book/contributing/architecture.html).
+**Source:** [rust-analyzer performance diagnostics](https://rust-analyzer.github.io/book/contributing/architecture.html) and [Benchmark Methodology](benchmark-methodology.md).
 
 ## 11. Design production workflows
 
@@ -693,7 +707,7 @@ supervision once at startup. Pass them explicitly to handlers/services. Keep
 domain code free of hidden global state, direct environment reads, and implicit
 runtime initialization.
 
-**Source:** [Zero To Production – Application State, Configuration, Middleware](https://www.zero2prod.com/assets/sample_zero2prod.pdf), Chapters 3, 5, and 10.
+**Source:** [Services, Data, and Async](services-data-and-async.md).
 
 ### 11.2 Test services through the public boundary
 
@@ -708,7 +722,7 @@ Group changes that must be atomic in a transaction. Define which layer owns the
 transaction and which errors trigger rollback. Do not spread transaction
 ownership across unrelated handlers or adapters.
 
-**Source:** [Zero To Production – Database Transactions](https://www.zero2prod.com/assets/sample_zero2prod.pdf), Chapter 7.8.
+**Source:** [`sqlx::Transaction`](https://docs.rs/sqlx/latest/sqlx/struct.Transaction.html) and [Transactions and Consistency](transactions-and-consistency.md).
 
 ### 11.4 Make SQL/build validation reproducible
 
@@ -716,7 +730,7 @@ Use the repository's supported SQLx offline metadata or equivalent query
 validation so a production build does not require a developer database. Check
 that CI regenerates or validates metadata intentionally.
 
-**Source:** [Zero To Production – SQLx Offline Mode](https://www.zero2prod.com/assets/sample_zero2prod.pdf), Chapter 5.3.3.
+**Source:** [SQLx query validation and offline mode](https://docs.rs/sqlx/latest/sqlx/macro.query.html).
 
 ### 11.5 Keep blocking work away from async executors
 
@@ -725,7 +739,7 @@ blocking FFI calls. Run them through an explicit blocking pool or worker
 boundary, size the pool, and expose cancellation/timeout behavior. Do not hide
 blocking work inside an async function merely because it has an `.await` later.
 
-**Source:** [Zero To Production – Do Not Block The Async Executor](https://www.zero2prod.com/assets/sample_zero2prod.pdf), Chapter 10.2.4; [Rust for Rustaceans – Asynchronous Programming](https://nostarch.com/download/samples/Rust_CID.pdf), Chapter 8.
+**Source:** [Tokio blocking-task boundary](https://docs.rs/tokio/latest/tokio/task/fn.spawn_blocking.html).
 
 ### 11.6 Specify retry and idempotency before adding retries
 
@@ -741,7 +755,7 @@ For every retried side effect, define:
 Use save-and-replay for stateful idempotency or a deterministic key only when
 the operation and time semantics support it. Never add an unbounded retry loop.
 
-**Source:** [Zero To Production – Fault-tolerant Workflows](https://www.zero2prod.com/assets/sample_zero2prod.pdf), Chapter 11.
+**Source:** [Transactions and Consistency](transactions-and-consistency.md) and [API and Interface Contracts](api-and-interface-contracts.md).
 
 ### 11.7 Choose recovery explicitly
 
@@ -750,7 +764,7 @@ forward recovery (retry/continue), or asynchronous processing. Document what a
 crash between two external effects leaves behind and how the next attempt
 repairs or observes it.
 
-**Source:** [Zero To Production – Distributed Transactions and Recovery](https://www.zero2prod.com/assets/sample_zero2prod.pdf), Chapter 11.10.
+**Source:** [Transactions and Consistency](transactions-and-consistency.md).
 
 ### 11.8 Keep security at both domain and operational boundaries
 
@@ -758,7 +772,7 @@ Model authentication/session states explicitly. Hash passwords without blocking
 the async executor. Prevent user enumeration, protect secrets from logs and
 debug output, define TLS/session-store policies, and test the failure paths.
 
-**Source:** [Zero To Production – Securing Our API](https://www.zero2prod.com/assets/sample_zero2prod.pdf), Chapter 10; [Rust API Guidelines – C-DEBUG/C-FAILURE](https://rust-lang.github.io/api-guidelines/).
+**Source:** [API and Interface Contracts](api-and-interface-contracts.md) and [Rust API debuggability guidelines](https://rust-lang.github.io/api-guidelines/debuggability.html).
 
 ## 12. Run the architecture review
 
@@ -835,11 +849,8 @@ map into a changelog.
 ## 13. Source map
 
 - [The Rust Programming Language](https://doc.rust-lang.org/stable/book/)
-- [Rust for Rustaceans](https://nostarch.com/rust-rustaceans) and its public [TOC/sample](https://nostarch.com/download/samples/Rust_CID.pdf)
-- [Effective Rust](https://www.effective-rust.com/)
 - [Rust API Guidelines](https://rust-lang.github.io/api-guidelines/)
 - [Rust Design Patterns](https://rust-unofficial.github.io/patterns/) and [PDF](https://rust-unofficial.github.io/patterns/rust-design-patterns.pdf)
 - [rust-analyzer Architecture](https://rust-analyzer.github.io/book/contributing/architecture.html)
 - [Large Rust Workspaces](https://matklad.github.io/2021/08/22/large-rust-workspaces.html)
 - [ARCHITECTURE.md](https://matklad.github.io/2021/02/06/ARCHITECTURE.md.html)
-- [Zero To Production In Rust](https://www.zero2prod.com/) and official [sample](https://www.zero2prod.com/assets/sample_zero2prod.pdf)

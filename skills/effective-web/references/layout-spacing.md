@@ -569,35 +569,38 @@ semantic custom property. Test short landscape viewports, mobile browser chrome,
 zoom, and content expansion whenever viewport-relative block sizing contributes
 to the formula.
 
-## Set a Global Measure Axiom
+## Bound the Reading Context
 
-Cap line length globally using an exception-based approach:
+Apply a measure to the region that owns reading, rather than constraining every
+box through a universal selector:
 
 ```css
-* {
-  max-inline-size: 60ch;
-}
-html, body, div, header, nav, main, footer, section, aside {
-  max-inline-size: none;
+.prose {
+  max-inline-size: var(--prose-measure, 65ch);
+  margin-inline: auto;
+  overflow-wrap: anywhere;
 }
 ```
 
-Container elements are excepted; text-bearing elements automatically get reasonable line lengths. Use a custom property for easy adjustment: `--measure: 60ch`.
+A text measure should not cap form controls, wide tables, page grids, or
+positioned UI. Check real and fallback fonts because `ch` is a font metric,
+not a guarantee about the number of characters in a line.
 
 ## Choose Intrinsic Algorithms Before Breakpoints
 
-Layouts that respond to their content and container are usually more reusable
-than layouts controlled by viewport breakpoints. Choose among Stack, Box,
-Center, Cluster, Sidebar, Switcher, Cover, Grid, Frame, Reel, Imposter, and Icon;
-compose them by responsibility, and establish a Container only when the
-component truly needs an explicit size-dependent mode.
+Layouts that respond to content and container space are usually more reusable
+than layouts controlled by viewport breakpoints. Choose Stack, Box, Center,
+Cluster, Sidebar, Switcher, Cover, Grid, Frame, Reel, Imposter, and Icon from
+their responsibility; compose them without changing semantic source order.
+Sidebar preserves a dominant main region, while Switcher changes equal peers
+together. Establish a Container only for an explicit local mode that intrinsic
+sizing cannot express suitably; viewport queries belong to page-owned changes.
 
-Read [intrinsic-layouts.md](intrinsic-layouts.md) for the selection table,
-implementation contracts, missing-content and child-count behavior,
-accessibility constraints, and continuous-resize verification. Keep this file
-as the source for spacing scales, measure, responsive media, safe areas,
-subgrid, and general layout mechanics rather than duplicating the primitive
-implementations here.
+Read [intrinsic-layouts.md](intrinsic-layouts.md) for the selection table, exact
+algorithms, missing-content and item-count contracts, Subgrid slot alignment,
+accessibility, and continuous-resize verification. Keep this appendix as the
+owner of spacing scales, measure, responsive media, safe areas, and general
+layout mechanics rather than duplicating the primitive implementations here.
 
 ## Responsive Images
 

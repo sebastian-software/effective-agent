@@ -401,8 +401,7 @@ Use shared references for read-only access and exclusive mutable references for
 mutation. Use Arc for shared ownership, not as a mutation or synchronization
 primitive. Establish Send and Sync constraints before introducing atomics.
 
-Source: [Rust Atomics and Locks, borrowing](https://mara.nl/atomics/basics.html#borrowing-and-races);
-[shared ownership](https://mara.nl/atomics/basics.html#shared-ownership-and-reference-counting).
+Source: [Rust shared ownership](https://doc.rust-lang.org/std/sync/struct.Arc.html) and [Send/Sync contracts](https://doc.rust-lang.org/std/marker/trait.Sync.html).
 
 ### 8.2 Prefer scoped threads for bounded borrows
 
@@ -410,7 +409,7 @@ Use std::thread::scope when worker threads cannot outlive a lexical region.
 This permits borrowing local slices without forcing static ownership or Arc
 allocation, and the scope joins outstanding threads before returning.
 
-Source: [Rust Atomics and Locks, scoped threads](https://mara.nl/atomics/basics.html#scoped-threads).
+Source: [`std::thread::scope`](https://doc.rust-lang.org/std/thread/fn.scope.html).
 
 ### 8.3 Use Relaxed only for the contract it satisfies
 
@@ -419,8 +418,7 @@ but they do not publish arbitrary writes to other variables. Stop flags and
 independent counters are common uses; composite snapshots need stronger
 ordering or a lock.
 
-Source: [Rust Atomics and Locks, atomics](https://mara.nl/atomics/atomics.html#atomic-load-and-store-operations);
-[memory model](https://mara.nl/atomics/memory-ordering.html#relaxed).
+Source: [Rust atomic memory model](https://doc.rust-lang.org/std/sync/atomic/index.html) and [`Ordering`](https://doc.rust-lang.org/std/sync/atomic/enum.Ordering.html).
 
 ### 8.4 Use Release/Acquire for publication
 
@@ -431,7 +429,7 @@ edge and test the protocol on weakly ordered targets.
     writer: data = value; ready.store(true, Release)
     reader: if ready.load(Acquire) { use(data) }
 
-Source: [Rust Atomics and Locks, release/acquire](https://mara.nl/atomics/memory-ordering.html#release-and-acquire-ordering).
+Source: [`Ordering::Release` and `Ordering::Acquire`](https://doc.rust-lang.org/std/sync/atomic/enum.Ordering.html).
 
 ### 8.5 Treat CAS failure and reclamation as first-class paths
 
@@ -440,7 +438,7 @@ compare_exchange, and reclaim the losing allocation on CAS failure. Prove that
 an acquired non-null pointer refers to initialized, live storage before
 constructing a reference.
 
-Source: [Rust Atomics and Locks, lazy initialization](https://mara.nl/atomics/memory-ordering.html#example-lazy-initialization-with-indirection).
+Source: [`AtomicPtr::compare_exchange`](https://doc.rust-lang.org/std/sync/atomic/struct.AtomicPtr.html#method.compare_exchange) and [Rust atomic memory model](https://doc.rust-lang.org/std/sync/atomic/index.html).
 
 ### 8.6 Use fences only with a written synchronization proof
 
@@ -448,28 +446,27 @@ A conditional Acquire fence after a Relaxed load can avoid acquire cost on a
 frequent null path, but fence correctness depends on the matching release and
 the exact control flow. Do not replace Acquire/Release with fences by intuition.
 
-Source: [Rust Atomics and Locks, fences](https://mara.nl/atomics/memory-ordering.html#fences).
+Source: [`std::sync::atomic::fence`](https://doc.rust-lang.org/std/sync/atomic/fn.fence.html).
 
 ### 8.7 Test x86 and ARM assumptions separately
 
-Chapter 7 distinguishes x86-64’s stronger apparent ordering from ARM64’s
-weaker ordering and discusses cache coherence, RMW, CAS, and LL/SC. Never infer
-portable ordering from a passing x86-only test.
+A passing x86-only test cannot establish portable ordering. Check the
+language-level synchronization contract and generated instructions separately
+on the supported architectures; hardware behavior cannot substitute for the
+required ordering in the source program.
 
-Source: [Rust Atomics and Locks, processor](https://mara.nl/atomics/hardware.html).
+Source: [Rust atomic portability](https://doc.rust-lang.org/std/sync/atomic/index.html#portability).
 
 ## 9. Locks, blocking, and async boundaries
 
 ### 9.1 Prefer established primitives for production
 
 Use std locks, well-reviewed channels, or a runtime’s synchronization primitives
-unless implementing a primitive is itself the requirement. The book’s spinlock,
-channel, and Arc chapters are learning material for invariants and unsafe
-contracts, not a blanket recommendation to replace std.
+unless implementing a primitive is itself the requirement. A custom primitive
+needs its own ownership, synchronization, liveness, reclamation, and unsafe
+proof; familiarity with a teaching implementation is insufficient.
 
-Source: [Rust Atomics and Locks, Spin Lock](https://mara.nl/atomics/building-spinlock.html);
-[Channels](https://mara.nl/atomics/building-channels.html);
-[Arc](https://mara.nl/atomics/building-arc.html).
+Source: [Rust synchronization primitives](https://doc.rust-lang.org/std/sync/index.html).
 
 ### 9.2 Keep blocking work off async executor threads
 
@@ -482,8 +479,8 @@ Use a synchronous lock inside an async task only when the critical section is
 provably short, non-blocking, and compatible with the runtime. Otherwise use an
 async-aware lock and preserve cancellation/ownership semantics.
 
-This boundary is an engineering rule derived from the blocking behavior of the
-OS primitives described in [Rust Atomics and Locks, Chapter 8](https://mara.nl/atomics/os-primitives.html).
+Source: [Tokio blocking-task behavior](https://docs.rs/tokio/latest/tokio/task/fn.spawn_blocking.html)
+and [Tokio mutex guidance](https://docs.rs/tokio/latest/tokio/sync/struct.Mutex.html).
 
 ### 9.3 Account for contention and cache lines
 
@@ -492,8 +489,7 @@ reader/writer skew. A lock-free algorithm can still be slower under contention,
 and a store that appears slow in a profile may be the point where a pipeline
 stall becomes visible.
 
-Source: [Rust Atomics and Locks, processor and caching](https://mara.nl/atomics/hardware.html);
-[SIMD guide, machine-code analysis](https://rust-lang.github.io/packed_simd/perf-guide/prof/mca.html).
+Source: [Rust atomic portability](https://doc.rust-lang.org/std/sync/atomic/index.html#portability) and [SIMD machine-code analysis](https://rust-lang.github.io/packed_simd/perf-guide/prof/mca.html).
 
 ## 10. Rayon and task granularity
 
@@ -648,7 +644,7 @@ Source: [Rustc Guide, parallelism](https://rustc-dev-guide.rust-lang.org/overvie
   — published by the archived `packed_simd` project; its profiling, target
   flag, and bounds-check guidance remains sound, but check crate and flag
   details against the current toolchain
-- [Rust Atomics and Locks](https://mara.nl/atomics/)
+- [Rust atomic memory model](https://doc.rust-lang.org/std/sync/atomic/index.html)
 - [Rayon API](https://docs.rs/rayon/latest/rayon/)
 - [Rust Compiler Development Guide](https://rustc-dev-guide.rust-lang.org/overview.html)
 - [Compiler Explorer Rust](https://rust.godbolt.org/)

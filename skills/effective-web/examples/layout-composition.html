@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CSS-Layouts mit variablem Inhalt</title>
+  <link rel="stylesheet" href="layout-composition.css">
+  <script src="layout-composition.js" defer></script>
+</head>
+<body>
+  <header class="demo-header">
+    <p class="eyebrow">Layout-Werkstatt</p>
+    <h1>Inhalt verändert das Layout.</h1>
+    <p>Verändere den verfügbaren Platz und den Inhalt. Die Beispiele passen sich ihrer Region an.</p>
+  </header>
+  <form class="demo-controls" aria-label="Beispiele verändern">
+    <label>Regionbreite <output id="width-value" for="region-width">960 px</output>
+      <input id="region-width" type="range" min="240" max="1200" value="960" step="1">
+    </label>
+    <label>Schriftgröße
+      <select id="font-size"><option value="16">16 px</option><option value="24">24 px</option><option value="32">32 px</option></select>
+    </label>
+    <label>Schreibrichtung
+      <select id="direction"><option value="ltr">Links nach rechts</option><option value="rtl">Rechts nach links</option></select>
+    </label>
+    <label>Elemente je Sammlung
+      <select id="item-count"><option value="0">Keine</option><option value="1">Eines</option><option value="3" selected>Drei</option><option value="4">Vier</option><option value="5">Fünf</option><option value="8">Acht</option></select>
+    </label>
+    <label class="checkbox-label"><input id="show-media" type="checkbox" checked>Produktbilder anzeigen</label>
+  </form>
+  <main>
+    <section class="demo-section" aria-labelledby="catalog-heading">
+      <div class="section-heading"><p class="eyebrow">Wiederholte Elemente</p><h2 id="catalog-heading">Ein Raster mit gemeinsamen Zeilen</h2></div>
+      <div class="demo-host catalog-region">
+        <p id="empty-products" role="status" hidden>Zurzeit sind keine Produkte verfügbar.</p>
+        <div class="product-list" id="products">
+          <article class="product-card">
+            <h3>Kiesel</h3>
+            <div class="product-card__body">
+              <svg class="product-media" viewBox="0 0 360 200" role="img" aria-label="Abstrakte Skizze eines runden Objekts"><rect width="360" height="200" fill="#e9ded0"/><circle cx="180" cy="100" r="62" fill="#496d5b"/></svg>
+              <p>Ein kleines Objekt für den Schreibtisch.</p>
+            </div>
+            <footer><span>24 €</span><a href="#checkout">Kiesel auswählen</a></footer>
+          </article>
+          <article class="product-card">
+            <h3>Werkbank mit zusätzlicher Ablage für größere Arbeitsmaterialien</h3>
+            <div class="product-card__body">
+              <svg class="product-media" viewBox="0 0 360 200" role="img" aria-label="Abstrakte Skizze einer Arbeitsfläche"><rect width="360" height="200" fill="#e9ded0"/><rect x="65" y="62" width="230" height="76" rx="12" fill="#845b41"/></svg>
+              <p>Mehr Platz zum Sortieren, Zeichnen und Arbeiten. Diese Beschreibung ist bewusst länger, damit die gemeinsame Ausrichtung sichtbar wird.</p>
+              <p class="identifier">Materialnummer-ABCD0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ</p>
+            </div>
+            <footer><span>68 €</span><a href="#checkout">Werkbank auswählen</a></footer>
+          </article>
+          <article class="product-card">
+            <h3>Nordlicht</h3>
+            <div class="product-card__body">
+              <svg class="product-media" viewBox="0 0 360 200" role="img" aria-label="Abstrakte Skizze einer Leuchte"><rect width="360" height="200" fill="#e9ded0"/><path d="M180 35 255 145H105Z" fill="#a56f32"/><rect x="173" y="145" width="14" height="30" fill="#496d5b"/></svg>
+              <p>Eine Leuchte für ruhige Abende.</p>
+            </div>
+            <footer><span>42 €</span><a href="#checkout">Nordlicht auswählen</a></footer>
+          </article>
+        </div>
+      </div>
+    </section>
+    <section class="demo-section" id="checkout" aria-labelledby="checkout-heading">
+      <div class="section-heading"><p class="eyebrow">Ungleiche Regionen</p><h2 id="checkout-heading">Das Formular erhält mehr Platz</h2></div>
+      <div class="demo-host checkout-layout">
+        <form class="checkout-form" id="order-preview" aria-label="Bestellung als lokale Vorschau">
+          <h3>Kontaktdaten</h3>
+          <label>Name <input name="name" autocomplete="name" placeholder="Vor- und Nachname"></label>
+          <label>E-Mail <input name="email" type="email" autocomplete="email" placeholder="name@example.org"></label>
+          <label>Hinweis zur Lieferung <textarea name="note" rows="3" placeholder="Optional"></textarea></label>
+          <div class="action-group"><button type="submit">Lokale Vorschau erstellen</button><a href="#article-heading">Informationen zur Lieferung</a></div>
+          <output id="preview-result" aria-live="polite"></output>
+        </form>
+        <aside class="checkout-summary" aria-labelledby="summary-heading">
+          <h3 id="summary-heading">Deine Übersicht</h3>
+          <p>Die Übersicht bleibt neben dem Formular, solange beide Regionen ausreichend Platz haben. Danach folgt sie im Lesefluss.</p>
+          <dl><dt>Produkt</dt><dd>Werkbank</dd><dt>Lieferung</dt><dd>Ohne zusätzliche Kosten</dd><dt>Gesamt</dt><dd>68 €</dd></dl>
+        </aside>
+      </div>
+    </section>
+    <section class="demo-section" aria-labelledby="comparison-heading">
+      <div class="section-heading"><p class="eyebrow">Gleichrangige Optionen</p><h2 id="comparison-heading">Eine gemeinsame Zeile oder einzelne Zeilen</h2><p>Die Optionen wechseln gemeinsam bei 30 rem. Ab fünf Elementen bleibt die Sammlung einspaltig.</p></div>
+      <div class="demo-host comparison-region">
+        <p id="empty-options" role="status" hidden>Zurzeit sind keine Optionen verfügbar.</p>
+        <div class="comparison-options" id="options">
+          <article class="comparison-option"><h3>Basis</h3><p>Eine Ablage für kleine Arbeitsmaterialien.</p><a href="#checkout">Basis auswählen</a></article>
+          <article class="comparison-option"><h3>Alltag mit zusätzlichen Sortiermöglichkeiten</h3><p>Mehr Fächer für Materialien, die du regelmäßig verwendest.</p><a href="#checkout">Alltag auswählen</a></article>
+          <article class="comparison-option"><h3>Rundum</h3><p>Platz für mehrere Projekte und größere Gegenstände.</p><a href="#checkout">Rundum auswählen</a></article>
+        </div>
+      </div>
+    </section>
+    <section class="demo-section" aria-labelledby="article-heading">
+      <div class="section-heading"><p class="eyebrow">Lesebreite und Bildbreite</p><h2 id="article-heading">Text und Medien teilen sich ein Raster</h2></div>
+      <article class="demo-host article-layout">
+        <h3>Platz für das Wesentliche</h3>
+        <p>Ein Text braucht auf einem großen Bildschirm nicht die gesamte Breite. Eine begrenzte Textspalte erleichtert das Lesen. Eine Abbildung darf mehr Platz erhalten, ohne dass dafür die Reihenfolge im Dokument geändert wird.</p>
+        <figure>
+          <svg viewBox="0 0 900 260" role="img" aria-labelledby="landscape-title"><title id="landscape-title">Eigene schematische Landschaftsskizze</title><rect width="900" height="260" fill="#e9ded0"/><path d="M0 240 200 65 400 230 640 40 900 240V260H0Z" fill="#496d5b"/><circle cx="790" cy="65" r="25" fill="#a56f32"/></svg>
+          <figcaption>Die Abbildung verwendet die äußeren Spalten. Der Text darunter kehrt in seine Lesespalte zurück.</figcaption>
+        </figure>
+        <p>Auf engem Raum wird die Textspalte kleiner. Die seitlichen Abstände bleiben erhalten, lange Wörter können umbrechen und die Abbildung bleibt innerhalb ihrer Region.</p>
+        <p class="identifier">Sendungskennung-0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ</p>
+      </article>
+    </section>
+  </main>
+  <footer class="demo-footer">Alle Produkte und Abbildungen sind eigens erstellte Beispieldaten. Die Formulare bleiben lokal.</footer>
+</body>
+</html>
