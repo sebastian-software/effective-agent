@@ -285,6 +285,17 @@ short example. Verify changing platform contracts against primary sources;
 experimental or single-source claims remain conditional rather than becoming
 universal defaults.
 
+Synthesize knowledge from books, courses, documentation, and practice around
+the user's task. Preserve precise algorithms, decision criteria, constraints,
+and failure modes; independently written examples should demonstrate the same
+technical depth. Change structure when it improves selection or comprehension,
+not merely to make a source less recognizable. Routine knowledge synthesis does
+not need an itemized reading list in the runtime guidance. Omit optional book
+and author credits when they distract from the task, while retaining required
+attribution and license notices for reused material. Keep technical links that
+verify platform contracts. Do not package source text, illustrations, or worked
+examples as a substitute for the original publication.
+
 ## Calibrate Findings and Verification by Decision Value
 
 A finding or permanent test needs evidence of reachable behavior, consequential

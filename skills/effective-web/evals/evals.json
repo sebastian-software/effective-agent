@@ -634,6 +634,16 @@
       "name": "ordinary-print-work-skips-scale-diagnostics",
       "prompt": "Add a basic print stylesheet to this article page: hide the toolbar and keep headings with the following paragraph. There is no reported physical-scale problem or Safari parity requirement.",
       "expected": "Uses ordinary print/layout guidance and proportionate output verification without preloading WebKit scale calibration or running its fixture. Preserves needed article content and does not claim physical parity from screen emulation."
+    },
+    {
+      "name": "align-optional-card-content-with-subgrid",
+      "prompt": "A responsive product list should align each card heading, body, and actions across a row. Some products have no image, others have long headings. The proposal gives every card a fixed height and assumes four rows because it treats the image as a required top-level slot. Review and implement the layout contract.",
+      "expected": "Uses content-sized tracks rather than a fixed card height, keeps a stable heading/body/actions slot contract with optional media inside the body or explicitly models varying slots, and uses row Subgrid only with an intentional parent span. It keeps an independent nested-Grid baseline without Subgrid and tests media absence, long text, one and many items, narrow hosts, and aligned actions without clipping or reordering."
+    },
+    {
+      "name": "scope-readable-measure-to-prose",
+      "prompt": "A universal max-inline-size:60ch is capped onto every element, with html/body/div exceptions. The form fields, wide data table, and modal now have unexpected size constraints. Preserve readable prose while fixing the layout.",
+      "expected": "Moves the measure to the actual prose or reading-track owner, keeps controls/data/overlay sizing under their own contracts, distinguishes ch from an exact character count, and verifies real/fallback fonts, larger text, long content, and intentional wide media without hiding overflow."
     }
   ],
   "activation": [

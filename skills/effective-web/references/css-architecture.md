@@ -439,7 +439,7 @@ Scope proximity is a cascade criterion that comes after specificity but before s
 
 ### CUBE CSS (Composition Utility Block Exception)
 
-Created by Andy Bell. Embraces the cascade rather than fighting it.
+Separate composition, utilities, component styles, and state exceptions while preserving the cascade.
 
 **Four layers:**
 - **Composition:** Layout primitives (Stack, Sidebar, Cluster)
@@ -463,19 +463,22 @@ Created by Andy Bell. Embraces the cascade rather than fighting it.
 
 Exceptions use `data-*` attributes instead of BEM modifiers, providing a hook for both CSS and JavaScript.
 
-### Every Layout Primitives
+### Composable Layout Primitives
 
-Keep the 12 composable primitives by Heydon Pickering and Andy Bell in the
-layout layer: Stack, Box, Center, Cluster, Sidebar, Switcher, Cover, Grid,
-Frame, Reel, Imposter, and Icon. Treat Container as a thirteenth meta-layout
-utility for establishing query contexts, not as another visual composition.
+Keep single-purpose geometry in the layout layer: Stack for sibling rhythm,
+Box for inset, Center for a measured column, Cluster for wrapping peers,
+Sidebar for unequal regions, Switcher for equal peers that change mode together,
+Cover for a principal region, Grid for repeated tracks, Frame for a ratio,
+Reel for native scrolling, Imposter for overlap, and Icon for text-relative
+media. Container establishes a query context when an explicit local mode is
+needed; it does not supply a visual composition itself.
 
-Each primitive has one responsibility and composes as a parent, child, or
-sibling. Read [intrinsic-layouts.md](intrinsic-layouts.md) for selection,
-implementation contracts, container-query boundaries, and verification. Do not
-duplicate the primitive algorithms inside component namespaces. A Stack may use
-Flexbox `gap` or preserve normal block flow with the Owl; choose from the needed
-formatting behavior rather than treating either implementation as universal.
+Each primitive composes as a parent, child, or sibling. Read
+[intrinsic-layouts.md](intrinsic-layouts.md) for selection, exact algorithms,
+parameter contracts, and verification. Keep external placement with the parent
+and internal response with the component; do not duplicate the algorithms in
+component namespaces. A Stack may use Flex/Grid `gap` or normal block flow with
+a direct-child Owl selector. Choose from the formatting behavior required.
 
 ### Recommended Combination
 
@@ -485,7 +488,7 @@ Use cascade layers as the orchestration layer -- they work with any methodology:
 @layer reset, tokens, base, layouts, components, utilities;
 ```
 
-- **Layouts layer:** Every Layout primitives for composition
+- **Layouts layer:** Composable layout primitives for composition
 - **Components layer:** CUBE CSS or BEM for component naming
 - **Utilities layer:** Sparingly, for one-off overrides at highest priority
 - **Tokens layer:** Three-tier custom properties architecture
@@ -671,7 +674,7 @@ The single entry point declares layer order and imports everything:
 - Simple naming -- `.card`, `.card-title` (no BEM needed)
 - Minimal custom properties (semantic layer only)
 - Nesting for pseudo-classes and media queries
-- Every Layout primitives for composition
+- Composable layout primitives for composition
 
 ### Design System / Component Library
 
@@ -679,7 +682,7 @@ The single entry point declares layer order and imports everything:
 - CUBE CSS or BEM naming for explicit component structure
 - Three-tier custom properties (primitive, semantic, component)
 - `@scope` for component encapsulation where supported
-- Every Layout primitives as layout building blocks
+- Composable layout primitives as composition building blocks
 - Strict nesting depth limits (max 2 levels)
 
 ### Large Application with Third-Party CSS

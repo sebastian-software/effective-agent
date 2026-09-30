@@ -18,19 +18,21 @@ The right target is not modest neutrality and not empty hype. The target is:
 - human enough that the profile does not sound generated, inflated, or corporate
 - personal enough that working style and judgment are visible where they matter
 
-## Source Principles
+## Editing Criteria
 
-### Zinsser / On Writing Well
+### Make the Claim Easy to Assess
 
-Use the spirit of William Zinsser's advice: clarity, simplicity, brevity, and removing clutter. For profiles, this means:
+For each profile claim, identify the actual work, the responsibility, and the
+supporting evidence. Remove an introductory phrase if it delays those facts.
 
-- cut throat-clearing, generic intros, and inflated phrasing
-- prefer concrete nouns and active verbs
-- make one point per sentence or bullet
-- let the strength of the evidence carry the claim
-- keep sentences easy to read, especially in English
-
-Do not confuse simple writing with small thinking. A clear sentence can carry a senior idea better than an ornate one.
+- Use concrete nouns and active verbs.
+- Keep each sentence or bullet focused on one assessable claim.
+- Replace an inflated adjective with a role, scope, constraint, or outcome.
+- Preserve the author's vocabulary where it makes working style clear.
+- Check that a reader can understand the claim without internal terminology.
+- Remove generic introductions and clutter; let evidence carry the claim.
+- Keep the sentence easy to read, especially for readers using English as an
+  additional language. Preserve the idea's depth while simplifying its wording.
 
 ### Plain Language
 
@@ -269,13 +271,10 @@ Before returning profile copy, check:
 
 ## Source Notes
 
-Sources and internal skills used for this reference:
+Supporting public guidance:
 
-- William Zinsser / On Writing Well context - https://en.wikipedia.org/wiki/William_Zinsser
-- The New Yorker, "Tuesdays with Zinsser" - https://www.newyorker.com/culture/culture-desk/tuesday-with-zinsser
 - Digital.gov / PlainLanguage.gov, "Plain language guide series" - https://digital.gov/guides/plain-language
 - Purdue OWL, "Resume Workshop" - https://owl.purdue.edu/owl/job_search_writing/resumes_and_vitas/resume_workshop/index.html
 - Harvard FAS Mignone Center for Career Success, "Create a Strong Resume" - https://careerservices.fas.harvard.edu/resources/create-a-strong-resume/
-- Robert Cialdini / principles of persuasion context - https://en.wikipedia.org/wiki/Robert_Cialdini
 - Guardian, "How to persuade people (hint: not by telling them they're stupid)" - https://www.theguardian.com/business-to-business/2018/mar/09/how-to-persuade-people-hint-not-by-telling-them-theyre-stupid
 - Local skill: `effective-writing`

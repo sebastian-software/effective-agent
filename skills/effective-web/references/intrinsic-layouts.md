@@ -2,7 +2,9 @@
 
 Use this reference to choose and compose small layout primitives that adapt to
 their content and container before adding viewport breakpoints or bespoke
-component CSS.
+component CSS. Use the executable
+[composition examples](../examples/layout-composition.html) to inspect these
+relationships with variable content and container widths.
 
 ## Contents
 
@@ -10,6 +12,7 @@ component CSS.
 - [Choose the Smallest Primitive](#choose-the-smallest-primitive)
 - [Outer Grids and Layout Slots](#outer-grids-and-layout-slots)
 - [Core Implementations](#core-implementations)
+- [Shared Tracks and Reading Regions](#shared-tracks-and-reading-regions)
 - [Composition and API Rules](#composition-and-api-rules)
 - [Container Queries](#container-queries)
 - [Accessibility and Resilience](#accessibility-and-resilience)
@@ -156,12 +159,17 @@ option that must survive zoom without moving content outside the viewport.
   gap: var(--space, 1rem);
 }
 
-.with-sidebar > :first-child {
+.with-sidebar > * {
+  min-inline-size: 0;
+  max-inline-size: 100%;
+}
+
+.with-sidebar > .sidebar-rail {
   flex-basis: var(--sidebar-size, 18rem);
   flex-grow: 1;
 }
 
-.with-sidebar > :last-child {
+.with-sidebar > .sidebar-main {
   flex-basis: 0;
   flex-grow: 999;
   min-inline-size: var(--content-min, 50%);
@@ -174,6 +182,7 @@ option that must survive zoom without moving content outside the viewport.
 }
 
 .switcher > * {
+  min-inline-size: 0;
   flex-basis: calc((var(--threshold, 30rem) - 100%) * 999);
   flex-grow: 1;
   max-inline-size: 100%;
@@ -189,6 +198,21 @@ Use Sidebar when one region should remain meaningfully narrower. Use Switcher
 when the children are peers and partial wrapping would imply a false hierarchy.
 Change the quantity selector to the documented maximum the composition can
 support; do not hide or drop excess content.
+
+Sidebar expects two regions with explicit rail/main roles, so either can come
+first in semantic source order. With a zero main basis and a large growth
+factor, the main takes almost all spare space; its minimum share decides when
+both regions must stack. A plain `3:1` growth ratio with two preferred bases is
+a different contract and does not guarantee that minimum share.
+
+Switcher multiplies the difference between its threshold and container width
+by a large factor. Above the threshold a negative basis clamps to zero, so
+peers share the row; below it a large positive basis makes them stack. `999`
+is a steep transition, not a mathematical discontinuity. Choose the threshold
+so the supported count, gaps, and real content fit in row mode; check the narrow
+transition band and automatic minimum sizes. Five or more children stack in
+this example. Allow long text to wrap and bound controls/media separately;
+`min-inline-size: 0` alone does not make oversized content fit.
 
 ```css
 .cover {
@@ -250,13 +274,19 @@ chains or undo rules no longer has one stable responsibility.
 
 .imposter {
   position: var(--imposter-position, absolute);
-  inset-block-start: 50%;
-  inset-inline-start: 50%;
-  transform: translate(-50%, -50%);
-  max-inline-size:
-    calc(100% - var(--imposter-gap, 1rem) - var(--imposter-gap, 1rem));
-  max-block-size:
-    calc(100% - var(--imposter-gap, 1rem) - var(--imposter-gap, 1rem));
+  inset: 0;
+  display: grid;
+  grid-template: minmax(0, 1fr) / minmax(0, 1fr);
+  place-items: center;
+  box-sizing: border-box;
+  padding: var(--imposter-gap, 1rem);
+}
+
+.imposter > * {
+  min-inline-size: 0;
+  min-block-size: 0;
+  max-inline-size: 100%;
+  max-block-size: 100%;
   overflow: auto;
 }
 
@@ -275,8 +305,12 @@ the scroll position, but must not become the only way to reach content. Use a
 partly visible next item, visible scrollbar, edge treatment, or concise cue to
 make overflow discoverable.
 
-Use Imposter only where overlap is intentional. For an interactive modal,
-prefer the native dialog/top-layer mechanism and load the
+Use Imposter only where overlap is intentional. This implementation uses one
+content child inside an inset alignment layer; an absolute layer requires a
+positioned ancestor with a useful block size. Grid alignment avoids mixing
+logical offsets with physical translation, which would miscenter in RTL or
+vertical writing. Bound and scroll oversized content within that region.
+For an interactive modal, prefer the native dialog/top-layer mechanism and load the
 [dialog guidance](dialog-foundation.md); positioning alone does not provide focus
 movement, containment, dismissal, background inertness, or an accessible name.
 Let source order determine overlapping layers where it remains semantically
@@ -290,6 +324,63 @@ absent. Preserve that simple behavior unless the component requires token-exact
 spacing. In that case use an `inline-flex` wrapper with `gap`, keep the SVG
 decorative when the surrounding control supplies the name, and verify the
 icon-only state explicitly.
+
+## Shared Tracks and Reading Regions
+
+Use Subgrid when repeated items need corresponding content slots to align
+across a row. Keep an independent nested-Grid baseline:
+
+```css
+.product-card {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  gap: 0.75rem;
+  min-inline-size: 0;
+}
+
+@supports (grid-template-rows: subgrid) {
+  .product-card {
+    grid-row: span 3;
+    grid-template-rows: subgrid;
+  }
+}
+```
+
+The card's three direct slots are its heading, body, and actions. Optional media
+belongs inside the body, so removing it does not change the row-span contract.
+Without Subgrid, each card still lays out these slots independently. With
+Subgrid, cards in the same visual row share their slot heights. Do not subgrid
+an unbounded set of children without a track-capacity contract: the subgridded
+axis cannot create its own implicit tracks.
+
+An outer Grid can constrain prose while allowing selected media to occupy the
+full region. This avoids viewport-width escape math and preserves source order.
+
+```css
+.article-layout {
+  display: grid;
+  grid-template-columns:
+    [wide-start] minmax(1rem, 1fr)
+    [text-start] minmax(0, 65ch)
+    [text-end] minmax(1rem, 1fr) [wide-end];
+  row-gap: 1.25rem;
+}
+
+.article-layout > * {
+  grid-column: text-start / text-end;
+  min-inline-size: 0;
+}
+
+.article-layout > figure {
+  grid-column: wide-start / wide-end;
+  margin: 0;
+}
+```
+
+Cap prose where it is actually read; avoid a universal `*` measure cap that also
+constrains form controls, data regions, nested grids, and overlays. `ch` is a
+font metric, not an exact character count. Check real and fallback fonts, text
+zoom, and supported writing directions before choosing a final measure.
 
 ## Composition and API Rules
 
@@ -330,6 +421,8 @@ Establish the smallest useful query boundary:
   must query a non-nearest ancestor or multiple nested contexts would be
   ambiguous.
 - Query the component's available space, not a duplicated viewport assumption.
+- Establish containment on a stable owner; inline-size containment changes
+  content-based sizing, so check shrink-to-fit contexts before adding it.
 - Do not add empty query-only wrappers when the owning region can establish the
   container.
 - Keep a coherent no-query baseline. A container query should finesse an
@@ -378,7 +471,13 @@ Establish the smallest useful query boundary:
 9. Inspect the API after real use. Split a primitive that accumulates unrelated
    modes, consumer-specific selectors, or repeated undo rules.
 
-This reference selectively distills *Every Layout*, version 3.1.7.14, by
-Heydon Pickering and Andy Bell. It preserves the book's algorithmic and
-compositional principles while using this skill's current parent-owned `gap`,
-native-semantics, and verification conventions.
+The [composition fixture](../examples/layout-composition.html) includes a
+Subgrid catalog, a Sidebar checkout, a Switcher comparison, and a reading grid
+with wider media. Its controls vary container width, root font size, direction,
+item count, and media presence. Check actual browser zoom and the target
+project's supported engines separately.
+
+Technical contracts: [CSS Flexbox](https://www.w3.org/TR/css-flexbox-1/),
+[CSS Grid](https://www.w3.org/TR/css-grid-2/),
+[Subgrid](https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Grid_layout/Subgrid),
+and [CSS Containment](https://www.w3.org/TR/css-contain-3/).
