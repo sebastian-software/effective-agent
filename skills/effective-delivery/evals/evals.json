@@ -689,6 +689,31 @@
       "name": "ordinary-review-comment-loads-proportionately",
       "prompt": "Review this complete one-line PR: the internal diagnostic label changes from recieve to receive. The label is not a public contract, the affected test passes, and the repository uses ordinary concise English. Return the review here.",
       "expected": "Returns a proportionate review without publication or invented findings, does not preload upkeep, voice examples, or a separate writing skill solely to compose an ordinary comment, and retains the complete supplied scope."
+    },
+    {
+      "name": "synthesize-settled-feature-with-local-uncertainty",
+      "prompt": "We already agreed on single-use invitations that expire after 48 hours, require a signed-in recipient, and cannot change the recipient role. Turn this discussion into a concise delivery specification here in chat. The existing product brief is authoritative, repository terminology is Member and Workspace, and the invitation email subject is still undecided. Do not create issues.",
+      "expected": "Synthesizes the accepted behavior, constraints, non-goals, and observable acceptance criteria using the supplied terminology and a reference to the existing brief. Marks the email subject as open without inventing it, repeating discovery, or blocking unrelated invitation work. Returns the requested artifact in chat, keeps product and architecture choices with their owners, and creates no tracker state or exhaustive story list."
+    },
+    {
+      "name": "feature-packages-prove-complete-outcomes",
+      "prompt": "Plan the approved invitation feature as tickets in the response only. The proposed breakdown is one database ticket, one API ticket, one UI ticket, and tests at the end. We also need an internal worker to reject revoked invitation links, but that worker has no UI. The codebase already has a focused invitation contract test command.",
+      "expected": "Prefers bounded packages with complete, independently verifiable invitation behaviors across only the affected layers. Gives each package acceptance evidence and real prerequisites, uses the existing focused check after discovery rather than inventing a command, and avoids adding a UI to the worker, deferring all proof to the end, creating issues, or inventing a tracker convention."
+    },
+    {
+      "name": "ticket-edges-follow-real-prerequisites",
+      "prompt": "Break an approved export change into work packages. A stable export contract must land before the browser download flow and the scheduled worker can use it. The browser and worker have separate implementations and checks and do not depend on each other. A copy change in the help page is independent. Our tracker already supports blocking links. Draft the graph here; do not publish it.",
+      "expected": "Models the shared export contract as a genuine prerequisite for both consumers, leaves the browser and worker unordered relative to each other, and keeps the help-page change independent. Names each outcome and completion evidence, describes native tracker relationships only for a later authorized publication, and does not create issues, labels, or accidental sequential blockers."
+    },
+    {
+      "name": "wide-contract-change-gates-removal-on-consumers",
+      "prompt": "Plan a rename of an HTTP field from customerId to accountId across the service, CLI, and fourteen consumer packages. Existing clients cannot all deploy at once and unknown external clients may still send customerId. Split the work into independently releasable tickets and remove the old field as soon as this repository has no references. Keep this as a plan, not implementation.",
+      "expected": "Surfaces the unresolved external-consumer and compatibility policy instead of assuming every stage can ship independently. Proposes expansion, coherent caller-migration batches with meaningful coexistence proof, and contraction blocked by all required migrations plus actual external-client, rollout, and recovery evidence. Routes unsettled contract decisions to engineering, does not equate a repository search or passing CI with consumer migration, and performs no implementation."
+    },
+    {
+      "name": "inseparable-migration-has-one-proof-boundary",
+      "prompt": "An internal protocol change affects two packages that are released as one binary. We verified that changing either package alone fails the integration check, while changing both together passes. There is no supported coexistence adapter. Make two independent green migration tickets anyway so different agents can deliver them separately.",
+      "expected": "Keeps the coupled changes within one integration unit with an explicit final behavioral and integration proof point. Can describe component work without promising independent green or releasable tickets, inventing an adapter or dual-write policy, or weakening the established check. Gives genuine prerequisites and completion criteria and preserves the recorded contract."
     }
   ],
   "activation": [
@@ -871,6 +896,16 @@
       "name": "application-concept-review-not-delivery",
       "prompt": "Review this new application concept for audience fit, coherent first scope, and unresolved product direction before any implementation plan exists.",
       "should_trigger": false
+    },
+    {
+      "name": "synthesize-approved-delivery-specification",
+      "prompt": "Turn our already agreed feature brief into a concise delivery specification with acceptance criteria and explicit open decisions.",
+      "should_trigger": true
+    },
+    {
+      "name": "decompose-approved-feature-into-work-packages",
+      "prompt": "Break this approved repository change into independently verifiable work packages with real blockers and a safe migration order.",
+      "should_trigger": true
     }
   ]
 }

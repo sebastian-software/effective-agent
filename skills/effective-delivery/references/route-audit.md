@@ -16,8 +16,9 @@ Match actions to the user's authority:
   explanations, and return the best-supported cause or uncertainty plus exactly
   one next action. Keep explanation-only requests read-only. When the request
   also authorizes a fix, continue to implementation and verification.
-- **Plan:** investigate enough to make one requested change executable. Return
-  the plan in the response unless the user asks to save it.
+- **Plan:** turn settled requirements into a delivery specification or executable
+  work packages, investigating enough to ground scope, prerequisites, and proof.
+  Return the artifact in the response unless the user asks to save or publish it.
 - **Review plan:** test an existing plan against current code, repository
   conventions, decision records, scope, and verification reality.
 - **Reconcile:** verify whether recorded work is done, stale, blocked,
@@ -47,8 +48,9 @@ Match actions to the user's authority:
 8. Read [Legacy change strategy](legacy-change-strategy.md) before planning or
    implementing a consequential change in weakly tested existing code. Keep
    preparatory structure work separate from the behavior change.
-9. Read [Implementation plans](implementation-plans.md) before creating,
-   reviewing, revising, saving, or reconciling a plan.
+9. Read [Implementation plans](implementation-plans.md) before synthesizing a
+   delivery specification, breaking work into tickets, or creating, reviewing,
+   revising, saving, or reconciling a plan.
 10. Report the smallest useful result: a diagnosis, evidence-backed findings,
     the selected plan, verified implementation, or current backlog state.
 

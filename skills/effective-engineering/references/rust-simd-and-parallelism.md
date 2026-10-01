@@ -438,7 +438,7 @@ compare_exchange, and reclaim the losing allocation on CAS failure. Prove that
 an acquired non-null pointer refers to initialized, live storage before
 constructing a reference.
 
-Source: [`AtomicPtr::compare_exchange`](https://doc.rust-lang.org/std/sync/atomic/struct.AtomicPtr.html#method.compare_exchange) and [Rust atomic memory model](https://doc.rust-lang.org/std/sync/atomic/index.html).
+Source: [`AtomicPtr::compare_exchange`](https://doc.rust-lang.org/std/sync/atomic/struct.Atomic.html#method.compare_exchange-1) and [Rust atomic memory model](https://doc.rust-lang.org/std/sync/atomic/index.html).
 
 ### 8.6 Use fences only with a written synchronization proof
 
