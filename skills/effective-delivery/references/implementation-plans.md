@@ -6,7 +6,10 @@ human or agent can execute without relying on the planning conversation.
 ## Contents
 
 - [Plan Ownership](#plan-ownership)
+- [Synthesize Settled Requirements](#synthesize-settled-requirements)
 - [Plan Contract](#plan-contract)
+- [Work Packages and Dependencies](#work-packages-and-dependencies)
+- [Wide Migration Sequences](#wide-migration-sequences)
 - [Drift and Working State](#drift-and-working-state)
 - [Plan Template](#plan-template)
 - [Review and Reconciliation](#review-and-reconciliation)
@@ -25,6 +28,24 @@ Discover the repository's existing planning surface before writing:
 When the user asks to save a plan and no convention exists, use plain Markdown
 under `docs/plans/`. Add an index only when several plans require dependency or
 status tracking. Do not introduce a hidden directory or tool-specific schema.
+
+## Synthesize Settled Requirements
+
+When asked to turn a discussion or approved brief into a delivery specification,
+reuse the decisions already made and the project's terminology. Capture the
+problem, intended behavior, accepted constraints, non-goals, and observable
+acceptance criteria. Link the authoritative brief or ADR when one exists.
+
+Separate agreed requirements from assumptions and unresolved choices. Ask only
+about missing decisions that change the outcome, scope, contract, or safety;
+mark affected work blocked while keeping independent work executable. A minor
+open detail does not justify repeating discovery or holding the whole plan.
+
+Keep the feature contract understandable without speculative file names or an
+exhaustive story list. Add verified paths and symbols when the artifact becomes
+an execution plan and they help the executor locate the change. Product
+direction belongs to `effective-product`; unresolved system or data contracts
+belong to `effective-engineering`.
 
 ## Plan Contract
 
@@ -46,6 +67,65 @@ A useful plan is:
 
 Do not assume the executor is cheaper, less capable, or a subagent. Write for a
 competent collaborator who lacks the planning session's hidden context.
+
+## Work Packages and Dependencies
+
+For feature work, prefer bounded packages that deliver a complete observable
+behavior across the affected layers. Include only the layers the behavior
+actually needs. For example, "a member can revoke an invitation and the revoked
+link is rejected" is an outcome with its own proof; separate database, API, and
+interface tickets may leave no usable behavior until all three are finished.
+
+For each package, state:
+
+- the behavior or invariant it delivers;
+- the acceptance evidence that proves that outcome;
+- the prerequisites that genuinely prevent it from starting, or none.
+
+Use the repository's existing issue identifiers and dependency relationships
+when publishing is requested and authorized. For a plan returned in chat or
+Markdown, short package names or numbers are enough. Drafting a breakdown does
+not authorize issue creation, new labels, or a new tracker scheme.
+
+A blocker is a required decision, contract, capability, or migration state,
+not merely an earlier item in the list. Independent packages remain eligible
+to start when their own prerequisites are met. Remove accidental ordering
+edges; resolve cycles by exposing the missing shared prerequisite or keeping
+inseparable work in one package. Keep each package small enough for coherent
+implementation, review, and decisive verification rather than targeting a
+fixed file count or context-window size.
+
+Make preparation a separate prerequisite only when it enables the named change.
+Use [Legacy change strategy](legacy-change-strategy.md) for consequential work
+in weakly tested code; unrelated cleanup is not a prerequisite.
+
+## Wide Migration Sequences
+
+An interface or representation change can affect too many callers for a feature
+slice to remain valid on its own. When old and new forms can coexist safely,
+plan a compatibility sequence:
+
+1. **Expand:** introduce the new form while preserving the accepted old
+   contract. Name the evidence that both forms work during coexistence.
+2. **Migrate:** move coherent caller groups onto the new form. Each batch
+   depends on expansion, plus any real prerequisite, and proves its behavior
+   while remaining compatible with callers still on the old form.
+3. **Contract:** remove the old form after every required migration batch and
+   evidence that consumers no longer rely on it. Include external consumers,
+   rollout windows, and recovery obligations when they are part of the contract;
+   a repository search or green tests alone do not establish their migration.
+
+List unresolved compatibility, data conversion, or recovery decisions in the
+plan with `effective-engineering` as the decision owner, the affected stages,
+and the evidence needed to settle them. Label candidate rules as proposals;
+dependent stages are not release-ready until their contract is settled. Do not
+invent dual writes or a compatibility promise merely to make the ticket graph
+fit.
+
+If intermediate batches cannot be safely verified independently, keep the
+coupled work in one integration unit and name its final proof point. Do not
+claim that each partial ticket is independently releasable or green. The plan
+must make clear where compatibility is established and when removal is safe.
 
 ## Drift and Working State
 
@@ -110,11 +190,15 @@ Out of scope:
 
 ### 1. <Safe first outcome>
 
+Blocked by: <actual prerequisites or none>
+
 Describe exact files, symbols, behavior, migration order, and test additions.
 
 Verify: `<command>` -> <expected result>
 
 ### 2. <Next outcome>
+
+Blocked by: <actual prerequisites or none>
 
 Continue with the smallest independently verifiable step.
 
@@ -150,6 +234,9 @@ When reviewing a plan, check:
 - Does the current code still contain the claimed problem?
 - Does the plan respect accepted ADRs and project terminology?
 - Are scope and exclusions sufficient to prevent attractive side quests?
+- Do work packages have their own completion evidence and only genuine blockers?
+- Can migration stages coexist safely, and is old-form removal gated by actual
+  consumer migration and any rollout or recovery obligations?
 - Do commands exist, run from the stated directory, and test the intended
   behavior rather than merely exit successfully?
 - Do new tests prove the regression and meaningful edge cases?

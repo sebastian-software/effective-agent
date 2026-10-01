@@ -28,7 +28,7 @@ data-loss, and irreversible boundaries. Never expose secret values.
 | User intent | Read |
 | --- | --- |
 | Coordinate multi-stage or mixed-domain work from an unclear request to a review-ready handoff | [Workflow Orchestration](references/route-orchestration.md) |
-| Audit a repository, explain a defect or surprising behavior, prioritize improvements, simplify code, or create, review, or reconcile an implementation plan | [Codebase Audit and Plans](references/route-audit.md) |
+| Audit a repository, explain a defect or surprising behavior, prioritize improvements, simplify code, or create, review, or reconcile delivery specifications, work packages, or implementation plans | [Codebase Audit and Plans](references/route-audit.md) |
 | Plan or execute a behavior-preserving port across languages, runtimes, frameworks, platforms, storage engines, or major APIs | [Behavior-Preserving Ports](references/route-porting.md) |
 | Review a pull request, act on review feedback, fix findings, recover CI, or keep a branch current | [PR Review and Upkeep](references/route-review.md) |
 | Select a provider adapter, use the GitHub CLI recipes, or return a caller-owned review handoff | [Review Provider Access](references/route-review-access.md) |

@@ -137,7 +137,7 @@ without correct runtime gating is not a correct implementation.
 
 Verify current versions and regional applicability:
 
-- [EDPB Cookie Banner Taskforce report](https://www.edpb.europa.eu/system/files/2023-01/edpb_20230118_report_cookie_banner_taskforce_en.pdf)
+- [EDPB Cookie Banner Taskforce report](https://www.edpb.europa.eu/documents/task-force-report/report-of-the-work-undertaken-by-the-cookie-banner-taskforce_en)
 - [EDPB consent guidelines (05/2020)](https://www.edpb.europa.eu/our-work-tools/our-documents/guidelines/guidelines-052020-consent-under-regulation-2016679_en)
 - [ICO cookies and similar technologies](https://ico.org.uk/for-organisations/direct-marketing-and-privacy-and-electronic-communications/guide-to-pecr/cookies-and-similar-technologies/)
 - [CNIL cookies and trackers guidance hub](https://www.cnil.fr/fr/cookies-et-autres-traceurs)
