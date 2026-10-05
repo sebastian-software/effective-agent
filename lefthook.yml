@@ -20,3 +20,10 @@ pre-push:
         - "lychee.toml"
         - "scripts/check-links.py"
       run: mise run links:check
+    - name: reference-audit
+      glob:
+        - "skills/**/*.md"
+        - "instructions/*.md"
+        - "docs/reference-audit.md"
+        - "scripts/reference-audit.py"
+      run: mise run references:audit

@@ -25,6 +25,7 @@ again after pulling a tooling change. Linked worktrees share the clone's hooks.
 | --- | --- | --- |
 | `readme` | `README.md.src`, `README.md`, or `mdtheme.yaml` | `mise run readme:check` |
 | `links` | Markdown, site HTML, `.lycheeignore`, or `lychee.toml` | `mise run links:check` |
+| `reference-audit` | Markdown under `skills/` or `instructions/`, or the audit prompt or script | `mise run references:audit` |
 
 The hook only checks. It never stages, commits, or pushes. Fix a README failure
 with `mise run readme:write`, then review and commit the output. When an
@@ -58,3 +59,34 @@ skipped by the local task only, with a comment in `mise.toml`.
 
 The [link-check decision](adr/0007-check-links-strictly-before-push.md) records
 why the two levels differ.
+
+## Reference audit
+
+`scripts/validate-readmes.py` checks that every local link, anchor, and quoted
+section name resolves, and that "the X section above/below" points the right
+way. It cannot tell whether a pointer's target still contains what the
+sentence promises, or whether a changed rule now contradicts another rule in
+the same skill. The reference audit covers that before a push.
+
+`mise run references:audit` sends the prompt in
+[reference-audit.md](reference-audit.md) to a local coding harness: `claude`
+when it is installed, otherwise `codex`. The harness can only read the
+repository. It reviews the commits being pushed (the diff against the branch's
+upstream, or against `main` for a new branch), plus the router, link targets,
+and linking files of each changed Markdown file.
+
+- A **high-confidence** finding fails the push. Medium and low findings are
+  printed as advice.
+- When a finding is wrong, push once with `git push --no-verify`, or skip only
+  this job with `LEFTHOOK_EXCLUDE=reference-audit git push`.
+- A missing harness, a login problem, or a timeout prints a warning and never
+  blocks.
+- Results are cached per change in `.reference-audit-cache/` (ignored by Git),
+  so pushing the same commits again costs nothing.
+- Choose the harness or model with `REFERENCE_AUDIT_HARNESS=claude|codex` and
+  `REFERENCE_AUDIT_MODEL=<model>`. `python3 scripts/reference-audit.py
+  --print-prompt` shows exactly what would be sent.
+
+CI does not run the audit: CI never executes model behavior. The
+[reference-audit decision](adr/0009-audit-changed-guidance-before-push.md)
+records why.

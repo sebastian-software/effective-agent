@@ -42,3 +42,9 @@ binary=$(mise which lychee) && python3 scripts/check-links.py "$binary" --config
   --exclude 'https://oipc\.ab\.ca/' \
   './**/*.md' './site/**/*.html'
 '''
+
+# Review changed skill guidance with a local claude or codex CLI. Fails only on
+# high-confidence findings; a missing or failing harness never blocks.
+[tasks."references:audit"]
+description = "Audit changed skill guidance for stale pointers and contradictions"
+run = "python3 scripts/reference-audit.py"
