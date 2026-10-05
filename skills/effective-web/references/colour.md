@@ -338,7 +338,7 @@ Relative color syntax (Baseline 2024) lets you derive new colours from existing 
 :root {
   --brand: oklch(60% 0.15 250);
 
-  /* Darken for hover — reduce lightness by 15% */
+  /* Darken for hover — reduce lightness by 10 percentage points */
   --brand-hover: oklch(from var(--brand) calc(l - 0.1) c h);
 
   /* Lighten for tint — increase lightness, reduce chroma */

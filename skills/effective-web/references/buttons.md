@@ -60,8 +60,8 @@ Secondary button fill contrast < 3:1 is too low to clearly indicate button shape
 - Buttons too similar for low vision users
 - Contrast ratio between buttons < 3:1
 
-### Mistake 6: Low contrast tertiary border
-- Border must be 3:1 to identify as interactive
+### Mistake 6: Low contrast tertiary text
+- Text needs 4.5:1 against its background, and the underline must stay visible to identify it as interactive
 
 ### Mistake 7: Colour-only tertiary indicator
 - Colour blind can't distinguish from plain text

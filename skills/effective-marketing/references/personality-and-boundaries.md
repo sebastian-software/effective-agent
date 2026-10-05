@@ -73,8 +73,8 @@ Good boundary language:
 - "I am strongest where product, design, and frontend architecture meet."
 - "I do not position myself as a pure backend infrastructure specialist."
 - "I can lead product-facing engineering work, but I involve dedicated specialists for deep security, legal, or domain-specific compliance topics."
-- "Ich bin nicht der richtige Ansprechpartner fuer reine Umsetzung nach Ticketliste, wenn niemand Produkt- und Architekturfragen klaeren will."
-- "Ich bin besonders wirksam, wenn Teams technische Entscheidungen mit Produkt- und Designfolgen verbinden muessen."
+- "Ich bin nicht der richtige Ansprechpartner für reine Umsetzung nach Ticketliste, wenn niemand Produkt- und Architekturfragen klären will."
+- "Ich bin besonders wirksam, wenn Teams technische Entscheidungen mit Produkt- und Designfolgen verbinden müssen."
 
 Avoid negative self-branding that sounds defensive, combative, or dismissive. Boundaries should create fit, not distance.
 
@@ -92,7 +92,7 @@ Good positioning:
 
 - "My engineering work is shaped by an early design/webdesign background: I care about how software reads, feels, and behaves, not only whether it compiles."
 - "I work well with designers because I understand visual intent and can translate it into maintainable frontend systems."
-- "Ich komme urspruenglich aus der Design- und Webdesign-Ecke. Das praegt bis heute meinen Blick auf Frontend-Architektur, UI-Qualitaet und Zusammenarbeit mit Produkt- und Designteams."
+- "Ich komme ursprünglich aus der Design- und Webdesign-Ecke. Das prägt bis heute meinen Blick auf Frontend-Architektur, UI-Qualität und Zusammenarbeit mit Produkt- und Designteams."
 
 Avoid caricatures such as "not a basement programmer" in formal copy. The underlying point is stronger when expressed positively: product-facing, design-literate, visually attentive, collaborative, user-aware.
 
@@ -110,7 +110,7 @@ Use it to explain:
 Good language:
 
 - "A self-taught path from webdesign into software engineering taught me to learn systems from first principles and connect disciplines that are often kept separate."
-- "Ich habe mir den technischen Teil aus einer Design- und Webpraxis heraus systematisch erarbeitet. Das macht mich pragmatisch, neugierig und anschlussfaehig an verschiedene Rollen."
+- "Ich habe mir den technischen Teil aus einer Design- und Webpraxis heraus systematisch erarbeitet. Das macht mich pragmatisch, neugierig und anschlussfähig an verschiedene Rollen."
 
 Avoid making "self-taught" sound like a substitute for proof. Pair it with real client, project, or seniority evidence.
 
@@ -135,7 +135,7 @@ Example structure:
 Keep personality restrained. Use it as role-fit language:
 
 - "Arbeitsweise"
-- "Rollenverstaendnis"
+- "Rollenverständnis"
 - "Schwerpunkte und Grenzen"
 - "Zusammenarbeit mit Produkt, Design und Engineering"
 - "Motivation" or "Was mich antreibt" only when the profile format allows a warmer tone
@@ -182,7 +182,7 @@ German variant:
 Arbeitsweise
 
 - Ich spreche Risiken und Zielkonflikte klar an, bevor sie teuer werden.
-- Ich achte auf visuelle und interaktive Qualitaet, nicht nur auf technische Umsetzung.
+- Ich achte auf visuelle und interaktive Qualität, nicht nur auf technische Umsetzung.
 - Ich bin besonders wirksam an der Schnittstelle von Produkt, Design und Engineering.
 - Ich benenne Grenzen offen, statt Breite zu versprechen, die im Projekt keinen Wert schafft.
 ```
@@ -204,7 +204,7 @@ German variant:
 ```text
 Was mich antreibt
 
-Mich interessiert Arbeit, bei der komplexe Produktideen zu klarer, nutzbarer und wartbarer Software werden muessen. Besonders gern arbeite ich dort, wo Designanspruch, technische Architektur und Lieferfaehigkeit zusammenkommen. Stark bin ich, wenn Teams jemanden brauchen, der Zielkonflikte offen benennt, Qualitaet sichtbar haelt und trotzdem pragmatisch vorankommt.
+Mich interessiert Arbeit, bei der komplexe Produktideen zu klarer, nutzbarer und wartbarer Software werden müssen. Besonders gern arbeite ich dort, wo Designanspruch, technische Architektur und Lieferfähigkeit zusammenkommen. Stark bin ich, wenn Teams jemanden brauchen, der Zielkonflikte offen benennt, Qualität sichtbar hält und trotzdem pragmatisch vorankommt.
 ```
 
 Keep this short. One paragraph is usually enough. If it becomes a manifesto, move the excess into an interview note, LinkedIn post, or about page.

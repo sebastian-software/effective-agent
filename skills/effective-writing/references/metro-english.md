@@ -143,7 +143,7 @@ Output:
 
 Input:
 > Ich glaube, wir sollten das nicht in diesem PR machen. Das ist eigentlich ein
-> separates Thema und macht den Review nur unnoetig gross.
+> separates Thema und macht den Review nur unnötig groß.
 
 Output:
 > I don't think we should do this in this PR. It's a separate thread, and adding

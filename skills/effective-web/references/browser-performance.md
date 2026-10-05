@@ -234,7 +234,7 @@ measurement reveals, not the technique that is easiest to apply.
   workflows keyboard-accessible and command-driven where appropriate, without
   hiding the mouse/touch alternative.
 - Animate only when motion clarifies state change or spatial origin. Prefer
-  `transform` and `opacity`, keep durations short (sub-200 ms for UI feedback),
+  `transform` and `opacity`, keep durations short (150–250 ms for UI feedback),
   and avoid layout-triggering properties in dense or long-list surfaces. Honor
   `prefers-reduced-motion`.
 
