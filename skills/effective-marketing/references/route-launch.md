@@ -2,8 +2,8 @@
 
 Use this route for launch scope, readiness, sequencing, ownership, sales
 enablement, competitive context, rollout guardrails, measurement,
-distribution-motion selection, build-versus-distribution diagnosis, and
-services-to-product scaling.
+distribution-motion selection, growth-option selection,
+build-versus-distribution diagnosis, and services-to-product scaling.
 
 ## Read
 
@@ -11,6 +11,10 @@ services-to-product scaling.
    boundary and deliverable contract.
 2. [Launch and enablement](launch-and-enablement.md) — the route's working
    guidance.
+
+Read [Growth options](growth-options.md) when choosing new acquisition or
+distribution ideas, especially for software products. Load the channel's route
+only after an option has been selected for a concrete plan.
 
 ## Apply
 

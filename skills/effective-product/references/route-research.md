@@ -23,6 +23,8 @@ enough to contradict the preferred product, design, or market story.
    - [Market and source research](market-and-source-research.md) for category
      and alternative mapping, competitor-customer evidence, public and licensed
      sources, reviews, communities, demand signals, and market sizing.
+   - [Competitive profiles](competitive-profiles.md) for comparable, dated
+     dossiers on alternatives, their plans, constraints, and changes over time.
    - [Synthesis and handoffs](synthesis-and-handoffs.md) for evidence registers,
      coding, themes, contradictions, Voice of Customer, Jobs to Be Done,
      personas, confidence, research repositories, and owner-specific handoffs.

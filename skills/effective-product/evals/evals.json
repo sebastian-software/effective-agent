@@ -414,6 +414,16 @@
       "name": "small-evidence-question-needs-direct-answer",
       "prompt": "We interviewed five trial users. Three said they prefer CSV export. Can we say most customers prefer CSV? Please answer briefly.",
       "expected": "Answers directly that three of five interviewed trial users expressed that preference, while the small selected sample does not establish a preference among all customers. Preserves the denominator and stated-preference limit without a full claim register, gate table, named owner, or seven-part readiness report."
+    },
+    {
+      "name": "competitive-profile-with-comparable-terms",
+      "prompt": "Build a compact dated profile matrix from these supplied notes only; do not browse or save files. Decision: shortlist scheduling products for a ten-person retail team needing CSV import. Observed 2026-10-05: OurShift official pricing EUR 18 per user monthly, minimum five, CSV import included. RivalShift official pricing USD 12 per user monthly billed annually, no import documentation supplied. A third-party estimate says RivalShift had 20,000 website visits in September; a 2024 review calls its import painful. Separate evidence from interpretation and identify the open questions.",
+      "expected": "Produces a proportionate comparable profile matrix with applicable terms, source and observation dates, unknown RivalShift import status, and the old review context. Separates vendor facts, customer report, estimate and interpretation; does not infer customer count, revenue or current import behavior from traffic or the old review. No mandatory provider, folder or archive; no universal winner or unapproved pricing decision."
+    },
+    {
+      "name": "competitive-profile-change-history",
+      "prompt": "Update our competitor evidence record: last April we observed Vendor A’s Starter plan at EUR 15 per seat monthly. Today’s supplied official excerpt lists EUR 20 per seat monthly and a minimum of ten seats. We use the old price on two comparison pages. Explain the smallest update and handoff; do not edit or publish anything.",
+      "expected": "Preserves the prior dated observation, records the new terms with current observation and source context, distinguishes a documented change from an unsupported claim about when it took effect, and identifies affected downstream comparison claims for effective-marketing. Does not silently overwrite history, invent discounts or change live pages."
     }
   ],
   "activation": [
@@ -571,6 +581,26 @@
       "name": "service-price-floor-triggers",
       "prompt": "Calculate a viable price floor for our service from delivery hours, acquisition effort, and risk, and compare payment structures.",
       "should_trigger": true
+    },
+    {
+      "name": "content-portfolio-planning-does-not-trigger",
+      "prompt": "Plan a cross-channel content portfolio, topic clusters, and production priorities for our B2B software.",
+      "should_trigger": false
+    },
+    {
+      "name": "competitive-profile-research-triggers",
+      "prompt": "Research dated competitor profiles with comparable plan terms, capabilities, sources, and unknowns.",
+      "should_trigger": true
+    },
+    {
+      "name": "commercial-comparison-copy-does-not-trigger",
+      "prompt": "Draft an alternatives page using our approved competitor facts and positioning.",
+      "should_trigger": false
+    },
+    {
+      "name": "editorial-article-refresh-does-not-trigger",
+      "prompt": "Refresh an informative essay with current examples and a clearer argument; it has no commercial offer.",
+      "should_trigger": false
     }
   ]
 }
