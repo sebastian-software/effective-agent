@@ -291,6 +291,41 @@
       "name": "build-webhook-idempotency",
       "prompt": "Implement idempotent webhook handling with an event-ID table in our own Node service so replayed deliveries never create duplicate orders.",
       "owner": "effective-engineering"
+    },
+    {
+      "name": "cross-channel-content-portfolio",
+      "prompt": "Plan a content portfolio and production priorities for our B2B software across search, newsletters, and social channels.",
+      "owner": "effective-marketing"
+    },
+    {
+      "name": "search-query-topic-clusters",
+      "prompt": "Group our keyword export by audience intent, identify gaps and overlaps with existing content, and propose topics to commission.",
+      "owner": "effective-marketing"
+    },
+    {
+      "name": "dated-competitive-profiles",
+      "prompt": "Research comparable dated profiles of three competitors with plan terms, capabilities, evidence sources, and unknowns.",
+      "owner": "effective-product"
+    },
+    {
+      "name": "commercial-alternatives-page",
+      "prompt": "Draft a buyer-facing alternatives-to-Acme page from our approved positioning and competitor facts.",
+      "owner": "effective-marketing"
+    },
+    {
+      "name": "software-acquisition-options",
+      "prompt": "Suggest feasible acquisition tests for our software using templates, partnerships, or useful tools, with effort and learning criteria.",
+      "owner": "effective-marketing"
+    },
+    {
+      "name": "commercial-content-refresh",
+      "prompt": "Refresh our landing page against approved current plan terms and proof; identify unsupported claims and give revised copy.",
+      "owner": "effective-marketing"
+    },
+    {
+      "name": "editorial-content-refresh",
+      "prompt": "Refresh an informative newsletter essay with current examples and a clearer argument. It has no offer or sales call to action.",
+      "owner": "effective-writing"
     }
   ]
 }

@@ -2,7 +2,8 @@
 name: effective-marketing
 description: >-
   Position, market, and sell products or services: messaging, commercial copy,
-  social content, launches, conversion, sales, CRM, and consultant profiles.
+  content strategy, social content, launches, conversion, sales, CRM, and
+  consultant profiles.
   Use for marketing execution; research and pricing belong to effective-product,
   editorial articles to effective-writing.
 ---
@@ -30,9 +31,10 @@ when the user has authorized the action and destination.
 | --- | --- |
 | Choose a target segment, alternative, category, or positioning; write a positioning brief | [Positioning and Segmentation](references/route-positioning.md) |
 | Build a message architecture, check claims against proof, adapt to an audience, or find proof gaps | [Messaging and Proof](references/route-messaging.md) |
-| Plan launch scope, readiness, sequencing, ownership, sales enablement, distribution motion, build-versus-distribution diagnosis, services-to-product scaling, or rollout guardrails | [Launch and Sales Enablement](references/route-launch.md) |
+| Plan launch scope, readiness, sequencing, ownership, sales enablement, distribution motion, growth options, build-versus-distribution diagnosis, services-to-product scaling, or rollout guardrails | [Launch and Sales Enablement](references/route-launch.md) |
 | Run win/loss or adoption analysis and decide whether the segment, position, message, or channel must change | [Market Learning](references/route-market-learning.md) |
-| Write or revise homepage, landing, product, service, pricing, campaign, launch, sales, or email copy, headlines, and calls to action | [Marketing Copywriting](references/route-copywriting.md) |
+| Plan a content portfolio, topic clusters, search intent, channel mix, production priorities, or content maintenance | [Content Strategy](references/route-content-strategy.md) |
+| Write, revise, or refresh homepage, landing, product, service, pricing, comparison, alternatives, campaign, launch, sales, or email copy, headlines, and calls to action | [Marketing Copywriting](references/route-copywriting.md) |
 | Diagnose funnel drop-off, design an ethical experiment, or judge a test result | [Conversion Optimization](references/route-conversion.md) |
 | Start or grow a service business end to end, find the current bottleneck, plan an offer-led content program, or plan the next week's priorities and delegable procedures | [Service Business Growth](references/route-service-growth.md) |
 | Research prospects, build a lead list, or write or run cold email, phone, direct mail, video follow-up, or event outreach | [Outbound Prospecting](references/route-outbound.md) |
@@ -49,9 +51,9 @@ when the user has authorized the action and destination.
 ## Routing Boundaries
 
 - `effective-product`: customer/buyer interviews, win/loss fieldwork, surveys,
-  market sizing and research synthesis; product scope, pricing (including
-  service pricing), packaging, trials, entitlements, migrations, service pilot
-  design, and durable decisions recorded as ADRs.
+  market sizing, competitive profiles, and research synthesis; product scope,
+  pricing (including service pricing), packaging, trials, entitlements,
+  migrations, service pilot design, and durable decisions recorded as ADRs.
 - `effective-writing`: informative articles, essays, newsletters, editorial case
   studies, locale typography, and audits of formulaic prose. Commercial-choice
   copy stays here, even when it is long.

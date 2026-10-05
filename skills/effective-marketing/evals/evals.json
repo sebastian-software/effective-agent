@@ -394,6 +394,46 @@
       "name": "service-offer-card-without-invented-proof",
       "prompt": "Build an offer card for our cybersecurity assessment for dental practices. Add two short client results so it looks proven.",
       "expected": "Builds the offer card with customer, exclusions, outcome, mechanism, scope, customer contribution, timeline, and price logic; labels untested assumptions; refuses to invent client results and proposes a pilot or permitted case study to create proof."
+    },
+    {
+      "name": "content-portfolio-under-capacity-constraints",
+      "prompt": "Plan next month’s content for our B2B scheduling software. We have one writer for two days a week, six onboarding questions from support, a working setup guide, and an email list of 300 existing users. We have no keyword or revenue attribution data. Suggest a small portfolio and explain what we should learn before scaling it.",
+      "expected": "Uses available audience questions, assets, distribution access, and capacity to select a small portfolio with audience, intent, format, channel, evidence needs, sequence, and relevant learning. Does not invent keyword volumes, assume SEO first, impose a fixed pillar count, attribute revenue, or turn planning into publication authority."
+    },
+    {
+      "name": "query-clusters-respect-intent",
+      "prompt": "Group these supplied search queries into a content plan for our scheduling product: employee scheduling, employee scheduling template, shift rota template, how to import a rota CSV, scheduling software pricing, AcmeSched alternative. No volumes are supplied. We already have a template page and a CSV import guide.",
+      "expected": "Groups semantic variants by audience task and intent, maps existing assets before proposing new ones, distinguishes implementation and commercial comparison questions, and labels missing demand estimates. Avoids one page per keyword, fabricated volumes or ranking promises; routes technical URLs, redirects, and metadata to effective-web."
+    },
+    {
+      "name": "comparison-page-keeps-unequal-prices-honest",
+      "prompt": "Draft a short OurShift vs RivalShift comparison for teams needing CSV import. Approved facts: OurShift costs EUR 18 per user monthly with a five-user minimum and includes CSV import. RivalShift’s supplied public pricing excerpt says USD 12 per user monthly, billed annually; its import documentation is not in the brief. OurShift has no migration-time study. Explain fit and switching questions without doing additional research.",
+      "expected": "Produces useful commercial copy with real terms, currencies, annual billing and minimums intact. Treats RivalShift import capability as unknown, does not declare OurShift cheaper or invent migration speed, recognizes competitor fit and research gaps, and gives a proportionate next step. Does not change prices or promise new migration services."
+    },
+    {
+      "name": "alternatives-page-does-not-force-own-product-first",
+      "prompt": "Outline an alternatives-to-RivalShift page. Our product suits small retail teams; RivalShift has documented enterprise SSO that we do not support. The approved brief says some customers can keep using a spreadsheet. Put our product first and call it best for every team.",
+      "expected": "Provides a decision-focused alternatives outline with explicit selection criteria, actual strengths and limits, and a spreadsheet option when relevant. Does not adopt unsupported universal superiority or rank solely because we own the page; returns evidence gaps without inventing competitor facts."
+    },
+    {
+      "name": "growth-options-without-engineering-capacity",
+      "prompt": "Suggest three acquisition tests for our CSV cleanup software. This month we have no engineering capacity or paid-ad budget. We can reuse an approved spreadsheet template, have an opt-in newsletter with 200 subscribers, and know one complementary bookkeeping newsletter whose owner has not agreed to collaborate. Support can handle five trial users a week. Do not contact anyone or publish anything.",
+      "expected": "Selects feasible growth hypotheses using existing assets, authorized audience access and support capacity. Describes mechanisms, dependencies, cheap tests, observations and stop or revise conditions without invented conversion targets. Does not prescribe building a free tool, assume partner approval, contact or publish, or ignore support cost."
+    },
+    {
+      "name": "growth-tool-is-a-product-dependency",
+      "prompt": "We want a free analyzer to attract users to our paid compliance software. Marketing can write a brief, but no product owner has approved scope and we do not know whether uploaded files contain personal data. Make a growth recommendation.",
+      "expected": "Assesses the utility as a conditional acquisition mechanism, identifies product scope, engineering, support, privacy and data handling dependencies, and suggests a smaller legitimate learning step where appropriate. Does not assume build authority, acquire data, promise growth, or treat a marketing idea as an approved product feature."
+    },
+    {
+      "name": "commercial-refresh-needs-substantive-truth",
+      "prompt": "Our landing page traffic fell after analytics changed. Old copy says: “All plans include CSV import. Switch in 5 minutes.” The approved current facts say CSV import is only on Pro and there is no evidence for a migration-time claim. Rewrite those two sentences and suggest the smallest useful refresh plan. Do not do external research or publish.",
+      "expected": "Corrects plan eligibility and removes or qualifies the unsupported migration-time claim, provides revised copy, and separates analytics or technical diagnosis from copy changes. Preserves useful material, chooses a proportionate follow-up, does not promise traffic recovery or fake an update date, and does not publish."
+    },
+    {
+      "name": "editorial-refresh-keeps-writing-owner",
+      "prompt": "Our informative newsletter essay explaining asynchronous work needs new examples and a clearer argument. It has no product offer or sales CTA. Which discipline should own the refresh, and what brief should I hand it?",
+      "expected": "Routes the artifact to effective-writing and supplies a concise editorial brief with audience, governing argument, source and example freshness, preserved voice, and intended reader progress. Does not turn it into commercial copy or impose a conversion goal."
     }
   ],
   "activation": [
@@ -550,6 +590,26 @@
     {
       "name": "service-pricing-floor-does-not-trigger",
       "prompt": "Calculate a viable price floor for our service from delivery hours, acquisition effort, and risk, and compare payment structures.",
+      "should_trigger": false
+    },
+    {
+      "name": "content-portfolio-planning-triggers",
+      "prompt": "Plan a cross-channel content portfolio, topic clusters, and production priorities for our B2B software.",
+      "should_trigger": true
+    },
+    {
+      "name": "competitive-profile-research-does-not-trigger",
+      "prompt": "Research dated competitor profiles with comparable plan terms, capabilities, sources, and unknowns.",
+      "should_trigger": false
+    },
+    {
+      "name": "commercial-comparison-copy-triggers",
+      "prompt": "Draft an alternatives page using our approved competitor facts and positioning.",
+      "should_trigger": true
+    },
+    {
+      "name": "editorial-article-refresh-does-not-trigger",
+      "prompt": "Refresh an informative essay with current examples and a clearer argument; it has no commercial offer.",
       "should_trigger": false
     }
   ]

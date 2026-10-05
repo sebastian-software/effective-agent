@@ -16,6 +16,37 @@ Before editing, identify:
 When the core message is not approved, diagnose and return the decision to
 the positioning and messaging routes instead of silently solving strategy through prose.
 
+## Refresh an existing asset
+
+Refresh when evidence, product behavior, terms, audience needs, or performance
+suggest a substantive change. Age alone does not make content wrong.
+
+1. Establish the current baseline: asset, intended audience and action, source
+   dates, claim dependencies, and available performance evidence. A traffic or
+   conversion decline can reflect measurement, technical delivery, distribution,
+   seasonality, or a changed audience; inspect those explanations before
+   prescribing new copy.
+2. Revalidate consequential facts against current sources. Check linked prices,
+   plans, screenshots, policies, comparisons, examples, and proof. Remove or
+   qualify unsupported claims rather than making old evidence sound current.
+3. Choose the intervention: correct a local fact; refresh examples and missing
+   decision information; restructure a useful but confused argument; or rewrite
+   after the positioning owner resolves a changed audience, offer, or promise.
+   Consider consolidation or retirement when assets duplicate one decision or
+   no longer serve an audience need. Let `effective-web` implement URL changes
+   and redirects with the appropriate owner.
+4. Preserve useful material and deliberate voice. Apply the passes below to the
+   changed argument and its dependencies. Record what changed and why when a
+   review record is useful; do not change a publication date merely to imply
+   freshness. Use a truthful update date after substantive revision.
+5. Choose a follow-up observation appropriate to the change and available
+   traffic. Do not promise recovered rankings or attribute improvement to copy
+   without an adequate comparison.
+
+Commercial-choice copy stays here. Refreshing an informative article or
+newsletter belongs to `effective-writing`; technical search and analytics
+diagnosis belongs to `effective-web`.
+
 ## Run the passes
 
 ### 1. Intent and message

@@ -45,13 +45,15 @@ workflow rather than three disconnected tricks.
 7. Draft with the reader's situation and vocabulary. Translate capabilities
    through mechanism into credible progress. Blend narrative, explanation, and
    evidence in the proportions the offer, audience, risk, and channel require.
-8. Read [Service landing page](service-landing-page.md) when a service needs an
+8. Read [Competitive pages](competitive-pages.md) for comparison or alternatives
+   pages that help a buyer choose between real options. Read
+   [Service landing page](service-landing-page.md) when a service needs an
    argument-led landing page with a build brief, wireframe, and handoff
    criteria.
 9. Read [Marketing copy revision](marketing-copy-revision.md) for an existing
-   draft, a copy critique, or the final quality gate. Revise in separate passes
-   so stronger emotion or brevity does not weaken truth, meaning, voice, or
-   necessary qualifications.
+   draft, a content refresh, a copy critique, or the final quality gate. Revise in
+   separate passes so stronger emotion or brevity does not weaken truth,
+   meaning, voice, or necessary qualifications.
 10. Return the requested artifact plus only the evidence gaps, consequential
    choices, or materially different variants needed for review. Do not bury
    finished copy beneath a generic lecture about copywriting.
