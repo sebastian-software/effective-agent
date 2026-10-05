@@ -133,11 +133,11 @@ Fill        - Secondary backgrounds
 Background  - White or near-white
 ```
 
-**Typography Options:** See [Typography route](route-typography.md) for the type scale (1.200 Minor Third, base 16px).
+**Typography Options:** See [Typography](typography.md) for the type scale (1.200 Minor Third, base 16px).
 
-**Spacing Options:** See [Layout and Spacing route](route-layout.md) for the 8pt grid (XS–XXL).
+**Spacing Options:** See [Layout and Spacing](layout-spacing.md) for the 8pt grid (XS–XXL).
 
-**Shadow Options:** See [Color and Theming route](route-color.md) for the two shadow levels (Raised, Overlay).
+**Shadow Options:** See [Colour](colour.md) for the two shadow levels (Raised, Overlay).
 
 **Border Radius Options:**
 - Small: 8pt
@@ -634,7 +634,7 @@ Slower:     400ms     — Elements moving on page, dropdowns, tooltips
 Deliberate: 700ms     — Large movements across screen, demonstrations
 ```
 
-Keep interaction feedback inside the 150–250ms band (consistent with the Product Motion Discipline section below); reserve the longer steps for spatial movement.
+Keep interaction feedback inside the 150–250ms band (consistent with the Product Motion Discipline section above); reserve the longer steps for spatial movement.
 
 **Guidelines:**
 - Colour/opacity changes under the cursor feel slow above 100ms

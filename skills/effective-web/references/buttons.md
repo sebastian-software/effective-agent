@@ -300,7 +300,7 @@ instead of asking them to predict whether they made a mistake.
 **Undo pattern:**
 1. Execute action immediately
 2. Show toast: "Email deleted. [Undo]"
-3. Actually delete after toast expires (5-10 seconds)
+3. Actually delete after the toast expires; give an Undo toast substantially longer than an informational one and a persistent alternative (see [Dialog and Modal](dialog-modal.md))
 
 **Benefits:**
 - Doesn't interrupt workflow

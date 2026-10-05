@@ -204,7 +204,7 @@ Sortable tables need careful ARIA implementation. The W3C ARIA Authoring Practic
 <div aria-live="polite" class="visually-hidden" id="sort-status"></div>
 ```
 
-After sorting, update the text content: "Sorted by name, ascending". Clear after approximately one second to avoid stale announcements.
+After sorting, update the text content: "Sorted by name, ascending". Leave it in place until the next sort replaces it, so users can still review it.
 
 ### Scrollable Table Containers
 
@@ -541,7 +541,7 @@ th.numeric {
 | Text            | Left       | Natural reading direction in LTR languages   |
 | Numbers         | Right      | Aligns decimal points and digit places       |
 | Currency        | Right      | Aligns decimal points; include currency symbol|
-| Dates           | Left       | Read as text; use consistent format           |
+| Dates           | Right when compared, otherwise left | Use one consistent format so digits align |
 | Status/badges   | Centre     | Short labels centred in column               |
 | Actions/icons   | Centre     | Visual balance for icon buttons              |
 

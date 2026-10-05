@@ -127,7 +127,7 @@ needs a citation, provenance trail, or actionable fallback. Better approaches:
 
 ```css
 @media print {
-  /* Sub/superscripts: see OpenType section in typography.md */
+  /* Sub/superscripts: see OpenType Features in print-typography.md */
 
   sup.fnref {
     font-size: 75%;

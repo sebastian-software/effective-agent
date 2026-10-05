@@ -312,20 +312,17 @@ element.scrollIntoView({
 ### Load More Implementation Notes
 
 ```html
-<ul id="results" aria-live="polite">
+<ul id="results">
   <!-- Items rendered here -->
 </ul>
+<p id="results-status" role="status" class="visually-hidden"></p>
 
-<button
-  type="button"
-  id="load-more"
-  aria-label="Load more results"
->
+<button type="button" id="load-more">
   Show more results
 </button>
 ```
 
-- Announce loaded content to screen readers with `aria-live="polite"` on the container
+- Keep the result list outside the live region; after loading, put one short message such as "20 more results loaded" in the status region
 - Move focus to the first new item after loading (or at minimum, keep the button visible)
 - Show a loading indicator on the button itself during fetch
 - Display the total count if known: "Showing 20 of 142 results"

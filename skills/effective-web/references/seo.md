@@ -218,7 +218,7 @@ The `<h1>` signals the primary topic of the page to search engines.
 
 ### Landmark Elements
 
-Use the correct semantic elements for page regions. This is already covered in [Design and Review route](route-design.md) — the SEO benefit is that search engines can identify and weight content by its structural role.
+Use the correct semantic elements for page regions; the [Accessibility and HTML route](route-accessibility.md) owns landmark markup. The SEO benefit is that search engines can identify and weight content by its structural role.
 
 | Element | SEO Role |
 |---------|----------|
@@ -318,7 +318,7 @@ For AI/GEO, structured data still helps with entity clarity and rich-result elig
 
 ## Image SEO
 
-Images are covered for responsive loading in [Layout and Spacing route](route-layout.md) and for alt text in accessibility guidelines. This section adds the SEO-specific considerations.
+Images are covered for responsive loading in [Web Performance route](route-performance.md) and for alt text in accessibility guidelines. This section adds the SEO-specific considerations.
 
 ### File Names
 
@@ -401,7 +401,7 @@ Measures responsiveness — how quickly the page reacts to user input.
 **Frontend actions:**
 - Keep event handlers fast — avoid synchronous layout calculations in click/input handlers
 - Break long tasks (> 50ms) with `scheduler.yield()`, `setTimeout`, or `postMessage` — not `requestAnimationFrame`, which queues work at the head of the next frame (see [browser performance](browser-performance.md))
-- Provide immediate visual feedback on interaction (see the 8 interaction states in [Design and Review route](route-design.md))
+- Provide immediate visual feedback on interaction (see the 8 interaction states in [Fundamentals](fundamentals.md#clearly-indicate-interaction-states))
 - Avoid layout thrashing — batch DOM reads before DOM writes
 - Use CSS transitions for state changes rather than JavaScript-driven animation
 
@@ -518,8 +518,8 @@ Many performance optimisations are covered across other chapters. This is a cros
 |-----------|-----------|-----------|
 | Font preloading and `font-display` | Reduces LCP and CLS | [Typography route](route-typography.md) |
 | `font-size-adjust` for fallback fonts | Reduces CLS during font swap | [Typography route](route-typography.md) |
-| Responsive images with `srcset` | Reduces LCP on mobile | [Layout and Spacing route](route-layout.md) |
-| `aspect-ratio` on media | Prevents CLS | [Layout and Spacing route](route-layout.md) |
-| `loading="lazy"` for off-screen images | Reduces initial page weight | [Layout and Spacing route](route-layout.md) |
-| CSS-only animations (`transform`, `opacity`) | Improves INP | [Design and Review route](route-design.md) |
-| Reduced motion preferences | Accessibility and performance | [Design and Review route](route-design.md) |
+| Responsive images with `srcset` | Reduces LCP on mobile | [Web Performance route](route-performance.md) |
+| `aspect-ratio` on media | Prevents CLS | [Web Performance route](route-performance.md) |
+| `loading="lazy"` for off-screen images | Reduces initial page weight | [Web Performance route](route-performance.md) |
+| CSS-only animations (`transform`, `opacity`) | Improves INP | [Motion and Interaction route](route-motion.md) |
+| Reduced motion preferences | Accessibility and performance | [Motion and Interaction route](route-motion.md) |

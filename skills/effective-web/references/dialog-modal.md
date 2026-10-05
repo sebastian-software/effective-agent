@@ -225,7 +225,7 @@ dialog::backdrop {
 
 ## Entry and Exit Animations
 
-For the underlying CSS features (`@starting-style`, `transition-behavior: allow-discrete`, animating `display`), see [Design and Review route](route-design.md). Below is the dialog-specific pattern combining all four:
+For the underlying CSS features (`@starting-style`, `transition-behavior: allow-discrete`, animating `display`), see [Motion and Interaction](motion-interaction.md) ("Entry and Exit Animations"). Below is the dialog-specific pattern combining all four:
 
 ### Complete Entry + Exit Animation Pattern
 
@@ -589,6 +589,6 @@ When a toast carries an action, auto-dismissal works against keyboard and screen
 - Use `role="status"` and `aria-live="polite"` so screen readers announce the message without interrupting
 - Use `popover="manual"` -- toasts should not light-dismiss on click outside
 - Include an Undo action when the toast replaces a confirmation dialog
-- Auto-dismiss after 5-10 seconds
+- Auto-dismiss informational toasts after 5-10 seconds; give toasts that carry an action such as Undo substantially longer and a persistent alternative, as described above
 - Position at the bottom of the viewport to avoid blocking content
 - Do NOT use toasts for critical errors or actions requiring user response (use a dialog instead)

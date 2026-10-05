@@ -63,7 +63,7 @@ Read it like this:
   `conclusion` (`conclusion` is null while running, never `PENDING`). This is
   your CI view; provider preview checks (e.g. a database preview like Supabase)
   show up here too.
-- **closingIssuesReferences**: the linked issue(s) — the intent gate and your
+- **closingIssuesReferences**: the linked issue(s) — the intent source and your
   scope yardstick. If empty, also scan `body` for `Closes #` / `Fixes #` and the
   branch name. To actually read the ticket content, see section 2b.
 
@@ -124,12 +124,12 @@ is_bot() {
 ```
 
 Bot findings still deserve real triage: judge each one valid / out of scope /
-wrong exactly like a human comment (Mode B step 2), just reply in the short
+wrong exactly like a human comment (see [review upkeep](review-upkeep.md#resolve-feedback)), just reply in the short
 technical tone from "Voice".
 
 ## 3b. Automated PRs
 
-Exempt from the step-1 ticket gate — their intent is self-evident. Detect by
+Automated PRs need no linked ticket — their intent is self-evident. Detect by
 author login, branch prefix, or labels (not author alone — release-please often
 runs under a human token):
 
@@ -345,8 +345,8 @@ gh pr view <N> --repo "$REPO" --json statusCheckRollup \
 gh api repos/"$REPO"/deployments --jq '.[0].statuses_url'   # fallback
 ```
 
-Then drive that URL with the `agent-browser` CLI
-([vercel-labs/agent-browser](https://github.com/vercel-labs/agent-browser)) —
-optional, separately installed, and not part of this collection — only when it
-is installed and configured. Otherwise, keep the verification static and report
-that the preview could not be exercised.
+Then drive that URL with an available, suitable browser tool. The optional,
+separately installed `agent-browser` CLI
+([vercel-labs/agent-browser](https://github.com/vercel-labs/agent-browser)) is
+one option, not a prerequisite. If no browser tool is available, keep the
+verification static and report that the preview could not be exercised.

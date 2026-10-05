@@ -282,16 +282,16 @@ Print media uses points (pt), not pixels. 1pt = 1/72 inch. Body text is typicall
     color: #000;
   }
 
-  h1 { font-size: 24pt; line-height: 1.2; }
-  h2 { font-size: 20pt; line-height: 1.3; }
-  h3 { font-size: 16pt; line-height: 1.3; }
-  h4 { font-size: 14pt; line-height: 1.4; }
+  h1 { font-size: 24pt; line-height: 1.1; }
+  h2 { font-size: 18pt; line-height: 1.15; }
+  h3 { font-size: 14pt; line-height: 1.2; }
+  h4 { font-size: 11pt; font-weight: 700; line-height: 1.25; }
 }
 ```
 
 ### Line Height
 
-Use unitless values for `line-height`. Body text on paper reads well at 1.35–1.4 (tighter than screen; see [print typography](print-typography.md)). Decrease for headings (1.2-1.3). Increase for very long lines.
+Use unitless values for `line-height`. Body text on paper reads well at 1.35–1.4 (tighter than screen; see [print typography](print-typography.md)). Decrease for headings (1.05–1.3, tighter as size grows). Increase for very long lines.
 
 ## Making Link Destinations Useful on Paper
 
