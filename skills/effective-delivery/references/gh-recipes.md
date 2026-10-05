@@ -336,7 +336,10 @@ keep cycling.
 
 ## 9. Verifying via preview deployment
 
-Pull the preview URL from checks/deployments (no local server, ever):
+Prefer the preview URL from checks/deployments. Do not start a local server by
+default: first check whether one is already running for this project or
+worktree and reuse it; start one only under the conditions in
+[review verification](review-verification.md).
 
 ```bash
 gh pr view <N> --repo "$REPO" --json statusCheckRollup \
