@@ -189,7 +189,7 @@ Headings with larger font-sizes get `line-height` set to 2x or 3x the rhythm uni
 
 ## Grid for Structured Sections
 
-CSS Grid is reliable in print. Use it for structured sections (bio, metadata, figure+text).
+CSS Grid works in print for structured sections that stay whole on one page (bio, metadata, figure+text) with `break-inside: avoid`. Keep content that may run across pages in block flow unless you have tested the target engine: Chromium fragments grid since Chrome 108, while Firefox and WebKit remain less reliable.
 
 ```css
 @media print {

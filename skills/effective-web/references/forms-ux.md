@@ -27,7 +27,7 @@ Design forms around user recovery: clear labels, browser-supported input attribu
 
 - Match the on-screen keyboard to the field with `inputmode` and `type` (`type="email"`, `inputmode="numeric"` for codes, `type="tel"` for phone numbers).
 - Keep mobile forms single-column and prefer a visible segmented control or radio set over a dropdown for small option counts to cut taps.
-- On constrained mobile layouts, mark optional fields with "(optional)" rather than repeating a required marker on every field.
+- Mark required and optional fields the same way on mobile as on desktop (see [Forms](forms.md)); a form that asks almost only for required information may mark just the few optional fields with "(optional)".
 - Meet the 24x24 CSS px WCAG floor; prefer 44-48px touch targets where space and platform conventions allow.
 - Detect coarse pointers with `pointer`/`hover` media queries rather than inferring touch from viewport width, and test hybrid devices that have both.
 

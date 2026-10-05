@@ -152,7 +152,7 @@ When a button triggers an action that takes more than 300ms, show a loading stat
 - The spinner must not change the button dimensions - reserve space or replace the icon
 - Change the label to describe the ongoing process: "Save post" becomes "Saving..."
 - Prevent double submission: set `aria-disabled="true"` during loading
-- Prefer `aria-disabled="true"` over `disabled` - `aria-disabled` keeps the button focusable and discoverable by screen readers while preventing activation
+- Prefer `aria-disabled="true"` over `disabled` - `aria-disabled` keeps the button focusable and discoverable by screen readers, but it does not block activation: guard the click or submit handler while loading, and keep the server tolerant of duplicates
 - Set `aria-busy="true"` on the button to indicate processing
 - On success, briefly show a check icon or "Saved" before restoring the default state
 
