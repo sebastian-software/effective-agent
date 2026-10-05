@@ -429,7 +429,7 @@ Verify contrast with tools like [oklch.fyi](https://oklch.fyi/) or Chrome DevToo
 
 ```
 Brand:         oklch(78% 0.12 hue)
-Text strong:   oklch(98% 0 0)          - White
+Text strong:   oklch(94% 0.01 hue)     - Off-white
 Text weak:     oklch(80% 0.01 hue)
 Stroke strong: oklch(58% 0.02 hue)
 Stroke weak:   oklch(25% 0.03 hue)
@@ -441,7 +441,7 @@ Background:    oklch(13% 0.03 hue)
 - Increase contrast above WCAG minimum (dark interfaces harder to see)
 - Meet the WCAG 2.2 baseline; use APCA only as a supplementary readability
   check with the actual polarity and current size/weight guidance
-- Start with white for Text strong
+- Use off-white rather than pure white for Text strong to avoid halation (see [Dark Mode](dark-mode.md))
 - Gradually increase saturation, decrease brightness
 - Avoid pure black background
 
@@ -544,7 +544,7 @@ Allows background to mix with foreground - maintains consistent prominence.
 
 **5 variations of white:**
 ```
-Text strong:   100% opacity (4.5:1 against overlay)
+Text strong:   90% opacity (off-white; 4.5:1 against overlay)
 Text weak:     78% opacity (4.5:1 against overlay)
 Stroke strong: 60% opacity (3:1 against overlay)
 Stroke weak:   12% opacity (decorative)

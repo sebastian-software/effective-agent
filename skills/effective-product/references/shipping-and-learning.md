@@ -31,8 +31,8 @@ Pair behavioral data with support, sales, interview, and operational evidence.
 Traffic, impressions, downloads, and sign-ups are inputs; they do not establish
 activation, retention, or value on their own.
 
-Minimize collection and route tracking or consent requirements to the relevant
-compliance skill before implementation.
+Minimize collection and route tracking or consent requirements to
+`effective-web`'s web legal-compliance route before implementation.
 
 ## Design a decision-grade experiment
 

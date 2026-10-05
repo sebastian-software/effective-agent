@@ -524,7 +524,7 @@ For display text that scales with the viewport, use `vmin` units for consistent 
 
 ```css
 .hero-heading {
-  font-size: clamp(2rem, 8vmin, 5rem);
+  font-size: clamp(2rem, 1rem + 6vmin, 5rem);
 }
 ```
 

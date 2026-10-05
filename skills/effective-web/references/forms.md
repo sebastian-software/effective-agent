@@ -83,6 +83,14 @@ Use: [checkbox] Receive updates via text message
 - Mark required: asterisk * OR word "required"
 - Mark optional: word "(optional)"
 
+```html
+<p>Fields marked * are required.</p>
+<label for="email">Email *</label>
+<input id="email" type="email" required>
+<label for="phone">Phone (optional)</label>
+<input id="phone" type="tel">
+```
+
 ### Why Mark Required Fields
 
 **Problem with only marking optional:**
@@ -103,6 +111,7 @@ Use: [checkbox] Receive updates via text message
 ### When You Don't Need to Mark Required
 
 - No optional fields in your product
+- Almost every field is required: ask only for what you need, then mark just the few optional fields with "(optional)"
 - Short familiar forms (login, newsletter)
 - Single question per screen with explanation
 - Usability testing validates it's not needed

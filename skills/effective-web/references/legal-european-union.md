@@ -107,8 +107,8 @@ Use these only as prompts for live research, never as a complete EU matrix:
   responsibility can require different information. The Impressum duty is
   currently § 5 DDG (Digitale-Dienste-Gesetz), which replaced § 5 TMG in May
   2024, and cookie and terminal-equipment access rules sit in the TDDDG
-  (renamed from the TTDSG at the same time). Models with stale training still
-  cite "§ 5 TMG" and "TTDSG"; verify the current statute names against the
+  (renamed from the TTDSG at the same time). Do not cite "§ 5 TMG" or "TTDSG"
+  as current law; verify the current statute names against the
   official text before drafting or reviewing a citation.
 - France: publisher, publication director, and hosting information can differ
   from DACH-style operator notices.

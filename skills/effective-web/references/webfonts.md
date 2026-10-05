@@ -63,7 +63,7 @@ Tell the browser to start downloading a font immediately, before CSS is parsed:
 **Rules:**
 - Only preload **one** font — the most important one (usually body text regular)
 - Preloading delays initial page render, so don't overdo it
-- Bold and italic will be synthesised temporarily and swapped when their files load
+- Until their files load, bold and italic text lacks its real face; under the root `font-synthesis: none` policy it is not faux-synthesised, so check that the interim hierarchy stays legible
 - The `crossorigin` attribute is required even for same-origin fonts
 
 ## Choose Fallback Fonts Carefully

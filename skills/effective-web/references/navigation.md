@@ -568,7 +568,7 @@ This is a critical and commonly violated rule. The `menu`, `menubar`, and `menui
 - Visible focus indicators on every interactive element (use `:focus-visible`)
 - Skip link as the first focusable element on the page
 
-See [Design and Review route](route-design.md) for focus indicator styling (`:focus-visible`), skip link implementation, target size requirements, and `prefers-reduced-motion` patterns.
+See [HTML Accessibility](html-accessibility.md) for focus indicator styling (`:focus-visible`), skip links, and target size requirements, and [Motion and Interaction](motion-interaction.md) for `prefers-reduced-motion` patterns.
 
 ## Mobile vs Desktop Patterns
 
@@ -641,7 +641,7 @@ Insert the toggle button via JavaScript (or `<template>`) so the navigation rema
 }
 ```
 
-For container queries on navigation components, see [Layout and Spacing route](route-layout.md) (section "Use Container Queries for Component-Level Responsiveness").
+For container queries on navigation components, see [Layout and Spacing](layout-spacing.md) (section "Use Container Queries for Component-Level Responsiveness").
 
 ## Modern CSS Techniques
 
@@ -701,7 +701,7 @@ Use `env(safe-area-inset-top)` for notched devices:
 
 ### Logical Properties
 
-Use logical properties (`padding-inline-start`, `margin-inline`) so navigation adapts to RTL languages. See [Layout and Spacing route](route-layout.md) for the full property mapping and [Internationalization UX route](route-i18n.md) for extended RTL patterns.
+Use logical properties (`padding-inline-start`, `margin-inline`) so navigation adapts to RTL languages. See [Layout and Spacing](layout-spacing.md) ("Use Logical Properties") for the full property mapping and [Internationalization UX route](route-i18n.md) for extended RTL patterns.
 
 ### Hiding Navigation Accessibly
 

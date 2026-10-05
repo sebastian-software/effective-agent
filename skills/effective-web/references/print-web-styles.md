@@ -256,7 +256,7 @@ Orphans are lines left at the bottom of a page before a break. Widows are lines 
 }
 ```
 
-**Note on Flexbox/Grid:** Fragmentation (page breaks) is poorly supported inside flex and grid containers. Keep print layouts in simple block flow for reliable results.
+**Note on Flexbox/Grid:** Page breaks inside flex and grid containers vary by engine. Use them for sections kept whole with `break-inside: avoid`; keep content that may run across pages in simple block flow (see [print layout](print-layout.md)).
 
 ## Typography for Print
 
@@ -282,16 +282,16 @@ Print media uses points (pt), not pixels. 1pt = 1/72 inch. Body text is typicall
     color: #000;
   }
 
-  h1 { font-size: 24pt; line-height: 1.2; }
-  h2 { font-size: 20pt; line-height: 1.3; }
-  h3 { font-size: 16pt; line-height: 1.3; }
-  h4 { font-size: 14pt; line-height: 1.4; }
+  h1 { font-size: 24pt; line-height: 1.1; }
+  h2 { font-size: 18pt; line-height: 1.15; }
+  h3 { font-size: 14pt; line-height: 1.2; }
+  h4 { font-size: 11pt; font-weight: 700; line-height: 1.25; }
 }
 ```
 
 ### Line Height
 
-Use unitless values for `line-height`. Body text on paper reads well at 1.35–1.4 (tighter than screen; see [print typography](print-typography.md)). Decrease for headings (1.2-1.3). Increase for very long lines.
+Use unitless values for `line-height`. Body text on paper reads well at 1.35–1.4 (tighter than screen; see [print typography](print-typography.md)). Decrease for headings (1.05–1.3, tighter as size grows). Increase for very long lines.
 
 ## Making Link Destinations Useful on Paper
 
@@ -763,8 +763,8 @@ The most common problem. Developers test on screen and never open Print Preview.
 ### Mistake 2: Not testing across browsers
 Print rendering varies significantly between Chrome, Firefox, and Safari. Test in at least Chrome and Firefox. Safari handles page breaks differently.
 
-### Mistake 3: Using Flexbox or Grid for print layouts
-Fragmentation (page breaks) is unreliable inside flex and grid containers. Switch to `display: block` for print.
+### Mistake 3: Letting flex or grid content run across pages
+Page breaks inside flex and grid containers vary by engine. Keep such sections whole with `break-inside: avoid`, or switch content that spans pages to `display: block` for print.
 
 ### Mistake 4: Long URLs breaking layouts
 Appending `attr(href)` without `overflow-wrap: break-word` or `word-break: break-all` lets long URLs overflow the page and push content off the right edge.

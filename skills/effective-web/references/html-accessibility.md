@@ -150,9 +150,12 @@ verification.
   outline without replacing it with an equally clear indicator.
 - Treat the focus indicator as a design token: standardize outline color, width,
   and `outline-offset` across links, buttons, inputs, `summary`, and custom
-  triggers. Note that `outline: currentColor` follows text color, which can fail
-  on colored backgrounds — set an explicit, sufficiently contrasting color
-  instead and verify it in both light and dark themes.
+  triggers. Use an explicit focus color with at least 3:1 against every adjacent
+  color; where the ring can cross varied backgrounds, pair a light and a dark
+  ring (`outline` plus `box-shadow`). `outline: currentColor` suits only unfilled
+  elements such as links, because on a filled control with `outline-offset` it
+  takes the label color onto the page background. Verify it in both light and
+  dark themes.
 - Never rely on color alone for the focus state; ensure the indicator is visible
   against every background it can sit on and meets contrast against adjacent
   colors.

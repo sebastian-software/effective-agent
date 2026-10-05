@@ -5,8 +5,8 @@ professional register: Slack and chat messages, GitHub, GitLab, Linear, and
 Jira comments, PR review notes, async updates, short internal announcements,
 and German-to-English rewrites for team communication.
 
-Metro English keeps its name as an in-discipline brand: it names a specific
-register, not a separate discipline.
+Metro English names a specific register within this discipline, not a
+separate discipline.
 
 ## Read
 

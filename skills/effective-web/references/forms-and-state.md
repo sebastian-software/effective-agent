@@ -73,8 +73,10 @@ the user typed.
 ### Async, submission, and recovery
 
 - Model submission state explicitly (`idle | submitting | error | success`) and
-  disable the submit control plus show progress while `submitting`, so a
-  double-click cannot fire two requests.
+  while `submitting` mark the submit control `aria-disabled="true"` and
+  `aria-busy="true"`, show progress, and ignore further submits in the handler,
+  so a double-click cannot fire two requests while the button keeps focus. The
+  server still has to tolerate a duplicate submit.
 - Never clear user input on error. On a failed submit keep all entered values,
   surface field-level and form-level messages, and move focus to the first error
   or the summary so keyboard and screen-reader users find it.
@@ -109,7 +111,7 @@ the user typed.
   single validation source?
 - Do conditional fields stay aligned across UI, registration, and schema, with
   `defaultValues` set and `reset()` working?
-- Is submission state explicit, the button disabled while pending, and user input
+- Is submission state explicit, repeat submits guarded while pending, and user input
   preserved on error with focus moved to the first problem?
 - Is every effect a real external sync, cancellable in cleanup, with exhaustive
   dependencies?
