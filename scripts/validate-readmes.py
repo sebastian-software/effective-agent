@@ -111,6 +111,84 @@ def linkable_text(markdown: Path) -> str:
     return INLINE_CODE.sub("", without_fenced_code(markdown.read_text(encoding="utf-8")))
 
 
+NAMED_SECTION_LINK = re.compile(
+    r"\[[^\]]*\]\(([^)\s#]+\.md)(?:#[^)]*)?\)\s*\((?:section\s+)?[\"“]([^\"”]+)[\"”]\)"
+)
+RELATIVE_SECTION = re.compile(r"\bthe\s+([A-Z][\w'’\- ]*?) section (above|below)\b")
+
+
+def heading_text(heading: str) -> str:
+    """Return a heading's visible text for comparison with a quoted section name."""
+    heading = re.sub(r"[`*_]", "", heading)
+    return re.sub(r"\s+", " ", heading).strip().casefold()
+
+
+def lines_outside_fences(text: str) -> list[tuple[int, str]]:
+    """Return (1-based line number, line) pairs outside fenced code blocks."""
+    numbered: list[tuple[int, str]] = []
+    fence: tuple[str, int] | None = None
+
+    for number, line in enumerate(text.splitlines(), start=1):
+        fence_match = MARKDOWN_FENCE.match(line)
+        if fence_match:
+            marker = fence_match.group(1)
+            if fence is None:
+                fence = (marker[0], len(marker))
+                continue
+            if (
+                marker[0] == fence[0]
+                and len(marker) >= fence[1]
+                and not fence_match.group(2).strip()
+            ):
+                fence = None
+                continue
+        if fence is None:
+            numbered.append((number, line))
+
+    return numbered
+
+
+@lru_cache
+def heading_lines(markdown: Path) -> dict[str, list[int]]:
+    found: dict[str, list[int]] = {}
+    for number, line in lines_outside_fences(markdown.read_text(encoding="utf-8")):
+        heading_match = MARKDOWN_HEADING.match(line)
+        if heading_match:
+            found.setdefault(heading_text(heading_match.group(1)), []).append(number)
+    return found
+
+
+def validate_named_section_references(markdown: Path, errors: list[str]) -> None:
+    """Check that quoted section names and "section above/below" pointers resolve.
+
+    A link followed by ("Section") must name a heading in its target, and "the
+    Section section above/below" must point the right way when the file has that
+    heading. Prose pointers without a named heading are left to the reference audit.
+    """
+    relative = markdown.relative_to(REPOSITORY_ROOT)
+    for number, line in lines_outside_fences(markdown.read_text(encoding="utf-8")):
+        prose = INLINE_CODE.sub("", line)
+        for target, section in NAMED_SECTION_LINK.findall(prose):
+            if target.startswith(("http://", "https://")):
+                continue
+            destination = (markdown.parent / unquote(target)).resolve()
+            if destination.suffix.lower() != ".md" or not destination.exists():
+                continue
+            if heading_text(section) not in heading_lines(destination):
+                errors.append(
+                    f"{relative}:{number}: section \"{section}\" not found in "
+                    f"{destination.relative_to(REPOSITORY_ROOT)}"
+                )
+        for section, direction in RELATIVE_SECTION.findall(prose):
+            positions = heading_lines(markdown).get(heading_text(section))
+            if not positions:
+                continue
+            if direction == "below" and all(position < number for position in positions):
+                errors.append(f"{relative}:{number}: section \"{section}\" is above, not below")
+            if direction == "above" and all(position > number for position in positions):
+                errors.append(f"{relative}:{number}: section \"{section}\" is below, not above")
+
+
 def validate_local_links(markdown: Path, errors: list[str]) -> None:
     text = linkable_text(markdown)
     for raw_target in MARKDOWN_LINK.findall(text):
@@ -880,6 +958,7 @@ def main() -> int:
 
     for markdown in markdown_files:
         validate_local_links(markdown, errors)
+        validate_named_section_references(markdown, errors)
 
     if errors:
         print("README validation failed:", file=sys.stderr)

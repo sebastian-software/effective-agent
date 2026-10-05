@@ -538,6 +538,82 @@ class InlineCodeLinkExtractionTests(unittest.TestCase):
         self.assertEqual(errors, ["README.md: missing missing.md"])
 
 
+class NamedSectionReferenceTests(unittest.TestCase):
+    def setUp(self) -> None:
+        self.temporary_directory = tempfile.TemporaryDirectory()
+        self.root = Path(self.temporary_directory.name).resolve()
+        self.root.joinpath("skills").mkdir()
+        self.original_root = VALIDATOR.REPOSITORY_ROOT
+        VALIDATOR.REPOSITORY_ROOT = self.root
+        VALIDATOR.heading_lines.cache_clear()
+
+    def tearDown(self) -> None:
+        VALIDATOR.REPOSITORY_ROOT = self.original_root
+        VALIDATOR.heading_lines.cache_clear()
+        self.temporary_directory.cleanup()
+
+    def check(self, markdown: Path) -> list[str]:
+        errors: list[str] = []
+        VALIDATOR.validate_named_section_references(markdown, errors)
+        return errors
+
+    def test_accepts_a_quoted_section_that_exists_in_the_target(self) -> None:
+        self.root.joinpath("layout.md").write_text(
+            "# Layout\n\n## Use Logical Properties\n", encoding="utf-8"
+        )
+        markdown = self.root / "nav.md"
+        markdown.write_text(
+            'See [layout](layout.md) ("Use Logical Properties") for the mapping.\n',
+            encoding="utf-8",
+        )
+
+        self.assertEqual(self.check(markdown), [])
+
+    def test_reports_a_quoted_section_missing_from_the_target(self) -> None:
+        self.root.joinpath("route.md").write_text("# Route\n", encoding="utf-8")
+        markdown = self.root / "nav.md"
+        markdown.write_text(
+            'See [route](route.md) (section "Use Container Queries").\n',
+            encoding="utf-8",
+        )
+
+        self.assertEqual(
+            self.check(markdown),
+            ['nav.md:1: section "Use Container Queries" not found in route.md'],
+        )
+
+    def test_reports_a_relative_pointer_in_the_wrong_direction(self) -> None:
+        markdown = self.root / "fundamentals.md"
+        markdown.write_text(
+            "### Product Motion Discipline\n\nText.\n\n"
+            "Consistent with the Product Motion Discipline section below.\n",
+            encoding="utf-8",
+        )
+
+        self.assertEqual(
+            self.check(markdown),
+            ['fundamentals.md:5: section "Product Motion Discipline" is above, not below'],
+        )
+
+    def test_ignores_relative_pointers_without_a_matching_heading(self) -> None:
+        markdown = self.root / "notes.md"
+        markdown.write_text(
+            "# Notes\n\nSee the Pricing section below.\n", encoding="utf-8"
+        )
+
+        self.assertEqual(self.check(markdown), [])
+
+    def test_ignores_pointers_inside_code(self) -> None:
+        markdown = self.root / "notes.md"
+        markdown.write_text(
+            "## Setup\n\n```md\nSee the Setup section below.\n```\n"
+            "Use `[x](missing.md) (\"Nope\")` literally.\n",
+            encoding="utf-8",
+        )
+
+        self.assertEqual(self.check(markdown), [])
+
+
 class IsolatedSkillRuntimeLinkTests(unittest.TestCase):
     def setUp(self) -> None:
         self.temporary_directory = tempfile.TemporaryDirectory()
