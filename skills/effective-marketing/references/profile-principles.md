@@ -389,7 +389,7 @@ Sources consulted for this reference:
 - IGotAnOffer, "Consulting Resume Guide (REAL McKinsey, BCG, Bain examples)" - https://igotanoffer.com/blogs/mckinsey-case-interview-blog/consulting-resume
 - McKinsey Careers, "Interviewing at McKinsey" - https://www.mckinsey.com/careers/interviewing
 - Harvard FAS Mignone Center for Career Success, "Harvard College Guide to Creating a Strong Resume" - https://careerservices.fas.harvard.edu/resources/create-a-strong-resume/
-- University of Cologne Career Service, "Guide fuer deinen Lebenslauf" (2025) - https://career.phil-fak.uni-koeln.de/sites/career_service/Guides/Guide_Lebenslauf_012025_CS_PhilFakUzK.pdf
+- University of Cologne Career Service, "Guide für deinen Lebenslauf" (2025) - https://career.phil-fak.uni-koeln.de/sites/career_service/Guides/Guide_Lebenslauf_012025_CS_PhilFakUzK.pdf
 - Technical University of Munich, "Present Your Skills" / Career Guide preview - https://www.community.tum.de/wp-content/uploads/2023/01/TUM_2209_career_guide_PREVIEW.pdf
 - University of Graz Career Center, "Bewerbungsleitfaden 2026/27" - https://static.uni-graz.at/fileadmin/_files/_administrative_sites/_careercenter/Karriere_Guide_und_Bewerbungsvorlagen/2026/Bewerbungsleitfaden_CareerCenter_2026-27_NR2.pdf
 - Austrian Public Employment Service (AMS), "Ansprechender Lebenslauf" - https://www.ams.at/arbeitsuchende/richtig-bewerben/ansprechender-lebenslauf

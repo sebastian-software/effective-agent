@@ -247,11 +247,11 @@ Use these transformations when profiles understate strong work:
   Stronger: "Weitere ausgewählte Projekterfahrung."
 
 - Raw: "Nein-Sager."
-  Stronger German: "Ich spreche Zielkonflikte und Risiken klar an, wenn Fokus, Qualitaet oder Nutzerwert gefaehrdet sind."
+  Stronger German: "Ich spreche Zielkonflikte und Risiken klar an, wenn Fokus, Qualität oder Nutzerwert gefährdet sind."
   Stronger English: "I bring constructive dissent when focus, quality, or users are at risk."
 
 - Neutral: "Ich kann Frontend und Design."
-  Stronger: "Mein Ursprung in Design und Webdesign praegt meine Arbeit an Frontend-Architektur, UI-Qualitaet und der Zusammenarbeit mit Produkt- und Designteams."
+  Stronger: "Mein Ursprung in Design und Webdesign prägt meine Arbeit an Frontend-Architektur, UI-Qualität und der Zusammenarbeit mit Produkt- und Designteams."
 
 ## Final Language Checklist
 

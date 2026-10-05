@@ -910,6 +910,18 @@ No `!important` — this allows more specific selectors (dialogs, view transitio
 
 Replace motion-based animations with fades where a visual signal is still needed:
 
+```css
+@media (prefers-reduced-motion: reduce) {
+  .toast[data-state="open"] {
+    animation: fade-in 150ms ease-out;
+  }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+}
+```
+
 ### View Transitions API
 
 The View Transition API provides native browser support for animated transitions between UI states — both within a single page (SPA) and across page navigations (MPA). It answers the question "what just happened?" by showing spatial relationships between states, reducing cognitive load.

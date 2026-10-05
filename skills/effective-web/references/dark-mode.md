@@ -324,7 +324,7 @@ A small inline script before any stylesheet applies the theme before first paint
   <script>
     (function() {
       var t = localStorage.getItem('theme');
-      if (t === 'dark' || (!t && matchMedia('(prefers-color-scheme: dark)').matches)) {
+      if (t === 'dark' || ((!t || t === 'system') && matchMedia('(prefers-color-scheme: dark)').matches)) {
         document.documentElement.dataset.theme = 'dark';
         document.documentElement.style.colorScheme = 'dark';
       }
