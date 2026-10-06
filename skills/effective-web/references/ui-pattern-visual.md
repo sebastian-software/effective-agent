@@ -35,8 +35,9 @@ Do not maintain a blacklist of fonts, colours, or effects. Judge whether the
 combination follows the owning system and creates a distinctive, usable result.
 Do not default to Inter or Roboto merely because they are convenient; preserve
 them when the brand, product system, or reading context deliberately uses them.
-Use [Typography Detail](typography-detail.md) for wrapping, measure, tracking,
-numeric alignment, and language-appropriate case.
+Use [Typography Detail](typography-detail.md) for line height, tracking,
+numeric alignment, and heading widows. Use [Interface copy](interface-copy.md)
+for case and wording; use `effective-writing` for language-specific conventions.
 
 ## Media and Icon Reflexes
 

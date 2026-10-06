@@ -16,9 +16,10 @@ This route owns the words inside those states.
 4. Make labels concrete and action text outcome-oriented.
 5. Match tone to consequence without changing the recorded voice: calm for
    errors, direct for actions, sparse for repeated workflows.
-6. When copy feels generic or generated, use [UI anti-patterns](ui-antipatterns.md)
+6. When copy feels generic or generated, use [Copy pattern review](ui-pattern-copy.md)
    to check repeated cadence, manufactured contrast, unsupported claims, and
-   redundant language without banning individual words or punctuation.
+   redundant language without banning individual words or punctuation. Use
+   [UI anti-patterns](ui-antipatterns.md) to classify the finding against context.
 7. Check text expansion, localization, accessibility names, and cross-channel
    consistency. Use `effective-product` when the work changes a durable
    communication direction.
@@ -35,5 +36,7 @@ This route owns the words inside those states.
 
 - [interface-copy.md](interface-copy.md) - concise interface and product copy rules.
 - [editorial-ux.md](editorial-ux.md) - editorial UX patterns and wording checks.
-- [ui-antipatterns.md](ui-antipatterns.md) - contextual generated-copy and
-  marketing tells plus exception handling.
+- [ui-pattern-copy.md](ui-pattern-copy.md) - generated-copy and marketing tells
+  with contextual exceptions.
+- [ui-antipatterns.md](ui-antipatterns.md) - defect, advisory, and pattern-cluster
+  classification.
