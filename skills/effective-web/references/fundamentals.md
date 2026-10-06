@@ -145,7 +145,9 @@ Background  - White or near-white
 - Large: 32pt
 
 **Icon Options:**
-- Use SVG icons exclusively — never emoji, bitmap icons, or icon fonts
+- Prefer a consistent SVG icon set for task controls. Another medium or a
+  deliberate emoji vocabulary can fit an accepted system when meaning and
+  accessibility remain clear.
 - Pick one icon set and use it consistently (e.g. Lucide, Heroicons, Phosphor)
 - Default size: `1.5rem` (24px) for UI icons, `1rem` (16px) for inline icons
 - Use `currentColor` so icons inherit the parent's text colour
@@ -687,9 +689,14 @@ Generate these values from spring parameters using tools like [linear-easing-gen
 - Interruptible animations — a new trigger mid-animation must redirect smoothly, not restart
 - Complex orchestrated sequences with stagger, layout animations, or shared element transitions
 
-### Only Animate Transform and Opacity
+### Prefer Transform and Opacity
 
-For smooth 60fps animations, only animate `transform` and `opacity`. Other properties (width, height, margin, padding) trigger expensive layout recalculations.
+Prefer `transform` and `opacity` for movement and fades because they can avoid
+layout and paint. Layout-affecting properties such as width, height, margin,
+and padding can trigger repeated layout. Keep any necessary layout or filter
+transition bounded, and verify its frame consistency on representative hardware.
+Use [Motion interaction](motion-interaction.md) for property selection and
+reduced-motion behavior.
 
 ```css
 /* Good - GPU accelerated */
@@ -709,7 +716,7 @@ A consistent frame rate matters more than a high one — a steady 30fps looks sm
 
 ### Animate Height with grid-template-rows
 
-The one exception to "only animate transform and opacity": `grid-template-rows` can animate between `0fr` and `1fr`, enabling smooth accordion-style height transitions without JavaScript height calculations (animating grid tracks is Baseline Widely available, so it needs no feature gate):
+`grid-template-rows` can animate between `0fr` and `1fr`, enabling accordion-style height transitions without JavaScript height calculations (animating grid tracks is Baseline Widely available, so it needs no feature gate). It still animates layout; keep the content bounded and measure the result on the target device:
 
 ```css
 .collapsible {
