@@ -24,6 +24,12 @@ the unresolved constraint.
   direction does not require a second layout.
 - Let the parent own a repeated gap with `gap`; use a one-off spacer only when
   it is a real, locally owned element of the composition.
+- Bind headings to the content they introduce. A heading closer to the previous
+  block reads as that block's caption; check proximity with the real copy at
+  narrow and wide widths. Dense layouts still need an identifiable group.
+- Choose image/text alternation for a better reading path, not automatic
+  left-right variety. Short comparisons may benefit; preserve logical source
+  and focus order when the layout changes.
 - Test empty, long, unbreakable, and translated content. A break is evidence of
   a missing constraint or wrong ownership, not an automatic reason for another
   media query.

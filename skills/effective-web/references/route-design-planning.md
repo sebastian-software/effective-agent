@@ -32,6 +32,10 @@ Intent](../SKILL.md#route-by-intent) to Design Review and Modernization.
    modes, unfamiliar concepts, or mental-model mismatch shape the experience.
 5. Use [Design planning core](design-planning-core.md) for unresolved hierarchy,
    layout, interaction, density, states, or adaptation decisions.
+   If a proposed structure follows a generic page template rather than the
+   brief, use [UI anti-patterns](ui-antipatterns.md) to examine that choice and
+   retain any justified exception. This is conditional, not a pre-read for
+   every new surface.
 6. For an AI-assisted feature, use [AI interface
    design](ai-interface-design.md) to choose the smallest fitting modality and
    specify uncertainty, review, cancellation, recovery, and a non-AI path.
