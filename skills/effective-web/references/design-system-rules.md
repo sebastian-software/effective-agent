@@ -144,6 +144,7 @@ Use this reference for reusable design-system decisions that cut across colour, 
 
 - Prefer inline SVG, or a deliberate SVG delivery system (sprite or component), for icons that need `currentColor`, CSS state styling, accessibility control, or design-system theming. Author SVG with a correct `viewBox`, presentational attributes, and shape primitives so it scales cleanly and stays readable by hand.
 - Treat masks, clipping, backdrop filters, glass, grain, and SVG filters as interface-clarity tools, not default decoration, and choose the right primitive: `clip-path` for hard geometric cutouts, CSS or SVG masks for soft/gradient fades (text and image fades, avatar cutouts, rounded tabs). Reserve `feColorMatrix` for specialized image/color math.
+- When a composition needs the actual contour of a photographed subject, use a suitable cutout asset or alpha matte rather than approximating the subject with a geometric clip.
 - Check contrast, forced-colors behavior, reduced visual complexity, and performance before adopting any effect. Keep effects optional layers with fallbacks; never let meaning depend on translucency, filtering, or an unknown backdrop, and never let an effect drop text contrast.
 - Control stacking with `isolation: isolate` and explicit stacking contexts so blend modes, filters, and backdrop effects do not leak into unintended backgrounds.
 

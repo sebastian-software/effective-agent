@@ -53,6 +53,23 @@ code review.
    redesign baseline when applicable, and quality gates before considering the
    UI done.
 
+## Combine observations and measurements
+
+For a broad critique, record your own observations before reading automated
+style advisories when practical. This reduces anchoring on the detector's
+vocabulary. Urgent defect evidence can still guide the investigation immediately.
+Use the actual surface, accepted decisions, and task to form the assessment;
+a screenshot or source file supports only the claims it can show.
+
+Then reconcile observations with measurements and any other review: merge
+duplicates, identify agreement, examine findings present in only one source,
+and name false positives or unresolved contradictions. A detector-only signal
+needs contextual evaluation; an observation without a detector match can still
+be a material problem. Explain impact and the appropriate change rather than
+combining unlike findings into an aggregate quality score. A second independent
+review is useful when uncertainty or consequence warrants it; it is not a
+mandatory role or fixed process for every refinement.
+
 ## Baseline Rules
 
 - Every visible element needs a job. Decoration is acceptable only when it improves recognition, trust, orientation, or comprehension.

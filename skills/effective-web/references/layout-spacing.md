@@ -52,7 +52,7 @@ Cards group heterogeneous content (image + text + action) into a self-contained,
 - Displaying tabular data — use a `<table>` (supports sorting, filtering, comparison)
 - Content is meant to be read sequentially — use body text with headings
 
-**Never nest cards inside cards.** Each card level adds border/shadow/padding chrome that compounds visual noise without adding information. If content inside a card needs sub-grouping, use a heading, divider, or subtle background tint.
+**Avoid nested card chrome when it adds no meaningful grouping.** Repeated borders, shadows, and padding can obscure hierarchy; a heading, divider, spacing, or surface tint often expresses the relationship more clearly. Nested cards can be justified when each container represents a distinct independently actionable entity or an accepted design-system relationship. Assess that purpose and the rendered hierarchy rather than treating nesting alone as a defect; use [ui-antipatterns.md](ui-antipatterns.md) for contextual pattern assessment.
 
 **Alternatives to card containers** (from least to most visual weight):
 
