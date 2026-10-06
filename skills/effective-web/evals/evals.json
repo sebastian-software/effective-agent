@@ -1,6 +1,21 @@
 {
   "evals": [
     {
+      "name": "preserve-functional-label-and-media-choices",
+      "prompt": "Polish a publication's existing article page. Its eyebrow says 'Updated for version 3' above a migration guide, grey text on a muted blue surface has verified readable contrast, the accepted system combines a border and shadow on 24px cards, and an authored SVG explains the migration. A scanner recommends deleting the eyebrow, tinting all grey text, forcing 12px radii, and replacing every SVG with raster media. The request is to improve article spacing while preserving the identity.",
+      "expected": "Preserves the functional version label, verified text colour, accepted component geometry, and suitable vector diagram; corrects the requested spacing inside the existing identity; distinguishes observed accessibility or functional defects from scanner style advisories; and avoids an unsolicited redesign or a fixed font, radius, or media blacklist."
+    },
+    {
+      "name": "repair-heading-proximity-and-reading-path",
+      "prompt": "An explainer page alternates image-left and image-right rows mechanically. At mobile width the title of each new topic sits nearer the previous image than its own paragraph, and the image/text ordering changes the argument sequence. A separate two-row comparison deliberately alternates to match before/after examples. Improve the layout without replacing the visual identity.",
+      "expected": "Binds each topic heading to its following content, distinguishes within-group from between-group spacing at narrow and wide widths, preserves logical source and reading order, removes unjustified zigzag alternation, and keeps the useful comparison rather than banning every alternating layout."
+    },
+    {
+      "name": "separate-demonstration-data-from-commercial-proof",
+      "prompt": "A landing-page draft needs a clearly labelled concept screenshot with example records. The designer also adds 'Trusted by 8,000 teams', an invented customer quote, three pricing tiers that sales has not supplied, and a countdown that restarts every visit. Review what can ship and improve the draft.",
+      "expected": "Allows visible labelled demonstration records and a meaningful concept view, removes or marks unsupported commercial claims and proposed offers appropriately, avoids fabricated customers or artificial scarcity, derives pricing and the final call to action from the real offer, and keeps the visitor's next useful step clear."
+    },
+    {
       "name": "reject-general-web-research-trigger",
       "prompt": "Review this public GitHub repository of agent skills, compare it with our local skill catalog, and recommend which material to adopt, correct, or leave external: https://github.com/example/skills",
       "expected": "Does not select Effective Web merely because the input is a web URL or repository. Treats the task as source and repository research plus catalog curation, uses the relevant research and repository evidence, and invokes Effective Web only for a resulting recommendation that actually changes or reviews a browser-facing experience."
