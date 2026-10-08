@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "note": "Cross-discipline routing contract for the six-skill catalog. Each case is a realistic request and the discipline that should own it; the set preserves representative intents from the pre-consolidation catalog after the old slugs were removed. Owner 'none' marks a control that should not activate a discipline.",
+  "note": "Cross-discipline routing contract for the seven-skill catalog. Each case is a realistic request and the discipline that should own it; the set preserves representative intents from the pre-consolidation catalog after the old slugs were removed. Owner 'none' marks a control that should not activate a discipline.",
   "cases": [
     {
       "name": "prioritize-release-scope",
@@ -326,6 +326,21 @@
       "name": "editorial-content-refresh",
       "prompt": "Refresh an informative newsletter essay with current examples and a clearer argument. It has no offer or sales call to action.",
       "owner": "effective-writing"
+    },
+    {
+      "name": "retouch-business-portraits",
+      "prompt": "Retouch these business portraits with smoother shirt sleeves, clearer glasses, and natural skin. Keep the people and the original shoot setting.",
+      "owner": "effective-photo-retouch"
+    },
+    {
+      "name": "match-approved-photo-series",
+      "prompt": "Apply the approved warm portrait treatment across the remaining shoot while preserving each pose, expression, and indoor or outdoor lighting.",
+      "owner": "effective-photo-retouch"
+    },
+    {
+      "name": "refine-existing-photo-edit",
+      "prompt": "Refine this previously approved portrait using the original as an identity reference. Preserve the current color treatment and quiet sideways gaze.",
+      "owner": "effective-photo-retouch"
     }
   ]
 }

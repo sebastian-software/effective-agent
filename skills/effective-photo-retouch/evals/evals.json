@@ -1,0 +1,56 @@
+{
+  "evals": [
+    {
+      "name": "approved-series",
+      "prompt": "Apply this approved warm portrait retouch to the rest of my shoot. Make sleeves smoother and glasses clearer, but keep real faces and expressions.",
+      "expected": "Edits the authorized series with the declared reference role, preserves originals, checks consistency and identity, and reports actual dimensions without repeated approval gates."
+    },
+    {
+      "name": "color-reference-contamination",
+      "prompt": "Use the second photo only for its warm colors. Retouch the first portrait; the second photo has different people and a laptop.",
+      "expected": "Declares Image 1 as the target and Image 2 as color-only. Preserves the target's people, pose, clothing and objects instead of borrowing the reference scene."
+    },
+    {
+      "name": "refine-approved-expression",
+      "prompt": "Refine this already approved portrait. The original is reference two. The subject looks sideways with a quiet expression; make them look fresher.",
+      "expected": "Uses the original for identity and anatomy, preserves the approved grade and quiet side gaze, and corrects light or puffiness without manufacturing a smile or camera gaze."
+    },
+    {
+      "name": "suspected-object",
+      "prompt": "This edit seems to have added a laptop corner. Check it and remove it if it is an artifact.",
+      "expected": "Compares against the original before deleting the corner; preserves it if it was present and repairs only a demonstrated addition."
+    },
+    {
+      "name": "resolution-and-tool-limit",
+      "prompt": "Deliver these retouched portraits at the original camera resolution. Imagegen only returns smaller files in this session.",
+      "expected": "Reports actual dimensions and the inability to preserve native camera resolution with this tool; does not silently upscale or imply original pixel detail."
+    }
+  ],
+  "activation": [
+    {
+      "name": "portrait-natural-retouch",
+      "prompt": "Smooth the shirt folds and reduce glasses glare in my business portraits while keeping a natural shoot look.",
+      "should_trigger": true
+    },
+    {
+      "name": "consistent-photo-series",
+      "prompt": "Apply this approved editorial color treatment and subtle facial retouch across my existing shoot.",
+      "should_trigger": true
+    },
+    {
+      "name": "commercial-copy",
+      "prompt": "Write the team-page introduction to accompany our new portraits.",
+      "should_trigger": false
+    },
+    {
+      "name": "new-image-scene",
+      "prompt": "Generate a fictional team in a futuristic office.",
+      "should_trigger": false
+    },
+    {
+      "name": "cdn-upload-only",
+      "prompt": "Upload the already finished photos to my CDN and enable optimization.",
+      "should_trigger": false
+    }
+  ]
+}
