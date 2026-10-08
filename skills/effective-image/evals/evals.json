@@ -24,6 +24,26 @@
       "name": "resolution-and-tool-limit",
       "prompt": "Deliver these retouched portraits at the original camera resolution. Imagegen only returns smaller files in this session.",
       "expected": "Reports actual dimensions and the inability to preserve native camera resolution with this tool; does not silently upscale or imply original pixel detail."
+    },
+    {
+      "name": "realism-pass-for-generated-scene",
+      "prompt": "Generate a lifestyle photo of our ceramic mug on a kitchen counter. The last attempt looked like an AI render.",
+      "expected": "Writes a subject-first concrete brief with directional light and lens, then adds a few scene-appropriate realism cues such as contact shadows and handling traces, and reviews skin, light and surfaces instead of stacking every film effect."
+    },
+    {
+      "name": "composite-single-change",
+      "prompt": "Put our real watch from the second image on the model's wrist in the first image, and also change the background to a beach and make the shirt white.",
+      "expected": "Declares the base and each source role, splits the request into single-change edit passes, matches light and perspective, describes the watch size relative to the wrist, and preserves the model's identity."
+    },
+    {
+      "name": "no-generated-cues-on-real-photo",
+      "prompt": "Retouch this real team photo and add film grain and halation so it feels more authentic.",
+      "expected": "Preserves the photograph's own grain and light during the retouch and treats added film effects as a separate explicit stylistic request rather than a realism fix."
+    },
+    {
+      "name": "real-photo-cleanup",
+      "prompt": "Remove the power cables and the trash bin from this real office photo of our team.",
+      "expected": "Routes to Photo Editing, edits one change per pass with the photo as base, preserves people, light and grain, adds no generated realism cues, and states that documentary content was changed."
     }
   ],
   "activation": [
@@ -51,6 +71,16 @@
       "name": "cdn-upload-only",
       "prompt": "Upload the already finished photos to my CDN and enable optimization.",
       "should_trigger": false
+    },
+    {
+      "name": "photoreal-product-scene",
+      "prompt": "Create a photoreal product shot of our serum bottle on travertine that does not look AI-generated.",
+      "should_trigger": true
+    },
+    {
+      "name": "real-photo-object-removal",
+      "prompt": "Remove the cables and the trash bin from this office photo but keep everything else exactly as shot.",
+      "should_trigger": true
     }
   ]
 }
