@@ -4,25 +4,21 @@ Use the reusable prompt below for a warm, open, professional result that still
 looks like a photograph from the same shoot: clothing that looks tailored and
 crisply ironed, and people who look like themselves on a very good day:
 rested, lightly sun-kissed, slightly fitter, and at most about five years
-younger. This route is
-a preset of [Photo Editing](route-photo-editing.md); its source and review
-rules apply, except that this subtle, consented refinement of the subjects'
-appearance is the purpose of the edit.
+younger. This route is a preset of [Photo Editing](route-photo-editing.md);
+its source and review rules apply, except that this subtle, consented
+refinement of the subjects' appearance is the purpose of the edit.
 
-## Source and Reference Roles
+## Source and Reference
 
-Inspect the original and any previous edits before editing. Image 1 is always
-the actual target. An optional Image 2 has exactly one declared role:
+Image 1 is always the untouched original, as described in
+[Photo Editing](route-photo-editing.md#the-source-stays-the-measure). A new
+version of a photo, including one that fixes a missed detail, is a fresh run
+from the original with an adjusted photo-specific instruction.
 
-- **Color reference:** transfer only the approved color treatment. Do not copy
-  people, poses, clothing, objects, composition, or light direction.
-- **Identity reference:** when refining an already approved edit, use the
-  original to check identity, anatomy, expression, and scene. Keep Image 1's
-  approved color treatment.
-
-Use the original for a first pass and the approved edit for a requested
-refinement. Do not keep reprocessing successful outputs without a concrete
-reason.
+An optional Image 2 is a color reference only, typically an approved edit
+whose color treatment the series should match. Transfer only that treatment;
+do not copy people, poses, clothing, objects, composition, or light
+direction.
 
 ## Adapt the Brief
 
@@ -57,7 +53,7 @@ this prompt. Omit the Image 2 sentence when no second reference is supplied.
 ~~~text
 Use case: identity-preserve.
 Asset type: polished, welcoming and professional business photo shoot retouch.
-Edit ONLY Image 1. Preserve its original people and their immediately recognizable identity, facial structure and features, exact mouth/teeth/smile, eyeglass frame, hairstyle, beard, overall build, pose, hands and finger anatomy, gaze direction, clothing design, jewelry, watch, all objects, architecture, background geometry, perspective, camera position, original crop and depth of field.
+Edit ONLY Image 1. Preserve its original people and their immediately recognizable identity, bone structure, eyes, nose, exact smile and mouth shape, every tooth's shape and position, eyeglass frame, hairstyle, beard, overall build apart from the subtle refinement in point 4, pose, hands and finger anatomy, gaze direction, clothing design, jewelry, watch, all objects, architecture, background geometry, perspective, camera position, original crop and depth of field.
 Fabric wrinkles and creases are not part of the clothing design or the pose; they are retouching targets. Preserving the pose means keeping the arm and body positions, not the folds in the fabric.
 Most visible change: every shirt, including both sleeves from shoulder to cuff, looks brand new and crisply ironed.
 Input role of Image 2, if described as style reference: use ONLY its restrained warm natural color treatment as a loose series reference, never copy its people, clothing, scene, light direction, framing or objects.
@@ -74,42 +70,38 @@ Return exactly one full original composition retouched photograph, matching Imag
 Strict preservation: never add a laptop, cup, phone, props or any other item absent from Image 1. Do not introduce objects from related shoot scenes. Do not manufacture etched or squiggly skin texture.
 ~~~
 
-Reference-role examples:
+Reference-role sentence, added when Image 2 is supplied:
 
 ~~~text
 Image 2 is only a color treatment reference. Image 1 is the original edit target.
-~~~
-
-~~~text
-Image 2 is an identity/anatomy reference only. Preserve Image 1's approved grade.
 ~~~
 
 Photo-specific example:
 
 ~~~text
 The subject is smiling while seated at a wooden table. Preserve the exact
-smile, gaze, hands, watch, cup, and table. Smooth the shirt sleeves and
-shoulders substantially; keep broad elbow folds physically needed by the pose.
+smile, gaze, hands, watch, cup, and table. Make the shirt and both sleeves
+crisply ironed from shoulder to cuff; allow at most one soft, shallow fold at
+each inner elbow.
 ~~~
 
 ## Batch Through the Images API
 
 When built-in Imagegen returns too little resolution, or a whole folder needs
 the approved look, run `scripts/retouch_batch.py` with `OPENAI_API_KEY` set.
-It reads the prompt above, sends each source as Image 1 to
-`gpt-image-2.5-sunburst` at the largest supported size for its aspect ratio
-(about 8.3 megapixels; sizes above 2560 × 1440 are experimental), and saves
-each result as
+It reads the prompt above, sends each original as Image 1 to the script's
+default image model (`--model` overrides it) at the largest size the script
+computes for the aspect ratio, using the limits documented for `gpt-image-2`
+(about 8.3 megapixels, partly experimental), and saves each result as
 `<source>-retouched.png` with a `.prompt.json` record of the prompt, size,
-and reference role. Existing outputs are skipped unless `--force` is passed.
+and color reference. Existing outputs are skipped unless `--force` is passed.
 
 ~~~sh
-scripts/retouch_batch.py SOURCE_DIR --reference APPROVED_EDITS_DIR --notes notes.json --dry-run
+scripts/retouch_batch.py ORIGINALS_DIR --reference APPROVED_EDITS_DIR --notes notes.json --dry-run
 ~~~
 
-`--reference` adds Image 2 for every source, or by matching source stem when
-it is a folder; `--reference-role` selects `color` (default) or `identity`.
-`--notes` maps source stems to the photo-specific instruction. Run
+`--reference` adds the color reference for every source, or by matching
+source stem when it is a folder. `--notes` maps source stems to the photo-specific instruction. Run
 `--dry-run` first to check the plan and prompt without calling the API.
 
 ## Review and Delivery

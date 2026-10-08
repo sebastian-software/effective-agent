@@ -37,10 +37,7 @@ MAX_PIXELS = 8_294_400
 MIN_PIXELS = 655_360
 MAX_RATIO = 3
 
-ROLE_SENTENCES = {
-    "color": "Image 2 is only a color treatment reference. Image 1 is the original edit target.",
-    "identity": "Image 2 is an identity/anatomy reference only. Preserve Image 1's approved grade.",
-}
+COLOR_REFERENCE = "Image 2 is only a color treatment reference. Image 1 is the original edit target."
 
 
 @dataclass(frozen=True)
@@ -61,12 +58,12 @@ def load_template(route: Path = ROUTE) -> str:
     return match.group(1).strip()
 
 
-def build_prompt(template: str, role: str | None, notes: str | None) -> str:
+def build_prompt(template: str, has_reference: bool, notes: str | None) -> str:
     lines = template.splitlines()
-    if role is None:
+    if not has_reference:
         # The route omits the Image 2 sentence when no second reference is supplied.
         lines = [line for line in lines if not line.startswith("Input role of Image 2")]
-    parts = [ROLE_SENTENCES[role]] if role else []
+    parts = [COLOR_REFERENCE] if has_reference else []
     parts.append("\n".join(lines))
     if notes:
         parts.append(f"Photo-specific instruction: {notes.strip()}")
@@ -138,8 +135,7 @@ def parse_args(argv: list[str]) -> argparse.Namespace:
     parser.add_argument("--out-dir", type=Path, help="Output folder (default: <first input>/retouched)")
     parser.add_argument("--suffix", default="-retouched", help="Appended to each output's file stem")
     parser.add_argument("--notes", type=Path, help="JSON object mapping source stems to photo-specific instructions")
-    parser.add_argument("--reference", type=Path, help="Image 2: one file, or a folder matched by source stem")
-    parser.add_argument("--reference-role", choices=sorted(ROLE_SENTENCES), default="color")
+    parser.add_argument("--reference", type=Path, help="Color reference: one file, or a folder matched by source stem")
     parser.add_argument("--model", default="gpt-image-2.5-sunburst")
     parser.add_argument("--quality", choices=["low", "medium", "high", "auto"], default="high")
     parser.add_argument("--size", default="max", help="'max' (largest supported at the source ratio), 'auto', or WxH")
@@ -159,7 +155,7 @@ def plan(args: argparse.Namespace) -> list[Job]:
         reference = find_reference(args.reference, source.stem)
         _, (width, height) = oriented_upload(source)
         size = largest_size(width, height) if args.size == "max" else args.size
-        prompt = build_prompt(template, args.reference_role if reference else None, notes.get(source.stem))
+        prompt = build_prompt(template, reference is not None, notes.get(source.stem))
         output = out_dir / f"{source.stem}{args.suffix}.png"
         jobs.append(Job(source=source, reference=reference, output=output, size=size, prompt=prompt))
     return jobs
@@ -182,8 +178,7 @@ def run(job: Job, args: argparse.Namespace, client: object) -> str:
     job.output.write_bytes(base64.b64decode(result.data[0].b64_json))
     record = {
         "source": job.source.name,
-        "reference": job.reference.name if job.reference else None,
-        "reference_role": args.reference_role if job.reference else None,
+        "color_reference": job.reference.name if job.reference else None,
         "model": args.model,
         "quality": args.quality,
         "size": job.size,

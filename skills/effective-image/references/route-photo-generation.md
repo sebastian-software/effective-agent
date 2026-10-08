@@ -42,6 +42,6 @@ kind of artificiality.
 
 A real product, logo, or person enters a generated scene as a source image,
 never as a description. Generate the scene first, then insert the real item
-with an edit pass from [Photo Editing](route-photo-editing.md) so its shape,
-label, and identity stay exact. Do not generate likenesses of real people from
-text alone.
+with an edit pass from [Photo Editing](route-photo-editing.md), with the
+generated scene as its original, so the item's shape, label, and identity stay
+exact. Do not generate likenesses of real people from text alone.

@@ -3,7 +3,7 @@
     {
       "name": "approved-series",
       "prompt": "Apply this approved warm portrait retouch to the rest of my shoot. Make sleeves smoother and glasses clearer, but keep real faces and expressions.",
-      "expected": "Edits the authorized series with the declared reference role, preserves originals, checks consistency and identity, and reports actual dimensions without repeated approval gates."
+      "expected": "Edits each original of the authorized series with the approved color reference, preserves originals, checks consistency and identity, and reports actual dimensions without repeated approval gates."
     },
     {
       "name": "color-reference-contamination",
@@ -11,14 +11,14 @@
       "expected": "Declares Image 1 as the target and Image 2 as color-only. Preserves the target's people, pose, clothing and objects instead of borrowing the reference scene."
     },
     {
-      "name": "refine-approved-expression",
-      "prompt": "Refine this already approved portrait. The original is reference two. The subject looks sideways with a quiet expression; make them look fresher.",
-      "expected": "Uses the original for identity and anatomy, preserves the approved grade and quiet side gaze, and corrects light or puffiness without manufacturing a smile or camera gaze."
+      "name": "redo-from-original",
+      "prompt": "This approved portrait still looks a bit tired. The subject looks sideways with a quiet expression; make them look fresher.",
+      "expected": "Runs again from the untouched original with an adjusted photo-specific instruction instead of editing the approved result, may use the approved edit as color reference, preserves the quiet side gaze, and corrects light or puffiness without manufacturing a smile or camera gaze."
     },
     {
       "name": "suspected-object",
       "prompt": "This edit seems to have added a laptop corner. Check it and remove it if it is an artifact.",
-      "expected": "Compares against the original before deleting the corner; preserves it if it was present and repairs only a demonstrated addition."
+      "expected": "Checks the original first; if the corner was absent there, runs again from the original with an explicit preservation note instead of editing the result; if it was present, keeps it."
     },
     {
       "name": "resolution-and-tool-limit",
@@ -31,9 +31,9 @@
       "expected": "Writes a subject-first concrete brief with directional light and lens, then adds a few scene-appropriate realism cues such as contact shadows and handling traces, and reviews skin, light and surfaces instead of stacking every film effect."
     },
     {
-      "name": "composite-single-change",
+      "name": "composite-from-original",
       "prompt": "Put our real watch from the second image on the model's wrist in the first image, and also change the background to a beach and make the shirt white.",
-      "expected": "Declares the base and each source role, splits the request into single-change edit passes, matches light and perspective, describes the watch size relative to the wrist, and preserves the model's identity."
+      "expected": "Declares the base and each source role, states each change with its location in one edit of the original, matches light and perspective, describes the watch size relative to the wrist, preserves the model's identity, and reruns from the original on a miss."
     },
     {
       "name": "no-generated-cues-on-real-photo",
@@ -43,7 +43,7 @@
     {
       "name": "real-photo-cleanup",
       "prompt": "Remove the power cables and the trash bin from this real office photo of our team.",
-      "expected": "Routes to Photo Editing, edits one change per pass with the photo as base, preserves people, light and grain, adds no generated realism cues, and states that documentary content was changed."
+      "expected": "Routes to Photo Editing, edits the original with both removals stated by location, preserves people, light and grain, adds no generated realism cues, and states that documentary content was changed."
     },
     {
       "name": "subtle-fitness-refinement",

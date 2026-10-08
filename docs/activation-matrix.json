@@ -338,8 +338,8 @@
       "owner": "effective-image"
     },
     {
-      "name": "refine-existing-photo-edit",
-      "prompt": "Refine this previously approved portrait using the original as an identity reference. Preserve the current color treatment and quiet sideways gaze.",
+      "name": "redo-portrait-from-original",
+      "prompt": "Redo this approved portrait from the original so the subject looks fresher. Keep the approved color treatment and the quiet sideways gaze.",
       "owner": "effective-image"
     },
     {
