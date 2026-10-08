@@ -39,8 +39,11 @@ change touches.
 
 Both tasks call `scripts/check-links.py`, which maps URLs on
 `skills.sebastian-software.com` to the corresponding files in this checkout.
-This checks new skill pages before they are deployed, including links from
-READMEs. Other domains still receive the same network checks as before.
+It also maps this repository's GitHub `blob/main/` links to files in the
+checkout. New skill pages and agent-instruction links are checked before
+deployment or merge, including links from READMEs. Missing files and anchors
+still fail; other repositories, branches, and external domains keep their
+normal network checks.
 
 - **Before a push**, `mise run links:check` applies `lychee.toml` strictly: any
   error fails, including 403, 5xx, and timeouts. Successful results are cached

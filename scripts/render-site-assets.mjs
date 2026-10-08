@@ -22,7 +22,7 @@ const icon = await svgData(resolve(assets, "brand/software-on-light.svg"));
 const logo = await svgData(resolve(assets, "brand/logo-software.svg"));
 const gptSeal = await svgData(resolve(assets, "seals/gpt-6.svg"));
 const opusSeal = await svgData(resolve(assets, "seals/opus-5-5.svg"));
-const headingFont = "https://sebastian-consulting.com/assets/slab-serif-Medium-Cq_srit_.woff2";
+const headingFont = "https://assets.sebastian-software.com/fonts/Elena/Elena-Medium-latin-f0e984d3e709.woff2";
 const browser = await chromium.launch({ executablePath, headless: true });
 
 try {

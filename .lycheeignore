@@ -18,10 +18,5 @@ https://www\.mckinsey\.com/alumni/news-and-events/global-news/alumni-news/barbar
 https://www\.solcom\.de/projektportal/registrieren
 https://www\.congress\.gov/
 
-# A new main-branch route cannot resolve before its first merge, so a pull
-# request that adds a skill or ADR needs a temporary entry here. Repository
-# inventory and local links are checked by scripts/validate-readmes.py.
-#
-# Remove the entry once the branch is merged. An exception left behind stops the
-# link check from ever verifying that route again, which is how a genuinely
-# broken link would slip through unnoticed.
+# Own-site and own-repository blob/main URLs are checked against the checkout
+# by scripts/check-links.py, including new routes before their first merge.
