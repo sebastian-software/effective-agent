@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://skills.sebastian-software.com/</loc>
-    <lastmod>2026-10-06</lastmod>
+    <lastmod>2026-10-08</lastmod>
   </url>
   <url>
     <loc>https://skills.sebastian-software.com/comparisons.html</loc>
@@ -31,5 +31,9 @@
   <url>
     <loc>https://skills.sebastian-software.com/skills/effective-writing/</loc>
     <lastmod>2026-09-26</lastmod>
+  </url>
+  <url>
+    <loc>https://skills.sebastian-software.com/skills/effective-photo-retouch/</loc>
+    <lastmod>2026-10-08</lastmod>
   </url>
 </urlset>

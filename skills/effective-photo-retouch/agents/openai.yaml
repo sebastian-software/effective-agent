@@ -1,0 +1,4 @@
+interface:
+  display_name: "Effective Photo Retouch"
+  short_description: "Natural portrait retouch with a consistent shoot look"
+  default_prompt: "Use $effective-photo-retouch to refine this photo shoot with natural faces, smoother clothing, clearer glasses, and a consistent approved color treatment."

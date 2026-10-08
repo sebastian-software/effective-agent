@@ -6,7 +6,7 @@
 **Practical skills for AI agents, from product decisions to software delivery
 and growth.**
 
-Six independently installable skills help your agent make domain decisions,
+Seven independently installable skills help your agent make domain decisions,
 avoid common mistakes, and verify its work. Each skill loads focused references
 when the task needs them.
 
@@ -23,6 +23,7 @@ Use cases, example prompts, strengths, and the full scope live on the homepage.
 | [`effective-delivery`](https://skills.sebastian-software.com/skills/effective-delivery/) | Repository improvements, PR reviews, dependencies, technical docs, and team delivery |
 | [`effective-writing`](https://skills.sebastian-software.com/skills/effective-writing/) | Articles, essays, editing, team communication, and locale typography |
 | [`effective-marketing`](https://skills.sebastian-software.com/skills/effective-marketing/) | Positioning, commercial copy, conversion, launches, social content, sales, and CRM |
+| [`effective-photo-retouch`](https://skills.sebastian-software.com/skills/effective-photo-retouch/) | Natural business portrait retouch, smoother clothing, clearer glasses, and consistent shoot color |
 
 Optional [instruction packs](https://skills.sebastian-software.com/#instructions)
 add standing guidance for request completion and documentation accuracy. Enable
