@@ -1,4 +1,4 @@
-# Natural Shoot Retouch
+# Business Portrait Retouch
 
 Use the reusable prompt below for a warm, open, professional result that still
 looks like a photograph from the same shoot. It supports more visible shirt

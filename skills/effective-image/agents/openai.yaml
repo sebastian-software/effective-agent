@@ -1,0 +1,4 @@
+interface:
+  display_name: "Effective Image"
+  short_description: "Image workflows, starting with natural business retouch"
+  default_prompt: "Use $effective-image and its business portrait retouch route to refine this shoot with natural faces, smoother clothing, clearer glasses, and a consistent approved color treatment."

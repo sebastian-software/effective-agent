@@ -330,17 +330,17 @@
     {
       "name": "retouch-business-portraits",
       "prompt": "Retouch these business portraits with smoother shirt sleeves, clearer glasses, and natural skin. Keep the people and the original shoot setting.",
-      "owner": "effective-photo-retouch"
+      "owner": "effective-image"
     },
     {
       "name": "match-approved-photo-series",
       "prompt": "Apply the approved warm portrait treatment across the remaining shoot while preserving each pose, expression, and indoor or outdoor lighting.",
-      "owner": "effective-photo-retouch"
+      "owner": "effective-image"
     },
     {
       "name": "refine-existing-photo-edit",
       "prompt": "Refine this previously approved portrait using the original as an identity reference. Preserve the current color treatment and quiet sideways gaze.",
-      "owner": "effective-photo-retouch"
+      "owner": "effective-image"
     }
   ]
 }
