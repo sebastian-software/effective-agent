@@ -31,6 +31,9 @@ jobs:
           version: 2026.10.2
           install_args: --locked lychee
 
+      - name: Verify checkout link mapping
+        run: python3 -m unittest discover -s scripts/tests -p 'test_check_links.py'
+
       # Every link, but only gone links and missing anchors fail here; see
       # .github/lychee-ci.toml. The pre-push hook checks strictly.
       - name: Check Markdown and site links

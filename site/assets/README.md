@@ -22,11 +22,12 @@ Consulting site. Body text, navigation, and controls use the platform's system
 UI font. The company wordmark retains its original outlined typography, and
 the model seals keep their own sans-serif lettering.
 
-The heading font is loaded from the [existing company CDN asset](https://sebastian-consulting.com/assets/slab-serif-Medium-Cq_srit_.woff2).
-Its 46 KB WOFF2 is byte-identical to `fonts/slab-serif/slab-serif-Medium.woff2`
-in the brand repository at the revision above. Only this normal, medium face
-is requested. All pages preload it and use `font-display: swap` with the
-Consulting site's metric-matched Georgia fallback.
+The heading font is loaded from the official [company asset CDN](https://assets.sebastian-software.com/fonts/Elena/Elena-Medium-latin-f0e984d3e709.woff2).
+The Latin and extended Elena Medium subsets follow the definitions in the
+[shared font stylesheet](https://assets.sebastian-software.com/fonts/fonts.css).
+Only this normal, medium face is requested. All pages preload the Latin subset;
+the extended subset loads for matching characters. Both use `font-display: swap`
+with the Consulting site's metric-matched Georgia fallback.
 
 The commercial font binary stays outside this open-source repository. It
 remains subject to the company's font license, not the MIT/Apache licenses
