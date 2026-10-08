@@ -115,13 +115,17 @@ def collect_sources(inputs: list[Path]) -> list[Path]:
 
 
 def find_reference(reference: Path | None, stem: str) -> Path | None:
-    """Uses a single reference file for every source, or the file in a folder named after the source."""
+    """Uses a single reference file for every source, or the file in a folder sharing the source's name stem.
+
+    Stems match when one extends the other after a hyphen, so `photo-retouched` pairs with `photo`.
+    """
     if reference is None or reference.is_file():
         return reference
     matches = sorted(
         p
         for p in reference.iterdir()
-        if p.suffix.lower() in SOURCE_SUFFIXES and (p.stem == stem or p.stem.startswith(f"{stem}-"))
+        if p.suffix.lower() in SOURCE_SUFFIXES
+        and (p.stem == stem or p.stem.startswith(f"{stem}-") or stem.startswith(f"{p.stem}-"))
     )
     if len(matches) > 1:
         raise SystemExit(f"Ambiguous references for {stem}: {', '.join(p.name for p in matches)}")

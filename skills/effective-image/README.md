@@ -9,9 +9,9 @@ Routing starts from the source:
 - **Photo Editing** changes existing photos (cleanup, backgrounds, objects,
   real product insertion) with short single-change edits, keeping the
   original's people, light, and grain as the measure of truth.
-- **Business Portrait Retouch** is the portrait preset: smooth distracting
-  shirt folds, reduce eyeglass glare, balance facial shadows, and keep an
-  approved color treatment consistent across a shoot.
+- **Business Portrait Retouch** is the portrait preset: tailored-looking
+  clothing, reduced eyeglass glare, balanced facial shadows, a subtly fresher
+  and fitter look, and an approved color treatment consistent across a shoot.
 - **Photo Generation** directs new photoreal scenes and brand visuals with a
   fixed series brief, concrete photographic language, and deliberate realism
   cues instead of plastic skin and sterile light.

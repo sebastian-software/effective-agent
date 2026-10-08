@@ -1,9 +1,13 @@
 # Business Portrait Retouch
 
 Use the reusable prompt below for a warm, open, professional result that still
-looks like a photograph from the same shoot. It supports more visible shirt
-smoothing while keeping facial corrections restrained. This route is a preset
-of [Photo Editing](route-photo-editing.md); its source and review rules apply.
+looks like a photograph from the same shoot: clothing that looks tailored and
+crisply ironed, and people who look like themselves on a very good day:
+rested, lightly sun-kissed, slightly fitter, and at most about five years
+younger. This route is
+a preset of [Photo Editing](route-photo-editing.md); its source and review
+rules apply, except that this subtle, consented refinement of the subjects'
+appearance is the purpose of the edit.
 
 ## Source and Reference Roles
 
@@ -30,8 +34,15 @@ mean inventing a smile or camera eye contact.
 The template's warm neutral grading is the established default for this
 retouch style. Substitute a different user-approved treatment when supplied.
 The navy-clothing phrase applies to navy garments; preserve other real garment
-colors. The approximate eye-opening limit is a restraint on the edit, not a
-measurable tool setting or a requirement to open every eye.
+colors. Percentages in the brief express relative strength for the model, not
+measurable tool settings; the eye-opening limit does not require opening every
+eye.
+
+Name in the photo-specific instruction where refinement matters, such as a
+beginning double chin, a shirt pulling at the waist, or an unflattering
+forehead line, and where it must not touch, such as a characteristic smile
+line. Retouch only people who agreed to it; the refinement stays subtle enough
+that colleagues would not notice a change, only a good photo.
 
 If the user requests initial proposals, show a few representative before/after
 pairs first. Once a look is approved, apply it consistently to the authorized
@@ -46,16 +57,19 @@ this prompt. Omit the Image 2 sentence when no second reference is supplied.
 ~~~text
 Use case: identity-preserve.
 Asset type: polished, welcoming and professional business photo shoot retouch.
-Edit ONLY Image 1. Preserve its original people, identity, anatomy, age, facial structure, exact mouth/teeth/smile, eyeglass frame, hairstyle, beard, body proportions, pose, hands and finger anatomy, gaze direction, clothing design, jewelry, watch, all objects, architecture, background geometry, perspective, camera position, original crop and depth of field.
+Edit ONLY Image 1. Preserve its original people and their immediately recognizable identity, facial structure and features, exact mouth/teeth/smile, eyeglass frame, hairstyle, beard, overall build, pose, hands and finger anatomy, gaze direction, clothing design, jewelry, watch, all objects, architecture, background geometry, perspective, camera position, original crop and depth of field.
+Fabric wrinkles and creases are not part of the clothing design or the pose; they are retouching targets. Preserving the pose means keeping the arm and body positions, not the folds in the fabric.
+Most visible change: every shirt, including both sleeves from shoulder to cuff, looks brand new and crisply ironed.
 Input role of Image 2, if described as style reference: use ONLY its restrained warm natural color treatment as a loose series reference, never copy its people, clothing, scene, light direction, framing or objects.
 Retouch brief:
 1. Local face light balancing: softly lift unnecessarily deep under-eye and mouth-adjacent shadows and reduce excessive forehead/nose shine, giving a rested open appearance with believable facial volume. Use subtle photographic dodge/burn, not new lighting or face sculpting.
 2. Eyes/glasses: gently reduce the appearance of eyelid puffiness using local shadow corrections; only when visibly squinting ease it very slightly, maximum roughly 5 percent, preserving natural smiling eye crinkles, actual eye shape, iris size, asymmetry and gaze. Substantially reduce distracting bright/tinted lens glare over eyes, leaving faint realistic glass reflections. Preserve existing catchlights; no new highlights, whitening or enlarged eyes.
-3. Skin: remove isolated transient blemishes only and balance small patches of excessive orange/red on cheeks, ears, nose, neck or hands to their original natural skin tones. Preserve pores, beard stubble and age/smile lines. Maintain different complexions of different people.
-4. Clothes: make shirts visibly smooth and freshly pressed, especially chest, shoulders and sleeves. Remove distracting tight/random creases and accordion wrinkles, keeping only broad soft folds physically needed by the pose. Neaten obvious collar or placket irregularities and isolated visible lint without changing garment cut, seams, buttons, lapels, pockets, stripes/checks, fabric weave or sheen. Preserve exact body/garment outline. Keep tailored jackets naturally dimensional.
-5. Background: subtly dim competing bright windows, lamps or wall patches and reduce distracting background color intensity where necessary, directing attention to the people. Keep every real background object and detail in its original place and retain the actual shoot setting and authentic depth of field. No background replacement, artificial blur or obvious vignette.
-6. Series finishing: coherent warm neutral editorial color treatment, soft highlight rolloff, natural balanced skin, rich navy clothes and gentle clean contrast. Retain real indoor/outdoor light differences. Selective crispness on actual eyes, hair and fabric only, no fake detail or skin sharpening. Keep the photograph's own fine grain uniform across skin, clothing and background.
-Overall result should be an improved real photo from the same shoot: warm, open, professional, natural. No plastic skin, glamour beauty filter, whitening of teeth/eyes, age changes, face/body reshaping, saturation boost, HDR, added objects, changed logos/text, border or watermark.
+3. Skin and grooming: remove blemishes, small spots, razor irritation and broken capillaries, and balance excessive orange/red patches on cheeks, ears, nose, neck or hands to natural skin tones. Give the skin a fresh, rested glow as after a few relaxed days outdoors: a slightly warmer, healthy tone with a faint sun-kissed warmth on cheeks, nose and forehead, evenly blended into neck and hands; never orange, bronzed, red or visibly tanned. Give the effect of light professional grooming makeup that nobody would notice: even complexion, matte forehead and nose, softened dark circles. Soften deep or unflattering wrinkles such as heavy forehead furrows, deep nasolabial folds and neck lines by about half; keep the smile lines and eye crinkles that carry warmth. Preserve pores, beard stubble, natural skin texture and different complexions of different people.
+4. Subtle fitness refinement: make each person look slightly fresher, fitter and at most about five years younger, as on a very good day. Brighten teeth very slightly to a natural, clean ivory by removing yellow or grey tint only, never bright white, and keep every tooth's shape, size and position. Gently tighten the under-chin and jawline to remove the beginning of a double chin, and very slightly slim cheeks, neck, waist and torso, as if a few kilograms lighter, never more than about 5 percent in width. Keep face shape, head size, bone structure, hands and posture recognizably the same; no visible reshaping, warping or bent background lines.
+5. Clothes: shirts must look brand new, crisply ironed and tailored. Remove about 90 percent of all shirt creases, including pull lines at the waist and stomach, button-strain folds, wrinkles on sleeves and forearms and fabric bunching at the cuffs, so shirt surfaces are smooth with only soft, gradual shading that shows the body underneath. Each sleeve becomes a smooth, slightly fitted tube of pressed fabric that follows the arm with soft, continuous shading, as freshly ironed as the shirt front: smooth upper arms, smooth forearms and a clean transition into the cuff. Even when both arms are bent, allow at most one soft, shallow fold at each inner elbow; everything else on the sleeve is smooth. Smooth excess fabric billowing at the waist and sleeves so clothing follows the body cleanly. Jackets get the same pressed look with about three quarters of their creases removed. Neaten collar or placket irregularities and visible lint without changing garment design, seams, buttons, lapels, pockets, stripes/checks, fabric weave or sheen. Keep tailored jackets naturally dimensional.
+6. Background: subtly dim competing bright windows, lamps or wall patches and reduce distracting background color intensity where necessary, directing attention to the people. Keep every real background object and detail in its original place and retain the actual shoot setting and authentic depth of field. No background replacement, artificial blur or obvious vignette.
+7. Series finishing: coherent warm neutral editorial color treatment, soft highlight rolloff, natural balanced skin, rich navy clothes and gentle clean contrast. Retain real indoor/outdoor light differences. Selective crispness on actual eyes, hair and fabric only, no fake detail or skin sharpening. Keep the photograph's own fine grain uniform across skin, clothing and background.
+Overall result should be an improved real photo from the same shoot: warm, open, professional, natural, with the same people looking at their best. No plastic skin, glamour beauty filter, visible makeup, bright white teeth, whitened eyes, fake tan, obvious rejuvenation or slimming, changed face shape, saturation boost, HDR, added objects, changed logos/text, border or watermark.
 Return exactly one full original composition retouched photograph, matching Image 1's portrait/landscape orientation and original aspect ratio. Use the largest supported native output resolution.
 Strict preservation: never add a laptop, cup, phone, props or any other item absent from Image 1. Do not introduce objects from related shoot scenes. Do not manufacture etched or squiggly skin texture.
 ~~~

@@ -44,6 +44,11 @@
       "name": "real-photo-cleanup",
       "prompt": "Remove the power cables and the trash bin from this real office photo of our team.",
       "expected": "Routes to Photo Editing, edits one change per pass with the photo as base, preserves people, light and grain, adds no generated realism cues, and states that documentary content was changed."
+    },
+    {
+      "name": "subtle-fitness-refinement",
+      "prompt": "Make me look a bit slimmer and younger in these team portraits, and get rid of the double chin. I still want to look like myself.",
+      "expected": "Applies the subtle refinement of the retouch preset: under-chin and slight slimming within the stated limit, at most a few years fresher, smile lines kept; checks identity against the original and declines visible reshaping or a different-looking person."
     }
   ],
   "activation": [
