@@ -4,3 +4,8 @@
 # be reached at all. The pre-push hook checks everything strictly.
 accept = ["100..=403", "405..=409", "411..=599"]
 accept_timeouts = true
+
+# 2026-10-09: the FTC's bot protection answers GitHub runners with a false
+# 404 even with the browser headers from lychee.toml. The pre-push hook still
+# checks these links with those headers from contributor networks.
+exclude = ['^https://www\.ftc\.gov/']

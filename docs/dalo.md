@@ -14,7 +14,7 @@ Register this repository as a catalog:
 curl -fsSL https://dalo.sh/install.sh | sh
 dalo init
 dalo target link codex
-dalo source add-catalog sebastian https://github.com/sebastian-software/skills.sebastian-software.com.git
+dalo source add-catalog sebastian https://github.com/sebastian-software/effective-agent.git
 dalo source inspect sebastian
 dalo source select sebastian effective-web
 dalo approve skill sebastian:effective-web

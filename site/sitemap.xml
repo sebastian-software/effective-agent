@@ -1,39 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://skills.sebastian-software.com/</loc>
+    <loc>https://effective-agent.dev/</loc>
+    <lastmod>2026-10-10</lastmod>
+  </url>
+  <url>
+    <loc>https://effective-agent.dev/comparisons.html</loc>
     <lastmod>2026-10-09</lastmod>
   </url>
   <url>
-    <loc>https://skills.sebastian-software.com/comparisons.html</loc>
-    <lastmod>2026-07-25</lastmod>
-  </url>
-  <url>
-    <loc>https://skills.sebastian-software.com/skills/effective-product/</loc>
-    <lastmod>2026-10-05</lastmod>
-  </url>
-  <url>
-    <loc>https://skills.sebastian-software.com/skills/effective-web/</loc>
-    <lastmod>2026-09-26</lastmod>
-  </url>
-  <url>
-    <loc>https://skills.sebastian-software.com/skills/effective-engineering/</loc>
-    <lastmod>2026-09-26</lastmod>
-  </url>
-  <url>
-    <loc>https://skills.sebastian-software.com/skills/effective-delivery/</loc>
-    <lastmod>2026-09-26</lastmod>
-  </url>
-  <url>
-    <loc>https://skills.sebastian-software.com/skills/effective-marketing/</loc>
-    <lastmod>2026-10-05</lastmod>
-  </url>
-  <url>
-    <loc>https://skills.sebastian-software.com/skills/effective-writing/</loc>
-    <lastmod>2026-09-26</lastmod>
-  </url>
-  <url>
-    <loc>https://skills.sebastian-software.com/skills/effective-image/</loc>
+    <loc>https://effective-agent.dev/skills/effective-product/</loc>
     <lastmod>2026-10-09</lastmod>
+  </url>
+  <url>
+    <loc>https://effective-agent.dev/skills/effective-web/</loc>
+    <lastmod>2026-10-09</lastmod>
+  </url>
+  <url>
+    <loc>https://effective-agent.dev/skills/effective-engineering/</loc>
+    <lastmod>2026-10-09</lastmod>
+  </url>
+  <url>
+    <loc>https://effective-agent.dev/skills/effective-delivery/</loc>
+    <lastmod>2026-10-09</lastmod>
+  </url>
+  <url>
+    <loc>https://effective-agent.dev/skills/effective-marketing/</loc>
+    <lastmod>2026-10-09</lastmod>
+  </url>
+  <url>
+    <loc>https://effective-agent.dev/skills/effective-writing/</loc>
+    <lastmod>2026-10-09</lastmod>
+  </url>
+  <url>
+    <loc>https://effective-agent.dev/skills/effective-image/</loc>
+    <lastmod>2026-10-10</lastmod>
   </url>
 </urlset>

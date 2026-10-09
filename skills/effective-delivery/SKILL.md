@@ -46,7 +46,7 @@ worktree uses the shared [worktree safety](references/worktree-safety.md) contra
 - `effective-engineering`: system and data contracts, Rust and server/shared
   TypeScript depth, focused non-frontend test design, and benchmark methodology.
 - `effective-web`: browser design, implementation, frontend diagnosis and tests,
-  interface copy, and web compliance.
+  annotated screenshots of rendered changes, interface copy, and web compliance.
 - `effective-product`: product direction, research, scope, and durable decisions
   recorded as ADRs.
 - `effective-writing`: editorial prose, natural team English, and locale

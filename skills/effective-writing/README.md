@@ -1,4 +1,4 @@
-[← Sebastian Software Skills](../../README.md)
+[← Effective Agent](../../README.md)
 
 # Effective Writing
 
@@ -9,7 +9,7 @@ reader can use. It works at article length, at team-message length, and down to
 the punctuation a locale expects. Structure, facts, qualifications, and the
 author’s voice stay connected through the edit.
 
-**[Explore Effective Writing →](https://skills.sebastian-software.com/skills/effective-writing/)**
+**[Explore Effective Writing →](https://effective-agent.dev/skills/effective-writing/)**
 
 The website covers use cases, capabilities, example prompts, and how this skill
 connects with the other disciplines.
@@ -17,7 +17,7 @@ connects with the other disciplines.
 ## Install
 
 ```sh
-npx skills add sebastian-software/skills.sebastian-software.com --skill effective-writing
+npx skills add sebastian-software/effective-agent --skill effective-writing
 ```
 
 For pinned selections and multiple agent targets, follow the
@@ -26,7 +26,7 @@ For pinned selections and multiple agent targets, follow the
 ```sh
 dalo init
 dalo target link codex
-dalo source add-catalog sebastian https://github.com/sebastian-software/skills.sebastian-software.com.git
+dalo source add-catalog sebastian https://github.com/sebastian-software/effective-agent.git
 dalo source select sebastian effective-writing
 dalo approve skill sebastian:effective-writing
 dalo sync

@@ -1,4 +1,4 @@
-[← Sebastian Software Skills](../../README.md)
+[← Effective Agent](../../README.md)
 
 # Effective Delivery
 
@@ -9,7 +9,7 @@ cause of a problem, improving a repository, reviewing changes, updating
 dependencies, keeping documentation accurate, and helping a team deliver. It
 connects the request to a verified handoff.
 
-**[Explore Effective Delivery →](https://skills.sebastian-software.com/skills/effective-delivery/)**
+**[Explore Effective Delivery →](https://effective-agent.dev/skills/effective-delivery/)**
 
 The website covers use cases, capabilities, example prompts, and how this skill
 connects with the other disciplines.
@@ -17,7 +17,7 @@ connects with the other disciplines.
 ## Install
 
 ```sh
-npx skills add sebastian-software/skills.sebastian-software.com --skill effective-delivery
+npx skills add sebastian-software/effective-agent --skill effective-delivery
 ```
 
 For pinned selections and multiple agent targets, follow the
@@ -26,7 +26,7 @@ For pinned selections and multiple agent targets, follow the
 ```sh
 dalo init
 dalo target link codex
-dalo source add-catalog sebastian https://github.com/sebastian-software/skills.sebastian-software.com.git
+dalo source add-catalog sebastian https://github.com/sebastian-software/effective-agent.git
 dalo source select sebastian effective-delivery
 dalo approve skill sebastian:effective-delivery
 dalo sync

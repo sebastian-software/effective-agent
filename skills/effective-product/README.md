@@ -1,4 +1,4 @@
-[← Sebastian Software Skills](../../README.md)
+[← Effective Agent](../../README.md)
 
 # Effective Product
 
@@ -9,7 +9,7 @@ problem matters, what to build first, what to charge, or how the experience
 should behave. Effective Product helps gather the evidence and turn it into a
 decision a team can act on.
 
-**[Explore Effective Product →](https://skills.sebastian-software.com/skills/effective-product/)**
+**[Explore Effective Product →](https://effective-agent.dev/skills/effective-product/)**
 
 The website covers use cases, capabilities, example prompts, and how this skill
 connects with the other disciplines.
@@ -17,7 +17,7 @@ connects with the other disciplines.
 ## Install
 
 ```sh
-npx skills add sebastian-software/skills.sebastian-software.com --skill effective-product
+npx skills add sebastian-software/effective-agent --skill effective-product
 ```
 
 For pinned selections and multiple agent targets, follow the
@@ -26,7 +26,7 @@ For pinned selections and multiple agent targets, follow the
 ```sh
 dalo init
 dalo target link codex
-dalo source add-catalog sebastian https://github.com/sebastian-software/skills.sebastian-software.com.git
+dalo source add-catalog sebastian https://github.com/sebastian-software/effective-agent.git
 dalo source select sebastian effective-product
 dalo approve skill sebastian:effective-product
 dalo sync

@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://skills.sebastian-software.com/sitemap.xml
+Sitemap: https://effective-agent.dev/sitemap.xml

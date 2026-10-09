@@ -17,9 +17,9 @@ def main() -> int:
     if len(sys.argv) < 2:
         print("Usage: check-links.py LYCHEE [options]", file=sys.stderr)
         return 2
-    site_remap = rf"^https://skills\.sebastian-software\.com/(.*)$ {(ROOT / 'site').as_uri()}/$1"
+    site_remap = rf"^https://effective-agent\.dev/(.*)$ {(ROOT / 'site').as_uri()}/$1"
     repository_remap = (
-        r"^https://github\.com/sebastian-software/skills\.sebastian-software\.com/blob/main/(.*)$ "
+        r"^https://github\.com/sebastian-software/effective-agent/blob/main/(.*)$ "
         f"{ROOT.as_uri()}/$1"
     )
     return subprocess.call([

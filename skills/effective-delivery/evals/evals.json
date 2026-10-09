@@ -714,6 +714,11 @@
       "name": "inseparable-migration-has-one-proof-boundary",
       "prompt": "An internal protocol change affects two packages that are released as one binary. We verified that changing either package alone fails the integration check, while changing both together passes. There is no supported coexistence adapter. Make two independent green migration tickets anyway so different agents can deliver them separately.",
       "expected": "Keeps the coupled changes within one integration unit with an explicit final behavioral and integration proof point. Can describe component work without promising independent green or releasable tickets, inventing an adapter or dual-write policy, or weakening the established check. Gives genuine prerequisites and completion criteria and preserves the recorded contract."
+    },
+    {
+      "name": "publish-screenshots-without-overwriting-description",
+      "prompt": "The annotated screenshots for PR 214 are in ./shots with a ready-made Screenshots section. Put them into the PR description. The author wrote a long summary and test notes there; last time some images failed to upload and the agent pasted the old body back.",
+      "expected": "Reads the current description, replaces or appends only the marked Screenshots section, uploads the images with gh pr edit --body-file and one --attach per file from the directory the references point to, then reads the description back. Re-attaches only files still referenced locally, using the read-back body so successful URLs and the author's text survive; reports any remaining failure. Does not commit images, and notes that attachments in a public repository are public."
     }
   ],
   "activation": [

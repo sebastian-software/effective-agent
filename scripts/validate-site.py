@@ -18,7 +18,7 @@ ROOT = Path(__file__).resolve().parents[1]
 SITE = ROOT / "site"
 INDEX = SITE / "index.html"
 COMPARISONS = SITE / "comparisons.html"
-EXPECTED_DOMAIN = "skills.sebastian-software.com"
+EXPECTED_DOMAIN = "effective-agent.dev"
 EXPECTED_HOME_OG_IMAGE = "og-card.png"
 EXPECTED_HOME_OG_IMAGE_URL = (
     f"https://{EXPECTED_DOMAIN}/assets/{EXPECTED_HOME_OG_IMAGE}"
@@ -29,7 +29,7 @@ EXPECTED_COMPARISON_OG_IMAGE_URL = (
 )
 SKILL_URL_PREFIX = f"https://{EXPECTED_DOMAIN}/skills/"
 EXPECTED_SKILLS_COMMAND = (
-    "npx skills add sebastian-software/skills.sebastian-software.com "
+    "npx skills add sebastian-software/effective-agent "
     "--skill effective-web"
 )
 EXPECTED_DALO_COMMANDS = (
@@ -37,7 +37,7 @@ EXPECTED_DALO_COMMANDS = (
     "dalo init",
     "dalo target link codex",
     "dalo source add-catalog sebastian "
-    "https://github.com/sebastian-software/skills.sebastian-software.com.git",
+    "https://github.com/sebastian-software/effective-agent.git",
     "dalo source select sebastian effective-web",
     "dalo approve skill sebastian:effective-web",
     "dalo sync",
@@ -290,7 +290,7 @@ def validate_skill_pages(skills: list[str], homepage: SiteParser, failures: list
                 f"{skill}: incorrect selective install command", failures)
         require(any(target == "skill-command" and label for target, label in parser.copy_buttons),
                 f"{skill}: missing named install copy button", failures)
-        require(f"https://github.com/sebastian-software/skills.sebastian-software.com/blob/main/skills/{skill}/SKILL.md" in parser.links,
+        require(f"https://github.com/sebastian-software/effective-agent/blob/main/skills/{skill}/SKILL.md" in parser.links,
                 f"{skill}: missing agent-source link", failures)
         validate_page_links(page, parser, failures)
 
@@ -1001,7 +1001,7 @@ def main() -> int:
     require(EXPECTED_SKILLS_COMMAND in html, "selective skills CLI command is missing", failures)
     validate_install_commands(parser, failures)
     require(
-        "https://github.com/sebastian-software/skills.sebastian-software.com/blob/main/docs/adr/0005-first-party-instruction-packs.md"
+        "https://github.com/sebastian-software/effective-agent/blob/main/docs/adr/0005-first-party-instruction-packs.md"
         in parser.links,
         "site must link the first-party guidance boundary",
         failures,
@@ -1010,7 +1010,7 @@ def main() -> int:
     for url in (
         "https://oss.sebastian-software.com/",
         "https://sebastian-consulting.com/en",
-        "https://github.com/sebastian-software/skills.sebastian-software.com",
+        "https://github.com/sebastian-software/effective-agent",
     ):
         require(url in html, f"required external link is missing: {url}", failures)
 

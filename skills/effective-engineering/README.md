@@ -1,4 +1,4 @@
-[← Sebastian Software Skills](../../README.md)
+[← Effective Agent](../../README.md)
 
 # Effective Engineering
 
@@ -9,7 +9,7 @@ behavior, TypeScript, Rust, and the tests that protect them. It starts from the
 repository and the actual failure consequences, then makes the technical choice
 explicit enough for the next maintainer to understand.
 
-**[Explore Effective Engineering →](https://skills.sebastian-software.com/skills/effective-engineering/)**
+**[Explore Effective Engineering →](https://effective-agent.dev/skills/effective-engineering/)**
 
 The website covers use cases, capabilities, example prompts, and how this skill
 connects with the other disciplines.
@@ -17,7 +17,7 @@ connects with the other disciplines.
 ## Install
 
 ```sh
-npx skills add sebastian-software/skills.sebastian-software.com --skill effective-engineering
+npx skills add sebastian-software/effective-agent --skill effective-engineering
 ```
 
 For pinned selections and multiple agent targets, follow the
@@ -26,7 +26,7 @@ For pinned selections and multiple agent targets, follow the
 ```sh
 dalo init
 dalo target link codex
-dalo source add-catalog sebastian https://github.com/sebastian-software/skills.sebastian-software.com.git
+dalo source add-catalog sebastian https://github.com/sebastian-software/effective-agent.git
 dalo source select sebastian effective-engineering
 dalo approve skill sebastian:effective-engineering
 dalo sync

@@ -1,4 +1,4 @@
-[← Sebastian Software Skills](../../README.md)
+[← Effective Agent](../../README.md)
 
 # Effective Marketing
 
@@ -9,7 +9,7 @@ reach that audience, and learn from the response. It connects positioning,
 proof, commercial copy, distribution, conversion, and sales without letting a
 persuasive story outrun the evidence.
 
-**[Explore Effective Marketing →](https://skills.sebastian-software.com/skills/effective-marketing/)**
+**[Explore Effective Marketing →](https://effective-agent.dev/skills/effective-marketing/)**
 
 The website covers use cases, capabilities, example prompts, and how this skill
 connects with the other disciplines.
@@ -17,7 +17,7 @@ connects with the other disciplines.
 ## Install
 
 ```sh
-npx skills add sebastian-software/skills.sebastian-software.com --skill effective-marketing
+npx skills add sebastian-software/effective-agent --skill effective-marketing
 ```
 
 For pinned selections and multiple agent targets, follow the
@@ -26,7 +26,7 @@ For pinned selections and multiple agent targets, follow the
 ```sh
 dalo init
 dalo target link codex
-dalo source add-catalog sebastian https://github.com/sebastian-software/skills.sebastian-software.com.git
+dalo source add-catalog sebastian https://github.com/sebastian-software/effective-agent.git
 dalo source select sebastian effective-marketing
 dalo approve skill sebastian:effective-marketing
 dalo sync

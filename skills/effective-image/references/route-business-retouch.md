@@ -95,6 +95,11 @@ computes for the aspect ratio, using the limits documented for `gpt-image-2`
 (about 8.3 megapixels, partly experimental), and saves each result as
 `<source>-retouched.png` with a `.prompt.json` record of the prompt, size,
 and color reference. Existing outputs are skipped unless `--force` is passed.
+Before any API call, the script rejects colliding image or prompt-record paths
+and destinations that would overwrite originals, color references, or notes,
+including path aliases. `--force` only replaces outputs; it never bypasses
+these checks. For sources sharing a stem, use separate output folders or
+distinct source stems.
 
 ~~~sh
 scripts/retouch_batch.py ORIGINALS_DIR --reference APPROVED_EDITS_DIR --notes notes.json --dry-run

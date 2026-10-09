@@ -1,4 +1,4 @@
-[← Sebastian Software Skills](README.md)
+[← Effective Agent](README.md)
 
 # Migration: 34 Skills → 6 Effective Disciplines
 
@@ -68,7 +68,7 @@ references; it absorbed the three skills listed above.
 discipline:
 
 ```sh
-npx skills add sebastian-software/skills.sebastian-software.com --skill effective-delivery
+npx skills add sebastian-software/effective-agent --skill effective-delivery
 ```
 
 ```sh

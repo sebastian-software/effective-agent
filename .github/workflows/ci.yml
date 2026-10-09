@@ -29,7 +29,9 @@ jobs:
         run: python3 scripts/validate-activation-matrix.py
 
       - name: Run script tests
-        run: python3 -m unittest discover -s scripts/tests -p 'test_*.py'
+        run: |
+          python3 -m pip install 'pillow>=11'
+          python3 -m unittest discover -s scripts/tests -p 'test_*.py'
 
       - name: Install pinned DALO release
         env:

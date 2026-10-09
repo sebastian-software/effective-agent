@@ -1,4 +1,4 @@
-[← Sebastian Software Skills](../../README.md)
+[← Effective Agent](../../README.md)
 
 # Effective Image
 
@@ -16,7 +16,7 @@ Routing starts from the source:
   fixed series brief, concrete photographic language, and deliberate realism
   cues instead of plastic skin and sterile light.
 
-**[Explore Effective Image →](https://skills.sebastian-software.com/skills/effective-image/)**
+**[Explore Effective Image →](https://effective-agent.dev/skills/effective-image/)**
 
 Example requests:
 
@@ -36,7 +36,7 @@ depends on the available tool and is reported with the delivery.
 ## Install
 
 ~~~sh
-npx skills add sebastian-software/skills.sebastian-software.com --skill effective-image
+npx skills add sebastian-software/effective-agent --skill effective-image
 ~~~
 
 For managed installations, see the [DALO setup guide](../../docs/dalo.md):
@@ -44,7 +44,7 @@ For managed installations, see the [DALO setup guide](../../docs/dalo.md):
 ~~~sh
 dalo init
 dalo target link codex
-dalo source add-catalog sebastian https://github.com/sebastian-software/skills.sebastian-software.com.git
+dalo source add-catalog sebastian https://github.com/sebastian-software/effective-agent.git
 dalo source select sebastian effective-image
 dalo approve skill sebastian:effective-image
 dalo sync

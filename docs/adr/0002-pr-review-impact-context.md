@@ -2,7 +2,7 @@
 
 - Status: Accepted
 - Date: 2026-07-27
-- Decision issue: [#190](https://github.com/sebastian-software/skills.sebastian-software.com/issues/190)
+- Decision issue: [#190](https://github.com/sebastian-software/effective-agent/issues/190)
 
 ## Context
 

@@ -158,7 +158,40 @@ def plan(args: argparse.Namespace) -> list[Job]:
         prompt = build_prompt(template, reference is not None, notes.get(source.stem))
         output = out_dir / f"{source.stem}{args.suffix}.png"
         jobs.append(Job(source=source, reference=reference, output=output, size=size, prompt=prompt))
+    validate_destinations(jobs, [args.notes] if args.notes else [])
     return jobs
+
+
+def path_keys(path: Path) -> set[tuple]:
+    """Identify path aliases, including symlinks and existing hard links."""
+    keys = {("path", path.resolve())}
+    if path.exists():
+        stat = path.stat()
+        keys.add(("inode", stat.st_dev, stat.st_ino))
+    return keys
+
+
+def validate_destinations(jobs: list[Job], extra_inputs: list[Path]) -> None:
+    """Reject unsafe image and prompt destinations before any API call."""
+    inputs = list(extra_inputs)
+    for job in jobs:
+        inputs.append(job.source)
+        if job.reference is not None:
+            inputs.append(job.reference)
+    protected = {key: path for path in inputs for key in path_keys(path)}
+    destinations: dict[tuple, Path] = {}
+    for job in jobs:
+        for output in (job.output, job.output.with_suffix(".prompt.json")):
+            keys = path_keys(output)
+            for key in keys:
+                if key in protected:
+                    raise SystemExit(f"Output {output} would overwrite input {protected[key]}")
+                if key in destinations:
+                    raise SystemExit(
+                        f"Output collision: {output} and {destinations[key]}; "
+                        "use separate output folders or distinct source stems"
+                    )
+            destinations.update((key, output) for key in keys)
 
 
 def run(job: Job, args: argparse.Namespace, client: object) -> str:

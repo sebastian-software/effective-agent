@@ -351,6 +351,11 @@
       "name": "clean-up-real-photo",
       "prompt": "Remove the cables and the trash bin from this office photo of our team but keep everything else exactly as it was shot.",
       "owner": "effective-image"
+    },
+    {
+      "name": "mark-visual-changes-in-pr",
+      "prompt": "Show reviewers what this pull request changes on the site: before/after screenshots of the affected pages with the changed areas marked.",
+      "owner": "effective-web"
     }
   ]
 }
