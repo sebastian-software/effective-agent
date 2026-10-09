@@ -25,6 +25,10 @@ repository convention call for it; do not fabricate requirements.
   not authorized; send them when it is.
 
 Keep the PR description aligned with the final implementation and its evidence.
+When the change alters rendered pages, keep its screenshot section current after
+pushes that change them: `effective-web` produces the annotated captures, and
+the selected provider adapter publishes them (with `gh`, see recipe 10 in
+[GitHub CLI fallback recipes](gh-recipes.md)).
 Resolve consequential architectural choices or developing reviewer conflicts
 with the smallest necessary human decision, while completing independent work.
 

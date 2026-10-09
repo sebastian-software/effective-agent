@@ -38,6 +38,9 @@ or live data — and the team learns to rubber-stamp updates, which defeats the 
 
 ## Thresholds and baselines
 
+- Fixed-coordinate comparison tools such as odiff or pixelmatch fit these baselines,
+  where layout must not move. Before/after evidence for a change, where content
+  shifts, needs row alignment instead: see [Change Screenshots](route-change-screenshots.md).
 - Start with a near-zero pixel threshold and only raise it with a written reason
   (documented sub-pixel anti-aliasing on one engine). A loose blanket threshold hides real
   regressions. Before raising a threshold to make a test pass, first narrow the screenshot,
