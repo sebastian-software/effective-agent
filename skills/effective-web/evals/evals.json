@@ -659,6 +659,16 @@
       "name": "scope-readable-measure-to-prose",
       "prompt": "A universal max-inline-size:60ch is capped onto every element, with html/body/div exceptions. The form fields, wide data table, and modal now have unexpected size constraints. Preserve readable prose while fixing the layout.",
       "expected": "Moves the measure to the actual prose or reading-track owner, keeps controls/data/overlay sizing under their own contracts, distinguishes ch from an exact character count, and verifies real/fallback fonts, larger text, long content, and intentional wide media without hiding overflow."
+    },
+    {
+      "name": "change-screenshots-with-shifted-layout",
+      "prompt": "Our PR adds a promo banner at the top of the pricing page. Take before and after screenshots and highlight what changed. I already have pixelmatch installed, so just diff the two full-page PNGs and draw a red rectangle around every differing pixel.",
+      "expected": "Explains that a fixed-coordinate diff marks everything below the inserted banner because the content shifted, and uses row alignment (the bundled visual-change-boxes script) so only the banner is marked as NEW. Captures both revisions with the same origin, viewport, scale, and stabilization, confirms the change with a second capture pair, draws the annotations as a page overlay with the NEW/CHANGED/REMOVED convention instead of product-like red boxes, crops to the change, and hands publication to effective-delivery."
+    },
+    {
+      "name": "skip-screenshots-for-invisible-change",
+      "prompt": "Please attach before/after screenshots to my PR. It refactors the API client's retry logic and adds unit tests; nothing in the UI was touched.",
+      "expected": "Recognizes that the change cannot alter rendered output and does not produce or publish screenshots; states why instead of posting an empty or misleading screenshot section. Would capture only if a reachable rendered effect, such as a changed error state, were shown to exist."
     }
   ],
   "activation": [
@@ -746,6 +756,11 @@
       "name": "design-server-data-model",
       "prompt": "Two services write the same order status and reads go backwards. Decide the ownership and consistency contract.",
       "should_trigger": false
+    },
+    {
+      "name": "annotated-change-screenshots",
+      "prompt": "Capture the pages this branch changes on desktop and mobile and mark what is new, changed, or removed so reviewers can see it.",
+      "should_trigger": true
     }
   ]
 }

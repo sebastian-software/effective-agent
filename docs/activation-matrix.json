@@ -341,6 +341,11 @@
       "name": "refine-existing-photo-edit",
       "prompt": "Refine this previously approved portrait using the original as an identity reference. Preserve the current color treatment and quiet sideways gaze.",
       "owner": "effective-image"
+    },
+    {
+      "name": "mark-visual-changes-in-pr",
+      "prompt": "Show reviewers what this pull request changes on the site: before/after screenshots of the affected pages with the changed areas marked.",
+      "owner": "effective-web"
     }
   ]
 }

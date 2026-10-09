@@ -353,3 +353,40 @@ separately installed `agent-browser` CLI
 ([vercel-labs/agent-browser](https://github.com/vercel-labs/agent-browser)) is
 one option, not a prerequisite. If no browser tool is available, keep the
 verification static and report that the preview could not be exercised.
+
+## 10. Screenshots in the PR description
+
+Keep generated screenshots in a marked section so a later run replaces it
+without touching the author's text. Editing the description is a PR mutation;
+it needs the same authority as any other edit.
+
+```markdown
+<!-- visual-review:start -->
+## Screenshots
+...
+| ![pricing, desktop](./pricing-desktop.png) | ![pricing, mobile](./pricing-mobile.png) |
+<!-- visual-review:end -->
+```
+
+```bash
+gh pr edit --help | grep -- --attach   # attachments need a recent gh (2.99+)
+gh pr view <N> --repo "$REPO" --json body -q .body > body.md
+# replace the marked section in body.md, or append it when it is missing
+# run from the directory holding the images: references and --attach paths must match
+gh pr edit <N> --repo "$REPO" --body-file body.md \
+  --attach ./pricing-desktop.png --attach ./pricing-mobile.png
+gh pr view <N> --repo "$REPO" --json body -q .body > published.md
+```
+
+`gh` uploads each attached file and rewrites the matching `./file.png`
+reference to the uploaded URL. One call accepts at most 50 files.
+
+- A partial upload still updates the description and exits nonzero. References
+  in `published.md` that still start with `./` failed: attach only those again,
+  with `published.md` as the body, so successful URLs are kept. Never reapply the
+  stale local body over them.
+- Attachments of a public repository are publicly reachable; those of a private
+  repository only for people with access. Inspect every image first, and never
+  commit image files to make them reachable.
+- When a later push removes all rendered changes, replace the section with a
+  short note instead of leaving stale images.

@@ -44,6 +44,7 @@ result; report material evidence gaps.
 | Organize cascade layers, tokens, scoping, browser support, or CSS tooling | [CSS Architecture](references/route-css.md) |
 | Improve metadata, structured data, crawlability, previews, or AI search | [Frontend SEO and AI Search](references/route-seo.md) |
 | Choose unit, component, visual, browser, or E2E coverage and CI strategy | [Frontend Testing](references/route-testing.md) |
+| Show what a branch or pull request changes on rendered pages with annotated before/after screenshots | [Change Screenshots](references/route-change-screenshots.md) |
 | Diagnose Core Web Vitals, images, caching, resource loading, animation cost, memory growth, or perceived speed | [Web Performance](references/route-performance.md) |
 | Decide React server/client boundaries, state placement, hydration, or rendering | [React Architecture](references/route-react-architecture.md) |
 | Design reusable React APIs, composition, state ownership, refs, or interop | [React Components](references/route-react-components.md) |
@@ -66,8 +67,9 @@ result; report material evidence gaps.
   punctuation and formatting. Layout and localization UX stay here.
 - `effective-engineering`: non-frontend system/data contracts, Rust, shared-library
   TypeScript, focused non-frontend tests, and benchmark methodology.
-- `effective-delivery`: repository audits, ports, PR upkeep, dependencies,
-  technical documentation, and execution-only requests for established checks.
+- `effective-delivery`: repository audits, ports, PR upkeep including publishing
+  screenshots in a description, dependencies, technical documentation, and
+  execution-only requests for established checks.
 
 General browsing or research does not belong here merely because it uses a URL.
 Backend infrastructure, deployment, load testing, dedicated security audits,
