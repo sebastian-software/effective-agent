@@ -67,10 +67,10 @@ try {
     h1 span{color:#00718d}p{font-size:16px;letter-spacing:0.4px;word-spacing:5px;margin:0;color:#005164}
     .seals{position:absolute;right:55px;top:186px;display:flex;gap:12px}.seals img{width:175px;height:175px}
     footer{position:absolute;bottom:0;left:0;right:0;background:#005164;color:#e7f0f3;padding:26px 64px;font-size:22px}
-  </style><main><header><img src="${logo}" alt="Sebastian Software"><span>AGENT SKILLS</span></header>
+  </style><main><header><img src="${logo}" alt="Sebastian Software"><span>EFFECTIVE AGENT</span></header>
   <h1>Better judgment.<br>From idea to <span>market.</span></h1>
   <div class="seals"><img src="${gptSeal}" alt="Tuned for GPT-6"><img src="${opusSeal}" alt="Tuned for Opus 5.5"></div>
-  <p>PRODUCT · WEB · ENGINEERING · DELIVERY · MARKETING · WRITING</p>
+  <p>PRODUCT · WEB · ENGINEERING · DELIVERY · MARKETING · WRITING · IMAGE</p>
   <footer>effective-agent.dev</footer></main></html>`);
   await page.locator("img").evaluateAll((images) => Promise.all(images.map((image) => image.decode())));
   await page.evaluate(() => document.fonts.ready);

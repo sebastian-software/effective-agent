@@ -242,7 +242,7 @@ try {
     await page.locator('[data-copy-target="skill-command"]').click();
     await page.waitForFunction(() => Boolean(window.copiedCommand));
     assert.equal(await page.evaluate(() => window.copiedCommand),
-      `npx skills add sebastian-software/skills.sebastian-software.com --skill ${site.skill}`);
+      `npx skills add sebastian-software/effective-agent --skill ${site.skill}`);
     await page.locator(".breadcrumbs a").click();
     assert.equal(page.url(), `${pageUrl("index.html")}#library`);
   }

@@ -3,7 +3,7 @@
 Resolve direct relationships of the symbols the pull request changes: what
 could this diff affect beyond itself? Return concrete evidence to the
 [review judgment](review-judgment.md); the Review route owns publication.
-The collection's [impact-context decision](https://github.com/sebastian-software/skills.sebastian-software.com/blob/main/docs/adr/0002-pr-review-impact-context.md)
+The collection's [impact-context decision](https://github.com/sebastian-software/effective-agent/blob/main/docs/adr/0002-pr-review-impact-context.md)
 owns the empirical rationale for the bounds below. A context pass may produce
 no findings.
 
