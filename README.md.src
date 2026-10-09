@@ -10,22 +10,22 @@ Seven independently installable skills help your agent make domain decisions,
 avoid common mistakes, and verify its work. Each skill loads focused references
 when the task needs them.
 
-**[Explore the collection →](https://skills.sebastian-software.com/)**
+**[Explore the collection →](https://effective-agent.dev/)**
 Use cases, example prompts, strengths, and the full scope live on the homepage.
 
 ## What's Included
 
 | Skill | Use it for |
 | --- | --- |
-| [`effective-product`](https://skills.sebastian-software.com/skills/effective-product/) | Research, product strategy and design, pricing, and naming |
-| [`effective-web`](https://skills.sebastian-software.com/skills/effective-web/) | Browser experiences: UI, React, CSS, accessibility, performance, and testing |
-| [`effective-engineering`](https://skills.sebastian-software.com/skills/effective-engineering/) | Architecture, APIs, data systems, Rust, backend TypeScript, and focused tests |
-| [`effective-delivery`](https://skills.sebastian-software.com/skills/effective-delivery/) | Repository improvements, PR reviews, dependencies, technical docs, and team delivery |
-| [`effective-writing`](https://skills.sebastian-software.com/skills/effective-writing/) | Articles, essays, editing, team communication, and locale typography |
-| [`effective-marketing`](https://skills.sebastian-software.com/skills/effective-marketing/) | Positioning, commercial copy, conversion, launches, social content, sales, and CRM |
-| [`effective-image`](https://skills.sebastian-software.com/skills/effective-image/) | Image workflows; business portrait retouch with natural faces, smoother clothing, and consistent shoot color |
+| [`effective-product`](https://effective-agent.dev/skills/effective-product/) | Research, product strategy and design, pricing, and naming |
+| [`effective-web`](https://effective-agent.dev/skills/effective-web/) | Browser experiences: UI, React, CSS, accessibility, performance, and testing |
+| [`effective-engineering`](https://effective-agent.dev/skills/effective-engineering/) | Architecture, APIs, data systems, Rust, backend TypeScript, and focused tests |
+| [`effective-delivery`](https://effective-agent.dev/skills/effective-delivery/) | Repository improvements, PR reviews, dependencies, technical docs, and team delivery |
+| [`effective-writing`](https://effective-agent.dev/skills/effective-writing/) | Articles, essays, editing, team communication, and locale typography |
+| [`effective-marketing`](https://effective-agent.dev/skills/effective-marketing/) | Positioning, commercial copy, conversion, launches, social content, sales, and CRM |
+| [`effective-image`](https://effective-agent.dev/skills/effective-image/) | Image workflows; business portrait retouch with natural faces, smoother clothing, and consistent shoot color |
 
-Optional [instruction packs](https://skills.sebastian-software.com/#instructions)
+Optional [instruction packs](https://effective-agent.dev/#instructions)
 add standing guidance for request completion and documentation accuracy. Enable
 them separately; every skill works without them.
 
@@ -46,7 +46,7 @@ Then ask your agent for an outcome:
 Replace `effective-web` with any skill from the table. Omit `--skill effective-web`
 to choose interactively, or use `--all` to install the collection.
 
-See [installation options](https://skills.sebastian-software.com/#install) or the
+See [installation options](https://effective-agent.dev/#install) or the
 [DALO setup guide](docs/dalo.md) for pinned selections, multiple agent targets,
 and optional instruction packs. For older skill names, see the
 [migration guide](MIGRATION.md).

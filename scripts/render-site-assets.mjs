@@ -71,7 +71,7 @@ try {
   <h1>Better judgment.<br>From idea to <span>market.</span></h1>
   <div class="seals"><img src="${gptSeal}" alt="Tuned for GPT-6"><img src="${opusSeal}" alt="Tuned for Opus 5.5"></div>
   <p>PRODUCT · WEB · ENGINEERING · DELIVERY · MARKETING · WRITING</p>
-  <footer>skills.sebastian-software.com</footer></main></html>`);
+  <footer>effective-agent.dev</footer></main></html>`);
   await page.locator("img").evaluateAll((images) => Promise.all(images.map((image) => image.decode())));
   await page.evaluate(() => document.fonts.ready);
   assert.ok(await page.evaluate(() => [...document.fonts].some(

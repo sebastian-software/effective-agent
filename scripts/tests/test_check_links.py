@@ -42,7 +42,7 @@ class CheckoutLinkTests(unittest.TestCase):
 
     def test_new_site_and_main_branch_files_are_checked_before_publication(self) -> None:
         result = self.check(
-            "[Page](https://skills.sebastian-software.com/skills/new-skill/#install)\n"
+            "[Page](https://effective-agent.dev/skills/new-skill/#install)\n"
             "[Source](https://github.com/sebastian-software/skills.sebastian-software.com/blob/main/skills/new-skill/SKILL.md#route-by-intent)\n"
         )
         self.assertEqual(result.returncode, 0, result.stdout + result.stderr)

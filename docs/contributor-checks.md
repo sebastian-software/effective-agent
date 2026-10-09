@@ -38,7 +38,7 @@ Every Markdown and site link is checked on every run, not only the links a
 change touches.
 
 Both tasks call `scripts/check-links.py`, which maps URLs on
-`skills.sebastian-software.com` to the corresponding files in this checkout.
+`effective-agent.dev` to the corresponding files in this checkout.
 It also maps this repository's GitHub `blob/main/` links to files in the
 checkout. New skill pages and agent-instruction links are checked before
 deployment or merge, including links from READMEs. Missing files and anchors

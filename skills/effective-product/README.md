@@ -9,7 +9,7 @@ problem matters, what to build first, what to charge, or how the experience
 should behave. Effective Product helps gather the evidence and turn it into a
 decision a team can act on.
 
-**[Explore Effective Product →](https://skills.sebastian-software.com/skills/effective-product/)**
+**[Explore Effective Product →](https://effective-agent.dev/skills/effective-product/)**
 
 The website covers use cases, capabilities, example prompts, and how this skill
 connects with the other disciplines.

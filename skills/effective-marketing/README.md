@@ -9,7 +9,7 @@ reach that audience, and learn from the response. It connects positioning,
 proof, commercial copy, distribution, conversion, and sales without letting a
 persuasive story outrun the evidence.
 
-**[Explore Effective Marketing →](https://skills.sebastian-software.com/skills/effective-marketing/)**
+**[Explore Effective Marketing →](https://effective-agent.dev/skills/effective-marketing/)**
 
 The website covers use cases, capabilities, example prompts, and how this skill
 connects with the other disciplines.

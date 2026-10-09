@@ -9,7 +9,7 @@ cause of a problem, improving a repository, reviewing changes, updating
 dependencies, keeping documentation accurate, and helping a team deliver. It
 connects the request to a verified handoff.
 
-**[Explore Effective Delivery →](https://skills.sebastian-software.com/skills/effective-delivery/)**
+**[Explore Effective Delivery →](https://effective-agent.dev/skills/effective-delivery/)**
 
 The website covers use cases, capabilities, example prompts, and how this skill
 connects with the other disciplines.

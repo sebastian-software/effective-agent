@@ -417,9 +417,9 @@ class SitemapLastmodValidationTests(unittest.TestCase):
 
 class ComparisonReviewFreshnessTests(unittest.TestCase):
     sitemap = (
-        "<url><loc>https://skills.sebastian-software.com/</loc>"
+        "<url><loc>https://effective-agent.dev/</loc>"
         "<lastmod>2026-07-23</lastmod></url>"
-        "<url><loc>https://skills.sebastian-software.com/comparisons.html</loc>"
+        "<url><loc>https://effective-agent.dev/comparisons.html</loc>"
         "<lastmod>2026-07-23</lastmod></url>"
     )
 
@@ -470,9 +470,9 @@ class ComparisonReviewFreshnessTests(unittest.TestCase):
 
     def test_uses_the_comparison_page_lastmod_not_the_homepage(self) -> None:
         sitemap = (
-            "<url><loc>https://skills.sebastian-software.com/</loc>"
+            "<url><loc>https://effective-agent.dev/</loc>"
             "<lastmod>2026-12-31</lastmod></url>"
-            "<url><loc>https://skills.sebastian-software.com/comparisons.html</loc>"
+            "<url><loc>https://effective-agent.dev/comparisons.html</loc>"
             "<lastmod>2026-07-23</lastmod></url>"
         )
         failures: list[str] = []

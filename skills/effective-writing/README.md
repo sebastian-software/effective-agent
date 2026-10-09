@@ -9,7 +9,7 @@ reader can use. It works at article length, at team-message length, and down to
 the punctuation a locale expects. Structure, facts, qualifications, and the
 author’s voice stay connected through the edit.
 
-**[Explore Effective Writing →](https://skills.sebastian-software.com/skills/effective-writing/)**
+**[Explore Effective Writing →](https://effective-agent.dev/skills/effective-writing/)**
 
 The website covers use cases, capabilities, example prompts, and how this skill
 connects with the other disciplines.

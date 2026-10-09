@@ -18,7 +18,7 @@ ROOT = Path(__file__).resolve().parents[1]
 SITE = ROOT / "site"
 INDEX = SITE / "index.html"
 COMPARISONS = SITE / "comparisons.html"
-EXPECTED_DOMAIN = "skills.sebastian-software.com"
+EXPECTED_DOMAIN = "effective-agent.dev"
 EXPECTED_HOME_OG_IMAGE = "og-card.png"
 EXPECTED_HOME_OG_IMAGE_URL = (
     f"https://{EXPECTED_DOMAIN}/assets/{EXPECTED_HOME_OG_IMAGE}"
