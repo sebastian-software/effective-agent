@@ -9,7 +9,7 @@ visual design, implementation, accessibility, performance, and verification, so
 the result holds up when someone uses a keyboard, opens it on a phone, or
 encounters an error.
 
-**[Explore Effective Web →](https://skills.sebastian-software.com/skills/effective-web/)**
+**[Explore Effective Web →](https://effective-agent.dev/skills/effective-web/)**
 
 The website covers use cases, capabilities, example prompts, and how this skill
 connects with the other disciplines.

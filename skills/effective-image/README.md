@@ -10,7 +10,7 @@ smooth distracting shirt folds, reduce eyeglass glare, balance facial shadows,
 and keep the approved color treatment consistent across a series. Preserve
 recognizable faces, authentic expressions, and the setting.
 
-**[Explore Effective Image →](https://skills.sebastian-software.com/skills/effective-image/)**
+**[Explore Effective Image →](https://effective-agent.dev/skills/effective-image/)**
 
 Example requests:
 

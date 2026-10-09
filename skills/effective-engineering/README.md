@@ -9,7 +9,7 @@ behavior, TypeScript, Rust, and the tests that protect them. It starts from the
 repository and the actual failure consequences, then makes the technical choice
 explicit enough for the next maintainer to understand.
 
-**[Explore Effective Engineering →](https://skills.sebastian-software.com/skills/effective-engineering/)**
+**[Explore Effective Engineering →](https://effective-agent.dev/skills/effective-engineering/)**
 
 The website covers use cases, capabilities, example prompts, and how this skill
 connects with the other disciplines.
