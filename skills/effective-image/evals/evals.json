@@ -68,8 +68,8 @@
       "should_trigger": false
     },
     {
-      "name": "new-image-scene",
-      "prompt": "Generate a fictional team in a futuristic office.",
+      "name": "stylized-illustration",
+      "prompt": "Draw a flat cartoon illustration of a fictional team in a futuristic office for our blog header.",
       "should_trigger": false
     },
     {
