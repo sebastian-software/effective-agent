@@ -1,4 +1,5 @@
 {
+  "name": "effective-agent",
   "private": true,
   "scripts": {
     "test:site-layout": "node scripts/test-site-layout.mjs"

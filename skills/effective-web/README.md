@@ -1,4 +1,4 @@
-[← Sebastian Software Skills](../../README.md)
+[← Effective Agent](../../README.md)
 
 # Effective Web
 
@@ -17,7 +17,7 @@ connects with the other disciplines.
 ## Install
 
 ```sh
-npx skills add sebastian-software/skills.sebastian-software.com --skill effective-web
+npx skills add sebastian-software/effective-agent --skill effective-web
 ```
 
 For pinned selections and multiple agent targets, follow the
@@ -26,7 +26,7 @@ For pinned selections and multiple agent targets, follow the
 ```sh
 dalo init
 dalo target link codex
-dalo source add-catalog sebastian https://github.com/sebastian-software/skills.sebastian-software.com.git
+dalo source add-catalog sebastian https://github.com/sebastian-software/effective-agent.git
 dalo source select sebastian effective-web
 dalo approve skill sebastian:effective-web
 dalo sync
