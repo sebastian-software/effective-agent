@@ -13,7 +13,8 @@ The base photograph defines what is true: people, identity, anatomy, pose,
 objects, architecture, camera position, and its own light, grain, and depth of
 field. An edit changes only what was requested and keeps everything else
 recognizably from the same capture. Do not add film effects, haze, scratches,
-or props the camera never recorded; realism here is preserved, not produced.
+or props as unrequested realism cues; realism here is preserved, not produced.
+A film look on a real photo is a separate, explicitly requested style edit.
 
 Every edit starts from that original, never from an earlier output. Each pass
 regenerates the whole image, so editing a result compounds drift; when a
