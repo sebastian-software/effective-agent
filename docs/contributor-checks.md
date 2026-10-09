@@ -57,11 +57,12 @@ normal network checks.
 Fix a dead link by finding the source's current URL. Confirm in a browser that
 it is really gone first: some hosts answer scripted requests with a false 404 or
 403. When browser navigation headers get through, add them for that host in
-`lychee.toml`, as for `www.ftc.gov`. Add an entry to `.lycheeignore` only when
-no checker can verify the link from any network, and record the reason and date
-beside it. A link that fails only in CI does not
-belong there. A host that refuses some contributor networks but not CI is
-skipped by the local task only, with a comment in `mise.toml`.
+`lychee.toml`, as for `www.ftc.gov`. When such a host still answers GitHub
+runners with a false 404, exclude it in `.github/lychee-ci.toml` only. Add an
+entry to `.lycheeignore` only when no checker can verify the link from any
+network, and record the reason and date beside it. A link that fails only in CI
+does not belong there. A host that refuses some contributor networks but not CI
+is skipped by the local task only, with a comment in `mise.toml`.
 
 The [link-check decision](adr/0007-check-links-strictly-before-push.md) records
 why the two levels differ.
