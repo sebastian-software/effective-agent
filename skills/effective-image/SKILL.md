@@ -1,34 +1,36 @@
 ---
 name: effective-image
 description: >-
-  Improve image assets through focused workflows. Currently includes Imagegen
-  retouch of existing business portraits and photo-shoot series: smoother
-  clothing, clearer glasses, rested eyes, balanced facial light, and consistent
-  color treatment. Use for natural portrait edits, before/after proposals, or
-  applying an approved look across a shoot. Commercial copy belongs to
-  effective-marketing; browser implementation to effective-web.
+  Edit real photos and generate new photoreal images with Imagegen: cleanup,
+  backgrounds, product composites, natural business portrait retouch across a
+  shoot, and new scenes or brand visuals that look like real photographs.
+  Commercial copy belongs to effective-marketing; browser implementation to
+  effective-web.
 ---
 
 # Effective Image
 
 Choose the route that matches the image task. Read only its relevant
 references and keep the requested outcome, source roles, and delivery format
-explicit. The available workflows are listed below; business retouch is the
-first route in this collection.
+explicit.
 
 ## Route by Intent
 
 | User intent | Read |
 | --- | --- |
+| Change an existing photo: clean up, remove or replace objects, change the background, correct color or light, or insert a real product | [Photo Editing](references/route-photo-editing.md) |
 | Retouch business portraits, prepare before/after proposals, or apply an approved natural look across a shoot | [Business Portrait Retouch](references/route-business-retouch.md) |
+| Create a new photoreal image or series: scenes, brand and lifestyle visuals, product settings, or a less artificial-looking AI image | [Photo Generation](references/route-photo-generation.md) |
 
 ## Routing Boundaries
 
-Each route defines its own editing constraints. Preserve the person and shoot
-when applying business retouch; do not turn its identity-preserving prompt into
-a default for every image task. Additional image workflows belong in their
-own routes when introduced; new scene generation and creative transformations
-are not covered by the current route.
+Route by the starting point: an existing photograph is edited and stays the
+measure of truth; a new image is generated and gets realism deliberately.
+Business retouch is the portrait preset of editing; do not turn its prompt
+into a default for other edits. A generated scene that receives a real product
+or person moves to editing for that insertion. All routes share the
+[Realism Review](references/realism-review.md). Illustration, graphic design,
+and stylized art are not covered.
 
 Commercial messaging and image placement strategy belong to
 `effective-marketing`; browser implementation belongs to `effective-web`.

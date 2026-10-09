@@ -4,11 +4,17 @@
 
 **Focused workflows for image assets.**
 
-The first route, **Business Portrait Retouch**, refines existing shoots with
-a restrained editorial finish:
-smooth distracting shirt folds, reduce eyeglass glare, balance facial shadows,
-and keep the approved color treatment consistent across a series. Preserve
-recognizable faces, authentic expressions, and the setting.
+Routing starts from the source:
+
+- **Photo Editing** changes existing photos (cleanup, backgrounds, objects,
+  real product insertion) with short single-change edits, keeping the
+  original's people, light, and grain as the measure of truth.
+- **Business Portrait Retouch** is the portrait preset: tailored-looking
+  clothing, reduced eyeglass glare, balanced facial shadows, a subtly fresher
+  and fitter look, and an approved color treatment consistent across a shoot.
+- **Photo Generation** directs new photoreal scenes and brand visuals with a
+  fixed series brief, concrete photographic language, and deliberate realism
+  cues instead of plastic skin and sterile light.
 
 **[Explore Effective Image →](https://effective-agent.dev/skills/effective-image/)**
 
@@ -18,10 +24,13 @@ Example requests:
   and natural skin texture.
 - Apply the approved warm look across the remaining portraits. Reduce glare
   and tired-looking shadows without changing the smiles.
+- Remove the cables from this office photo without changing the people.
+- Create a warm travertine bathroom scene for our serum bottle that looks like
+  an actual photograph, not an AI render.
 
-The current route uses Imagegen editing. Further image workflows can be added
-as separate routes. It does not cover new scenes, photo publication, storage
-configuration, or commercial copy. Output resolution
+All routes use Imagegen; a batch script runs the retouch through the
+Images API at higher resolution. The skill does not cover illustration, photo
+publication, storage configuration, or commercial copy. Output resolution
 depends on the available tool and is reported with the delivery.
 
 ## Install
@@ -43,9 +52,11 @@ dalo sync
 
 ## Agent Instructions
 
-[SKILL.md](SKILL.md) routes to [Business Portrait Retouch](references/route-business-retouch.md),
-with the reusable prompt and instructions for
-references, series consistency, before/after comparison, and artifact review.
+[SKILL.md](SKILL.md) routes to [Photo Editing](references/route-photo-editing.md),
+its portrait preset [Business Portrait Retouch](references/route-business-retouch.md)
+with the reusable prompt and batch script, and
+[Photo Generation](references/route-photo-generation.md). All share the
+[Realism Review](references/realism-review.md).
 
 Maintained by [Sebastian Software](https://oss.sebastian-software.com/).
 We also help teams [design, modernize, and ship software](https://sebastian-consulting.com/en).

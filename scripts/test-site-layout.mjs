@@ -254,7 +254,9 @@ try {
   for (const site of pages.filter((site) => site.skill)) {
     await staticPage.goto(site.url);
     assert.equal(await staticPage.locator("h1").count(), 1);
-    assert.equal(await staticPage.locator(".skill-prompts li").count(), 3);
+    const expectedPromptCount = site.skill === "effective-image" ? 4 : 3;
+    assert.equal(await staticPage.locator(".skill-prompts li").count(), expectedPromptCount,
+      `${site.name}: example prompts must match the published skill coverage`);
     await staticPage.locator('.skill-toc a[href="#install"]').click();
     assert.equal(staticPage.url(), `${site.url}#install`);
     assert.ok(await staticPage.locator("#skill-command").isVisible());

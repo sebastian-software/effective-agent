@@ -338,8 +338,18 @@
       "owner": "effective-image"
     },
     {
-      "name": "refine-existing-photo-edit",
-      "prompt": "Refine this previously approved portrait using the original as an identity reference. Preserve the current color treatment and quiet sideways gaze.",
+      "name": "redo-portrait-from-original",
+      "prompt": "Redo this approved portrait from the original so the subject looks fresher. Keep the approved color treatment and the quiet sideways gaze.",
+      "owner": "effective-image"
+    },
+    {
+      "name": "photoreal-product-composite",
+      "prompt": "Place our real perfume bottle into a generated bathroom scene so it looks like an actual photograph, with matching light and believable surfaces.",
+      "owner": "effective-image"
+    },
+    {
+      "name": "clean-up-real-photo",
+      "prompt": "Remove the cables and the trash bin from this office photo of our team but keep everything else exactly as it was shot.",
       "owner": "effective-image"
     },
     {
