@@ -30,7 +30,7 @@ data-loss, and irreversible boundaries. Never expose secret values.
 | Coordinate multi-stage or mixed-domain work from an unclear request to a review-ready handoff | [Workflow Orchestration](references/route-orchestration.md) |
 | Audit a repository, explain a defect or surprising behavior, prioritize improvements, simplify code, or create, review, or reconcile delivery specifications, work packages, or implementation plans | [Codebase Audit and Plans](references/route-audit.md) |
 | Plan or execute a behavior-preserving port across languages, runtimes, frameworks, platforms, storage engines, or major APIs | [Behavior-Preserving Ports](references/route-porting.md) |
-| Review a pull request, act on review feedback, fix findings, recover CI, or keep a branch current | [PR Review and Upkeep](references/route-review.md) |
+| Review a pull request, explain a substantial change to a human, act on review feedback, fix findings, recover CI, or keep a branch current | [PR Review and Upkeep](references/route-review.md) |
 | Select a provider adapter, use the GitHub CLI recipes, or return a caller-owned review handoff | [Review Provider Access](references/route-review-access.md) |
 | Discover, rank, process, reconcile, or monitor an unspecified live issue queue when the user delegates target selection | [Issue Queue Autopilot](references/route-issue-autopilot.md) |
 | Add, choose, update, or group external dependencies; assess changelog impact; create dependency PRs | [Dependency Updates](references/route-dependencies.md) |

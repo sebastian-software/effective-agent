@@ -1,6 +1,7 @@
 # Review Judgment
 
-Use for a full PR review or an unresolved technical question during upkeep.
+Use for a full PR review, an unresolved technical question during upkeep, or
+explaining a substantial change to a human.
 The [Review route](route-review.md) owns scope and authority. Mode C uses only
 its supplied evidence and separate handoff contract.
 
@@ -116,5 +117,5 @@ files by topic when it helps the reader follow the change; summarize repeated
 mechanical edits once and point to representative examples. Distinguish those
 edits from consequential choices, and support material claims with relevant
 code, tests, or other evidence. Adapt depth and order to the reader's request.
-An explanation provides context; it does not recommend approval or claim that
-behavior was verified.
+An explanation alone establishes neither an approval decision nor behavioral
+verification. Report any checks actually run with their scope and gaps.

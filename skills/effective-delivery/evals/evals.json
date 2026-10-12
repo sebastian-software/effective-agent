@@ -293,7 +293,7 @@
     {
       "name": "explain-cross-file-change-without-review",
       "prompt": "Explain the signup change in this PR to a teammate who has not seen it. Use the supplied base, head, linked issue, and diff. The change spans a route, API handler, background worker, and feature-flag configuration; some flag wiring is mechanical. Show how the behavior crosses those files and summarize repeated updates once. I want context and evidence, not a formal review.",
-      "expected": "Uses the actual supplied base and head and available intent; explains the cross-file behavior by topic rather than file order when that helps; summarizes mechanical repetition and distinguishes consequential choices; and supports material claims with relevant evidence. Adapts depth to the reader and request, and does not give an approval recommendation or claim behavior was verified. It does not impose a block-by-block acceptance process."
+      "expected": "Uses the actual supplied base and head and available intent; explains the cross-file behavior by topic rather than file order when that helps; summarizes mechanical repetition and distinguishes consequential choices; and supports material claims with relevant evidence. Adapts depth to the reader and request without turning the explanation into an approval decision or inferring verification from the supplied diff alone. It reports supplied check results with their scope and gaps and does not impose a block-by-block acceptance process."
     },
     {
       "name": "preserve-dirty-primary-checkout",
