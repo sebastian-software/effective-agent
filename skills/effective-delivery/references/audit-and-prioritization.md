@@ -6,6 +6,7 @@ padding the result with generic advice.
 ## Contents
 
 - [Reconnaissance](#reconnaissance)
+- [Patterns Across Completed Deliveries](#patterns-across-completed-deliveries)
 - [Audit Lenses](#audit-lenses)
 - [Finding Contract](#finding-contract)
 - [Verification and Rejection](#verification-and-rejection)
@@ -32,6 +33,24 @@ Establish the repository's actual operating model before evaluating it:
 
 State the audit boundary. On large repositories, name packages and categories
 not inspected instead of implying exhaustive coverage.
+
+## Patterns Across Completed Deliveries
+
+When asked to analyze patterns across delivered work, compare relevant
+evidence in existing project artifacts and describe gaps in their coverage:
+
+- Work without a review has unknown review status. A review with no findings
+  shows only that none were recorded within its scope.
+- Failures reproduced independently across changes can indicate recurrence;
+  repeated reports or tools describing one cause remain one observation.
+- An action landing shows that it was implemented. Evidence that it helped
+  requires observing the relevant outcome; timing alone is not enough.
+- Assess decisions against the requirements and information available when
+  they were made, not with hindsight.
+- Missing evidence is unknown, not evidence of failure.
+
+Churn, commit volume, and finding counts can guide follow-up investigation; they
+do not measure delivery quality or individual contribution.
 
 ## Audit Lenses
 
