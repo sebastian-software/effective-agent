@@ -571,6 +571,11 @@
       "expected": "The agent removes any stale ready flag, routes the issue-scoped branch-local failure back to the owning worktree, validates and pushes the narrow repair, and does not claim the new issue until the owned PR is repaired or safely parked as an external blocker."
     },
     {
+      "name": "distinguish-same-work-from-related-issues",
+      "prompt": "An open issue titled ‘resubmit hangs after 503’ describes the same trigger, affected contract, and intended outcome as your audit finding, which is titled ‘retry path never returns’. A closed issue titled ‘retry backoff experiment’ was rejected and produced no code change. Another open issue titled ‘request timeout handling’ asks to cancel slow requests so users can edit drafts, which is a different outcome. How do you classify these before deciding whether to report the finding?",
+      "expected": "The agent compares symptoms, error text, affected contracts, and intended outcomes rather than titles. It recognizes the open issue as the same problem under different wording, checks the closed item's rationale and changed evidence instead of treating closed state as proof of a fix, and keeps the similar-title issue with different requirements separate as related or competing work. It does not infer permission to close or link anything from the classification, and it avoids premature closure."
+    },
+    {
       "name": "keep-readiness-reversible",
       "prompt": "The queue-owned PR was ready yesterday, but a new push has landed and required checks are still pending. Keep the ready-to-merge label because the earlier checks passed.",
       "expected": "The agent removes or withholds ready-to-merge immediately, refreshes checks and review state for the current head, and restores the flag only when every current-head invariant holds; it never treats the flag as approval or merges the PR."
