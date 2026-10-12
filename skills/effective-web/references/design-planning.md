@@ -185,10 +185,10 @@ tokens, name:
   colors. Keep familiar forms when they serve real decisions and workflow
   meanings; novelty alone does not justify replacing them.
 
-The signature does not need to be loud. It might be a domain-specific queue, a
+When a signature is useful, it need not be loud: a domain-specific queue, a
 timeline shaped around the real process, a comparison surface tuned to the data,
-or token names that reflect actual product semantics. If the product name were
-removed, the main structure should still hint at what the tool is for.
+or naming and grouping that match the product's concepts. Familiar structure is
+appropriate when its content and actions make the actual workflow understandable.
 
 ## Persuade Point of View
 
