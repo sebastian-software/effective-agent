@@ -16,6 +16,18 @@ measure, spacing, numeric data, headings, or rich display copy.
 - Prevent heading widows where they materially damage scanning, but do not add
   brittle manual line breaks that fail under translation and resize.
 
+## Paragraph Rhythm
+
+For sustained prose, choose a primary paragraph boundary: interparagraph space
+or first-line indentation. Both together usually repeat the same signal; keep
+the combination only when it serves a deliberate editorial distinction.
+
+With indentation, the first paragraph after a heading can remain flush left,
+since the heading already marks its beginning. Scope the treatment to the prose
+component; labels, lists, callouts, and short UI messages need their own spacing.
+Judge the result with the actual font and reading measure rather than importing
+a fixed print indent or applying a global `p` rule.
+
 ## Contrast and Overlays
 
 - Ensure text on an image has a stable contrast mechanism: a tested overlay,

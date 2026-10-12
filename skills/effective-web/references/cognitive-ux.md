@@ -207,6 +207,18 @@ Reserve learnability for capability whose repeated value justifies practice.
 - Let onboarding be skipped, resumed, and rediscovered. Measure successful task
   completion and later independent use, not tour completion.
 
+Choose the teaching pattern from the learning need:
+
+| Need | Pattern | Boundary |
+| --- | --- | --- |
+| A local, unfamiliar action | A contextual hint or example beside that action | Avoid interrupting an unrelated task |
+| A worthwhile multi-step capability | An optional, retrievable guide through a real task | Explain actions as people use them, rather than requiring recall of a launch tour |
+| A novel interaction or consequential workflow needs practice | A clearly identified sandbox, preview, or reversible rehearsal | Make practice effects distinct from live changes |
+
+Repair unclear labels, affordances, and flow before adding instruction. A
+screen-by-screen introduction is not evidence that users can perform the task;
+some genuinely novel capabilities need teaching, while familiar ones do not.
+
 ## Review checklist
 
 - What is already competing for attention in the real use context?

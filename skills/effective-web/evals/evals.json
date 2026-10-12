@@ -1,6 +1,36 @@
 {
   "evals": [
     {
+      "name": "match-opening-controls-to-visitor-intent",
+      "prompt": "Review two accommodation homepages. On a large hotel booking site, most visitors arrive with a destination and dates, but a full-screen film pushes booking search far down the page. On a boutique hotel's site, visitors first compare the property and location; booking is clearly available in navigation. A proposed redesign puts the same large booking form above all evidence on both sites. On mobile, the form's date picker covers the remaining fields. What should change?",
+      "expected": "Makes booking search a usable, prominent starting point for the task-driven site; resolves narrow-screen field and picker access; preserves appropriate property evidence and a findable booking path for the browse-first site; and avoids imposing the same opening form on both contexts."
+    },
+    {
+      "name": "preserve-reading-orientation-and-prose-boundaries",
+      "prompt": "A technical publication wants a distinctive article page. Its prototype applies display typography and bordered containers to every paragraph, hides desktop search and section navigation, and adds both first-line indentation and a large gap between every paragraph. The same global paragraph selector also indents form help, warning text, and list items. Improve reading while keeping the publication recognizable.",
+      "expected": "Preserves recognizable identity and useful orientation while simplifying the reading column; restores needed navigation and search; uses a coherent paragraph-boundary treatment suited to the prose; and scopes prose styling so unrelated UI and structured content retain appropriate spacing."
+    },
+    {
+      "name": "compare-variants-for-the-actual-open-decision",
+      "prompt": "An existing, validated checkout needs a choice between two accessible typefaces. A separate project is still deciding whether a comparison tool should lead with a table or a guided selection flow. The designer proposes three completely new layouts for the checkout but only three palette swaps of the same layout for the comparison tool. Decide what alternatives would help and how to assess them.",
+      "expected": "Keeps the checkout comparison focused on its unresolved type choice and accepted task flow; explores materially different structures for the unresolved comparison experience with comparable tasks and content; assesses actual task use as well as appearance; and avoids requiring an arbitrary number of alternatives or universal layout divergence."
+    },
+    {
+      "name": "separate-brand-coverage-from-semantic-color",
+      "prompt": "An event site has a readable blue feature background that carries its identity, while a repeated-use operations screen has mostly neutral surfaces. A critique says both must use 30–60% saturated brand color and at least four hues to look intentional. Another proposal recolors error, focus, and success treatments to the same blue. Review these changes.",
+      "expected": "Allows each surface's color distribution to follow its task and identity without a coverage quota or minimum hue count; preserves the useful brand region where its foregrounds and controls work; and keeps semantic meanings and non-color cues recognizable rather than treating brand fill as the state system."
+    },
+    {
+      "name": "coordinate-motion-without-routine-choreography",
+      "prompt": "A product launch sequence moves a diagram, headline, controls, and background at once, obscuring which diagram element changed. A separate admin toggle needs immediate state feedback. The team proposes a dramatic shared entrance sequence for both surfaces, with important content absent until the animation completes. Improve the motion approach.",
+      "expected": "Clarifies the launch sequence's relevant change and continuity while reducing competing movement and delay; keeps the admin toggle's feedback direct; preserves content and operation in the static experience; and does not add page-load choreography merely to make motion consistent."
+    },
+    {
+      "name": "teach-new-capability-at-the-moment-of-use",
+      "prompt": "A mapping tool adds a genuinely unfamiliar multi-step spatial operation. New users want to try it without changing live project data, and returning users need to revisit instructions. The team also wants to force a first-login tour explaining familiar search, profile, and save controls. The operation's main control currently has an ambiguous label. Design the learning support.",
+      "expected": "Repairs the ambiguous control, offers discoverable contextual instruction or a retrievable guided task for the novel capability, makes practice effects safely distinct from live changes, and avoids forcing a launch tour for familiar controls. Success is independent task use rather than completing the tour."
+    },
+    {
       "name": "preserve-functional-label-and-media-choices",
       "prompt": "Polish a publication's existing article page. Its eyebrow says 'Updated for version 3' above a migration guide, grey text on a muted blue surface has verified readable contrast, the accepted system combines a border and shadow on 24px cards, and an authored SVG explains the migration. A scanner recommends deleting the eyebrow, tinting all grey text, forcing 12px radii, and replacing every SVG with raster media. The request is to improve article spacing while preserving the identity.",
       "expected": "Preserves the functional version label, verified text colour, accepted component geometry, and suitable vector diagram; corrects the requested spacing inside the existing identity; distinguishes observed accessibility or functional defects from scanner style advisories; and avoids an unsolicited redesign or a fixed font, radius, or media blacklist."
