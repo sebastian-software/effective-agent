@@ -36,6 +36,11 @@
       "expected": "Does not treat the inaccessible pages or search snippet as verified evidence. It reports the region and retention claims as unverified, identifies the access gap and suitable current primary evidence to resolve it, and keeps any recommendation conditional until the requirements can be checked."
     },
     {
+      "name": "scope-greenfield-technology-evidence",
+      "prompt": "We're evaluating Runtime Alder and Birch for a new service. Hard constraints are Linux x86_64 support and an Apache-2.0-or-MIT license. There's no repository, package manifest, or deployment config yet. Compare their current official support and platform documentation and recommend one.",
+      "expected": "Uses current primary sources to establish each candidate's applicable release, support, platform, and license scope, and compares only candidates that meet the hard constraints. It does not invent installed versions, toolchains, wrappers, or consumers. It names local integration behavior as unverified and says what would establish it later, without requiring a prototype solely to create local proof."
+    },
+    {
       "name": "design-observability-from-operator-questions",
       "prompt": "Add every metric our telemetry vendor recommends to the payment worker and alert when CPU exceeds 70%. We need to know whether customers are harmed and what to do next.",
       "expected": "Starts with named operator questions about user impact, dependency or capacity cause, durable-work risk, and change correlation; maps only actionable signals to them; rejects unbounded metric labels and guessed CPU thresholds; assigns alert ownership and action; and requires exercising the signal path before claiming observability."
