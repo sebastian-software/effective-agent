@@ -15,3 +15,13 @@ Design global interfaces so language, country, currency, units, timezone, direct
 - Keep data-grid headers able to identify their cells after responsive transformation (stacked or card layouts), alongside locale-aware alignment and number formatting.
 - Localize form input examples, placeholders, address structure, name and phone-number fields, postal codes, and validation copy per locale.
 - Delegate the choice of quotation marks and other locale-specific punctuation to the `effective-writing` skill; implement the chosen marks with CSS rather than literal characters in copy — declare `quotes` per language with `:lang()` and emit `<q>` or `quotes`-aware content so the browser inserts the correct marks for each locale.
+
+## Update existing UI messages
+
+Read the changed source and matching target alongside the target project's
+existing locale settings and terminology. Update only the affected message.
+Validate it against the actual message format: preserve each variable and its
+meaning and all required plural or select variants, while allowing
+target-language reordering when the format supports it. Review the changed
+message in the UI for text expansion, plural forms, and direction changes that
+affect the component.

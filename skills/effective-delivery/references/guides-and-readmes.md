@@ -40,6 +40,16 @@ mixing them would interrupt the supported path.
 - Remove stale paths and misleading alternatives rather than keeping them for
   historical completeness. Put durable history in release or migration notes.
 
+## Refresh an existing translation
+
+Read the changed source, matching target, and the target project's current
+locale settings and terminology. Update only the affected passages, leaving
+already-correct sections intact. Translate technical meaning without copying
+source-language word order. Preserve code, commands, identifiers, paths,
+examples, and placeholders according to their owning format. Check changed
+technical claims against their code, schema, or decision owner. Surface
+material uncertainty when that context does not settle the wording or claim.
+
 ## Review for reader success
 
 Read the result from the documented starting state. Confirm that prerequisites

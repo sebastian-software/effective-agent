@@ -15,6 +15,14 @@ more specific.
 - Preserve a coherent existing house style. Do not create mixed quote or dash
   systems inside one document.
 
+## Revise translated prose
+
+Use the target project's existing locale settings, house style, and terminology.
+Preserve intent and register without copying source word order; keep unrelated
+target passages unchanged. If the source and local context leave a material
+language choice unresolved, surface the uncertainty rather than inventing an
+approved term or parallel glossary.
+
 ## Use the right character
 
 | Purpose | Character | Rule |
