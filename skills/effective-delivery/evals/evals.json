@@ -246,6 +246,21 @@
       "expected": "Does not approve blindly, asks one focused blocking question or requests the missing authorization evidence, explains the billing-bypass risk, acknowledges what is already solid, and avoids confidence percentages or vague hedging."
     },
     {
+      "name": "find-orphaned-config-reader-after-rename",
+      "prompt": "Review a PR that renames the YAML key `storage.root` to `storage.path` and updates its schema and documentation. `loadStorage` still reads `storage.root` and silently falls back to `./data`; the test only checks that the new key parses. Decide whether the change is safe.",
+      "expected": "Follows the actual runtime reader, identifies that the renamed setting is ignored and the fallback changes the configured storage location, and requests the smallest correction or compatibility behavior. Does not rely on startup success or invent hypothetical consumers."
+    },
+    {
+      "name": "compare-pr-claims-with-changed-behavior",
+      "prompt": "Review a PR whose description says webhook retries reuse one idempotency key to prevent duplicate charges. The changed loop creates a new request ID on every attempt, and the test checks only that three calls were made. Decide whether the claim is supported.",
+      "expected": "Compares the description with the changed retry code, identifies that changing request IDs does not support the stated duplicate-charge protection, and reports the reachable consequence and smallest useful correction or evidence. Does not treat the PR text or call-count assertion as proof of idempotency."
+    },
+    {
+      "name": "inspect-reachable-empty-result-regression",
+      "prompt": "Review a PR that removes an empty-result guard from a search handler and now returns `items[0].id`. The endpoint accepts valid searches with no matches, while the new test covers only a populated result. Decide whether the change is safe.",
+      "expected": "Recognizes the valid empty-result case as reachable, identifies the resulting error or contract regression, and asks for the smallest guard or specified empty-result behavior. Does not enumerate unrelated branches or demand tests for every internal path."
+    },
+    {
       "name": "write-compact-actionable-inline-finding",
       "prompt": "Review a PR line where user.email is read immediately after findUser(id), which returns User or null. Write the inline comment for a human teammate.",
       "expected": "Anchors the comment to the line, names the reachable null access and crash consequence, proposes the smallest credible guard or missing-user path, avoids labels and throat-clearing, and sounds like a natural teammate rather than a rigid template."

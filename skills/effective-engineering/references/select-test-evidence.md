@@ -22,6 +22,11 @@ as “increase coverage” is not a claim; inspect the uncovered risk or ask for
 concrete behavior. Conversely, do not split one coherent claim into isolated
 assertions merely to satisfy an assertion-count rule.
 
+A mock can support a claim about a collaborator call, but it cannot establish
+behavior hidden behind that mock. For example, asserting one repository write
+can show that retry logic issues one write; it cannot prove that a database
+uniqueness constraint rejects duplicates when the database is mocked out.
+
 Use qualitative, evidence-backed calibration when exact probability or cost is
 unavailable. Consider reachability under supported behavior, consequence,
 affected users or data, repetition, relevant lifetime, detectability, recovery,
