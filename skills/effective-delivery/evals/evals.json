@@ -116,6 +116,16 @@
       "expected": "Verifies cheap decisive done criteria, investigates blockers, marks duplicates and superseded work with successor links or rationale, reruns drift checks against current architecture, rejects plans that no longer have value, and identifies the next executable item instead of preserving every stale plan."
     },
     {
+      "name": "interpret-delivery-review-coverage-and-recurrence",
+      "prompt": "Summarize evidence across eight completed changes: four have no review record; three have reviews with no findings within their stated scopes; one has two bot comments and a follow-up ticket for the same timeout cause. A separate change independently reproduces the timeout on another code path. Churn is highest in the cleanly reviewed changes. What can we conclude about review coverage and recurrence?",
+      "expected": "Keeps unreviewed work distinct from scoped reviews that recorded no findings; counts duplicate reports for one cause as one observation, while the independent reproduction is evidence of recurrence. Treats churn as a search signal only, not a quality or contribution score, limits claims to available records and review scopes, and leaves missing evidence unknown."
+    },
+    {
+      "name": "separate-landed-action-from-demonstrated-benefit",
+      "prompt": "An implementation ships to meet a documented retry requirement. Later, total retries fall, but request volume doubles and duplicate ledger rows were not measured. A reviewer says the original design decision was wrong because a later architecture now supports an alternative. Assess what the evidence says about the action and the decision.",
+      "expected": "Separates the shipped action from evidence that it helped: the retry count is ambiguous because exposure changed and the relevant duplicate-row outcome is unmeasured, so benefit remains unknown. Assesses the original decision against the requirements and information available then, not later architecture, and states evidence gaps without turning delivery or counts into a quality score."
+    },
+    {
       "name": "diagnose-confirmed-regression-without-fixing",
       "prompt": "Diagnosis only: after commit abc123, invoice retries create duplicate ledger entries. A focused reproduction reaches the retry path, and history shows the idempotency key was moved below the insert in that commit. Explain the root cause, but do not edit anything.",
       "expected": "Selects investigation mode, distinguishes the reproduced observation from causal inference, tests credible alternatives, identifies the moved idempotency boundary as a confirmed regression only when the trace supports it, reports impact and limits, recommends exactly one separately authorized fix workflow, and makes no source, test, issue, branch, or project-state change."
