@@ -37,8 +37,8 @@
     },
     {
       "name": "scope-greenfield-technology-evidence",
-      "prompt": "We're evaluating Runtime Alder and Birch for a new service. Hard constraints are Linux x86_64 support and an Apache-2.0-or-MIT license. There's no repository, package manifest, or deployment config yet. Compare their current official support and platform documentation and recommend one.",
-      "expected": "Uses current primary sources to establish each candidate's applicable release, support, platform, and license scope, and compares only candidates that meet the hard constraints. It does not invent installed versions, toolchains, wrappers, or consumers. It names local integration behavior as unverified and says what would establish it later, without requiring a prototype solely to create local proof."
+      "prompt": "We're evaluating Runtime Alder and Runtime Birch for a new service; these are hypothetical placeholder names, and I haven't provided source links or documentation. Hard constraints are Linux x86_64 support and an Apache-2.0-or-MIT license. There's no repository, package manifest, or deployment config yet. Can you compare and recommend one from the available evidence? State what you cannot verify.",
+      "expected": "Recognizes that the candidate names are placeholders and no primary sources are provided, so it cannot identify the projects, verify their release, support, platform, or license claims, or recommend one. It asks for identifiable candidates and suitable current primary sources or dated excerpts. Separately, it states that the absent repository leaves installed-version and local integration evidence unavailable; it does not invent those facts or require a prototype solely to create local proof."
     },
     {
       "name": "design-observability-from-operator-questions",
