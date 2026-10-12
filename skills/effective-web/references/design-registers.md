@@ -59,6 +59,11 @@ Before styling, decide:
 - Choose colour and typography by role and point of view, not category reflex.
 - Use real imagery or credible evidence when visitors need to inspect the
   subject; do not replace it with abstract decoration.
+- When visitors arrive ready to perform a known task, expose its working entry
+  controls early: for example, destination and dates for accommodation search.
+  Keep the controls usable together on small screens. When visitors first need
+  to understand or compare the offer, lead with that evidence and a clear next
+  step rather than forcing a form into every opening section.
 - Let narrative sections vary in rhythm and composition when the story earns
   it.
 - Use motion and delight as art direction only when they strengthen the story
@@ -81,6 +86,12 @@ and technical reference material.
 - Keep navigation, contents, anchors, and search predictable.
 - Use colour sparingly for links, status, callouts, and code emphasis.
 - Prefer real examples, diagrams, tables, and code over decorative imagery.
+
+Let a recognizable header, navigation, or document frame carry identity while
+the reading column keeps stable measure and quiet text styling. Keep supporting
+chrome proportionate to its orientation value; do not hide needed navigation or
+search just to make the page look calm. Branding does not require display
+treatments or decorative containers around every paragraph.
 
 ## Experience Register
 

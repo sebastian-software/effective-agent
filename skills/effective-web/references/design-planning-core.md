@@ -68,8 +68,9 @@ Before colours, spacing, shadows, or type, decide:
 - Surface density: sparse, normal, dense, or data-heavy.
 - Primary (and optional secondary) direction from
   [design-directions.md](design-directions.md), not a fixed style preset.
-- Tone, and the meaning of structural devices (numbers, eyebrows, badges,
-  dividers should communicate sequence/status/grouping, not decorate).
+- Tone and the role of structural devices such as numbers, eyebrows, badges,
+  and dividers. Apply [Choose Patterns by Role](fundamentals-core.md#choose-patterns-by-role)
+  when selecting repeated visual treatments.
 
 Do not start with card grids, hero templates, gradients, or animation before the
 surface has a clear job.
@@ -78,8 +79,9 @@ surface has a clear job.
 
 - **Operate surfaces:** specificity comes from the product's world — name domain
   concepts, data shapes (compare rows / monitor exceptions / approve batches /
-  debug incidents), and one signature move that could only belong to this
-  product. Avoid sidebar-plus-generic-cards and icon-number-label metrics.
+  debug incidents), and useful actions. Familiar navigation, cards, and metrics
+  can fit when they reflect the real workflow; do not invent a unique signature
+  merely to distinguish an otherwise effective tool.
 - **Persuade surfaces:** decide the point of view first — audience and promise,
   concrete voice, the category reflex to avoid, primary credibility evidence,
   and one memorable signal. Let the first viewport express the thesis through
@@ -127,7 +129,7 @@ by task, register, or accepted decision. If a cluster appears, change the owning
 brief decision rather than polishing around it.
 
 Write a **compact design brief** for ambiguous or net-new UI (surface, register,
-direction, primary user/action, register-specific signature, layout strategy,
+direction, primary user/action, optional register-specific signature, layout strategy,
 interaction model, required states, content, context adaptation, browser
 evidence, constraints, anti-goals) in concrete nouns — the full template is in
 the appendix. Record durable register/direction/communication decisions through

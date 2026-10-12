@@ -20,7 +20,8 @@ Review these as advisory signals:
   Keep labels that add a section, version, breadcrumb, or status, and numbers
   whose order carries real meaning, such as a process or timeline.
 - A thick coloured side stripe decorates rounded cards, list items, or callouts
-  without communicating state or category.
+  without a distinguishable state, category, or expressive role in the visual
+  system; repeated emphasis obscures the intended hierarchy.
 - Identical radii, shadows, borders, and stock component styling flatten the
   roles of unrelated elements. Choose them from the owning system and component
   purpose; a border plus shadow, hard offset shadow, pill, or soft corner can be
@@ -49,6 +50,19 @@ Review these as advisory signals:
   next useful step, pricing from the actual offer, and questions from plausible
   user uncertainty. A real offer may justify a familiar structure.
 
-Ask what information structure would remain if borders, icons, and labels were
-removed. If the answer is nothing, redesign the hierarchy rather than replacing
-one decoration with another.
+## Contextual Example Pairs
+
+Use these pairs to assess the role and consequence, not to classify a shape as
+inherently good or bad. Apply [Choose Patterns by Role](fundamentals-core.md#choose-patterns-by-role).
+
+| Treatment | Fitting use | Misuse to correct |
+| --- | --- | --- |
+| Left accent stripe | Marks a quotation or status, or repeats a deliberate brand motif while preserving hierarchy | The same selection-like stripe appears on every unselected item, or gives routine and urgent content indistinguishable emphasis |
+| Eyebrow | Adds a category, version, or context; a concise recurring caption can also establish an editorial rhythm | Repeats the heading's words without a separate role, or adds vague labels above every heading that obscure useful context |
+| Cards inside cards | A project panel contains independently actionable task cards; the two boundaries represent different relationships | Nested borders and padding repeat the same group boundary, consume usable space, and make the primary objects harder to compare |
+
+When grouping or priority is unclear, ask which relationships would remain if
+borders, icons, and labels were removed. Use that question to expose weak
+structure, while retaining decoration that serves the intended visual character.
+An expressive motif may need refinement in weight, frequency, or spacing rather
+than removal.

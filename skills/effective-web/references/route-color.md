@@ -13,8 +13,8 @@ Use this skill for color decisions that affect usability, brand expression, acce
 ## Rules
 
 - Never rely on color alone to convey state or meaning.
-- Avoid one-note palettes where the entire UI is variations of a single hue family.
-- Use brand color sparingly for important affordances or identity moments.
+- Keep semantic roles distinguishable even when the brand palette centers on one hue.
+- Match brand-color coverage to the surface's register and hierarchy; use the distribution guidance in [colour-system.md](colour-system.md#choose-coverage-by-purpose).
 - Dark mode is a separate contrast and elevation system, not an inverted light palette.
 - Tokens should describe intent, not appearance.
 

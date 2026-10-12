@@ -1,6 +1,71 @@
 {
   "evals": [
     {
+      "name": "remove-selection-like-accent-on-unselected-content",
+      "prompt": "Review an operations page where the existing system uses a blue left stripe to indicate the selected record. A polish pass puts the same stripe on every unselected summary card. Routine summaries now look selected and draw the same attention as a consequential exception. Keep the familiar visual system and improve the page.",
+      "expected": "Corrects the misleading repeated selection treatment and restores the exception's priority while preserving the stripe where it actually indicates selection. Explains the conflict with state and hierarchy rather than banning colored left edges."
+    },
+    {
+      "name": "preserve-expressive-left-accent-without-status-meaning",
+      "prompt": "Refine spacing on a music festival page whose established poster-inspired identity repeats a thin colored left stripe across selected editorial blocks. The motif has no status or category meaning. Headings, actions, and reading order remain clear at narrow widths. A style scanner recommends removing every stripe because it is decorative and common in generated sites. No change to the visual identity was requested.",
+      "expected": "Preserves the coherent expressive motif while making the requested spacing refinement. Recognizes visual character and rhythm as legitimate roles, does not invent a functional meaning to justify the stripe, and does not escalate the scanner's resemblance claim into a defect or require new brand documentation."
+    },
+    {
+      "name": "remove-redundant-eyebrows-without-banning-context-labels",
+      "prompt": "A documentation landing page puts 'Features' above a 'Features' heading and 'FAQ' above 'FAQ'. Every other heading has a vague 'Explore' label. These extra lines push useful section context apart, while a separate 'API v3' label identifies the version of a migration guide. Improve scanning within the current design.",
+      "expected": "Removes or consolidates labels that merely duplicate headings or obscure useful context, retains the migration version cue, and improves hierarchy without treating all eyebrows, uppercase captions, or recurring labels as undesirable."
+    },
+    {
+      "name": "preserve-editorial-eyebrow-as-context-and-rhythm",
+      "prompt": "A publication consistently places a small 'Field Notes' eyebrow above essays in that editorial series. The essay titles describe different subjects, and the caption supplies series context and a calm recurring rhythm. Readers can distinguish it from navigation and actions. Improve the article's paragraph spacing; a reviewer calls eyebrows fashionable and asks to delete all of them.",
+      "expected": "Keeps the useful series caption and coherent editorial rhythm while changing the requested prose spacing. Does not force a new visual identity or treat fashion and repetition as sufficient grounds for removal."
+    },
+    {
+      "name": "flatten-card-wrappers-that-repeat-one-boundary",
+      "prompt": "A comparison page wraps a group of subscription attributes in three nested cards. All three frames enclose the same group, have no separate controls or states, and their cumulative padding compresses the comparable values into narrow wrapped columns. The accepted identity uses cards elsewhere for distinct offers. Improve this comparison.",
+      "expected": "Simplifies redundant wrappers and restores usable comparison space while retaining meaningful offer boundaries and the existing card language. Grounds the change in repeated grouping and its visible cost rather than a general prohibition on nested cards."
+    },
+    {
+      "name": "preserve-cards-for-distinct-parent-child-objects",
+      "prompt": "A project panel shows a project budget and team controls, with separate task cards inside it. Each task has its own assignee, progress, and detail action; the parent and child controls have clear accessible boundaries and ample space. The request is to adjust header spacing. A scanner flags cards inside cards and proposes flattening every project and task into one undifferentiated list.",
+      "expected": "Preserves the meaningful parent-child grouping and independently actionable tasks while making the header change. Does not flatten established relationships to satisfy a nesting detector or impose an arbitrary container-depth limit."
+    },
+    {
+      "name": "grade-specificity-by-the-surface-contract",
+      "prompt": "Assess two surfaces. An inventory tool follows its established conventional sidebar, cards, and familiar typeface; its content and actions match the real workflow and the brief prioritizes familiarity. A product evidence page uses the same popular styling but substitutes generic decorative charts for the actual product demonstration explicitly required by its brief. A reviewer marks both blocked because they look like generated templates. Decide what needs correction.",
+      "expected": "Accepts the coherent inventory interface without requiring novelty. Identifies the evidence page's missing required demonstration and its effect on the requested outcome, grounds severity in that concrete contract failure, and avoids inferring quality or provenance from popular styling alone."
+    },
+    {
+      "name": "match-opening-controls-to-visitor-intent",
+      "prompt": "Review two accommodation homepages. On a large hotel booking site, most visitors arrive with a destination and dates, but a full-screen film pushes booking search far down the page. On a boutique hotel's site, visitors first compare the property and location; booking is clearly available in navigation. A proposed redesign puts the same large booking form above all evidence on both sites. On mobile, the form's date picker covers the remaining fields. What should change?",
+      "expected": "Makes booking search a usable, prominent starting point for the task-driven site; resolves narrow-screen field and picker access; preserves appropriate property evidence and a findable booking path for the browse-first site; and avoids imposing the same opening form on both contexts."
+    },
+    {
+      "name": "preserve-reading-orientation-and-prose-boundaries",
+      "prompt": "A technical publication wants a distinctive article page. Its prototype applies display typography and bordered containers to every paragraph, hides desktop search and section navigation, and adds both first-line indentation and a large gap between every paragraph. The same global paragraph selector also indents form help, warning text, and list items. Improve reading while keeping the publication recognizable.",
+      "expected": "Preserves recognizable identity and useful orientation while simplifying the reading column; restores needed navigation and search; uses a coherent paragraph-boundary treatment suited to the prose; and scopes prose styling so unrelated UI and structured content retain appropriate spacing."
+    },
+    {
+      "name": "compare-variants-for-the-actual-open-decision",
+      "prompt": "An existing, validated checkout needs a choice between two accessible typefaces. A separate project is still deciding whether a comparison tool should lead with a table or a guided selection flow. The designer proposes three completely new layouts for the checkout but only three palette swaps of the same layout for the comparison tool. Decide what alternatives would help and how to assess them.",
+      "expected": "Keeps the checkout comparison focused on its unresolved type choice and accepted task flow; explores materially different structures for the unresolved comparison experience with comparable tasks and content; assesses actual task use as well as appearance; and avoids requiring an arbitrary number of alternatives or universal layout divergence."
+    },
+    {
+      "name": "separate-brand-coverage-from-semantic-color",
+      "prompt": "An event site has a readable blue feature background that carries its identity, while a repeated-use operations screen has mostly neutral surfaces. A critique says both must use 30–60% saturated brand color and at least four hues to look intentional. Another proposal recolors error, focus, and success treatments to the same blue. Review these changes.",
+      "expected": "Allows each surface's color distribution to follow its task and identity without a coverage quota or minimum hue count; preserves the useful brand region where its foregrounds and controls work; and keeps semantic meanings and non-color cues recognizable rather than treating brand fill as the state system."
+    },
+    {
+      "name": "coordinate-motion-without-routine-choreography",
+      "prompt": "A product launch sequence moves a diagram, headline, controls, and background at once, obscuring which diagram element changed. A separate admin toggle needs immediate state feedback. The team proposes a dramatic shared entrance sequence for both surfaces, with important content absent until the animation completes. Improve the motion approach.",
+      "expected": "Clarifies the launch sequence's relevant change and continuity while reducing competing movement and delay; keeps the admin toggle's feedback direct; preserves content and operation in the static experience; and does not add page-load choreography merely to make motion consistent."
+    },
+    {
+      "name": "teach-new-capability-at-the-moment-of-use",
+      "prompt": "A mapping tool adds a genuinely unfamiliar multi-step spatial operation. New users want to try it without changing live project data, and returning users need to revisit instructions. The team also wants to force a first-login tour explaining familiar search, profile, and save controls. The operation's main control currently has an ambiguous label. Design the learning support.",
+      "expected": "Repairs the ambiguous control, offers discoverable contextual instruction or a retrievable guided task for the novel capability, makes practice effects safely distinct from live changes, and avoids forcing a launch tour for familiar controls. Success is independent task use rather than completing the tour."
+    },
+    {
       "name": "preserve-functional-label-and-media-choices",
       "prompt": "Polish a publication's existing article page. Its eyebrow says 'Updated for version 3' above a migration guide, grey text on a muted blue surface has verified readable contrast, the accepted system combines a border and shadow on 24px cards, and an authored SVG explains the migration. A scanner recommends deleting the eyebrow, tinting all grey text, forcing 12px radii, and replacing every SVG with raster media. The request is to improve article spacing while preserving the identity.",
       "expected": "Preserves the functional version label, verified text colour, accepted component geometry, and suitable vector diagram; corrects the requested spacing inside the existing identity; distinguishes observed accessibility or functional defects from scanner style advisories; and avoids an unsolicited redesign or a fixed font, radius, or media blacklist."

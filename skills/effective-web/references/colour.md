@@ -2,7 +2,7 @@
 
 > Deep appendix. Start from [colour-system.md](colour-system.md) and [colour-accessibility.md](colour-accessibility.md); load this file only for advanced palette work.
 
-Learn how to use colour sparingly and purposefully to add meaning to an interface.
+Use color purposefully to support hierarchy, interaction, and brand identity.
 
 ## Ensure Sufficient Contrast
 
@@ -358,15 +358,12 @@ Relative color syntax (Baseline 2024) lets you derive new colours from existing 
 - Changing the base colour cascades through all variations
 - Works with any colour space (`oklch`, `hsl`, `rgb`, etc.) — prefer OKLCH for perceptual uniformity
 
-## Consider the 60-30-10 Rule
+## Color Distribution
 
-A guideline (not strict rule) for colour distribution from interior design:
-
-- **60%** - Dominant colour (backgrounds, white space)
-- **30%** - Secondary colours (text, borders, cards)
-- **10%** - Accent colour (CTAs, links, highlights)
-
-The accent colour works *because* it's rare. Overuse kills its impact. This is a helpful starting point, but context matters more than rigid proportions.
+Choose surface distribution using [coverage by purpose](colour-system.md#choose-coverage-by-purpose).
+A scarce accent can draw attention on a quiet surface; a larger brand region
+can carry identity without serving as an action cue. Judge their roles and
+contrast in context rather than assigning fixed area proportions.
 
 ## Create a Colour Palette
 

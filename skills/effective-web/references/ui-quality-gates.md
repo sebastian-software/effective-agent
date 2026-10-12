@@ -6,7 +6,7 @@ repository checks and one focused rendered inspection. Mark assessed categories
 as `blocked`, `risky`, or `acceptable`, and distinguish unverified claims. These
 are severity judgments, not numerical design scores.
 
-## Measurable UI Gate
+## UI Gate
 
 | Category | Blocked | Risky | Acceptable |
 |----------|---------|-------|------------|
@@ -16,14 +16,19 @@ are severity judgments, not numerical design scores.
 | Theming | Hard-coded colours break tokens, dark mode, contrast, or semantic state colours | Some one-off values need token consolidation | Tokens and semantic colours are used consistently |
 | State coverage | Missing a reachable empty, loading, error, success, disabled, or permission state for the core flow | A consequential secondary state needs clearer copy or interaction detail | States required by the brief and real component contract are implemented |
 | Resilience | Supported or observed long text, empty values, permissions, offline/errors, or localisation break the primary task | A reachable secondary failure is known but bounded | Relevant long text, missing data, error recovery, permission, and i18n cases are handled |
-| Specificity | The UI could belong to any product in the category, or uses obvious generated-output patterns | Some details are specific but the main layout, media, or interaction model is still generic | The dominant design decisions follow the brief, audience, content, and register |
+| Specificity | Dominant choices omit required subject evidence or contradict an explicit surface contract, preventing the requested outcome | A concrete mismatch with the content, audience, or visual system weakens the intended hierarchy or identity | The dominant choices fit the task, content, audience, and visual system, including familiar or current conventions |
+
+Judge specificity through [pattern roles](fundamentals-core.md#choose-patterns-by-role).
+Common styling or resemblance to generated output does not establish severity.
+Name the actual mismatch and consequence; a coherent conventional interface can
+be acceptable without a unique visual signature.
 
 ## Interpretation
 
 - Any `blocked`: do not call the UI done.
 - Any `risky`: either fix now or explicitly name the follow-up risk.
-- All `acceptable`: the implementation can ship from a measurable-quality
-  perspective.
+- All `acceptable`: the implementation can ship within the assessed quality
+  scope.
 
 ## Accessibility as an operating capability
 
@@ -101,34 +106,30 @@ Report actionable findings at clickable `file:line` locations, with the user
 consequence and evidence. State any verification limit without replacing concrete
 findings with a general score.
 
-## Generic Output Gate
+## Pattern Fit Gate
 
-Use this gate to catch templated AI output without turning design into a
-polishing loop. Classify suspected patterns with
-[UI anti-patterns](ui-antipatterns.md): objective defects can block, individual
-style tells are advisory, and clusters indicate a likely direction problem.
+Use this gate when a suspected default may conflict with the surface's task or
+visual character. Apply [pattern roles](fundamentals-core.md#choose-patterns-by-role)
+and classify findings with [UI anti-patterns](ui-antipatterns.md): objective
+defects can block, unexamined defaults are advisory, and a cluster sharing a
+concrete mismatch points to an owning direction or structure decision.
 
 Ask:
 
-- Would this screen still make sense if the brand name and colours were removed?
-  If yes, what product-specific structure, content, media, or interaction is
-  missing?
-- Does the layout come from the brief, or from a common category template such
-  as hero plus metrics plus repeated cards?
-- Is the memorable part useful to the user, or merely decorative?
+- Does the structure support the actual workflow, data shapes, and reading or
+  browsing needs? A familiar shell can fit when its content and actions do.
+- Do labels, accents, and container boundaries serve distinguishable content,
+  interaction, or expressive roles without competing with the intended hierarchy?
 - Does the interface show real evidence when users need to inspect a product,
   place, person, object, state, screenshot, diagram, or outcome?
-- Is restraint doing real work, or is it hiding an absent point of view?
-- Is boldness doing real work, or is it compensating for weak hierarchy and
-  content?
-- For operate UI, does navigation, data presentation, or workflow structure
-  reflect the product domain, or could the same shell fit any dashboard?
+- Does the expressive treatment fit the direction while preserving task access,
+  clear content, and proportionate attention and rendering cost?
 
-Operate UI can pass this gate by being extremely clear and quiet. Persuade UI
-can pass by making the offer, evidence, and action credible and memorable. Read
-UI can pass by being unusually readable and trustworthy. Experience UI can pass
-when the work itself carries the distinctiveness and the interface provides
-quiet control. The standard is specificity, not intensity.
+Operate UI can pass by reflecting the real workflow through familiar controls.
+Persuade UI can pass by making the offer, evidence, and action credible in the
+intended voice. Read UI can pass by being readable and trustworthy. Experience
+UI can pass when the work leads and the interface supplies orientation and
+control. Judge fit and consequence rather than uniqueness or intensity.
 
 ## Performance Design Check
 
@@ -192,7 +193,8 @@ Check the implementation details affected by the change:
 
 ## Use With Judgment
 
-This gate covers measurable quality. It does not replace design judgment. A UI
-can pass every measurable gate and still have the wrong register, weak
-hierarchy, or unclear primary action. Revisit the brief when those problems
-appear; a link to planning guidance does not require another planning cycle.
+These gates cover the assessed scope and combine implementation evidence with
+design judgment. They do not establish quality beyond that scope. If the real
+surface exposes a wrong register, weak hierarchy, or unclear primary action,
+revisit the owning decision; a link to planning guidance does not require another
+planning cycle.

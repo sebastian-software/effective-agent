@@ -16,6 +16,7 @@ direction.
 
 - [Design Read](#design-read)
 - [Independent Axes](#independent-axes)
+- [Compare the Open Decision](#compare-the-open-decision)
 - [Direction Profiles](#direction-profiles)
 - [Conflict Resolution](#conflict-resolution)
 - [Persistence and Drift](#persistence-and-drift)
@@ -35,7 +36,7 @@ Density: [sparse / normal / dense / data-heavy]
 Motion: [static / functional / expressive]
 Depth: [flat / borders / surface shifts / subtle shadows / layered]
 Communication: [relationship, form of address, voice, and tone constraints]
-Signature: [one product- or subject-specific element]
+Signature: [product- or subject-specific element when useful; omit otherwise]
 Avoid: [the category default or wrong direction]
 ```
 
@@ -73,6 +74,19 @@ Do not ask empty preference questions such as "modern or clean?".
 quality and may imply premium materiality or art direction; minimalism describes
 restraint. A precise premium-minimalist landing page is coherent. A dense
 analytical console with cinematic scroll choreography usually is not.
+
+## Compare the Open Decision
+
+When composition is still open, compare alternatives that change a meaningful
+relationship: the leading evidence, navigation structure, grouping, or density.
+Keep the task, content, and constraints comparable so a preferred direction is
+more than a reaction to different material. Compare task use as well as visual
+appeal before refining the strongest ideas.
+
+If the open decision is only a typeface or palette, targeted variants are
+appropriate; do not reopen an accepted layout to manufacture difference. There
+is no required variant count. Use the `effective-product` exploration described
+in the introduction when the alternatives change the broader experience.
 
 ## Direction Profiles
 

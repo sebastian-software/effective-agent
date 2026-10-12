@@ -72,7 +72,8 @@ mandatory role or fixed process for every refinement.
 
 ## Baseline Rules
 
-- Every visible element needs a job. Decoration is acceptable only when it improves recognition, trust, orientation, or comprehension.
+- Choose treatments through [pattern roles](fundamentals-core.md#choose-patterns-by-role);
+  preserve purposeful expression as well as functional conventions.
 - Optimize for scanning first, then reading. Users should understand state, next action, and risk without decoding the layout.
 - Keep interaction cost low: related controls belong near the content they affect, destructive actions need recoverability, and repeated workflows need density.
 - Treat attention as a user resource. Interrupt only when urgency or otherwise

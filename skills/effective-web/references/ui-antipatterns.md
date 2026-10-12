@@ -6,20 +6,22 @@ representative screens, content, and surface register before judging a pattern.
 The client's chosen style and the user's task take precedence over style
 advisories. Preserve an existing identity during refinement; an anti-pattern
 review does not authorize replacing its fonts, palette, copy, or components.
+Apply [Choose Patterns by Role](fundamentals-core.md#choose-patterns-by-role)
+when deciding whether a familiar or expressive treatment fits.
 
 ## Classify Before Correcting
 
 | Class | Meaning | Response |
 | --- | --- | --- |
 | Defect | Observable user harm or broken implementation, such as unreadable contrast, overflow, lost functionality, or an inaccessible control | Treat as blocked or risky according to impact; verify and fix |
-| Advisory | A current generated-output tell or weak default that may still be valid in context | Name the reflex and ask what product, audience, or brand decision justifies it |
-| Cluster | Several advisory tells reinforce the same generic template or aesthetic | Change the owning direction, hierarchy, media, copy, or interaction decision instead of polishing each symptom |
+| Advisory | An unexamined default whose fit is unclear but may be valid in context | Inspect its content, interaction, or expressive role before recommending a change |
+| Cluster | Several choices reinforce the same concrete mismatch with the task, content, or intended direction | Change the owning direction, hierarchy, media, copy, or interaction decision instead of polishing each symptom |
 | Accepted exception | The pattern follows a real task, sequence, brand system, content form, or recorded decision | Keep it, verify execution, and avoid inventing a second system to satisfy the checklist |
 
 Do not escalate an advisory to a defect merely because it is easy to detect.
 One familiar font, card, glow, serif headline, or numbered label is not evidence
-of generic design. Repetition without purpose and clusters across independent
-choices are stronger signals.
+of generic design. Repetition without purpose can prompt inspection, but even a
+cluster needs a concrete mismatch and an explanation of the change's benefit.
 An accepted visual choice still needs working behavior and accessible execution.
 For a suspected cluster, name the missing product relationship and the change
 that would restore it. Replacing cream with purple, cards with rows, or one

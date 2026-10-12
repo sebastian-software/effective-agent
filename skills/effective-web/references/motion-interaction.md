@@ -5,6 +5,20 @@ or to create an earned moment of brand character. Functional motion must clarify
 the interface. Expressive motion must be restrained, optional, and unable to
 delay or obscure the user's task.
 
+## Plan Coordinated Motion
+
+When several elements move together or an expressive sequence carries the
+story, decide what the motion communicates before choosing effects:
+
+- Which change needs attention, and which supporting elements should stay quiet?
+- Which shared objects or spatial relationships explain continuity?
+- Which repeated actions should share motion because they share meaning?
+
+Use these answers to remove competing movement and keep the sequence's total
+delay and rendering cost bounded. Preserve the same information and task access
+in the static version. A routine control transition does not need a separate
+motion concept, and a sequence does not justify animating stable page content.
+
 ## Reduced Motion First
 
 - Treat `prefers-reduced-motion: reduce` as the baseline, not an afterthought. Author the static, non-animated experience first, then add motion inside `@media (prefers-reduced-motion: no-preference)`.
