@@ -1,6 +1,41 @@
 {
   "evals": [
     {
+      "name": "remove-selection-like-accent-on-unselected-content",
+      "prompt": "Review an operations page where the existing system uses a blue left stripe to indicate the selected record. A polish pass puts the same stripe on every unselected summary card. Routine summaries now look selected and draw the same attention as a consequential exception. Keep the familiar visual system and improve the page.",
+      "expected": "Corrects the misleading repeated selection treatment and restores the exception's priority while preserving the stripe where it actually indicates selection. Explains the conflict with state and hierarchy rather than banning colored left edges."
+    },
+    {
+      "name": "preserve-expressive-left-accent-without-status-meaning",
+      "prompt": "Refine spacing on a music festival page whose established poster-inspired identity repeats a thin colored left stripe across selected editorial blocks. The motif has no status or category meaning. Headings, actions, and reading order remain clear at narrow widths. A style scanner recommends removing every stripe because it is decorative and common in generated sites. No change to the visual identity was requested.",
+      "expected": "Preserves the coherent expressive motif while making the requested spacing refinement. Recognizes visual character and rhythm as legitimate roles, does not invent a functional meaning to justify the stripe, and does not escalate the scanner's resemblance claim into a defect or require new brand documentation."
+    },
+    {
+      "name": "remove-redundant-eyebrows-without-banning-context-labels",
+      "prompt": "A documentation landing page puts 'Features' above a 'Features' heading and 'FAQ' above 'FAQ'. Every other heading has a vague 'Explore' label. These extra lines push useful section context apart, while a separate 'API v3' label identifies the version of a migration guide. Improve scanning within the current design.",
+      "expected": "Removes or consolidates labels that merely duplicate headings or obscure useful context, retains the migration version cue, and improves hierarchy without treating all eyebrows, uppercase captions, or recurring labels as undesirable."
+    },
+    {
+      "name": "preserve-editorial-eyebrow-as-context-and-rhythm",
+      "prompt": "A publication consistently places a small 'Field Notes' eyebrow above essays in that editorial series. The essay titles describe different subjects, and the caption supplies series context and a calm recurring rhythm. Readers can distinguish it from navigation and actions. Improve the article's paragraph spacing; a reviewer calls eyebrows fashionable and asks to delete all of them.",
+      "expected": "Keeps the useful series caption and coherent editorial rhythm while changing the requested prose spacing. Does not force a new visual identity or treat fashion and repetition as sufficient grounds for removal."
+    },
+    {
+      "name": "flatten-card-wrappers-that-repeat-one-boundary",
+      "prompt": "A comparison page wraps a group of subscription attributes in three nested cards. All three frames enclose the same group, have no separate controls or states, and their cumulative padding compresses the comparable values into narrow wrapped columns. The accepted identity uses cards elsewhere for distinct offers. Improve this comparison.",
+      "expected": "Simplifies redundant wrappers and restores usable comparison space while retaining meaningful offer boundaries and the existing card language. Grounds the change in repeated grouping and its visible cost rather than a general prohibition on nested cards."
+    },
+    {
+      "name": "preserve-cards-for-distinct-parent-child-objects",
+      "prompt": "A project panel shows a project budget and team controls, with separate task cards inside it. Each task has its own assignee, progress, and detail action; the parent and child controls have clear accessible boundaries and ample space. The request is to adjust header spacing. A scanner flags cards inside cards and proposes flattening every project and task into one undifferentiated list.",
+      "expected": "Preserves the meaningful parent-child grouping and independently actionable tasks while making the header change. Does not flatten established relationships to satisfy a nesting detector or impose an arbitrary container-depth limit."
+    },
+    {
+      "name": "grade-specificity-by-the-surface-contract",
+      "prompt": "Assess two surfaces. An inventory tool follows its established conventional sidebar, cards, and familiar typeface; its content and actions match the real workflow and the brief prioritizes familiarity. A product evidence page uses the same popular styling but substitutes generic decorative charts for the actual product demonstration explicitly required by its brief. A reviewer marks both blocked because they look like generated templates. Decide what needs correction.",
+      "expected": "Accepts the coherent inventory interface without requiring novelty. Identifies the evidence page's missing required demonstration and its effect on the requested outcome, grounds severity in that concrete contract failure, and avoids inferring quality or provenance from popular styling alone."
+    },
+    {
       "name": "match-opening-controls-to-visitor-intent",
       "prompt": "Review two accommodation homepages. On a large hotel booking site, most visitors arrive with a destination and dates, but a full-screen film pushes booking search far down the page. On a boutique hotel's site, visitors first compare the property and location; booking is clearly available in navigation. A proposed redesign puts the same large booking form above all evidence on both sites. On mobile, the form's date picker covers the remaining fields. What should change?",
       "expected": "Makes booking search a usable, prominent starting point for the task-driven site; resolves narrow-screen field and picker access; preserves appropriate property evidence and a findable booking path for the browse-first site; and avoids imposing the same opening form on both contexts."

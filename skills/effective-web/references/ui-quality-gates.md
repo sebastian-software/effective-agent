@@ -6,7 +6,7 @@ repository checks and one focused rendered inspection. Mark assessed categories
 as `blocked`, `risky`, or `acceptable`, and distinguish unverified claims. These
 are severity judgments, not numerical design scores.
 
-## Measurable UI Gate
+## UI Gate
 
 | Category | Blocked | Risky | Acceptable |
 |----------|---------|-------|------------|
@@ -16,14 +16,19 @@ are severity judgments, not numerical design scores.
 | Theming | Hard-coded colours break tokens, dark mode, contrast, or semantic state colours | Some one-off values need token consolidation | Tokens and semantic colours are used consistently |
 | State coverage | Missing a reachable empty, loading, error, success, disabled, or permission state for the core flow | A consequential secondary state needs clearer copy or interaction detail | States required by the brief and real component contract are implemented |
 | Resilience | Supported or observed long text, empty values, permissions, offline/errors, or localisation break the primary task | A reachable secondary failure is known but bounded | Relevant long text, missing data, error recovery, permission, and i18n cases are handled |
-| Specificity | The UI could belong to any product in the category, or uses obvious generated-output patterns | Some details are specific but the main layout, media, or interaction model is still generic | The dominant design decisions follow the brief, audience, content, and register |
+| Specificity | Dominant choices omit required subject evidence or contradict an explicit surface contract, preventing the requested outcome | A concrete mismatch with the content, audience, or visual system weakens the intended hierarchy or identity | The dominant choices fit the task, content, audience, and visual system, including familiar or current conventions |
+
+Judge specificity through [pattern roles](fundamentals-core.md#choose-patterns-by-role).
+Common styling or resemblance to generated output does not establish severity.
+Name the actual mismatch and consequence; a coherent conventional interface can
+be acceptable without a unique visual signature.
 
 ## Interpretation
 
 - Any `blocked`: do not call the UI done.
 - Any `risky`: either fix now or explicitly name the follow-up risk.
-- All `acceptable`: the implementation can ship from a measurable-quality
-  perspective.
+- All `acceptable`: the implementation can ship within the assessed quality
+  scope.
 
 ## Accessibility as an operating capability
 

@@ -22,12 +22,11 @@ Base design decisions on risk - the risk that someone could have difficulty usin
 
 ## Have a Logical Reason for Every Design Detail
 
-Every element must have a purpose that improves usability.
-
-- Design using objective logic, rather than subjective opinion
-- Be able to articulate the rationale behind each decision
-- "That looks nice" or "I don't like it" are NOT logical or constructive feedback
-- Focus on HOW it works and WHY it works that way
+Apply [Choose Patterns by Role](fundamentals-core.md#choose-patterns-by-role)
+to judge functional and expressive choices. Explain the concrete consequence
+when proposing a correction; a personal preference or generic claim that a
+treatment looks polished does not establish its fit. Infer reasonable intent
+from the existing system rather than requiring a rationale for every detail.
 
 ## Minimise Interaction Cost
 
@@ -81,7 +80,7 @@ Reveal information gradually as needed — show only what the current task requi
 
 ### Don't Confuse Minimalism with Simplicity
 
-Minimal interfaces can be vague — unlabelled navigation, overly subtle selected states, hidden actions, insufficient icon contrast. Simplify by removing what carries no meaning, never by hiding what users need. People don't use what they can't see: if there is space, keep important content and actions visible, and make hidden content discoverable (e.g. expose the edge of off-screen cards). Don't let aesthetics hinder usability or exclude people — trendy effects (glassmorphic, neumorphic) age poorly and often cause accessibility and hierarchy issues.
+Minimal interfaces can be vague — unlabelled navigation, overly subtle selected states, hidden actions, insufficient icon contrast. Simplify by removing what carries no meaning, never by hiding what users need. People don't use what they can't see: if there is space, keep important content and actions visible, and make hidden content discoverable (e.g. expose the edge of off-screen cards). Evaluate effects such as glass or soft relief against actual contrast, affordances, hierarchy, and rendering cost. Their popularity or trend cycle does not by itself establish a problem.
 
 ## Create a Design System
 

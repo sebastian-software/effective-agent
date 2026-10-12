@@ -161,9 +161,9 @@ Before choosing colours, spacing, shadows, or typography, decide:
 - The tone: quiet utility, confident product, instructional, editorial,
   promotional, or immersive, aligned with recorded audience relationship,
   form of address, voice, and channel exceptions.
-- The meaning of structural devices: numbers, eyebrows, badges, labels, and
-  dividers should communicate sequence, status, grouping, or orientation rather
-  than serve as interchangeable decoration.
+- The role of structural devices: numbers, eyebrows, badges, labels, and
+  dividers. Apply [Choose Patterns by Role](fundamentals-core.md#choose-patterns-by-role)
+  to decide which content, interaction, or expressive relationship they serve.
 
 These decisions make the visual layer follow from the job. Do not start with
 card grids, hero templates, gradients, or animation before the surface has a
@@ -179,10 +179,11 @@ tokens, name:
   think in.
 - Data shapes: whether users compare rows, monitor exceptions, inspect
   timelines, approve batches, configure settings, or debug incidents.
-- Signature opportunity: one visual, structural, or interaction decision that
-  could only belong to this product.
-- Obvious defaults to avoid: sidebar plus generic cards, icon-number-label
-  metrics, charts without decisions, status colours without workflow meaning.
+- Signature opportunity, when useful: a visual, structural, or interaction
+  decision that reflects this product's domain; uniqueness is not required.
+- Defaults to examine: sidebar and card composition, metrics, charts, and status
+  colors. Keep familiar forms when they serve real decisions and workflow
+  meanings; novelty alone does not justify replacing them.
 
 The signature does not need to be loud. It might be a domain-specific queue, a
 timeline shaped around the real process, a comparison surface tuned to the data,
