@@ -20,7 +20,7 @@ Base design decisions on risk - the risk that someone could have difficulty usin
 - Keep an eye out for potential usability risks
 - If anything is slightly vague, confusing or unclear - simplify it
 
-## Have a Logical Reason for Every Design Detail
+## Judge Design Details by Role and Consequence
 
 Apply [Choose Patterns by Role](fundamentals-core.md#choose-patterns-by-role)
 to judge functional and expressive choices. Explain the concrete consequence
