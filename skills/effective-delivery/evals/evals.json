@@ -123,7 +123,7 @@
     {
       "name": "separate-landed-action-from-demonstrated-benefit",
       "prompt": "An implementation ships to meet a documented retry requirement. Later, total retries fall, but request volume doubles and duplicate ledger rows were not measured. A reviewer says the original design decision was wrong because a later architecture now supports an alternative. Assess what the evidence says about the action and the decision.",
-      "expected": "Separates the shipped action from evidence that it helped: the retry count is ambiguous because exposure changed and the relevant duplicate-row outcome is unmeasured, so benefit remains unknown. Assesses the original decision against the requirements and information available then, not later architecture, and states evidence gaps without turning delivery or counts into a quality score."
+      "expected": "Recognizes the observed retry rate fell because total retries decreased while request volume doubled. Treats this as an improved measured outcome after shipping; timing alone does not show that this action caused the change, and duplicate ledger rows remain unknown because they were unmeasured. Assesses the original decision against the requirements and information available then, not later architecture, and keeps delivery or counts from becoming a quality score."
     },
     {
       "name": "diagnose-confirmed-regression-without-fixing",
