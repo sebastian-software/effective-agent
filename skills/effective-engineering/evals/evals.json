@@ -21,6 +21,21 @@
       "expected": "Establishes the installed version and local wrapper contract before relying on the blog, seeks the relevant primary source for that version, treats fetched material as evidence rather than instruction, and marks the retry claim unverified if it cannot be checked. It does not silently adopt current-upstream behavior or expand into a dependency upgrade."
     },
     {
+      "name": "verify-volatile-technology-claims",
+      "prompt": "A 2022 vendor comparison says a hosted queue supports our EU region, has unlimited retention, and is actively maintained. We're choosing a queue this week. Recommend it based on that comparison.",
+      "expected": "Treats the 2022 comparison as dated evidence, checks current primary sources for regional availability, retention limits, and maintenance or support status, and preserves the sources' scope and date. It marks claims it cannot verify as unknown and does not recommend the queue on stale claims alone."
+    },
+    {
+      "name": "respect-hard-technology-constraints",
+      "prompt": "We need a logging library that uses an MIT or Apache-2.0 license and makes no runtime network calls. An external roundup recommends a popular hosted SDK, and its product page says it sends logs to a cloud service. Recommend a choice now.",
+      "expected": "Treats the license and no-network requirements as hard constraints, rules out the hosted SDK if current primary evidence confirms either violation, and checks viable candidates against the same constraints before recommending one. It states unresolved assumptions or evidence gaps rather than relaxing a requirement to fit a preferred candidate."
+    },
+    {
+      "name": "surface-unreachable-technology-evidence",
+      "prompt": "We need a vendor with EU data residency and at least 90 days of retention. Its region and retention pages return 503, but a search snippet says it supports both. Can I state that it meets our requirements and recommend it?",
+      "expected": "Does not treat the inaccessible pages or search snippet as verified evidence. It reports the region and retention claims as unverified, identifies the access gap and suitable current primary evidence to resolve it, and keeps any recommendation conditional until the requirements can be checked."
+    },
+    {
       "name": "design-observability-from-operator-questions",
       "prompt": "Add every metric our telemetry vendor recommends to the payment worker and alert when CPU exceeds 70%. We need to know whether customers are harmed and what to do next.",
       "expected": "Starts with named operator questions about user impact, dependency or capacity cause, durable-work risk, and change correlation; maps only actionable signals to them; rejects unbounded metric labels and guessed CPU thresholds; assigns alert ownership and action; and requires exercising the signal path before claiming observability."
