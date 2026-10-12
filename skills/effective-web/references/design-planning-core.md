@@ -129,7 +129,7 @@ by task, register, or accepted decision. If a cluster appears, change the owning
 brief decision rather than polishing around it.
 
 Write a **compact design brief** for ambiguous or net-new UI (surface, register,
-direction, primary user/action, register-specific signature, layout strategy,
+direction, primary user/action, optional register-specific signature, layout strategy,
 interaction model, required states, content, context adaptation, browser
 evidence, constraints, anti-goals) in concrete nouns — the full template is in
 the appendix. Record durable register/direction/communication decisions through

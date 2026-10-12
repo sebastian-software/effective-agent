@@ -38,7 +38,7 @@ When browser evidence requires a different implementation:
 When the direction needs exploration, use the compact Design Read from
 [Design directions](design-directions.md): surface register, audience, primary
 job, primary direction, expression, density, motion, depth, communication,
-signature, and category default to avoid.
+optional signature, and category default to avoid.
 
 When the visual direction, object model, or interaction concept is still open
 and the work needs materially different experience alternatives, route that

@@ -36,7 +36,7 @@ Density: [sparse / normal / dense / data-heavy]
 Motion: [static / functional / expressive]
 Depth: [flat / borders / surface shifts / subtle shadows / layered]
 Communication: [relationship, form of address, voice, and tone constraints]
-Signature: [one product- or subject-specific element]
+Signature: [product- or subject-specific element when useful; omit otherwise]
 Avoid: [the category default or wrong direction]
 ```
 
