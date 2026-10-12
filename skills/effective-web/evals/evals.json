@@ -441,6 +441,11 @@
       "expected": "Keeps the visible Add to cart phrase within the computed accessible name, adds only useful product context through aria-labelledby or visually hidden content, avoids an aria-label that overrides visible and localized text, and verifies repeated controls plus speech-input activation in the accessibility tree."
     },
     {
+      "name": "preserve-icu-contract-in-pl-translation",
+      "prompt": "An English UI message changed and its Polish (`pl-PL`) translation is out of date. The project uses ICU MessageFormat. The source is `{name} uploaded {count, plural, one {# file} other {# files}}`; the proposed target is `{count, plural, one {# plik przesłany przez {name}} few {# pliki przesłane} many {# plików przesłanych przez {name}} other {# pliku przesłanego przez {name}}}`. One reviewer says the target is invalid because the placeholders moved; another sees no issue. Judge the update.",
+      "expected": "Recognizes both patterns as syntactically valid and that a Polish target can require `few` and `many` even though the English source uses only `one` and `other`. The target's reordered placeholders are allowed by ICU; the `few` branch alone loses the uploader because it omits `{name}`. Preserve the upload relation and variable meaning across the locale's required branches, validate with the project's message tooling where available, and leave unchanged sibling keys intact."
+    },
+    {
       "name": "name-icon-control-robustly",
       "prompt": "A dialog close button contains only an SVG with a title element. It sounds correct in one screen reader, so the team assumes the button is named everywhere. Make the component robust.",
       "expected": "Keeps a native button, supplies durable localized text through visually hidden content or an aria-label fallback, treats the child SVG as decorative and hidden, avoids relying on SVG title propagation, and verifies the parent's computed role and name in representative pairings."

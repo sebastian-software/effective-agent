@@ -501,6 +501,16 @@
       "expected": "Applies STE to the surrounding English prose while preserving commands, identifiers, UI labels, and quoted output exactly. It separates prerequisites from imperative steps, keeps each instruction focused, treats product-approved terms through the project terminology process, and verifies copyability and technical behavior independently from the language review."
     },
     {
+      "name": "preserve-protected-terms-in-translated-guide",
+      "prompt": "An API guide has one changed paragraph and an existing `de-DE` translation. The project's locale settings preserve the product term `Workspace`; the exact interface elements are `agent publish --dry-run`, `retryPolicy`, `/workspaces/{workspaceId}`, and `{workspaceId}`. A proposed update translates `Workspace`, renames `retryPolicy`, and replaces the path placeholder with a sample ID. Review it.",
+      "expected": "Uses the existing locale terminology and preserves `Workspace`, the command, identifier, path, and placeholder exactly. Checks the changed technical claim against the owning CLI or schema, scopes edits to the changed paragraph, and does not create a new glossary format or translate protected literals."
+    },
+    {
+      "name": "leave-unchanged-translated-sections-alone",
+      "prompt": "Only step 2 of a three-step English setup guide changed. Steps 1 and 3 in the existing `fr-CA` translation still match their sources, including the command `agent sync --dry-run` and a warning. A proposal rewrites all three translated steps. What should the translation update change?",
+      "expected": "Updates only the target passage corresponding to changed step 2 and leaves already-correct steps 1 and 3 intact, including their command and warning. Verifies any changed technical claim against its source of truth and uses the project's existing locale settings and terminology."
+    },
+    {
       "name": "write-natural-rule-based-technical-german",
       "prompt": "Überarbeite eine deutsche Wartungsanleitung nach dem tekom-Ansatz für regelbasiertes Schreiben. Die Zielgruppe sind erfahrene Servicetechniker. Der Auftraggeber möchte besonders verständlichen Text, aber ausdrücklich keine abgehackte Leichte Sprache. Der Entwurf wechselt Benennungen, verwendet Nominalstil, verschachtelte Bedingungen und unklare Modalverben.",
       "expected": "Preserves precise technical terms and necessary domain knowledge, selects one preferred designation per concept, puts prior conditions before clear imperative actions, and distinguishes requirements, prohibitions, recommendations, and possibilities. It reduces nominal style and unnecessary nesting while retaining useful subordinate clauses, normal connective prose, and natural sentence variation. It does not impose Easy-Language conventions or hard sentence-length limits, and it states the adopted tekom edition, project profile, and unresolved terminology decisions needed for a traceable review."

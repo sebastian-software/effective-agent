@@ -101,6 +101,11 @@
       "expected": "Uses the German profile and changes only visible prose, preserving code, attributes, URLs, identifiers, and existing intentional house-style choices."
     },
     {
+      "name": "surface-uncertain-term-in-localization",
+      "prompt": "Update the existing `de-CH` translation of this product sentence: “Run your workspace before sharing it.” The project preserves `Workspace` as its product term, but the source and local context do not show whether “run” means starting a saved workspace or executing a workflow. No approved German verb is recorded. Return the wording or alternatives and any note needed.",
+      "expected": "Retains the exact product term `Workspace` and applies the target project's existing `de-CH` conventions. Does not silently choose a German verb that commits to one of the two meanings; surfaces the ambiguity and gives meaning-specific alternatives or asks for the missing context. Does not invent an approved term or a parallel glossary."
+    },
+    {
       "name": "distinguish-french-canadian-spacing",
       "prompt": "Normalize punctuation spacing in a fr-CA checkout message that contains a colon, semicolon, question mark, and exclamation mark.",
       "expected": "Uses the French profile's regional guidance and does not apply fr-FR spacing rules universally to Canadian French."
