@@ -51,6 +51,9 @@ load shared or implementation guidance only for the issues involved.
 
 - Correct typography and locale-sensitive presentation, not spelling, grammar,
   translation, tone, or general content style unless requested.
+- When translation revision is requested, use
+  [Revise translated prose](locale-shared-rules.md#revise-translated-prose) for
+  language-level choices; this route still owns locale typography.
 - Encode durable rules and frequent error cases, not a complete national style
   manual.
 - Treat locale defaults as defaults, not universal law. Product terminology,

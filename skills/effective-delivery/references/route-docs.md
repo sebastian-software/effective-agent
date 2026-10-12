@@ -18,8 +18,8 @@ docs system.
    operational recovery have separate authoritative surfaces.
 3. Choose the narrowest owning surface and read its reference:
    - README, setup, task, conceptual, or contributor guide: read
-     [Guides and READMEs](guides-and-readmes.md). For an existing translated
-     guide, also use its existing-translation guidance.
+     [Guides and READMEs](guides-and-readmes.md). When updating a translation,
+     use [Refresh an existing translation](guides-and-readmes.md#refresh-an-existing-translation).
    - API, CLI, configuration, or migration documentation: read
      [Interfaces and Migrations](interfaces-and-migrations.md).
    - JSDoc, TSDoc, rustdoc, docstrings, or explanatory comments: read
