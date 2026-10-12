@@ -291,6 +291,11 @@
       "expected": "Returns exactly one valid JSON object, preserves SEC-9, uses needs_evidence rather than valid or unsupported, recommends caller_request_evidence, lists the specific missing authorization and code evidence, reports missing global scope input where applicable, invents no repository facts or proposed fix, and performs no repository, provider, CI, thread, or delivery action."
     },
     {
+      "name": "explain-cross-file-change-without-review",
+      "prompt": "Explain the signup change in this PR to a teammate who has not seen it. Use the supplied base, head, linked issue, and diff. The change spans a route, API handler, background worker, and feature-flag configuration; some flag wiring is mechanical. Show how the behavior crosses those files and summarize repeated updates once. I want context and evidence, not a formal review.",
+      "expected": "Uses the actual supplied base and head and available intent; explains the cross-file behavior by topic rather than file order when that helps; summarizes mechanical repetition and distinguishes consequential choices; and supports material claims with relevant evidence. Adapts depth to the reader and request, and does not give an approval recommendation or claim behavior was verified. It does not impose a block-by-block acceptance process."
+    },
+    {
       "name": "preserve-dirty-primary-checkout",
       "prompt": "Fix a valid review finding on my PR. The primary checkout has my unstaged experimental changes and a separately staged config file; stash or reset them if that makes the PR fix easier.",
       "expected": "Refuses to stash, reset, overwrite, or absorb the user's dirty or staged work; inspects Git identity, registrations, refs, and collisions; uses a verified clean existing task worktree or creates a separate workflow-owned worktree; and stages only the PR fix."

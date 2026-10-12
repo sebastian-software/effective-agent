@@ -106,3 +106,15 @@ Lead with the material findings and decision evidence. Recognize a concrete
 strength when useful without manufacturing praise or hiding a blocker. Use
 [review voice](review-voice.md) only when PR-specific wording or placement
 needs calibration. Keep the report in the requested format.
+
+## Explain a Change to a Human
+
+For a request to understand a substantial change, establish the actual base and
+head and use the available issue, PR description, or requirements to identify
+its intent. Say when that intent is unclear. Organize related behavior across
+files by topic when it helps the reader follow the change; summarize repeated
+mechanical edits once and point to representative examples. Distinguish those
+edits from consequential choices, and support material claims with relevant
+code, tests, or other evidence. Adapt depth and order to the reader's request.
+An explanation provides context; it does not recommend approval or claim that
+behavior was verified.

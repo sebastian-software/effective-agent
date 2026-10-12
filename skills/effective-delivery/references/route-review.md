@@ -29,6 +29,10 @@ Load only the selected mode and references needed for the current decision.
 For live PR access or a caller-owned full review result, use
 [Review provider access](route-review-access.md). Mode C needs no live adapter.
 
+When someone asks to understand a substantial change, use [Explain a Change to
+a Human](review-judgment.md#explain-a-change-to-a-human). That request alone
+does not call for a PR decision.
+
 ## Establish Scope
 
 Use the current repository unless the user names specific PRs. Operate on the
