@@ -142,13 +142,14 @@ Before presenting a finding:
 4. Deduplicate findings that share one root cause.
 5. Downgrade uncertainty to an investigation item instead of prescribing a fix.
 
-When existing work is relevant, compare its symptom, error text, affected
-contract, and intended outcome rather than relying on its title. Different
-titles can describe the same problem, while similar titles can hide different
-requirements. Check the item's state, rationale, and changed evidence: a closed
-issue may document a completed fix or a rejected direction. Treat only the
-same underlying problem as a duplicate; keep related work and competing
-solutions distinct.
+When a finding may overlap existing work, search the relevant issue and PR
+trackers for a distinctive error fragment, affected symbol or contract, or
+intended outcome. If a title search misses the work, try alternate wording for
+the symptom or outcome. Compare candidates by symptom, error text, affected
+contract, and intended outcome rather than title. Check the item's state,
+rationale, and changed evidence, including closed items when their history may
+contain a completed fix or rejected direction. Treat only the same underlying
+problem as a duplicate; keep related work and competing solutions distinct.
 
 Reject candidates that are by design, already fixed, based on stale line
 numbers, unsupported by evidence, or whose avoided harm does not justify the
