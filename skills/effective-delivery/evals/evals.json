@@ -252,8 +252,8 @@
     },
     {
       "name": "compare-pr-claims-with-changed-behavior",
-      "prompt": "Review a PR whose description says webhook retries reuse one idempotency key to prevent duplicate charges. The changed loop creates a new request ID on every attempt, and the test checks only that three calls were made. Decide whether the claim is supported.",
-      "expected": "Compares the description with the changed retry code, identifies that changing request IDs does not support the stated duplicate-charge protection, and reports the reachable consequence and smallest useful correction or evidence. Does not treat the PR text or call-count assertion as proof of idempotency."
+      "prompt": "Review a PR whose description says webhook retries reuse one idempotency key to prevent duplicate charges. The changed loop generates and sends a fresh idempotency key on every attempt, and the provider deduplicates by that key. The test checks only that three calls were made. Decide whether the claim is supported.",
+      "expected": "Compares the description with the changed retry code, identifies that a fresh idempotency key makes each attempt a distinct provider request and does not support the stated duplicate-charge protection, and reports the reachable consequence and smallest useful correction or evidence. Does not treat the PR text or call-count assertion as proof of idempotency."
     },
     {
       "name": "inspect-reachable-empty-result-regression",

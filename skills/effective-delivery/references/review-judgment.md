@@ -37,8 +37,8 @@ Use these questions where they apply; their order is not a gate sequence:
   contracts, including relevant focus, loading, failure, localized, or narrow
   states. Missing requested behavior is incomplete delivery. When a changed
   condition handles a boundary or failure, check a supported reachable case:
-  an empty search result should not become a `results[0]` crash after a guard
-  is removed.
+  an empty search result should not become an `items[0].id` crash after a
+  guard is removed.
 - Does a changed signature or contract affect actual consumers? Use
   [codebase context](codebase-context.md) when relationship resolution is
   needed. Resolve real call sites rather than inventing hypothetical callers.
