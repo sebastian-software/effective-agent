@@ -53,6 +53,9 @@ and optional instruction packs. For older skill names, see the
 
 ## Contributing
 
+Use US English for all project content, including issues, posts, and pull
+requests. See the [project language policy](docs/contributor-checks.md#project-language).
+
 Improvements should help an agent make a better decision: a clearer trigger,
 a missing edge case, or a useful example. Start with the
 [authoring guide](docs/authoring-skills.md) and

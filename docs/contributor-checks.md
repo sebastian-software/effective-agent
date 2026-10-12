@@ -4,6 +4,32 @@ Pinned contributor tools and Git hooks catch a broken README or link before a
 push. CI runs the same checks on every pull request and remains the gate for
 changes pushed without the hooks.
 
+## Project language
+
+US English (`en-US`) is required for all Effective Agent project content,
+whether written by a person, agent, or bot. This includes:
+
+- Issue and pull request titles and descriptions, comments, and reviews.
+- Project posts, discussions, announcements, and other shared communication.
+- Documentation, ADRs, skill guidance, website copy, and code comments.
+- Commit messages, changelogs, and release notes.
+
+Use US spelling, such as "behavior," "color," and "organize." Before publishing
+or editing an artifact, check its title and entire body for language and
+spelling. Translate content drafted in another language before sharing it.
+When correcting an existing issue or pull request, preserve its meaning,
+links, technical identifiers, acceptance criteria, and decision status.
+
+Keep quoted source text, proper names, exact technical identifiers, and
+locale-specific examples or fixtures intact when their original language
+matters; write the surrounding explanation in US English. Private conversations
+may use the participants' preferred language. This repository policy does not
+override the language requested by users of the installable skills.
+
+The [project language decision](adr/0011-use-us-english-for-project-content.md)
+records the rationale and scope. Reviewers check language alongside content;
+the existing automated checks do not establish language compliance.
+
 ## Set up once per clone
 
 Install [mise](https://mise.jdx.dev/getting-started.html) and Git. From a trusted
