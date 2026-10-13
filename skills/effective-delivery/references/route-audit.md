@@ -29,30 +29,33 @@ Match actions to the user's authority:
 
 ## Workflow
 
-1. Read scoped agent instructions and the relevant implementation and tests.
-   Inspect manifests, CI, documentation, accepted decisions, or history when
-   they establish a convention, requirement, or disputed behavior in scope.
-2. State the selected scope, evidence limits, and important areas not inspected.
-3. Read [Investigation](investigation.md) for a defect, root-cause, or
-   surprising-behavior diagnosis. After establishing the cause, complete any
-   follow-up change already authorized by the request.
-4. Read [Audit and prioritization](audit-and-prioritization.md) for a repository
-   audit or improvement search.
-5. Verify each candidate finding directly. Reject duplicates, by-design
-   behavior, stale evidence, and problems without a concrete cost.
-6. Rank verified findings by impact, effort, confidence, fix risk, and whether
-   they unblock other work. Keep product-direction options separate from
-   defects.
-7. Read [Complexity lens](complexity-lens.md) when the task involves
-   simplification, abstraction, dependencies, duplication, or solution design.
-8. Read [Legacy change strategy](legacy-change-strategy.md) before planning or
-   implementing a consequential change in weakly tested existing code. Keep
-   preparatory structure work separate from the behavior change.
-9. Read [Implementation plans](implementation-plans.md) before synthesizing a
-   delivery specification, breaking work into tickets, or creating, reviewing,
-   revising, saving, or reconciling a plan.
-10. Report the smallest useful result: a diagnosis, evidence-backed findings,
-    the selected plan, verified implementation, or current backlog state.
+Read scoped agent instructions and the relevant implementation and tests.
+Inspect manifests, CI, documentation, accepted decisions, or history when they
+establish a convention, requirement, or disputed behavior in scope. State the
+selected scope, evidence limits, and important areas not inspected.
+
+Load the references the task needs:
+
+- [Investigation](investigation.md) for a defect, root-cause, or
+  surprising-behavior diagnosis. After establishing the cause, complete any
+  follow-up change already authorized by the request.
+- [Audit and prioritization](audit-and-prioritization.md) for a repository
+  audit or improvement search.
+- [Complexity lens](complexity-lens.md) when the task involves simplification,
+  abstraction, dependencies, duplication, or solution design.
+- [Legacy change strategy](legacy-change-strategy.md) before planning or
+  implementing a consequential change in weakly tested existing code. Keep
+  preparatory structure work separate from the behavior change.
+- [Implementation plans](implementation-plans.md) before synthesizing a
+  delivery specification, breaking work into tickets, or creating, reviewing,
+  revising, saving, or reconciling a plan.
+
+Verify each candidate finding directly, and reject duplicates, by-design
+behavior, stale evidence, and problems without a concrete cost. Rank verified
+findings by impact, effort, confidence, fix risk, and whether they unblock other
+work; keep product-direction options separate from defects. Report the smallest
+useful result: a diagnosis, evidence-backed findings, the selected plan,
+verified implementation, or current backlog state.
 
 ## Artifact Ownership
 

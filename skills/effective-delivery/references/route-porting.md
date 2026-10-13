@@ -38,8 +38,7 @@ profile that can satisfy the migration contract:
 - **Parallel:** independent shards with explicit ownership, isolated worktrees
   or directories, bounded concurrency, and a single integration queue.
 
-State the chosen profile and why. Never imply that correctness requires massive
-parallelism. More agents reduce wall-clock time only when the work can be
+State the chosen profile and why. More agents reduce wall-clock time only when the work can be
 partitioned and verification keeps pace.
 
 When any profile creates, adopts, writes in, stages from, integrates from, or

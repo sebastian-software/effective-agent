@@ -80,5 +80,5 @@ Measure the path that matters and report environment limits. Read
 microbenchmark, comparison, bounded workflow benchmark, or publishable claim.
 Route performance targets and capacity planning that need architecture
 tradeoffs to the architecture route; route browser performance to
-`effective-web`. No first-party skill currently claims new load, soak, or
-stress methodology.
+`effective-web`. New load, soak, and stress methodology is outside this
+collection.

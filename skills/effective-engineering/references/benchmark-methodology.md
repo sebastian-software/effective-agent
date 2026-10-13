@@ -138,8 +138,8 @@ tradeoffs, and capacity planning to the architecture route. Use
 `effective-delivery` to run an established repository-native load or soak
 command without redesigning it.
 
-When asked to create a new load or soak program, state that the collection has
-no current first-party methodology owner. Do not invent a traffic model, user
+When asked to create a new load or soak program, state that its methodology is
+outside this collection. Do not invent a traffic model, user
 mix, target environment, credential path, destructive-data policy, or k6,
 Locust, JMeter, or Autocannon stack. Ask for an approved workload and target,
 preserve any repository-local runbook, and recommend explicit specialist

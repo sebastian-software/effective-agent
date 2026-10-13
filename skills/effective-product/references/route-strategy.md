@@ -1,8 +1,8 @@
 # Route: Strategy, Outcomes, and Operating Model
 
 Use this route for product theses, goals, differentiation, economics, strategic
-choices, the team system around the product work, and networked or multi-sided
-products.
+choices, the product operating model (outcome ownership, discovery, and
+commitments), and networked or multi-sided products.
 
 ## Read
 
@@ -15,7 +15,7 @@ reference directly:
   goals, differentiation, economics, and strategic choices.
 - [Product operating model](product-operating-model.md) for empowered
   cross-functional teams, discovery and delivery responsibilities,
-  high-integrity commitments, AI-era exploration tempo, and organizational
+  high-integrity commitments, broad exploration before convergence, and organizational
   change away from feature-factory behavior.
 - [Networked products](networked-products.md) for marketplaces, multi-sided
   products, network-effect claims, cold starts, local liquidity, seeding,

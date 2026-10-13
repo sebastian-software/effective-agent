@@ -97,7 +97,7 @@ A relationship requires resolved code evidence:
   or `crates/cli/src/release.rs` in an explanation says nothing about whether
   the diff touches it. The relationship has to be one you looked up.
 - **Confirmation is not a finding.** If resolution shows the change is fine,
-  that produces no comment. Do not report the work you did.
+  that produces no review comment.
 - **A generic term is not evidence.** "Callers", "consumers", "downstream" with
   no named symbol behind them is a guess dressed as analysis.
 

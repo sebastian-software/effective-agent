@@ -59,7 +59,7 @@ evidence, and voice brief here and hand the LinkedIn expression to that route.
    - make a commercial connection explicit and proportionate instead of
      disguising a pitch as neutral advice.
 7. Vary direction only when it helps the decision. When the angle remains open,
-   return three materially different finished options and put the strongest
+   return a few materially different finished options and put the strongest
    first. Vary intent, structure, evidence, rhythm, or perspective rather than
    producing surface paraphrases. When the user requests one version or the
    evidence clearly supports one direction, deliver one polished version.

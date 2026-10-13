@@ -89,7 +89,7 @@ Then produce a gap map:
 
 ## Interview Mode
 
-Ask concise, prioritized question batches: the few questions that unblock the next profile improvement. Do not ask every possible question.
+Ask concise, prioritized question batches: the few questions that unblock the next profile improvement.
 
 Good interview behavior:
 
@@ -198,8 +198,9 @@ With a large collection, create one record per recommendation:
   appendix, or source-only
 - **Last verified**
 
-LinkedIn's account-data download includes received recommendations with name,
-associated company, description, and published date. Prefer that export or
+LinkedIn's account-data download can include received recommendations with
+name, associated company, description, and published date; check the current
+export before relying on that field set. Prefer that export or
 user-supplied copies for inventory work; do not scrape profiles.
 
 ### Select, Do Not Dump
@@ -343,8 +344,6 @@ Return:
 - Do not quote long references unless explicitly requested and allowed.
 - Do not hide translation, omissions, or unclear provenance.
 - Do not scrape LinkedIn; work from user-provided material or account exports.
-- Do not let data collection block all progress; improve what is supported, then mark the rest as open.
-- Do not over-interview. Ask enough to unblock the next profile improvement.
 
 The best interview mode feels like a senior editor helping the user remember and organize the evidence they already have.
 

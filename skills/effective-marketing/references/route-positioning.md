@@ -15,12 +15,8 @@ differentiation, positioning options, and the positioning brief.
 
 ## Apply
 
-- Start from a recognizable customer situation and the alternative they use
-  today, not a demographic label or an imagined persona.
-- A segment is useful only when its members share decision-relevant needs,
-  alternatives, buying conditions, or response to the product.
-- Choose category language for comprehension and truthful comparison. A new
-  category costs education and does not itself differentiate anything.
+Apply the shared operating rules in [Market-facing decisions](market-facing-decisions.md). In addition:
+
 - Offer two to four materially different positions while the direction is open,
   then recommend one at the confidence the evidence supports.
 

@@ -12,11 +12,8 @@ or channel.
 
 ## Apply
 
-- Study wins, losses, non-decisions, failed adoption, and retained use. A
-  convenient sample or a desired narrative is not what the market said.
-- Keep platform behavior, channel performance, competitive facts, and market
-  conditions dated and verifiable. Recheck volatile inputs before relying on
-  them.
+Apply the shared operating rules in [Market-facing decisions](market-facing-decisions.md). In addition:
+
 - State plainly which market-facing choice the evidence changes, and which it
   merely fails to contradict.
 

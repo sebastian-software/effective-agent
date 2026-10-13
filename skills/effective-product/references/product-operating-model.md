@@ -68,28 +68,17 @@ and experience insights arrive before roadmap commitments. Keep product
 managers close enough to delivery that operational consequences, scope
 pressure, and quality tradeoffs change the decision when necessary.
 
-## Explore at AI-era tempo
+## Explore broadly before converging
 
 Cheap generation changes the expected breadth of exploration. For a
 consequential but reversible opportunity, challenge the team to examine
 **10–20 materially different approaches per week** before settling on the first
-plausible answer.
-
-Use the number as a nudge:
-
-- count different mechanisms, workflows, business models, channels, or
-  constraint choices—not color, layout, or wording variants
-- give each approach a distinct assumption or reason it might win
-- use AI for adversarial critique, counterfactuals, rough artifacts,
-  calculations, technical spikes, and combinations the team might overlook
-- eliminate weak options cheaply before asking customers or building
-- carry at least two genuinely distinct candidates into decision-grade testing
-  when the risk and timeline permit
-
-The target is not idea theater. Twenty generated screens are not twenty product
-ideas, and a polished AI simulation is not market evidence. Adjust the cadence
-to consequence, reversibility, domain constraints, access to evidence, and the
-cost of the next test.
+plausible answer, and carry at least two genuinely distinct candidates into
+decision-grade testing when the risk and timeline permit. Run the exploration
+with the filters and limits in
+[Discovery and evidence](discovery-and-evidence.md#exploit-cheap-exploration-without-faking-evidence):
+twenty generated screens are not twenty product ideas, and a polished AI
+simulation is not market evidence.
 
 ## Make high-integrity commitments
 

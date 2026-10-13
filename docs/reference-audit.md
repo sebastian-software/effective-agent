@@ -25,9 +25,10 @@ Report a finding only when the repository itself shows the defect:
   skill for the topic, not only the listed neighbors. A narrower rule whose
   scope explains the difference (a different medium, platform, or task) is an
   override, not a contradiction.
-- **Model- or history-relative phrasing.** The changed text describes model
-  behavior instead of the requirement ("models tend to…", "models with stale
-  training…"), or is written as a diff against an earlier version the reader
+- **Model- or history-relative phrasing.** The changed text describes the
+  reading agent's own model behavior instead of the requirement ("models tend
+  to…", "models with stale training…"); behavior of a model the skill operates,
+  such as an image or speech model, is domain content, or is written as a diff against an earlier version the reader
   never saw ("keeps its name", "now works differently", "no longer" about a
   rule rather than about the domain).
 
@@ -39,7 +40,7 @@ A clean change is a valid result: return an empty list.
 
 - `high`: you read both sides and the repository contradicts the text: the
   target lacks the promised content, or two rules give opposite instructions.
-  Quote both locations. A high finding blocks the push.
+  Quote both locations.
 - `medium`: likely, but it depends on reading intent or scope.
 - `low`: worth a look; it does not meet the bar above.
 

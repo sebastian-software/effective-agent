@@ -68,12 +68,10 @@ Pattern:
 
 ## How to Use the Arc in a Profile
 
-Place the arc near the top, directly below the headline or executive summary. Keep it short:
-
-- 2-4 sentences on a website
-- 1 compact paragraph in a PDF
-- 1-2 paragraphs in a LinkedIn About section
-- a small "through-line" box if the profile has many projects
+Place the arc near the top, directly below the headline or executive summary,
+and keep it short enough to read in one pass: a few sentences on a website, one
+compact paragraph in a PDF, a little more room in a LinkedIn About section, or a
+small "through-line" box when the profile has many projects.
 
 Then make the project section echo the arc:
 

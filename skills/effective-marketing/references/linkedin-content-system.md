@@ -71,8 +71,7 @@ When the system needs an actual post, pass the LinkedIn posts route a concise br
 - voice, language, capacity, and review owner
 
 Return here after drafting to check alignment with the acquisition path,
-production capacity, and learning goal. Do not create or maintain a competing
-post-writing formula in this file.
+production capacity, and learning goal.
 
 ## Use AI as an editor and sparring partner
 

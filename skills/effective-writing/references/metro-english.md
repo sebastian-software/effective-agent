@@ -64,7 +64,8 @@ but it should not be careless.
 
 1. Preserve the user's intent, facts, names, constraints, and decision. Do not
    add commitments, follow-ups, owners, or deadlines that the user did not supply.
-2. Make the message shorter unless the user asked for detail.
+2. Keep the message as short as the reader needs to act; cut padding from a
+   source draft unless the user asked for detail.
 3. Replace formal scaffolding with natural phrasing.
 4. Remove generic praise and chatbot politeness.
 5. Use first person when it helps: "I'd", "I think", "I don't think we need".
@@ -82,7 +83,8 @@ Do not add fake local flavor. No forced NYC, SF, or Silicon Valley stereotypes.
 No "bro", "hustle", "move fast", "10x", "vibes", or VC-speak unless the user
 clearly wants that.
 
-Avoid AI and corporate patterns:
+Cut these AI and corporate patterns when they make a message read as
+templated. Judge clusters, not one isolated word or dash:
 
 - "delve", "crucial", "pivotal", "robust", "seamless", "leverage"
 - "underscores", "showcases", "serves as a testament"

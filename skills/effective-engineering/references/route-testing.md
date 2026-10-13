@@ -85,7 +85,8 @@ to the claim.
 - A focused performance-regression guard for a concrete function or service
   path is in scope when the environment and target are explicit. Prefer a
   trend or relative threshold on shared CI when an absolute number would be
-  brittle. Do not claim load, soak, stress, or capacity methodology.
+  brittle. Do not claim load, soak, stress, or capacity methodology; state that
+  it is outside this collection instead of inventing a tool or traffic model.
 - TypeScript and Rust are the primary ecosystems here. Follow local conventions
   in other languages; do not use their presence to prescribe a
   language-specific stack.
@@ -117,8 +118,5 @@ to the claim.
   typecheck, lint, build, or documentation command belong to
   `effective-delivery`. Return here when new or repaired test evidence is the
   requested outcome.
-- No first-party discipline currently claims new load, soak, or stress
-  execution methodology; state that boundary instead of inventing a tool or
-  traffic model.
 - Leave orchestration, worktrees, commits, approvals, and delivery flow to the
   calling workflow.
