@@ -64,8 +64,9 @@ acoustically instead, with
   consonant release.
 - /ɑ/ ("dah") stays near 1,000–1,400 Hz.
 - Calibrate against one take the requester accepted and one they rejected.
-- Make sure the window starts on the name and not on the preceding word: the
-  "o" of "-lo" also has a low F2.
+- Start the window at the name's first consonant, not on the preceding word.
+  A front vowel just before it, as in "Meet", also has a high F2 and yields a
+  false "front". The low F2 of a following "-lo" does not change the verdict.
 - Check every occurrence of the name in the final voice track, not only in the
   replaced take.
 
@@ -76,7 +77,8 @@ text. [`scripts/cue_sheet.py`](../scripts/cue_sheet.py) does this:
 
 - it levels each take to the same speech loudness;
 - it adds short fades at trims;
-- it writes the voice track and SRT captions with the take's real duration.
+- it writes the voice track plus SRT and WebVTT captions, using the take's
+  real duration.
 
 When replacing a take, regenerate the captions as well, because cue end times
 move with the take length.

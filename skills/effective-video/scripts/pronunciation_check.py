@@ -8,8 +8,10 @@ verdict. After the consonant release, a front vowel such as /eɪ/ ("Day-lo")
 holds F2 near 2,300-2,800 Hz for about 100 ms; a back vowel such as /ɑ/
 ("Dah-lo") stays near 1,000-1,400 Hz. ASR transcripts cannot make this
 distinction. Calibrate --front-min (default 2100) on one accepted and one
-rejected take, and place the window on the word itself: the vowel of a
-following syllable ("-lo") also has a low F2. Requires praat-parselmouth.
+rejected take. Start the window at the word's first consonant: a front vowel
+just before it ("Meet Dalo") also has a high F2 and yields a false "front",
+while the low F2 of a following "-lo" does not change the verdict. Requires
+praat-parselmouth.
 """
 from __future__ import annotations
 

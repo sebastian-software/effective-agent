@@ -18,7 +18,8 @@ The cue sheet is JSON:
 cuts the take (seconds, `null` = to the end); `on` (default 0.22) is the
 speech onset inside the take, used for the caption start. Every take is
 levelled to the same speech loudness and faded at its edges, so trims never
-click. Writes `<out-dir>/vo.wav` (48 kHz mono) and `<out-dir>/captions.srt`.
+click. Writes `<out-dir>/vo.wav` (48 kHz mono), `<out-dir>/captions.srt`, and
+`<out-dir>/captions.vtt`.
 Requires numpy, scipy, and soundfile.
 """
 from __future__ import annotations
@@ -54,6 +55,13 @@ def srt(captions: list[tuple[float, float, str]]) -> str:
     return "".join(f"{i}\n{srt_timestamp(s)} --> {srt_timestamp(e)}\n{t}\n\n" for i, (s, e, t) in enumerate(captions, 1))
 
 
+def vtt(captions: list[tuple[float, float, str]]) -> str:
+    cues = "".join(
+        f"{srt_timestamp(s).replace(',', '.')} --> {srt_timestamp(e).replace(',', '.')}\n{t}\n\n" for s, e, t in captions
+    )
+    return "WEBVTT\n\n" + cues
+
+
 def render(takes_dir: str, sheet: dict, out_dir: str) -> None:
     import numpy as np
     import soundfile as sf
@@ -83,6 +91,8 @@ def render(takes_dir: str, sheet: dict, out_dir: str) -> None:
     sf.write(os.path.join(out_dir, "vo.wav"), track[: int(total * SAMPLE_RATE)], SAMPLE_RATE)
     with open(os.path.join(out_dir, "captions.srt"), "w", encoding="utf-8") as handle:
         handle.write(srt(captions))
+    with open(os.path.join(out_dir, "captions.vtt"), "w", encoding="utf-8") as handle:
+        handle.write(vtt(captions))
 
 
 def main(argv: list[str]) -> int:
