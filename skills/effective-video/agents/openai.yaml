@@ -1,0 +1,4 @@
+interface:
+  display_name: "Effective Video"
+  short_description: "Product films in code: Remotion picture, synthetic voiceover, original score, mix, and streaming delivery"
+  default_prompt: "Use $effective-video to produce a 60-second product film for our homepage with an English voiceover and an original piano score."

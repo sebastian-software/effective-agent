@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "note": "Cross-discipline routing contract for the seven-skill catalog. Each case is a realistic request and the discipline that should own it; the set preserves representative intents from the pre-consolidation catalog after the old slugs were removed. Owner 'none' marks a control that should not activate a discipline.",
+  "note": "Cross-discipline routing contract for the eight-skill catalog. Each case is a realistic request and the discipline that should own it; the set preserves representative intents from the pre-consolidation catalog after the old slugs were removed. Owner 'none' marks a control that should not activate a discipline.",
   "cases": [
     {
       "name": "prioritize-release-scope",
@@ -366,6 +366,41 @@
       "name": "draft-team-update-from-status",
       "prompt": "Write a Slack update for my teammates from these facts: the fix is in preview, unit tests pass, and the browser check remains pending.",
       "owner": "effective-writing"
+    },
+    {
+      "name": "homepage-product-film",
+      "prompt": "Make a 60-second product film for our homepage with an English voiceover and calm piano music, rendered from code so we can update it later.",
+      "owner": "effective-video"
+    },
+    {
+      "name": "rebuild-promo-scenes",
+      "prompt": "Rebuild the Remotion promo with snapcn components where they fit, but keep our own product scenes and the existing beat timing.",
+      "owner": "effective-video"
+    },
+    {
+      "name": "fix-voiceover-take",
+      "prompt": "The synthetic voiceover says 'Dahlo' at 0:15. Regenerate only that take with the same voice and seed settings and keep the rest of the mix.",
+      "owner": "effective-video"
+    },
+    {
+      "name": "original-film-score",
+      "prompt": "Compose an original score for our launch video on the existing bar grid, duck it under the narration, and master the mix to -16 LUFS.",
+      "owner": "effective-video"
+    },
+    {
+      "name": "publish-film-streaming",
+      "prompt": "Publish the finished launch film on Bunny Stream with a click-to-play player, captions, and a poster frame, and archive the original renders outside Git.",
+      "owner": "effective-video"
+    },
+    {
+      "name": "launch-video-script-messaging",
+      "prompt": "Write the positioning and the 60-second script for our launch video: the core promise, three proof points, and the call to action. Production comes later.",
+      "owner": "effective-marketing"
+    },
+    {
+      "name": "embed-film-on-landing-page",
+      "prompt": "Our product film is already hosted. Add it to the landing page hero as a lazy-loaded, accessible click-to-play embed that does not hurt LCP.",
+      "owner": "effective-web"
     }
   ]
 }
