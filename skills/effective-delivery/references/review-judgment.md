@@ -112,13 +112,27 @@ needs calibration. Keep the report in the requested format.
 
 For a request to understand a substantial change, establish the actual base and
 head and use the available issue, PR description, or requirements to identify
-its intent. Say when that intent is unclear. Organize related behavior across
-files by topic when it helps the reader follow the change; summarize repeated
-mechanical edits once and point to representative examples. Distinguish those
-edits from consequential choices, and support material claims with relevant
-code, tests, or other evidence. Adapt depth and order to the reader's request.
-An explanation alone establishes neither an approval decision nor behavioral
-verification. Report any checks actually run with their scope and gaps.
+its intent; say when that intent is unclear. Lead with a concise summary of the
+net user or system behavior that changed. By default, explain material topics
+with enough substance that readers need not reconstruct them from source: what
+changed from before to after, who or what is affected, and why, including the
+supported problem, constraint, benefit, or meaningful tradeoff. Prioritize by
+impact and affected contracts, not by changed lines or file count; a one-line
+authorization, security, or configuration change can affect a broad boundary.
+Organize related user and system behavior across files together when that helps
+the reader understand the change.
+
+Use supplied issues, accepted decisions, compatibility or browser-support
+evidence, code, tests, and runtime or browser results to explain the change
+directly. Link sources for traceability, not as a file or symbol itinerary that
+leaves the reader to reconstruct the behavior. Distinguish recorded rationale
+and observed behavior from inference; name missing rationale or compatibility
+evidence instead of inventing a product decision or browser-support claim.
+Summarize or omit low-impact mechanical churn unless it helps explain a
+consequence. Adapt the format and depth to the reader; a deeper code-level
+explanation remains appropriate when requested. An explanation alone
+establishes neither an approval decision nor behavioral verification. Report
+any checks actually run with their scope and gaps.
 
 Add a small explanatory view only when it answers a reader's concrete question.
 These choices adapt visual explanation techniques from Humanlayer's
