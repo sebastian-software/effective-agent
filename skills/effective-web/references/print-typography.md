@@ -209,7 +209,7 @@ Even 0.5pt differences in apparent size matter on paper — `font-size-adjust` p
 }
 ```
 
-**`text-wrap: pretty`** — Chrome 117+, Safari 26+. **`text-wrap: balance`** — Chrome 114+, Firefox 121+, Safari 17.5+. **`hyphens: auto`** requires `lang` attribute on `<html>`.
+**`text-wrap: pretty`** — Chrome 117+, Safari 26+, not Firefox as of October 2026. **`text-wrap: balance`** — Chrome 114+, Firefox 121+, Safari 17.5+. **`hyphens: auto`** requires `lang` attribute on `<html>`.
 
 **`<wbr>`** (word break opportunity) — insert in HTML where long unbreakable strings (URLs, chemical names, identifiers) may break across lines *without* inserting a hyphen. Useful for print where long strings must fit within the measure.
 
@@ -319,7 +319,7 @@ For reference lists, use a hanging indent so the first line protrudes while cont
     letter-spacing: 0.05em;
   }
 
-  /* Hanging punctuation (Safari only — progressive enhancement) */
+  /* Hanging punctuation (Safari only as of October 2026 — progressive enhancement) */
   article p {
     hanging-punctuation: first allow-end last;
   }
@@ -403,7 +403,7 @@ h1 {
 3. **More space before** headings than after to group them with following content
 4. **Gestalt law of proximity:** A multi-line heading's internal line-height must always be tighter than its margin-top/margin-bottom — otherwise readers mis-group heading lines with surrounding content
 5. Modest scale (~1.2x between levels); print needs less contrast than screen
-6. Use **`text-box-trim`** (Chrome 133+, Safari 18.2+) for optically precise vertical spacing
+6. Use **`text-box-trim`** (Chrome 133+, Safari 18.2+, Firefox 154+) for optically precise vertical spacing
 
 ## Resume Typography
 

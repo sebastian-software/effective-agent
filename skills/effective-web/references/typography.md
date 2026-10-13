@@ -542,7 +542,7 @@ At small sizes: increased x-height, wider spacing, thicker strokes for legibilit
 
 ### Hanging Punctuation for Display Text
 
-For large quoted text, pull punctuation into the margin so the text edge aligns visually. The CSS `hanging-punctuation` property exists but is Baseline Limited availability (Safari only). Use a negative `text-indent` instead:
+For large quoted text, pull punctuation into the margin so the text edge aligns visually. The CSS `hanging-punctuation` property exists but is Baseline Limited availability (Safari only as of October 2026). Use a negative `text-indent` instead:
 
 ```css
 blockquote.display {
@@ -552,7 +552,7 @@ blockquote.display {
 
 ### Drop Caps
 
-Use `initial-letter` for drop caps (Baseline Limited availability: Chrome 110+, no Firefox; Safari only via the `-webkit-` prefix, which an unprefixed `@supports` check misses). Provide a fallback for unsupported browsers:
+Use `initial-letter` for drop caps (Baseline Limited availability as of October 2026: Chrome 110+, no Firefox; Safari only via the `-webkit-` prefix, which an unprefixed `@supports` check misses). Provide a fallback for unsupported browsers:
 
 ```css
 .article > p:first-of-type::first-letter {
@@ -576,7 +576,7 @@ Use `initial-letter` for drop caps (Baseline Limited availability: Chrome 110+, 
 
 ### Prevent Widows in Headings
 
-A single word on the last line of a heading looks orphaned. Use CSS `text-wrap: balance` (Baseline Newly available: Chrome 114+, Firefox 121+, Safari 17.5+) for headings and `text-wrap: pretty` (Limited availability: Chrome 117+, Safari 26+, not Firefox) for paragraphs — both are safe progressive enhancements:
+A single word on the last line of a heading looks orphaned. Use CSS `text-wrap: balance` (Baseline Newly available: Chrome 114+, Firefox 121+, Safari 17.5+) for headings and `text-wrap: pretty` (Limited availability as of October 2026: Chrome 117+, Safari 26+, not Firefox) for paragraphs — both are safe progressive enhancements:
 
 ```css
 h1, h2, h3, h4, h5, h6 {

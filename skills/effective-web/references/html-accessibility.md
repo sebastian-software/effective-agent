@@ -194,8 +194,8 @@ verification.
   announcement when its result appears away from focus, while an asynchronous
   change may need none when focus or state already communicates it. Keep
   interactive recovery UI outside the live region.
-- Treat `ariaNotify()` as a progressive enhancement while it remains outside
-  Baseline. Prefer semantic DOM updates and established live-region behavior;
+- Treat `ariaNotify()` as a progressive enhancement: it became Baseline Newly
+  available in September 2026, so older targets still lack it. Prefer semantic DOM updates and established live-region behavior;
   use it only for useful announcements that are not already expressed, feature-
   detect it, coalesce rapid messages, inherit the correct `lang`, avoid duplicate
   narration, and retain a tested live-region fallback where the message is

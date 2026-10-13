@@ -669,7 +669,7 @@ When tabs overflow on small screens, use CSS scroll-snap for a swipeable tab str
 }
 ```
 
-**Emerging CSS features (Limited availability, Chromium-only):**
+**Emerging CSS features (Limited availability, Chromium-only as of October 2026):**
 - `::scroll-button()` generates previous/next buttons (Chrome 135+)
 - `::scroll-marker` and `::scroll-marker-group` associate navigation markers with scroll items (Chrome 135+)
 - `scroll-state(snapped)` container queries enable styling based on snap position (Chrome 133+)

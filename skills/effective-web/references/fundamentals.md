@@ -731,7 +731,7 @@ A consistent frame rate matters more than a high one — a steady 30fps looks sm
 }
 ```
 
-**Future alternative:** `interpolate-size: allow-keywords` (Chrome 129+) allows direct `height: 0` to `height: auto` transitions — but it is Baseline Limited availability, so keep the grid technique as the default until support widens.
+**Future alternative:** `interpolate-size: allow-keywords` (Chrome 129+) allows direct `height: 0` to `height: auto` transitions — but it is Baseline Limited availability as of October 2026, so keep the grid technique as the default until support widens.
 
 ### Every Entrance Needs an Exit
 
@@ -906,7 +906,7 @@ Replace motion-based animations with fades where a visual signal is still needed
 
 The View Transition API provides native browser support for animated transitions between UI states — both within a single page (SPA) and across page navigations (MPA). It answers the question "what just happened?" by showing spatial relationships between states, reducing cognitive load.
 
-**Browser support:** Same-document transitions are Baseline 2025 (Chrome 111+, Safari 18+, Firefox 144+). Cross-document (MPA) transitions have no Firefox support — use as progressive enhancement only.
+**Browser support:** Same-document transitions are Baseline 2025 (Chrome 111+, Safari 18+, Firefox 144+). Cross-document (MPA) transitions have no Firefox support as of October 2026 — use as progressive enhancement only.
 
 #### Same-Document Transitions (SPA)
 

@@ -272,7 +272,7 @@ Limit nesting to 2-3 levels maximum. Deeper nesting creates:
 
 ## Scoped Styles (`@scope`)
 
-`@scope` defines style boundaries so rules apply only within a subtree. Supported in Chrome 118+, Edge 118+, Safari 17.4+, Firefox 146+.
+`@scope` defines style boundaries so rules apply only within a subtree. Baseline 2026 Newly available (March 2026): Chrome 118+, Edge 118+, Firefox 146+, Safari 26.4+ (Safari 26.0–26.3 skipped scoped rules on `<input>` and `<textarea>`).
 
 ### Basic Syntax
 

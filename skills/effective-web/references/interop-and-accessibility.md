@@ -76,7 +76,7 @@ screen reader — not against the library's reputation.
   everything else declaratively through props and state.
 - In React 19+, accept `ref` as a normal prop on function components and forward
   it to the underlying DOM node; the old `forwardRef` wrapper is no longer
-  required (and is being deprecated). In React 18 codebases, keep using
+  required (and React plans to deprecate it in a future release). In React 18 codebases, keep using
   `forwardRef`. Match the codebase's React version before changing a public ref
   API — it is a breaking change for consumers.
 - When exposing imperative methods, use `useImperativeHandle` to publish a

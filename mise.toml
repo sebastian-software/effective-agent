@@ -45,6 +45,11 @@ binary=$(mise which lychee) && python3 scripts/check-links.py "$binary" --config
 
 # Review changed skill guidance with a local claude or codex CLI. Fails only on
 # high-confidence findings; a missing or failing harness never blocks.
+# List dated claims older than 180 days and support claims without a date.
+[tasks."claims:freshness"]
+description = "Report dated skill claims that are due for re-verification"
+run = "python3 scripts/check-claim-freshness.py --undated"
+
 [tasks."references:audit"]
 description = "Audit changed skill guidance for stale pointers and contradictions"
 run = "python3 scripts/reference-audit.py"

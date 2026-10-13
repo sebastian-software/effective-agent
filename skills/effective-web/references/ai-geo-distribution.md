@@ -130,11 +130,11 @@ Google-specific status handling source: [How Google interprets the robots.txt sp
 
 ## LLM and Agent Access
 
-Search and AI crawlers serve separate purposes, so set policy per purpose. User-agent names and opt-out behavior change; verify them in each provider's current crawler documentation before writing `robots.txt` rules:
+Search and AI crawlers serve separate purposes, so set policy per purpose. User-agent names and opt-out behavior change; verify them in each provider's current crawler documentation before writing `robots.txt` rules. The list below was verified in October 2026:
 
 - Googlebot controls Google Search crawling.
 - Google-Extended can limit use in some Google AI training and grounding systems without being the same as Search indexing controls.
-- OpenAI separates `OAI-SearchBot` for ChatGPT search visibility, `GPTBot` for training, and `ChatGPT-User` for user-triggered retrieval, with `robots.txt` handling that differs by purpose.
+- OpenAI separates `OAI-SearchBot` for ChatGPT search visibility, `GPTBot` for training, and `ChatGPT-User` for user-triggered retrieval, with `robots.txt` handling that differs by purpose; it also lists further agents such as `OAI-AdsBot`.
 - Anthropic separates `ClaudeBot` for training, `Claude-SearchBot` for search, and `Claude-User` for user-triggered retrieval.
 
 Decide crawler policy intentionally:
