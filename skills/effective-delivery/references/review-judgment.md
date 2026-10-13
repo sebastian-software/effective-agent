@@ -119,3 +119,28 @@ edits from consequential choices, and support material claims with relevant
 code, tests, or other evidence. Adapt depth and order to the reader's request.
 An explanation alone establishes neither an approval decision nor behavioral
 verification. Report any checks actually run with their scope and gaps.
+
+Add a small explanatory view only when it answers a reader's concrete question.
+These choices adapt visual explanation techniques from Humanlayer's
+[show-me skill at a pinned revision](https://github.com/humanlayer/skills/blob/bba9d13ab34f0a87f1cc33df4dd196372393ddfc/plugins/show-me/skills/show-me/SKILL.md).
+Keep brief prose beside the view to state its takeaway and point to the
+underlying evidence.
+
+| Reader's question | Smallest useful view |
+| --- | --- |
+| Which rules decide the outcome? | Short pseudocode for consequential branches, or a focused diff sketch when the surrounding code matters. |
+| Which files or components own the work? | A shallow file-responsibility or component-state tree with only changed owners and relevant neighbors. |
+| How does behavior cross code boundaries? | A small call tree, flow, or sequence diagram (Mermaid is one option) naming actual modules, symbols, and supported call, data, or control edges. |
+| Which source detail must stay visible? | A focused code block when the change is mostly new or trimming it would hide ownership or order. |
+| Would a diagram obscure a dense layout or state set? | A focused HTML illustration can make the concept easier to compare; preview it with an available host tool when useful. |
+
+Build names, edges, conditions, ownership, and ordering from the supplied code,
+contracts, tests, or runtime evidence. A static call relationship does not prove
+that a path ran for a particular input. Label a view as code-derived, observed
+in a named test or runtime trace, or proposed when that distinction matters;
+mark omitted conditions or unresolved relationships when they materially
+change interpretation. Do not present a proposed or illustrative HTML view as
+a capture of the product or as verification. For rendered UI changes, use
+`effective-web`'s Change Screenshots route for real annotated captures, then use
+the existing [Screenshots in the PR description](gh-recipes.md#10-screenshots-in-the-pr-description)
+path when publication is requested and authorized.

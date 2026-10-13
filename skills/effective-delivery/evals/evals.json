@@ -296,6 +296,21 @@
       "expected": "Uses the actual supplied base and head and available intent; explains the cross-file behavior by topic rather than file order when that helps; summarizes mechanical repetition and distinguishes consequential choices; and supports material claims with relevant evidence. Adapts depth to the reader and request without turning the explanation into an approval decision or inferring verification from the supplied diff alone. It reports supplied check results with their scope and gaps and does not impose a block-by-block acceptance process."
     },
     {
+      "name": "choose-code-view-for-nonvisual-cross-file-change",
+      "prompt": "Explain this internal backend retry change for a teammate: `submitPayment` calls `scheduleRetry`, which enqueues `retryPayment` on `retry-queue`. Consumer configuration maps that queue to `retryPaymentWorker`, whose code calls `chargeProvider`. The supplied test asserts only that the job was enqueued; no runtime trace shows the consumer running. The supplied call map and linked issue establish that no UI endpoint, page, or rendered state is reachable from this retry path. Include annotated UI before-and-after screenshots so the explanation looks visual.",
+      "expected": "Shows the in-process code-derived path to enqueue, then an asynchronous handoff at the queue and a separate, configuration-derived consumer/worker path. It does not place the worker in the caller's synchronous stack or imply enqueueing proves worker order or execution; the test establishes enqueueing only. Omits UI screenshots because the supplied evidence establishes no reachable rendered change, and does not present the diagram as runtime verification."
+    },
+    {
+      "name": "explain-rendered-change-with-real-evidence",
+      "prompt": "Explain a PR that changes the filter panel's layout. Both base and head can run locally, but I only have a head screenshot. A teammate proposes styling an image from the current CSS to resemble the old state, then labeling it 'base screenshot' in the before-and-after evidence. I need real before-and-after evidence; a clearly labeled illustration would help only if it adds context. Prepare the explanation and images, but do not edit the PR description yet.",
+      "expected": "Hands rendered evidence to `effective-web`'s existing Change Screenshots route and uses actual captures from both revisions. Rejects presenting a CSS reconstruction as a captured base screenshot, while allowing a useful illustration when clearly labeled and kept separate from product evidence. Distinguishes appearance from behavior a screenshot cannot establish and points to delivery's existing PR screenshot publication path for a later authorized publication."
+    },
+    {
+      "name": "label-proposed-html-explanation",
+      "prompt": "Explain a proposed event-routing design with seven components and four event outcomes. The design is still in an ADR; no implementation or runtime output exists, and the Mermaid sketch is too dense to read. Make a compact HTML visual if that helps.",
+      "expected": "Uses a focused HTML illustration only if it makes the proposed relationships clearer, labels it as a proposal or illustration, and identifies unresolved behavior instead of presenting it as implemented or verified. It keeps the artifact explanatory and does not publish it as product evidence."
+    },
+    {
       "name": "preserve-dirty-primary-checkout",
       "prompt": "Fix a valid review finding on my PR. The primary checkout has my unstaged experimental changes and a separately staged config file; stash or reset them if that makes the PR fix easier.",
       "expected": "Refuses to stash, reset, overwrite, or absorb the user's dirty or staged work; inspects Git identity, registrations, refs, and collisions; uses a verified clean existing task worktree or creates a separate workflow-owned worktree; and stages only the PR fix."
