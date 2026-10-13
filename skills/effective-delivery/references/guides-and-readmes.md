@@ -56,3 +56,36 @@ Read the result from the documented starting state. Confirm that prerequisites
 appear before use, links resolve, commands are copyable, expected output is
 recognizable, and the guide does not rely on knowledge found only in the
 author's implementation context.
+
+## Repository instruction files
+
+Use this section when a user explicitly asks to create, revise, or extend
+repository instruction files such as `AGENTS.md` or `CLAUDE.md`. Ordinary
+implementation work does not authorize adding persistent guidance for future
+sessions.
+
+### Verify facts and preserve authority
+
+Verify operational claims with [Command Discovery](command-discovery.md)
+against current manifests, task runners, CI, tests, and scoped instructions. A
+script or configuration shows what runs and how; it does not by itself set
+policy. Correct a stale operational claim within the requested scope. Preserve
+applicable scoped policy, keep an unresolved conflict visible, and change
+policy only when that decision is part of the request.
+
+### Keep the existing owner useful
+
+Improve an existing file in place and preserve its supported scoped
+instructions and policy. Remove material only when the request covers that
+cleanup and the material is stale, unsupported, redundant, or generic. Apply
+one test to new files and maintenance alike: would an agent otherwise get a
+concrete project-specific decision wrong?
+
+Keep concise, non-obvious knowledge that changes an agent's action, such as a
+verified command or prerequisite, a local boundary, a dependency between files,
+or a recovery detail. Add it only when repository evidence supports it, it is
+not already documented, and the task grants that authority. Put it in the
+closest existing scoped instruction file. Omit generic language or framework
+advice, easily rediscovered facts, and session-specific narrative. Create a new
+file only when requested guidance has no suitable existing owner, and scope it
+to the smallest affected area.

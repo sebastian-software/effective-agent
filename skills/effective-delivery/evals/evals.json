@@ -16,6 +16,31 @@
       "expected": "The agent performs the small repository-native documentation fix and relevant focused validation without creating hidden state, a custom plan store, labels, setup files, or unnecessary phases."
     },
     {
+      "name": "refresh-stale-instruction-command-from-evidence",
+      "prompt": "Update the existing AGENTS.md command for testing the API package. It says `npm test`, but the current workspace manifest and CI job use `pnpm --filter api test`. Keep the change limited to this instruction file.",
+      "expected": "Checks the command against the current manifest and CI, updates the stale operational fact in the existing file, and preserves unrelated scoped instructions and policy."
+    },
+    {
+      "name": "script-capability-does-not-set-policy",
+      "prompt": "Review this CLAUDE.md cleanup. It says production deploys require release-lead approval. The package manifest exposes `deploy:production`, so I assume the approval line is stale. Update only claims that current repository evidence can verify.",
+      "expected": "Treats the manifest as evidence that the command exists, not that approval is unnecessary; preserves the existing policy and updates only a verified stale operational claim."
+    },
+    {
+      "name": "maintain-existing-instruction-file-in-place",
+      "prompt": "Refresh this repository's AGENTS.md. It contains a useful local data-handling constraint, an outdated test command, and a generic reminder to write clean code. Remove what does not earn its place, but improve the existing file rather than replacing it wholesale.",
+      "expected": "Edits the existing file in place, verifies and corrects the stale command, preserves the supported data-handling constraint, and removes the generic reminder as part of the requested cleanup. It does not rewrite or reorder unrelated sections."
+    },
+    {
+      "name": "reject-generic-instruction-file-tip",
+      "prompt": "Review this proposed addition to the root AGENTS.md: `Write clean, maintainable code and test your changes`. The repository has no project-specific issue behind it. Does it merit persistent space?",
+      "expected": "Recommends omitting the generic sentence because it does not change a project-specific decision; favors verified, non-obvious local guidance without inventing a rule or editing a file."
+    },
+    {
+      "name": "retain-verified-local-constraint-at-closest-owner",
+      "prompt": "In the billing package, `codegen --schema public` omits the internal ledger field, while the CI generation job uses `--schema internal` and a contract test checks that field. Add this easy-to-miss constraint to the closest existing instruction file; do not create another file.",
+      "expected": "Verifies the command and test evidence, keeps the useful constraint in the existing billing-scoped instruction file, and avoids broadening it into root guidance or creating a duplicate owner."
+    },
+    {
       "name": "bug-fix-requires-regression-evidence",
       "prompt": "Fix the retry bug that charges a customer twice after a timeout. Keep the intervention minimal and tell me when it is done.",
       "expected": "The agent establishes a reproduction or broken invariant, routes non-frontend test design to effective-engineering, implements only the authorized fix, proves discrimination with regression evidence, runs relevant repository checks, and reports any remaining payment or concurrency risk."
