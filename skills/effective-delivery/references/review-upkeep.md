@@ -50,6 +50,7 @@ provider mutation, not a generic retry: use it only when documented and within
 granted authority. If still stuck, report the evidence and stop that retry flow.
 
 Use [review verification](review-verification.md) for execution or browser
-evidence and [review voice](review-voice.md) only when response wording needs
-calibration. Distinguish local, committed, pushed, and published outcomes in
-the final handoff.
+evidence. Apply the [review route's Metro English default](route-review.md#voice)
+to replies addressed to teammates; use [review voice](review-voice.md) only for
+PR-specific calibration. Distinguish local, committed, pushed, and published
+outcomes in the final handoff.

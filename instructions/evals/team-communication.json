@@ -1,0 +1,29 @@
+{
+  "evals": [
+    {
+      "name": "route-first-draft-review-automatically",
+      "prompt": "Review this complete supplied PR record and draft a public comment for its human author. No special writing style was requested. The change correctly guards a nullable profile name, tests cover missing and blank names, and CI passes. Keep all publication with me.",
+      "expected": "Loads effective-writing and its Metro English route before drafting without an explicit style request, retains technical judgment and publication authority with the review workflow, returns concise natural prose tied to supported facts, and does not publish."
+    },
+    {
+      "name": "draft-approval-preserves-pending-action",
+      "prompt": "Draft a GitHub approval and a Slack update about the same reviewed PR. There are no blockers and CI passes, but no approval has been submitted and nothing has deployed. Return drafts only.",
+      "expected": "Uses Metro English for both drafts. The approval body can express the intended decision, but the Slack update must not claim approval was submitted or the change deployed. Performs no publication."
+    },
+    {
+      "name": "preserve-blocker-and-bot-audience",
+      "prompt": "Draft a review for the human author of a PR with a reachable duplicate-charge regression, plus a reply declining a bot's purely stylistic helper rename. Return the two drafts.",
+      "expected": "Keeps the charge regression explicitly blocking, with a concrete consequence and required behavior. Writes respectful prose for the human and a short technical disposition for the bot without compulsory praise, and changes no review or publication state."
+    },
+    {
+      "name": "private-machine-result-needs-no-prose-pass",
+      "prompt": "Return only a JSON object with the findings key and an empty array. No public comment, approval body, or team message is requested.",
+      "expected": "Returns the requested schema without loading a prose workflow solely to format a machine result, adding commentary, or inventing human-facing output."
+    },
+    {
+      "name": "preserve-repository-language",
+      "prompt": "Draft a review for a repository whose contributing guide requires Spanish public review text. The private user conversation is in German. The review found no blockers.",
+      "expected": "Applies Metro English's natural team-writing principles within the repository's Spanish language convention, preserves the no-blocker judgment, and does not force US English or translate the public text into the private conversation's German."
+    }
+  ]
+}

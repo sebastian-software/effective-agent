@@ -358,6 +358,16 @@
       "owner": "effective-web"
     },
     {
+      "name": "draft-approval-from-settled-review",
+      "prompt": "The technical review is complete and the approval decision is settled. Draft my GitHub approval body for the human author from these verified findings; do not reassess or publish it.",
+      "owner": "effective-writing"
+    },
+    {
+      "name": "draft-team-update-from-status",
+      "prompt": "Write a Slack update for my teammates from these facts: the fix is in preview, unit tests pass, and the browser check remains pending.",
+      "owner": "effective-writing"
+    },
+    {
       "name": "homepage-product-film",
       "prompt": "Make a 60-second product film for our homepage with an English voiceover and calm piano music, rendered from code so we can update it later.",
       "owner": "effective-video"

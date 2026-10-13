@@ -61,12 +61,17 @@ verified target:
 ```sh
 dalo instructions enable sebastian:request-and-completion --target codex --target claude
 dalo instructions enable sebastian:documentation-truth --target codex --target claude
+dalo instructions enable sebastian:team-communication --target codex --target claude
 dalo instructions list
 dalo doctor
 ```
 
 `request-and-completion` governs authority, autonomy, and terminal-state
-behavior. `documentation-truth` prevents prose shadows of code while preserving
+behavior. `team-communication` makes the Metro English route the default for
+reviews, approvals, and messages to teammates, including drafts produced by a
+technical workflow. It supplies standing activation guidance for hosts that may
+otherwise skip a skill on short requests. `documentation-truth` prevents prose
+shadows of code while preserving
 the distinct authority of requirements, decisions, domain language, runbooks,
 and verification evidence. Each enabled pack becomes a separate DALO-owned
 managed block in Codex's and Claude's user-level instruction files. Content

@@ -149,6 +149,26 @@
       "name": "honor-terse-technical-article-first-pass",
       "prompt": "Schreibe aus diesen geprüften Notizen einen kurzen deutschen Engineering-Blogtext mit etwa 180 Wörtern. Ich möchte bewusst kurze Sätze, keine Metaphern und möglichst einfache Wörter. Erhalte notwendige Fachbegriffe. Keine Rückfragen, keine Erklärung deines Schreibprozesses. Notizen: Unser Node-Dienst verarbeitet Bestell-Webhooks. Bisher konnte eine erneut gelieferte Nachricht dieselbe Bestellung doppelt anlegen. Wir speichern jetzt die event_id in einer Datenbanktabelle mit Unique Constraint. Der Eintrag und die Bestelländerung liegen in derselben Transaktion. Ein bereits gespeichertes Ereignis wird bestätigt, ohne die Bestellung erneut zu ändern. Ein Test sendet dasselbe Ereignis zweimal und prüft, dass eine Bestellung besteht. Wir haben weder Lasttests noch Produktionsmessungen durchgeführt. Die Änderung garantiert keine Exactly-once-Zustellung durch den Anbieter.",
       "expected": "Returns the requested German article directly, with short sentences and no metaphors or clarification loop. Preserves event_id, the uniqueness constraint and transaction boundary, the duplicate-event test, and the absence of production/load evidence. Does not promise exactly-once delivery or invent operational measurements."
+    },
+    {
+      "name": "draft-approval-without-rewrite-request",
+      "prompt": "The review is complete: no blockers, CI passes, and the change correctly skips an unchanged locale cookie on POST while preserving GET renewal. The two dependent screens explicitly refresh their layout data. Draft my GitHub approval to the human author. Do not publish it.",
+      "expected": "Uses Metro English for the first draft without a separate style or rewrite request. Writes concise, natural, friendly prose with a concrete supported strength, preserves the supplied approval decision and evidence, adds no invented verification or conditions, and does not publish."
+    },
+    {
+      "name": "draft-team-update-from-facts",
+      "prompt": "Write a Slack update for the engineering team: the proxy fix is in preview, unit tests pass, the unread-badge browser check is still pending, and no production deploy has happened. Return the message only.",
+      "expected": "Uses Metro English for a first draft, leads with the preview status, preserves the pending browser check and absence of a production deploy, sounds like a helpful teammate, and returns the message without process narration, a formal report template, or invented commitments."
+    },
+    {
+      "name": "resolve-legacy-metro-english-route",
+      "prompt": "Our review workflow tells you to use metro-english. That standalone skill was consolidated into effective-writing. Draft a GitHub reply to a human author saying the null guard fixes my concern and I have no further blockers. Return the draft only.",
+      "expected": "Resolves the former skill name to the Metro English route, produces the requested friendly and technically accurate reply, and does not stop for a missing standalone skill, invent a new alias skill, or publish."
+    },
+    {
+      "name": "draft-approval-does-not-complete-related-status",
+      "prompt": "Draft a GitHub approval and a Slack update about the same PR. The substantive review found no blockers and CI passes, but no approval has been submitted, the browser check is pending, and nothing has deployed. Keep all publication with me.",
+      "expected": "Uses Metro English for both drafts while preserving action state. The approval body can express the intended approval, but the Slack update describes the completed review and pending approval rather than claiming approval was submitted. Preserves the pending browser check and absence of a deploy, and performs no publication."
     }
   ],
   "activation": [
@@ -230,6 +250,26 @@
     {
       "name": "run-repository-validation-checks",
       "prompt": "Run this repository's typecheck, lint, and test commands against my branch and report what failed.",
+      "should_trigger": false
+    },
+    {
+      "name": "draft-github-approval",
+      "prompt": "My review is complete and I found no blockers. Write the GitHub approval body for the human author from these verified findings.",
+      "should_trigger": true
+    },
+    {
+      "name": "draft-team-update-without-style-request",
+      "prompt": "Write a Slack update from these facts: the fix is in preview, unit tests pass, and the browser check is still pending.",
+      "should_trigger": true
+    },
+    {
+      "name": "compose-prose-within-pr-review",
+      "prompt": "Review this supplied PR change and return the public review comment for its human author. Keep all publication with me.",
+      "should_trigger": true
+    },
+    {
+      "name": "private-technical-diagnosis-without-message",
+      "prompt": "Explain to me why this parser returns null for an empty input. Do not draft a review, issue comment, or team message.",
       "should_trigger": false
     }
   ]

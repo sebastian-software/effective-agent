@@ -14,7 +14,7 @@
     <meta property="og:title" content="Effective Agent — Practical skills. Better work.">
     <meta
       property="og:description"
-      content="8 practice-built skills, 387 focused references, and 2 optional instruction packs for product decisions, software delivery, marketing, writing, image, and video workflows."
+      content="8 practice-built skills, 387 focused references, and 3 optional instruction packs for product decisions, software delivery, marketing, writing, image, and video workflows."
     >
     <meta property="og:url" content="https://effective-agent.dev/">
     <meta property="og:site_name" content="Effective Agent">
@@ -32,7 +32,7 @@
     <meta name="twitter:title" content="Effective Agent — Practical skills. Better work.">
     <meta
       name="twitter:description"
-      content="8 practice-built skills, 387 focused references, and 2 optional instruction packs for product decisions, software delivery, marketing, writing, image, and video workflows."
+      content="8 practice-built skills, 387 focused references, and 3 optional instruction packs for product decisions, software delivery, marketing, writing, image, and video workflows."
     >
     <meta
       name="twitter:image"
@@ -178,7 +178,7 @@
               </div>
               <div>
                 <dt>optional packs</dt>
-                <dd>2</dd>
+                <dd>3</dd>
               </div>
             </dl>
           </div>
@@ -758,13 +758,14 @@
           </div>
           <div class="landscape-teaser-copy reveal">
             <p>
-              Skills help with a particular kind of work. Two optional instruction
+              Skills help with a particular kind of work. Three optional instruction
               packs add conventions across tasks. Enable them separately in your agent
               setup; every skill works without them.
             </p>
             <dl class="pack-list">
               <div><dt>Request and completion</dt><dd>Honor the requested scope, preserve existing authorization, and carry the work through a truthful handoff.</dd></div>
               <div><dt>Documentation truth</dt><dd>Keep documentation aligned with observable behavior, current implementation, and explicit uncertainty.</dd></div>
+              <div><dt>Team communication</dt><dd>Load Metro English by default for reviews, approvals, and messages to teammates, while keeping technical judgment with its owner.</dd></div>
             </dl>
             <a class="button button-primary" href="https://github.com/sebastian-software/effective-agent/blob/main/docs/adr/0005-first-party-instruction-packs.md">Read the collection boundary</a>
           </div>
@@ -818,7 +819,8 @@ dalo sync</code>
                 <p>Requires a DALO release with source-backed instruction packs.</p>
                 <div class="code-block code-block-multiline">
                   <code id="optional-instructions-command">dalo instructions enable sebastian:request-and-completion --target codex
-dalo instructions enable sebastian:documentation-truth --target codex</code>
+dalo instructions enable sebastian:documentation-truth --target codex
+dalo instructions enable sebastian:team-communication --target codex --target claude</code>
                   <button class="copy-button" type="button" data-copy-target="optional-instructions-command" aria-label="Copy optional instruction pack commands"><span data-copy-label>Copy</span></button>
                 </div>
               </details>

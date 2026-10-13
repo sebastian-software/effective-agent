@@ -69,11 +69,13 @@ force-push without the required authority and `--force-with-lease` protection.
 
 ## Voice
 
-Match repository language and communication conventions. Make blocking impact
-and optional suggestions distinguishable; write compact, concrete comments.
-Use [PR review voice](review-voice.md) only when wording or placement needs
-calibration. Its examples and a separate writing skill are optional aids, not
-prerequisites for an ordinary comment.
+For review text addressed to an author, including approval bodies and replies,
+use `effective-writing` and its Metro English route by default when available,
+before drafting.
+Reuse it after the first read in a conversation. Preserve repository language,
+review judgment, and required versus optional meaning. The [PR review
+voice](review-voice.md) owns placement and review semantics; its examples remain
+optional. Private technical reports and machine-only results need no prose pass.
 
 ## Handoff
 

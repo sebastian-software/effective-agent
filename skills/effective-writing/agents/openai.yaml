@@ -2,3 +2,6 @@ interface:
   display_name: "Effective Writing"
   short_description: "Prose that people trust and act on"
   default_prompt: "Use $effective-writing to plan, draft, revise, audit, or typographically correct prose without inventing facts."
+
+policy:
+  allow_implicit_invocation: true

@@ -27,8 +27,9 @@ Use cases, example prompts, strengths, and the full scope live on the homepage.
 | [`effective-video`](https://effective-agent.dev/skills/effective-video/) | Product films in code: Remotion picture, synthetic voiceover, original score, mix, and streaming delivery |
 
 Optional [instruction packs](https://effective-agent.dev/#instructions)
-add standing guidance for request completion and documentation accuracy. Enable
-them separately; every skill works without them.
+add standing guidance for request completion, documentation accuracy, and
+automatic Metro English routing for team communication. Enable them separately;
+every skill works without them.
 
 ## Installation
 
