@@ -307,7 +307,7 @@
     },
     {
       "name": "label-proposed-html-explanation",
-      "prompt": "Explain a proposed event-routing design with seven components and four event outcomes. The design is still in an ADR; no implementation or runtime output exists, and the Mermaid sketch is too dense to read. Make a compact HTML visual if that helps.",
+      "prompt": "Explain the ADR revision in this PR to a teammate, using the supplied base, head, and ADR diff. The ADR describes seven components and four event outcomes, but there is no implementation or runtime output, and its Mermaid sketch is too dense to read. Use only the names and relationships in the supplied ADR; do not invent its contents. Add a compact HTML visual only if it helps explain this documentation change.",
       "expected": "Uses a focused HTML illustration only if it makes the proposed relationships clearer, labels it as a proposal or illustration, and identifies unresolved behavior instead of presenting it as implemented or verified. It keeps the artifact explanatory and does not publish it as product evidence."
     },
     {
