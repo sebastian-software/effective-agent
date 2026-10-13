@@ -571,6 +571,21 @@
       "expected": "States affected users and versions, the compatibility window, exact before-and-after configuration, warning and removal behavior, checkpoints, validation, and the supported recovery path. It does not promise rollback after removal, invent dates, or create a new documentation hierarchy outside the existing release convention."
     },
     {
+      "name": "release-note-subject-needs-diff-evidence",
+      "prompt": "Draft customer release notes for `v3.7.0..v3.8.0`. The only commit is titled `fix: prevent duplicate invoice emails`, but the complete diff only renames a test description and updates a CI job name; production code, public behavior, and user documentation are unchanged. What should the notes say?",
+      "expected": "Uses the complete diff to assess the customer effect instead of repeating the commit subject. It does not claim duplicate emails were fixed; if the project has no other customer-relevant changes in the range, it uses the project's no-change wording."
+    },
+    {
+      "name": "release-note-dependency-fix-needs-local-evidence",
+      "prompt": "A release updates `hook-client` from 4.2.1 to 4.2.2. The commit subject says `fix: stop losing webhook deliveries`. The official upstream notes mention adding jitter to retries after HTTP 503 responses, but no upstream issue or patch connects that change to lost deliveries, and no one has checked whether this repository's webhook path uses the affected retry behavior. Draft the release note for integration operators.",
+      "expected": "Does not claim that lost webhook deliveries are fixed from the version bump and nearby upstream note alone. It names the missing upstream and local applicability evidence, and omits or clearly qualifies the fix claim until that evidence is established."
+    },
+    {
+      "name": "release-range-with-no-notable-audience-changes",
+      "prompt": "Draft the release note for public API customers for `v2.4.0..v2.4.1`. The range has three commits: `feat: faster onboarding`, `fix: flaky coverage upload`, and `chore: bump CI runner image`. The diff changes contributor setup documentation, the CI workflow, and internal coverage reporting; it does not touch the API, its configuration, or customer documentation. The release template says to write `No notable changes.` when nothing affects customers.",
+      "expected": "Checks the diff rather than the commit subjects, recognizes that `feat: faster onboarding` refers to contributor setup rather than customer onboarding, and concludes that the range has no notable effect for API customers. Uses the project's exact no-change wording and does not invent a customer improvement or force internal changes into customer notes."
+    },
+    {
       "name": "review-maintenance-procedure-against-ste",
       "prompt": "Rewrite an English maintenance procedure to ASD-STE100 Issue 9 and state whether it is compliant. The draft uses passive voice, long sentences, several actions in one step, a WARNING, and company-specific component terms. The repository contains the authoritative procedure but no approved terminology database or completed STE review.",
       "expected": "Preserves the technical meaning and hazard level, separates procedural and descriptive content, uses imperative steps with prior conditions first, applies the applicable sentence and paragraph constraints, and identifies company terms that require technical-noun or technical-verb approval. It checks vocabulary against the official Issue 9 dictionary when available, does not treat a generic readability score or checker as proof, and labels the result as an STE-aligned draft rather than compliant while terminology and full rule review remain incomplete."
