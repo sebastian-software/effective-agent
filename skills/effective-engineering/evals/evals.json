@@ -37,8 +37,8 @@
     },
     {
       "name": "scope-greenfield-technology-evidence",
-      "prompt": "We're evaluating Runtime Alder and Runtime Birch for a new service; these are hypothetical placeholder names, and I haven't provided source links or documentation. Hard constraints are Linux x86_64 support and an Apache-2.0-or-MIT license. There's no repository, package manifest, or deployment config yet. Can you compare and recommend one from the available evidence? State what you cannot verify.",
-      "expected": "Recognizes that the candidate names are placeholders and no primary sources are provided, so it cannot identify the projects, verify their release, support, platform, or license claims, or recommend one. It asks for identifiable candidates and suitable current primary sources or dated excerpts. Separately, it states that the absent repository leaves installed-version and local integration evidence unavailable; it does not invent those facts or require a prototype solely to create local proof."
+      "prompt": "We're starting a new service and have no repository, manifest, or deployment config yet. Hard constraints: Linux arm64 support and an MIT, BSD, or Apache-2.0 license. We're choosing between Redis and Valkey as a cache, and a teammate remembers that one of them changed its license recently. Compare them and recommend one.",
+      "expected": "Checks each candidate's current release, license, and arm64 support against current primary sources such as license files, release notes, and platform documentation, and records each source's scope and date. Treats the teammate's recollection as a lead to verify, excludes a candidate that current evidence shows violates a hard constraint, and keeps any recommendation conditional on claims it could not verify. States that installed-version and local integration evidence do not exist yet; it does not invent them or require a prototype solely to create local proof."
     },
     {
       "name": "design-observability-from-operator-questions",

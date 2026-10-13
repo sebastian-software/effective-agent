@@ -31,7 +31,9 @@ design request unless explicitly asked.
   mandates containers, microservices, or a cloud vendor.
 - [Source-verified external contracts](source-verified-external-contracts.md)
   when a framework, dependency, platform, or provider contract materially
-  affects the recommended architecture or its public behavior.
+  affects the recommended architecture or its public behavior, including a
+  technology choice that rests on current support, licensing, availability, or
+  limits.
 
 ## Workflow
 
