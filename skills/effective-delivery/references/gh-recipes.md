@@ -98,7 +98,7 @@ the PR body, or a Linear-style branch name (`name/abc-123-...`). Read it through
 connected Linear integration **if one is available**: discover it at runtime from
 the host's tool list or tool search, and use it to fetch the ticket.
 
-If no Linear MCP is connected and the content isn't reachable, don't stall:
+If no Linear integration is available and the content isn't reachable, don't stall:
 use the PR title, description, diff, and available requirements. A missing link
 does not stop independent technical review. Note an established ticket-linking
 requirement as an unresolved process condition, and ask only for acceptance
