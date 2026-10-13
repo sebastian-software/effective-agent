@@ -5,7 +5,7 @@ web platform. Snapshot date: **2026-10-14**. Before shipping, verify each lead
 against current Baseline/MDN data and the project's support target; status can
 only move forward after this snapshot.
 
-## Promote: Baseline 2026 Newly available
+## Promote: recently Newly available
 
 Propose these when they remove brittle workarounds or improve the result. State
 that they target current browser versions and preserve a coherent older-browser
@@ -61,7 +61,7 @@ path when the project supports older devices, WebViews, or enterprise browsers.
   replace semantic order or explicit application data with DOM-position
   inference.
 - **Invoker commands (`command`/`commandfor`):** Baseline 2025, Newly available
-  since December 2025 and listed here because it is still recent. Let a `button` open, close, or toggle a dialog or popover
+  since December 2025. Let a `button` open, close, or toggle a dialog or popover
   without glue JavaScript; keep the same actions reachable through ordinary
   controls for older targets.
 
