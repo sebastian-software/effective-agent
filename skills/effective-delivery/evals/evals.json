@@ -116,6 +116,16 @@
       "expected": "Verifies cheap decisive done criteria, investigates blockers, marks duplicates and superseded work with successor links or rationale, reruns drift checks against current architecture, rejects plans that no longer have value, and identifies the next executable item instead of preserving every stale plan."
     },
     {
+      "name": "interpret-delivery-review-coverage-and-recurrence",
+      "prompt": "Summarize evidence across eight completed changes: four have no review record; three have reviews with no findings within their stated scopes; one has two bot comments and a follow-up ticket for the same timeout cause. A separate change independently reproduces the timeout on another code path. Churn is highest in the cleanly reviewed changes. What can we conclude about review coverage and recurrence?",
+      "expected": "Keeps unreviewed work distinct from scoped reviews that recorded no findings; counts duplicate reports for one cause as one observation, while the independent reproduction is evidence of recurrence. Treats churn as a search signal only, not a quality or contribution score, limits claims to available records and review scopes, and leaves missing evidence unknown."
+    },
+    {
+      "name": "separate-landed-action-from-demonstrated-benefit",
+      "prompt": "An implementation ships to meet a documented retry requirement. Later, total retries fall, but request volume doubles and duplicate ledger rows were not measured. A reviewer says the original design decision was wrong because a later architecture now supports an alternative. Assess what the evidence says about the action and the decision.",
+      "expected": "Recognizes the observed retry rate fell because total retries decreased while request volume doubled. Treats this as an improved measured outcome after shipping; timing alone does not show that this action caused the change, and duplicate ledger rows remain unknown because they were unmeasured. Assesses the original decision against the requirements and information available then, not later architecture, and keeps delivery or counts from becoming a quality score."
+    },
+    {
       "name": "diagnose-confirmed-regression-without-fixing",
       "prompt": "Diagnosis only: after commit abc123, invoice retries create duplicate ledger entries. A focused reproduction reaches the retry path, and history shows the idempotency key was moved below the insert in that commit. Explain the root cause, but do not edit anything.",
       "expected": "Selects investigation mode, distinguishes the reproduced observation from causal inference, tests credible alternatives, identifies the moved idempotency boundary as a confirmed regression only when the trace supports it, reports impact and limits, recommends exactly one separately authorized fix workflow, and makes no source, test, issue, branch, or project-state change."
@@ -218,7 +228,7 @@
     {
       "name": "retain-pr-semantics-while-reusing-general-voice",
       "prompt": "Use the team's general writing guidance to word this PR review. A human author introduced a reachable duplicate charge, which is blocking; a bot also suggested a purely stylistic rename. Write the review decision and both replies.",
-      "expected": "Uses effective-writing or repository conventions for natural phrasing without delegating review judgment to them; requests changes for the duplicate-charge consequence with a clear required action, treats the bot's style preference as optional or declines it in a short technical reply, gives the human author appropriately warm context, and preserves Delivery ownership of severity, reviewer-class behavior, and the review decision."
+      "expected": "Uses effective-writing and its Metro English route when available for natural phrasing, with repository conventions as the fallback; retains Delivery ownership of judgment; requests changes for the duplicate-charge consequence with a clear required action; treats the bot's style preference as optional or declines it in a short technical reply; and gives the human author appropriately warm context without changing severity, reviewer-class behavior, or the review decision."
     },
     {
       "name": "critical-accessibility-can-block",
@@ -531,6 +541,16 @@
       "expected": "Applies STE to the surrounding English prose while preserving commands, identifiers, UI labels, and quoted output exactly. It separates prerequisites from imperative steps, keeps each instruction focused, treats product-approved terms through the project terminology process, and verifies copyability and technical behavior independently from the language review."
     },
     {
+      "name": "preserve-protected-terms-in-translated-guide",
+      "prompt": "An API guide has one changed paragraph and an existing `de-DE` translation. The project's locale settings preserve the product term `Workspace`; the exact interface elements are `agent publish --dry-run`, `retryPolicy`, `/workspaces/{workspaceId}`, and `{workspaceId}`. A proposed update translates `Workspace`, renames `retryPolicy`, and replaces the path placeholder with a sample ID. Review it.",
+      "expected": "Uses the existing locale terminology and preserves `Workspace`, the command, identifier, path, and placeholder exactly. Checks the changed technical claim against the owning CLI or schema, scopes edits to the changed paragraph, and does not create a new glossary format or translate protected literals."
+    },
+    {
+      "name": "leave-unchanged-translated-sections-alone",
+      "prompt": "Only step 2 of a three-step English setup guide changed. Steps 1 and 3 in the existing `fr-CA` translation still match their sources, including the command `agent sync --dry-run` and a warning. A proposal rewrites all three translated steps. What should the translation update change?",
+      "expected": "Updates only the target passage corresponding to changed step 2 and leaves already-correct steps 1 and 3 intact, including their command and warning. Verifies any changed technical claim against its source of truth and uses the project's existing locale settings and terminology."
+    },
+    {
       "name": "write-natural-rule-based-technical-german",
       "prompt": "Überarbeite eine deutsche Wartungsanleitung nach dem tekom-Ansatz für regelbasiertes Schreiben. Die Zielgruppe sind erfahrene Servicetechniker. Der Auftraggeber möchte besonders verständlichen Text, aber ausdrücklich keine abgehackte Leichte Sprache. Der Entwurf wechselt Benennungen, verwendet Nominalstil, verschachtelte Bedingungen und unklare Modalverben.",
       "expected": "Preserves precise technical terms and necessary domain knowledge, selects one preferred designation per concept, puts prior conditions before clear imperative actions, and distinguishes requirements, prohibitions, recommendations, and possibilities. It reduces nominal style and unnecessary nesting while retaining useful subordinate clauses, normal connective prose, and natural sentence variation. It does not impose Easy-Language conventions or hard sentence-length limits, and it states the adopted tekom edition, project profile, and unresolved terminology decisions needed for a traceable review."
@@ -589,6 +609,11 @@
       "name": "reconcile-owned-pr-before-new-work",
       "prompt": "The monitor sees a newly opened actionable issue, but a PR created by this queue has just failed a required check on its latest head. Continue the monitor cycle.",
       "expected": "The agent removes any stale ready flag, routes the issue-scoped branch-local failure back to the owning worktree, validates and pushes the narrow repair, and does not claim the new issue until the owned PR is repaired or safely parked as an external blocker."
+    },
+    {
+      "name": "distinguish-same-work-from-related-issues",
+      "prompt": "Your title search for ‘retry path never returns’ finds nothing. Searching the distinctive error `503` and intended outcome finds an open issue titled ‘resubmit hangs after 503’, which describes the same trigger and affected contract. Looking at the affected retry contract also finds a closed PR titled ‘retry backoff experiment’ that was rejected without a code change. Another open issue titled ‘request timeout handling’ asks to cancel slow requests so users can edit drafts, which is a different outcome. How do you classify these before deciding whether to report the finding?",
+      "expected": "The agent treats the missed title search as a cue to try distinctive error fragments, affected symbols or contracts, and outcome terms, and considers relevant issue and PR records. It compares symptoms, contracts, and intended outcomes rather than titles, recognizes the open issue as the same problem under different wording, and checks the closed PR's rationale and changed evidence instead of treating closed state as proof of a fix. It keeps the similar-title issue with different requirements separate as related or competing work, does not infer permission to close or link anything from the classification, and avoids premature closure."
     },
     {
       "name": "keep-readiness-reversible",
@@ -718,7 +743,7 @@
     {
       "name": "ordinary-review-comment-loads-proportionately",
       "prompt": "Review this complete one-line PR: the internal diagnostic label changes from recieve to receive. The label is not a public contract, the affected test passes, and the repository uses ordinary concise English. Return the review here.",
-      "expected": "Returns a proportionate review without publication or invented findings, does not preload upkeep, voice examples, or a separate writing skill solely to compose an ordinary comment, and retains the complete supplied scope."
+      "expected": "Returns a proportionate private review without publication or invented findings, does not preload upkeep or voice examples, and needs no separate writing pass when no prose for a PR author or team is requested. Retains the complete supplied scope."
     },
     {
       "name": "synthesize-settled-feature-with-local-uncertainty",
@@ -749,6 +774,16 @@
       "name": "publish-screenshots-without-overwriting-description",
       "prompt": "The annotated screenshots for PR 214 are in ./shots with a ready-made Screenshots section. Put them into the PR description. The author wrote a long summary and test notes there; last time some images failed to upload and the agent pasted the old body back.",
       "expected": "Reads the current description, replaces or appends only the marked Screenshots section, uploads the images with gh pr edit --body-file and one --attach per file from the directory the references point to, then reads the description back. Re-attaches only files still referenced locally, using the read-back body so successful URLs and the author's text survive; reports any remaining failure. Does not commit images, and notes that attachments in a public repository are public."
+    },
+    {
+      "name": "review-first-draft-loads-metro-english",
+      "prompt": "Review this complete supplied PR and draft a comment for its human author, without publishing. The change skips a locale-cookie write when a POST already carries the detected value, preserves GET expiry renewal, and adds explicit refreshes for the unread badge and post-checkout navigation. The cookie-precedence and refresh paths have protective tests, CI is green, and you find no blockers. No special comment template or style was requested.",
+      "expected": "Keeps the review judgment and publication boundary with Delivery, automatically loads effective-writing and its Metro English route for the human-facing first draft, writes a concise friendly comment tied to the supplied concrete change, omits empty findings sections, preserves the supplied verification limits, and performs no publication."
+    },
+    {
+      "name": "default-writing-pass-preserves-blocker-and-bot-audience",
+      "prompt": "Review this supplied change and draft the feedback only. A reachable retry can charge a buyer twice; that is a blocker. The human author also correctly added validation for missing session IDs. A review bot suggests renaming a local helper for taste alone. Return a review for the human author and a reply declining the bot suggestion. No style instructions were requested.",
+      "expected": "Uses effective-writing and Metro English automatically for the prose while retaining Delivery ownership of severity and required versus optional work. Clearly states the duplicate-charge blocker and required behavior without a praise sandwich, keeps any recognition specific and supported, and gives the bot a short technical disposition without mandatory praise. Does not publish or soften the blocker."
     }
   ],
   "activation": [

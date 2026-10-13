@@ -2,10 +2,10 @@
 
 ## General prose owner
 
-Use repository conventions and the requested register for ordinary comments.
-Load `effective-writing` and its Metro English route only when a rewrite,
-translation, or unresolved voice problem needs that depth and the register fits.
-Do not maintain a second general prose blacklist here.
+Before drafting review bodies, approvals, inline comments, or replies, load
+`effective-writing` and its Metro English route when available. Use it for
+routine first drafts as well as rewrites, and reuse it after the first read in a
+conversation. Do not maintain a second general prose guide here.
 
 Repository language and communication conventions override the Metro English
 default. When `effective-writing` is unavailable or does not match the

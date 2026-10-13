@@ -8,13 +8,13 @@
     <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#1a211c">
     <meta
       name="description"
-      content="Seven open-source skills for AI agents across product, web, engineering, delivery, marketing, writing, and image workflows. Focused guidance from first idea to market."
+      content="Eight open-source skills for AI agents across product, web, engineering, delivery, marketing, writing, image, and video workflows. Focused guidance from first idea to market."
     >
     <meta property="og:type" content="website">
     <meta property="og:title" content="Effective Agent — Practical skills. Better work.">
     <meta
       property="og:description"
-      content="7 practice-built skills, 382 focused references, and 2 optional instruction packs for product decisions, software delivery, marketing, writing, and image workflows."
+      content="8 practice-built skills, 387 focused references, and 3 optional instruction packs for product decisions, software delivery, marketing, writing, image, and video workflows."
     >
     <meta property="og:url" content="https://effective-agent.dev/">
     <meta property="og:site_name" content="Effective Agent">
@@ -32,7 +32,7 @@
     <meta name="twitter:title" content="Effective Agent — Practical skills. Better work.">
     <meta
       name="twitter:description"
-      content="7 practice-built skills, 382 focused references, and 2 optional instruction packs for product decisions, software delivery, marketing, writing, and image workflows."
+      content="8 practice-built skills, 387 focused references, and 3 optional instruction packs for product decisions, software delivery, marketing, writing, image, and video workflows."
     >
     <meta
       name="twitter:image"
@@ -59,7 +59,7 @@
         "@type": "CollectionPage",
         "name": "Effective Agent",
         "url": "https://effective-agent.dev/",
-        "description": "Seven open-source skills for AI agents across product, web, engineering, delivery, marketing, writing, and image workflows. Focused guidance from first idea to market.",
+        "description": "Eight open-source skills for AI agents across product, web, engineering, delivery, marketing, writing, image, and video workflows. Focused guidance from first idea to market.",
         "isPartOf": {
           "@type": "WebSite",
           "name": "Sebastian Software Open Source",
@@ -67,7 +67,7 @@
         },
         "mainEntity": {
           "@type": "ItemList",
-          "numberOfItems": 7,
+          "numberOfItems": 8,
           "itemListElement": [
             {
               "@type": "ListItem",
@@ -110,6 +110,12 @@
               "position": 7,
               "name": "Effective Image",
               "url": "https://effective-agent.dev/skills/effective-image/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 8,
+              "name": "Effective Video",
+              "url": "https://effective-agent.dev/skills/effective-video/"
             }
           ]
         }
@@ -164,15 +170,15 @@
             <dl class="proof-row" aria-label="Collection facts">
               <div>
                 <dt>independent skills</dt>
-                <dd>7</dd>
+                <dd>8</dd>
               </div>
               <div>
                 <dt>focused references</dt>
-                <dd>382</dd>
+                <dd>387</dd>
               </div>
               <div>
                 <dt>optional packs</dt>
-                <dd>2</dd>
+                <dd>3</dd>
               </div>
             </dl>
           </div>
@@ -211,11 +217,11 @@
           </div>
 
           <div class="filter-bar reveal" role="group" aria-label="Filter disciplines">
-            <button type="button" aria-pressed="true" data-filter="all">All <span>7</span></button>
+            <button type="button" aria-pressed="true" data-filter="all">All <span>8</span></button>
             <button type="button" aria-pressed="false" data-filter="product">Product <span>1</span></button>
             <button type="button" aria-pressed="false" data-filter="web">Web <span>1</span></button>
             <button type="button" aria-pressed="false" data-filter="engineering">Engineering <span>2</span></button>
-            <button type="button" aria-pressed="false" data-filter="growth">Growth &amp; language <span>3</span></button>
+            <button type="button" aria-pressed="false" data-filter="growth">Growth &amp; language <span>4</span></button>
           </div>
 
           <div class="skill-grid" data-skill-grid>
@@ -295,6 +301,17 @@
               </ul>
               <a href="skills/effective-image/index.html" aria-label="Explore Effective Image">Explore skill <span aria-hidden="true">→</span></a>
             </article>
+            <article class="skill-card reveal" data-skill="effective-video" data-category="growth">
+              <div class="card-topline"><span>Video</span><span>08</span></div>
+              <h3>Effective Video</h3>
+              <p>Product films in code: Remotion picture, synthetic voiceover, original score, mix, and streaming delivery.</p>
+              <ul>
+                <li>5 intent routes</li>
+                <li>Beat sheet on a bar grid</li>
+                <li>Licenses checked before release</li>
+              </ul>
+              <a href="skills/effective-video/index.html" aria-label="Explore Effective Video">Explore skill <span aria-hidden="true">→</span></a>
+            </article>
           </div>
 
           <p class="filter-status sr-only" role="status" aria-live="polite" data-filter-status></p>
@@ -346,6 +363,10 @@
                 <button id="capability-tab-photo" type="button" role="tab" aria-selected="false" aria-controls="capability-panel-photo" tabindex="-1" data-capability-tab="photo">
                   <span class="capability-index">07</span>
                   <span><small>Image</small><strong>Refine the real portrait</strong></span>
+                </button>
+                <button id="capability-tab-video" type="button" role="tab" aria-selected="false" aria-controls="capability-panel-video" tabindex="-1" data-capability-tab="video">
+                  <span class="capability-index">08</span>
+                  <span><small>Video</small><strong>Produce the product film</strong></span>
                 </button>
               </div>
             </div>
@@ -525,6 +546,31 @@
                 </div>
                 <div class="panel-outcome"><span>Work toward</span><p>A coherent portrait series that feels warm, open, professional, and faithful to the shoot.</p></div>
               </article>
+              <article class="capability-panel" id="capability-panel-video" role="tabpanel" aria-labelledby="capability-tab-video" tabindex="0" data-capability-panel="video" hidden>
+                <div class="capability-panel-topline"><span>Effective Video</span><span>Start with · A product, a message, and a target length</span></div>
+                <div class="capability-panel-copy">
+                  <p class="capability-question">Render the film from code.</p>
+                  <p class="example-label">An example request</p>
+                  <blockquote>“Make a 60-second product film for our homepage with an English voiceover and calm piano music.”</blockquote>
+                </div>
+                <div class="review-snapshot">
+                  <div class="review-verdict">
+                    <span class="output-label">What the guidance adds</span>
+                    <strong>Picture, voice, and music on one grid</strong>
+                    <p>Plan beats on a musical bar grid so scenes, voiceover, and score land together, with checkpoints before each expensive render.</p>
+                  </div>
+                  <div class="review-register">
+                    <span class="output-label">Inside this skill</span>
+                    <ul class="coverage-list">
+                      <li>Film plan, Remotion scenes, camera &amp; brand theme</li>
+                      <li>License-checked synthetic voiceover, original score &amp; mix</li>
+                      <li>Captions, poster, streaming embed &amp; archived originals</li>
+                    </ul>
+                    <a class="panel-skill-link" href="skills/effective-video/index.html">Explore Effective Video <span aria-hidden="true">→</span></a>
+                  </div>
+                </div>
+                <div class="panel-outcome"><span>Work toward</span><p>A finished, captioned film with a reproducible source, delivered for streaming without video files in Git.</p></div>
+              </article>
             </div>
           </div>
 
@@ -606,11 +652,12 @@
               <div>
                 <p class="step-label">Reach</p>
                 <h3>Reach customers. Make the value clear.</h3>
-                <p>Connect positioning and content with acquisition, consultative sales, CRM, and service growth. Keep editorial and team writing in the right voice, and refine existing portraits without losing their shoot character.</p>
+                <p>Connect positioning and content with acquisition, consultative sales, CRM, and service growth. Keep editorial and team writing in the right voice, refine existing portraits without losing their shoot character, and render product films from code.</p>
                 <div class="step-skills">
                   <a href="skills/effective-marketing/index.html">Effective Marketing</a>
                   <a href="skills/effective-writing/index.html">Effective Writing</a>
                   <a href="skills/effective-image/index.html">Effective Image</a>
+                  <a href="skills/effective-video/index.html">Effective Video</a>
                 </div>
               </div>
             </li>
@@ -711,13 +758,14 @@
           </div>
           <div class="landscape-teaser-copy reveal">
             <p>
-              Skills help with a particular kind of work. Two optional instruction
+              Skills help with a particular kind of work. Three optional instruction
               packs add conventions across tasks. Enable them separately in your agent
               setup; every skill works without them.
             </p>
             <dl class="pack-list">
               <div><dt>Request and completion</dt><dd>Honor the requested scope, preserve existing authorization, and carry the work through a truthful handoff.</dd></div>
               <div><dt>Documentation truth</dt><dd>Keep documentation aligned with observable behavior, current implementation, and explicit uncertainty.</dd></div>
+              <div><dt>Team communication</dt><dd>Load Metro English by default for reviews, approvals, and messages to teammates, while keeping technical judgment with its owner.</dd></div>
             </dl>
             <a class="button button-primary" href="https://github.com/sebastian-software/effective-agent/blob/main/docs/adr/0005-first-party-instruction-packs.md">Read the collection boundary</a>
           </div>
@@ -771,7 +819,8 @@ dalo sync</code>
                 <p>Requires a DALO release with source-backed instruction packs.</p>
                 <div class="code-block code-block-multiline">
                   <code id="optional-instructions-command">dalo instructions enable sebastian:request-and-completion --target codex
-dalo instructions enable sebastian:documentation-truth --target codex</code>
+dalo instructions enable sebastian:documentation-truth --target codex
+dalo instructions enable sebastian:team-communication --target codex --target claude</code>
                   <button class="copy-button" type="button" data-copy-target="optional-instructions-command" aria-label="Copy optional instruction pack commands"><span data-copy-label>Copy</span></button>
                 </div>
               </details>

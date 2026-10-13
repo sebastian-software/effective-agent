@@ -441,6 +441,26 @@
       "expected": "Keeps the visible Add to cart phrase within the computed accessible name, adds only useful product context through aria-labelledby or visually hidden content, avoids an aria-label that overrides visible and localized text, and verifies repeated controls plus speech-input activation in the accessibility tree."
     },
     {
+      "name": "icu-example-preserves-required-polish-branches",
+      "prompt": "An English UI message changed and its Polish (`pl-PL`) translation is out of date. In this example, the catalog is known to use ICU MessageFormat. The source is `{name} uploaded {count, plural, one {# file} other {# files}}`; the proposed target is `{count, plural, one {# plik przesłany przez {name}} few {# pliki przesłane} many {# plików przesłanych przez {name}} other {# pliku przesłanego przez {name}}}`. One reviewer says the target is invalid because the placeholders moved; another sees no issue. Judge the update.",
+      "expected": "For this explicitly ICU-based project, recognizes both patterns as syntactically valid and that a Polish target can require `few` and `many` even though the English source uses only `one` and `other`. The target's reordered placeholders are allowed by ICU; the `few` branch alone loses the uploader because it omits `{name}`. Preserve the upload relation and variable meaning across the locale's required branches, validate with the project's message tooling where available, and leave unchanged sibling keys intact."
+    },
+    {
+      "name": "reorder-custom-placeholders-without-icu",
+      "prompt": "This catalog uses a custom interpolation grammar: `%%name%%` inserts one escaped text value; each required token must occur exactly once; translators may reorder tokens; the format has no plural or select branches. Source: `%%user%% uploaded %%count%% files`. Review the proposed French target: `%%count%% fichiers transférés par %%user%%`.",
+      "expected": "Accepts the target's supported reordering, preserving both exact custom tokens once and retaining which value is the uploader and which is the count. Does not demand ICU, add ICU braces or plural syntax, or invent branches unsupported by the stated format."
+    },
+    {
+      "name": "preserve-rendered-meaning-of-html-entities",
+      "prompt": "This project stores an HTML fragment and assigns it to `innerHTML`. In this message, `&lt;b&gt;...&lt;/b&gt;` intentionally displays an example tag as literal text; `&auml;` in a normal text node displays `ä`. Source: `Click &lt;b&gt;bold&lt;/b&gt; to emphasize; M&auml;dchen is a valid example.` Review this proposed German target: `Klicke auf <b>fett</b>, um etwas hervorzuheben; Mädchen ist ein gültiges Beispiel.`",
+      "expected": "Keeps the `b` tag delimiters escaped, for example `&lt;b&gt;fett&lt;/b&gt;`, so the example remains literal text instead of becoming active markup for this consumer; translates the human-facing word `bold` to `fett`. May retain `M&auml;dchen` or use `Mädchen`, since both render the same text in this HTML text node. Does not treat every entity spelling as immutable or decode escaped literal markup without checking the consumer."
+    },
+    {
+      "name": "translate-human-facing-rich-text-attributes",
+      "prompt": "A locale catalog stores this HTML fragment, and the project renderer preserves allowed `<a>` markup. The link destination is functional and must stay `/help/account`; the link text and `aria-label` are human-facing. Translate the message to German: `<a href=\"/help/account\" aria-label=\"Account help and support options\">Account help</a>`.",
+      "expected": "Translates both the visible link text and the human-facing `aria-label` into German, keeping the translated visible label in the accessible name, while preserving the anchor structure and exact `/help/account` destination. Does not freeze every attribute value or rewrite the functional URL."
+    },
+    {
       "name": "name-icon-control-robustly",
       "prompt": "A dialog close button contains only an SVG with a title element. It sounds correct in one screen reader, so the team assumes the button is named everywhere. Make the component robust.",
       "expected": "Keeps a native button, supplies durable localized text through visually hidden content or an aria-label fallback, treats the child SVG as decorative and hidden, avoids relying on SVG title propagation, and verifies the parent's computed role and name in representative pairings."

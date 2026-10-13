@@ -23,6 +23,13 @@ material evidence gaps. Rank findings by demonstrated impact and remedy cost;
 a clean audit is a valid result. Keep scrutiny high at security, privacy, money,
 data-loss, and irreversible boundaries. Never expose secret values.
 
+When a delivery task drafts communication to teammates, use `effective-writing`
+and its Metro English route by default when available. This covers review
+bodies, approvals, PR and issue text, replies, and team updates, including first
+drafts without a separate style request. Delivery retains the technical judgment
+and publication authority; the writing route preserves repository language and
+channel rules.
+
 ## Route by Intent
 
 | User intent | Read |

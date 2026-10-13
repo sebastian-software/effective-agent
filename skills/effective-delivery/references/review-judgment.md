@@ -104,9 +104,11 @@ for security, data-loss, architectural, irreversible, or onboarding-sensitive
 advice to remain unambiguous.
 
 Lead with the material findings and decision evidence. Recognize a concrete
-strength when useful without manufacturing praise or hiding a blocker. Use
-[review voice](review-voice.md) only when PR-specific wording or placement
-needs calibration. Keep the report in the requested format.
+strength when useful without manufacturing praise or hiding a blocker. For
+prose addressed to an author, apply the [review route's Metro English
+default](route-review.md#voice). Use [review voice](review-voice.md) only when
+PR-specific wording or placement needs calibration. Keep the report in the
+requested format.
 
 ## Explain a Change to a Human
 

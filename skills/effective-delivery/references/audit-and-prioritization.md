@@ -6,6 +6,7 @@ padding the result with generic advice.
 ## Contents
 
 - [Reconnaissance](#reconnaissance)
+- [Patterns Across Completed Deliveries](#patterns-across-completed-deliveries)
 - [Audit Lenses](#audit-lenses)
 - [Finding Contract](#finding-contract)
 - [Verification and Rejection](#verification-and-rejection)
@@ -32,6 +33,24 @@ Establish the repository's actual operating model before evaluating it:
 
 State the audit boundary. On large repositories, name packages and categories
 not inspected instead of implying exhaustive coverage.
+
+## Patterns Across Completed Deliveries
+
+When asked to analyze patterns across delivered work, compare relevant
+evidence in existing project artifacts and describe gaps in their coverage:
+
+- Work without a review has unknown review status. A review with no findings
+  shows only that none were recorded within its scope.
+- Failures reproduced independently across changes can indicate recurrence;
+  repeated reports or tools describing one cause remain one observation.
+- An action landing shows that it was implemented. Evidence that it helped
+  requires observing the relevant outcome; timing alone is not enough.
+- Assess decisions against the requirements and information available when
+  they were made, not with hindsight.
+- Missing evidence is unknown, not evidence of failure.
+
+Churn, commit volume, and finding counts can guide follow-up investigation; they
+do not measure delivery quality or individual contribution.
 
 ## Audit Lenses
 
@@ -141,6 +160,15 @@ Before presenting a finding:
 3. Check accepted decisions and current repository conventions.
 4. Deduplicate findings that share one root cause.
 5. Downgrade uncertainty to an investigation item instead of prescribing a fix.
+
+When a finding may overlap existing work, search the relevant issue and PR
+trackers for a distinctive error fragment, affected symbol or contract, or
+intended outcome. If a title search misses the work, try alternate wording for
+the symptom or outcome. Compare candidates by symptom, error text, affected
+contract, and intended outcome rather than title. Check the item's state,
+rationale, and changed evidence, including closed items when their history may
+contain a completed fix or rejected direction. Treat only the same underlying
+problem as a duplicate; keep related work and competing solutions distinct.
 
 Reject candidates that are by design, already fixed, based on stale line
 numbers, unsupported by evidence, or whose avoided harm does not justify the
