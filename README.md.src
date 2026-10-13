@@ -26,8 +26,9 @@ Use cases, example prompts, strengths, and the full scope live on the homepage.
 | [`effective-image`](https://effective-agent.dev/skills/effective-image/) | Photo editing and photoreal generation; natural business portrait retouch, cleanup and composites, and AI scenes that look like real photographs |
 
 Optional [instruction packs](https://effective-agent.dev/#instructions)
-add standing guidance for request completion and documentation accuracy. Enable
-them separately; every skill works without them.
+add standing guidance for request completion, documentation accuracy, and
+automatic Metro English routing for team communication. Enable them separately;
+every skill works without them.
 
 ## Installation
 

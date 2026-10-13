@@ -1,10 +1,15 @@
 ---
 name: effective-writing
 description: >-
-  Write, structure, revise, or audit nonfiction and technical articles, team
-  messages, and locale typography. Use for argument, clarity, voice, and
-  AI-sounding prose patterns without inferring authorship. Commercial copy
-  belongs to effective-marketing; repository documentation to effective-delivery.
+  Use by default whenever a task drafts or revises PR review text, approvals,
+  issue comments, Slack messages, or team updates, including prose produced
+  within technical workflows. The Metro English route (formerly metro-english)
+  owns natural team communication; the domain workflow retains technical
+  judgment and publication authority. Also write, structure, revise, or audit
+  nonfiction and technical articles for argument, clarity, voice, and observable
+  AI-writing patterns without inferring authorship, and correct locale
+  typography. Commercial copy belongs to effective-marketing;
+  repository documentation to effective-delivery.
 ---
 
 # Effective Writing
@@ -22,6 +27,12 @@ Return the requested artifact. An audit-only request ends with findings; when
 the user also asks for revision, complete that revision. Report observable
 patterns in prose without claiming or estimating AI authorship.
 
+For communication addressed to teammates, use the [Metro English
+route](references/route-metro-english.md) by default, including first drafts
+created inside another workflow. An explicit rewrite or style request is not
+needed. Read the route once per conversation and reuse it. A workflow using
+the former name "metro-english" selects this route.
+
 ## Route by Intent
 
 | User intent | Read |
@@ -31,7 +42,7 @@ patterns in prose without claiming or estimating AI authorship.
 | Make prose sound less generated, or report observable AI-writing patterns without an authorship guess | [Human Voice Editing](references/route-voice-audit.md) |
 | Write thought leadership, content marketing, editorial case studies, objections, proof, or a call to action | [Persuasive Nonfiction](references/route-persuasion.md) |
 | Write engineering blog posts, technical articles, explainers, or public technical project pages | [Technical Subject Matter](references/route-technical-prose.md) |
-| Rewrite a Slack message, issue or PR comment, async update, or stiff or German team note into natural US team English | [Metro English](references/route-metro-english.md) |
+| Draft or revise a review, approval, PR or issue comment, Slack message, async update, or German team note, including within another workflow | [Metro English](references/route-metro-english.md) |
 | Fix quotation marks, punctuation spacing, dashes, apostrophes, numbers, dates, currency, or hyphenation for a locale | [Locale Typography](references/route-locale-typography.md) |
 
 ## Routing Boundaries

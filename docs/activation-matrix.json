@@ -356,6 +356,16 @@
       "name": "mark-visual-changes-in-pr",
       "prompt": "Show reviewers what this pull request changes on the site: before/after screenshots of the affected pages with the changed areas marked.",
       "owner": "effective-web"
+    },
+    {
+      "name": "draft-approval-from-settled-review",
+      "prompt": "The technical review is complete and the approval decision is settled. Draft my GitHub approval body for the human author from these verified findings; do not reassess or publish it.",
+      "owner": "effective-writing"
+    },
+    {
+      "name": "draft-team-update-from-status",
+      "prompt": "Write a Slack update for my teammates from these facts: the fix is in preview, unit tests pass, and the browser check remains pending.",
+      "owner": "effective-writing"
     }
   ]
 }

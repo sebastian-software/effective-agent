@@ -62,7 +62,8 @@ but it should not be careless.
 
 ## Rewrite rules
 
-1. Preserve the user's intent, facts, names, constraints, and decision.
+1. Preserve the user's intent, facts, names, constraints, and decision. Do not
+   add commitments, follow-ups, owners, or deadlines that the user did not supply.
 2. Make the message shorter unless the user asked for detail.
 3. Replace formal scaffolding with natural phrasing.
 4. Remove generic praise and chatbot politeness.
@@ -100,6 +101,8 @@ Avoid AI and corporate patterns:
 - Issue comments: state the current problem, evidence, and next step.
 - PR review comments: preserve the supplied blocker, suggestion, approval, or
   uncertainty. Phrasing must not change the review decision or consequence.
+  A clean review or approval usually needs one short paragraph; omit empty
+  findings sections unless the repository requires that format.
 - Async updates: lead with status, then the blocker, decision, or next step.
 - Docs-adjacent notes: keep language durable and accurate. Manuals, API/CLI
   references, and normative procedures belong to `effective-delivery`; an

@@ -2,7 +2,7 @@
 
 These examples calibrate PR-specific severity, optionality, reviewer class, and
 decision language. They are not a second general prose guide. Apply the Metro
-English route in `effective-writing` only when general prose needs that help,
+English route in `effective-writing` by default for prose addressed to teammates,
 and do not copy these examples as templates. Approval wording describes a
 published action only when publication was authorized and actually completed.
 

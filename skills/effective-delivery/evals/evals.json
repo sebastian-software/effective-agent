@@ -228,7 +228,7 @@
     {
       "name": "retain-pr-semantics-while-reusing-general-voice",
       "prompt": "Use the team's general writing guidance to word this PR review. A human author introduced a reachable duplicate charge, which is blocking; a bot also suggested a purely stylistic rename. Write the review decision and both replies.",
-      "expected": "Uses effective-writing or repository conventions for natural phrasing without delegating review judgment to them; requests changes for the duplicate-charge consequence with a clear required action, treats the bot's style preference as optional or declines it in a short technical reply, gives the human author appropriately warm context, and preserves Delivery ownership of severity, reviewer-class behavior, and the review decision."
+      "expected": "Uses effective-writing and its Metro English route when available for natural phrasing, with repository conventions as the fallback; retains Delivery ownership of judgment; requests changes for the duplicate-charge consequence with a clear required action; treats the bot's style preference as optional or declines it in a short technical reply; and gives the human author appropriately warm context without changing severity, reviewer-class behavior, or the review decision."
     },
     {
       "name": "critical-accessibility-can-block",
@@ -713,7 +713,7 @@
     {
       "name": "ordinary-review-comment-loads-proportionately",
       "prompt": "Review this complete one-line PR: the internal diagnostic label changes from recieve to receive. The label is not a public contract, the affected test passes, and the repository uses ordinary concise English. Return the review here.",
-      "expected": "Returns a proportionate review without publication or invented findings, does not preload upkeep, voice examples, or a separate writing skill solely to compose an ordinary comment, and retains the complete supplied scope."
+      "expected": "Returns a proportionate private review without publication or invented findings, does not preload upkeep or voice examples, and needs no separate writing pass when no prose for a PR author or team is requested. Retains the complete supplied scope."
     },
     {
       "name": "synthesize-settled-feature-with-local-uncertainty",
@@ -744,6 +744,16 @@
       "name": "publish-screenshots-without-overwriting-description",
       "prompt": "The annotated screenshots for PR 214 are in ./shots with a ready-made Screenshots section. Put them into the PR description. The author wrote a long summary and test notes there; last time some images failed to upload and the agent pasted the old body back.",
       "expected": "Reads the current description, replaces or appends only the marked Screenshots section, uploads the images with gh pr edit --body-file and one --attach per file from the directory the references point to, then reads the description back. Re-attaches only files still referenced locally, using the read-back body so successful URLs and the author's text survive; reports any remaining failure. Does not commit images, and notes that attachments in a public repository are public."
+    },
+    {
+      "name": "review-first-draft-loads-metro-english",
+      "prompt": "Review this complete supplied PR and draft a comment for its human author, without publishing. The change skips a locale-cookie write when a POST already carries the detected value, preserves GET expiry renewal, and adds explicit refreshes for the unread badge and post-checkout navigation. The cookie-precedence and refresh paths have protective tests, CI is green, and you find no blockers. No special comment template or style was requested.",
+      "expected": "Keeps the review judgment and publication boundary with Delivery, automatically loads effective-writing and its Metro English route for the human-facing first draft, writes a concise friendly comment tied to the supplied concrete change, omits empty findings sections, preserves the supplied verification limits, and performs no publication."
+    },
+    {
+      "name": "default-writing-pass-preserves-blocker-and-bot-audience",
+      "prompt": "Review this supplied change and draft the feedback only. A reachable retry can charge a buyer twice; that is a blocker. The human author also correctly added validation for missing session IDs. A review bot suggests renaming a local helper for taste alone. Return a review for the human author and a reply declining the bot suggestion. No style instructions were requested.",
+      "expected": "Uses effective-writing and Metro English automatically for the prose while retaining Delivery ownership of severity and required versus optional work. Clearly states the duplicate-charge blocker and required behavior without a praise sandwich, keeps any recognition specific and supported, and gives the bot a short technical disposition without mandatory praise. Does not publish or soften the blocker."
     }
   ],
   "activation": [
