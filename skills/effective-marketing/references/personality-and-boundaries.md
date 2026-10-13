@@ -2,7 +2,7 @@
 
 Use this reference when a consultant profile should communicate personality, values, taste, working style, personal motivation, professional ambition, buyer fit, professional boundaries, or a non-linear background without becoming unprofessional or self-indulgent.
 
-Note: examples in this file (the design/webdesign origin, autodidact path, "Nein-Sager" stance, and named industries) come from one specific consultant's history and are illustrative only — never transfer them into another user's profile.
+Examples in this file are illustrative and deliberately drawn from different consultant profiles; build the user's copy only from their own evidence.
 
 ## Core Principle
 
@@ -55,6 +55,13 @@ Possible professional translations:
 - "Ich spreche technische und produktbezogene Risiken klar an, bevor sie teuer werden."
 - "Ich helfe Teams, Fokus zu halten - auch wenn das bedeutet, Vorhaben bewusst nicht umzusetzen."
 
+Example: "Zahlenpolizei" (a data consultant's internal label)
+
+Possible professional translations:
+
+- "I make sure decisions rest on numbers that have been checked."
+- "Ich sorge dafür, dass Entscheidungen auf geprüften Zahlen beruhen."
+
 Use the sharper label only when the brand context supports it. On a personal website it may work as a memorable section title if the surrounding copy explains it. In a formal DACH supplier profile, use the professional translation.
 
 ## Boundaries as Trust Signal
@@ -71,48 +78,31 @@ Many weak profiles imply "I can do everything." Strong profiles show a sharper r
 Good boundary language:
 
 - "I am strongest where product, design, and frontend architecture meet."
-- "I do not position myself as a pure backend infrastructure specialist."
+- "I build data platforms and decision pipelines; I do not train or tune machine-learning models myself."
 - "I can lead product-facing engineering work, but I involve dedicated specialists for deep security, legal, or domain-specific compliance topics."
 - "Ich bin nicht der richtige Ansprechpartner für reine Umsetzung nach Ticketliste, wenn niemand Produkt- und Architekturfragen klären will."
-- "Ich bin besonders wirksam, wenn Teams technische Entscheidungen mit Produkt- und Designfolgen verbinden müssen."
+- "Ich bin besonders wirksam, wenn eine Plattform modernisiert werden muss, ohne dass der Betrieb stillsteht."
 
 Avoid negative self-branding that sounds defensive, combative, or dismissive. Boundaries should create fit, not distance.
 
-## Design-Origin and Visual Judgment
+## Background Signals
 
-A design or webdesign origin can be a differentiator for technology consultants when it explains a real capability:
+An earlier discipline, a career change, or a self-taught path can differentiate
+a consultant when it explains a capability the buyer gets today: how they
+judge quality, why they bridge disciplines, or how they learn unfamiliar
+domains. Pair it with client, project, or seniority evidence; a background is
+context, not proof.
 
-- sensitivity to layout, hierarchy, color, and interaction quality
-- ability to collaborate with designers without reducing design to decoration
-- translation between product, design, and engineering constraints
-- focus on user-facing quality, not only implementation completeness
-- comfort discussing both visual detail and architectural trade-offs
+Illustrative examples from different profiles:
 
-Good positioning:
+- Design origin, frontend consultant: "My engineering work is shaped by an early webdesign background: I care about how software reads, feels, and behaves, not only whether it compiles."
+- Research origin, data consultant: "Years of experimental physics taught me to distrust a number until I know how it was measured. I bring that to every data pipeline I build."
+- Operations origin, platform consultant: "I came to platform engineering from a data center night shift. I design systems for the person who gets paged at 3 a.m."
+- Self-taught path, in German: "Ich habe mir den technischen Teil aus einer Design- und Webpraxis heraus systematisch erarbeitet. Das macht mich pragmatisch, neugierig und anschlussfähig an verschiedene Rollen."
 
-- "My engineering work is shaped by an early design/webdesign background: I care about how software reads, feels, and behaves, not only whether it compiles."
-- "I work well with designers because I understand visual intent and can translate it into maintainable frontend systems."
-- "Ich komme ursprünglich aus der Design- und Webdesign-Ecke. Das prägt bis heute meinen Blick auf Frontend-Architektur, UI-Qualität und Zusammenarbeit mit Produkt- und Designteams."
-
-Avoid caricatures such as "not a basement programmer" in formal copy. The underlying point is stronger when expressed positively: product-facing, design-literate, visually attentive, collaborative, user-aware.
-
-## Autodidact / Self-Learner
-
-An autodidactic path can support credibility when framed as evidence of self-directed learning and adaptability.
-
-Use it to explain:
-
-- how the consultant moved from design/web work into deeper engineering
-- why they can bridge disciplines
-- how they learn unfamiliar domains quickly
-- why they can operate without rigid role boundaries
-
-Good language:
-
-- "A self-taught path from webdesign into software engineering taught me to learn systems from first principles and connect disciplines that are often kept separate."
-- "Ich habe mir den technischen Teil aus einer Design- und Webpraxis heraus systematisch erarbeitet. Das macht mich pragmatisch, neugierig und anschlussfähig an verschiedene Rollen."
-
-Avoid making "self-taught" sound like a substitute for proof. Pair it with real client, project, or seniority evidence.
+In formal copy, say what the background enables, such as design-literate,
+measurement-minded, or operations-aware, rather than using caricatures such as
+"not a basement programmer".
 
 ## Where to Put Personality
 
@@ -137,7 +127,7 @@ Keep personality restrained. Use it as role-fit language:
 - "Arbeitsweise"
 - "Rollenverständnis"
 - "Schwerpunkte und Grenzen"
-- "Zusammenarbeit mit Produkt, Design und Engineering"
+- "Zusammenarbeit mit Fachbereichen und Engineering"
 - "Motivation" or "Was mich antreibt" only when the profile format allows a warmer tone
 
 Avoid labels that could sound like attitude before the reader has seen the proof.
@@ -146,7 +136,7 @@ Avoid labels that could sound like attitude before the reader has seen the proof
 
 LinkedIn can be more personal. First person works well. Use a short story or contrast if it clarifies fit:
 
-- "I started in webdesign before moving deeper into software engineering. That still shapes how I work: I care about systems, but also about whether the result is usable, legible, and worth building."
+- "I spent six years in experimental physics before moving into data engineering. That still shapes how I work: I want to know where a number came from before anyone makes a decision with it."
 - "I enjoy the parts of software work where product judgment, design quality, and engineering discipline need to meet. That is also where I am most useful."
 
 ### English / International
@@ -157,6 +147,8 @@ Use direct but positive language:
 - "product judgment"
 - "clear boundaries"
 - "design-literate engineering"
+- "measurement-minded"
+- "operations-aware"
 - "self-directed learning"
 
 Avoid literal translations of German edge phrases.
@@ -176,14 +168,14 @@ How I work
 - I am clear about my limits and bring in specialists for [the adjacent area they do not cover].
 ```
 
-German variant:
+German example (platform consultant):
 
 ```text
 Arbeitsweise
 
 - Ich spreche Risiken und Zielkonflikte klar an, bevor sie teuer werden.
-- Ich achte auf visuelle und interaktive Qualität, nicht nur auf technische Umsetzung.
-- Ich bin besonders wirksam an der Schnittstelle von Produkt, Design und Engineering.
+- Ich modernisiere Plattformen schrittweise, damit der Betrieb jederzeit weiterläuft.
+- Ich bin besonders wirksam, wo Modernisierung und Betriebssicherheit zusammenkommen.
 - Ich benenne Grenzen offen, statt Breite zu versprechen, die im Projekt keinen Wert schafft.
 ```
 
@@ -191,7 +183,7 @@ Arbeitsweise
 
 Use this when the profile needs to say more about the person without turning into a life story.
 
-Template:
+Example (frontend and product engineering consultant):
 
 ```text
 What drives me
@@ -199,12 +191,12 @@ What drives me
 I enjoy work where complex product ideas have to become clear, usable, maintainable software. I care about the point where design intent, technical architecture, and delivery reality meet. I am at my best when teams need someone who can name trade-offs honestly, keep quality visible, and still move the work forward.
 ```
 
-German variant:
+German example (data platform consultant):
 
 ```text
 Was mich antreibt
 
-Mich interessiert Arbeit, bei der komplexe Produktideen zu klarer, nutzbarer und wartbarer Software werden müssen. Besonders gern arbeite ich dort, wo Designanspruch, technische Architektur und Lieferfähigkeit zusammenkommen. Stark bin ich, wenn Teams jemanden brauchen, der Zielkonflikte offen benennt, Qualität sichtbar hält und trotzdem pragmatisch vorankommt.
+Mich interessiert Arbeit, bei der aus verstreuten Daten eine verlässliche Grundlage für Entscheidungen wird. Besonders gern arbeite ich dort, wo Fachbereich, Datenqualität und Technik zusammenkommen. Stark bin ich, wenn Teams jemanden brauchen, der unbequeme Zahlen offen anspricht und trotzdem pragmatisch vorankommt.
 ```
 
 Keep this short. One paragraph is usually enough. If it becomes a manifesto, move the excess into an interview note, LinkedIn post, or about page.
@@ -222,7 +214,7 @@ Ask these questions when personality or boundaries are important but underspecif
 - When has saying no improved the outcome?
 - What kinds of work should clients not hire you for?
 - Which earlier discipline or path still shapes how you work today?
-- What do designers, product people, or stakeholders usually appreciate about working with you?
+- What do the people you work alongside usually appreciate about working with you?
 - Which labels feel true internally but need safer public wording?
 - Where should the profile be sharper, and where should it stay restrained?
 

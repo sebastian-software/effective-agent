@@ -2,7 +2,7 @@
 
 Use this reference when a consultant profile should feel coherent rather than like a loose list of projects. The goal is not to write a biography or a dramatic story. The goal is to reveal the professional through-line that is already present in the work.
 
-Note: examples in this file (industries, clients, background details) come from one specific consultant's history and are illustrative only — never transfer them into another user's profile.
+Examples in this file are illustrative and deliberately drawn from different consultant profiles; build the user's copy only from their own evidence.
 
 ## Core Idea
 
@@ -20,9 +20,9 @@ This is similar to high-quality sports profiles: the interesting part is rarely 
 Look for real continuity:
 
 - **Capability deepening** - frontend development becomes frontend architecture, then product engineering strategy.
-- **Industry recurrence** - banking, telecom, retail/ecommerce, building materials, or B2B platforms recur across years.
+- **Industry recurrence** - insurance and healthcare data, logistics and manufacturing platforms, or retail and ecommerce recur across years.
 - **Scale progression** - startup/product work expands into enterprise or multi-brand environments.
-- **Constraint transfer** - lessons from regulated banking shape later reliability, governance, or stakeholder work.
+- **Constraint transfer** - lessons from regulated healthcare data shape later governance, audit, or stakeholder work.
 - **Internationalization return** - early i18n/localization experience becomes useful again in later multi-market product work.
 - **Bridge roles** - the consultant repeatedly translates between product, engineering, design, leadership, and delivery.
 - **Trust pattern** - recognizable organizations keep bringing the consultant into complex, high-stakes work.
@@ -43,7 +43,7 @@ Pattern:
 Use when the consultant repeatedly connects disciplines.
 
 Pattern:
-"Across the work, the recurring value is translation: turning product, design, and business ambiguity into engineering decisions teams can execute."
+"Across the work, the recurring value is translation: turning business questions, operational constraints, and messy data into decisions teams can execute."
 
 ### From Project Work to Trusted Contexts
 
@@ -64,7 +64,7 @@ Pattern:
 Use when sectors themselves create credibility.
 
 Pattern:
-"The profile has an enterprise spine: banking, telecommunications, industrial B2B, and multi-brand retail. That matters because these environments reward pragmatic architecture, clear communication, and delivery discipline."
+"The profile has an operations spine: logistics, manufacturing, and energy utilities. That matters because these environments reward conservative change, observable systems, and calm incident handling."
 
 ## How to Use the Arc in a Profile
 
@@ -110,20 +110,34 @@ Use restrained linking language:
 Keep linking language factual and restrained; use story vocabulary or personal
 biography only when the user or the profile context calls for it.
 
-## Example
+## Examples
 
-Raw project facts:
+These two illustrative profiles show different arcs; derive the user's arc from
+their own project facts.
+
+Platform reliability consultant. Raw project facts:
+
+- ran on-call for a regional parcel carrier's dispatch systems
+- migrated a machine builder's telemetry backend to managed Kubernetes
+- later led platform reliability for an energy utility
+- trains internal platform teams on incident reviews
+
+Arc:
+
+"The through-line is keeping critical operations running while they change. On-call work for a parcel carrier built the operational base; the telemetry migration added large platform change without downtime; the utility work turned that into reliability leadership. The result is a consultant who is strongest where infrastructure modernization meets systems that cannot stop."
+
+Frontend and product engineering consultant. Raw project facts:
 
 - built frontend systems for ecommerce
-- worked in banking
+- worked on an online banking portal
 - later worked on internationalization
 - advised enterprise teams on product engineering
 
 Arc:
 
-"The through-line is product engineering in complex organizations. Early frontend work built the hands-on base; banking added discipline around reliability and stakeholder alignment; later internationalization work extended that into multi-market product systems. The result is a consultant who is strongest where frontend architecture, product clarity, and enterprise delivery constraints meet."
+"The through-line is product engineering in complex organizations. Early frontend work built the hands-on base; the banking portal added discipline around reliability and stakeholder alignment; later internationalization work extended that into multi-market product systems. The result is a consultant who is strongest where frontend architecture, product clarity, and enterprise delivery constraints meet."
 
-This is more interesting than a list, but still factual.
+Both arcs are more interesting than a list, but still factual.
 
 ## Risk Checks
 
