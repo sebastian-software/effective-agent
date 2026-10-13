@@ -2,7 +2,7 @@
 
 This reference condenses current consultant-resume, web-reading, and career-positioning guidance into a reusable profile-writing method.
 
-Note: examples in this file (industries, clients, background details) come from one specific consultant's history and are illustrative only — never transfer them into another user's profile.
+Examples in this file are illustrative and deliberately drawn from different consultant profiles; build the user's copy only from their own evidence.
 
 ## Research Synthesis
 
@@ -43,7 +43,7 @@ Read `narrative-arc.md` when the profile needs to show how earlier work, recurri
 
 Read `interview-and-completion.md` when projects are missing, unclear, duplicated across sources, or only visible in old pages, LinkedIn, references, or recommendations.
 
-Read `personality-and-boundaries.md` when the profile should communicate opinionated judgment, design background, self-directed learning, working principles, or what the consultant deliberately does not do.
+Read `personality-and-boundaries.md` when the profile should communicate opinionated judgment, an earlier discipline or career path, working principles, or what the consultant deliberately does not do.
 
 ## Regional and Channel Strategy
 
@@ -59,7 +59,7 @@ credibility-first style. Strong consultant profiles usually benefit from:
 - clear role labels such as "Senior Software Engineer", "Frontend Architect", "Product Engineering Consultant", "Interim Tech Lead", or "Berater"
 - project entries with client type, industry, role, duration/period if available, responsibilities, deliverables, technologies, and bounded impact
 - "Ausgewählte Projekte" or "Projekt-Highlights" before the long project history when older enterprise work proves credibility
-- compact industry proof: banking, telecommunications, building materials, multi-brand retail/ecommerce, B2B SaaS, public sector, etc.
+- compact industry proof from the consultant's own sectors (for example insurance and banking, hospital IT, or logistics and manufacturing)
 - careful language around client names and confidential outcomes
 - less hype, fewer self-branding slogans, more verifiable substance
 
@@ -298,8 +298,8 @@ Use one of these formulas for each project entry:
 Prefer:
 
 - "Designed a frontend architecture for a multi-brand retail platform" over "Worked on frontend development."
-- "Built analytics and decision-support workflows in a regulated banking environment" over "Developed internal tools."
-- "Modernized customer-facing telecom experiences at enterprise scale" over "Implemented React components."
+- "Built the claims-data pipeline that an insurer's analysts use for weekly reserving decisions" over "Developed internal tools."
+- "Moved a parcel carrier's dispatch platform to Kubernetes in stages while operations kept running" over "Did DevOps work."
 
 ## Handling Missing Metrics
 
@@ -320,7 +320,7 @@ Best for senior independent consultants. Put 3-5 projects near the top. Each get
 
 ### Client/Industry Matrix
 
-Best when broad trust matters. Show sectors such as banking, telecommunications, building materials, ecommerce/retail, SaaS, public sector, or media, with representative clients and project themes.
+Best when broad trust matters. Show the consultant's sectors, such as insurance, healthcare, logistics, manufacturing, retail, SaaS, public sector, or media, with representative clients and project themes.
 
 ### Capability-Led Projects
 
@@ -346,7 +346,7 @@ Check whether the profile:
 - includes a short professional through-line when the project history has recurring themes or transferable experience
 - uses the language and persuasion pass from `language-and-persuasion.md` when
   tone or persuasion is part of the requested work
-- uses the personality and boundaries pass from `personality-and-boundaries.md` when working style, values, design background, or role-fit clarity matter
+- uses the personality and boundaries pass from `personality-and-boundaries.md` when working style, values, background, or role-fit clarity matter
 - avoids reading like an anonymous staffing profile when direct buyer or interviewer trust matters
 - makes target clients and use cases obvious
 - includes 3-5 high-signal highlights

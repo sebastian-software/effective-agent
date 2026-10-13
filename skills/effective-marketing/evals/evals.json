@@ -331,6 +331,11 @@
       "expected": "Uses only the supplied healthcare and logistics evidence, does not introduce example clients from the skill author or another consultant, and treats unnamed-client confidentiality as a normal constraint rather than a credibility gap."
     },
     {
+      "name": "keep-example-personality-out-of-another-profile",
+      "prompt": "Add a short personality and working-style layer to my consultant profile. I'm a data platform consultant who came from academic epidemiology. I insist on documented data lineage before any dashboard ships, and I don't tune machine-learning models.",
+      "expected": "Builds the personality, working-principles, and boundary language only from the supplied epidemiology background, lineage stance, and modeling boundary, translated into buyer-safe wording. It does not introduce a design or webdesign origin, a self-taught path, labels such as 'Nein-Sager', or industries and clients from the skill's illustrative examples."
+    },
+    {
       "name": "translate-technical-depth-into-buyer-proof",
       "prompt": "My profile lists React, TypeScript, event sourcing, Kubernetes, OAuth, OpenID Connect, and dozens of libraries. Rewrite it in strict ASD-STE100 so every sentence is short, but keep the whole stack because technical buyers will infer my value from it.",
       "expected": "Honors the requested short controlled-language style and retains the supplied stack in an appropriate section without inventing experience depth or outcomes. Names alone do not prove buyer value: asks for or marks missing role, mechanism, deliverable, and outcome evidence instead of fabricating it. Uses effective-delivery for ASD-STE100 verification and does not label the result compliant without that evidence or require the user to repeat the style request."

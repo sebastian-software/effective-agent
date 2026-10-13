@@ -2,7 +2,7 @@
 
 Use this reference when the task involves tone, translation, self-presentation, LinkedIn copy, English variants, German variants, or making a consultant profile feel more positive without becoming hollow.
 
-Note: examples in this file (industries, clients, background details) come from one specific consultant's history and are illustrative only — never transfer them into another user's profile.
+Examples in this file are illustrative and deliberately drawn from different consultant profiles; build the user's copy only from their own evidence.
 
 ## Core Principle
 
@@ -101,11 +101,11 @@ Do not use this as permission to invent. The positive frame must be anchored.
 
 Use this ladder to keep positivity grounded:
 
-1. **Raw fact** - "Worked with a regulated bank on an internal platform."
-2. **Contextual fact** - "Worked in a regulated banking environment with enterprise stakeholders."
-3. **Capability claim** - "Brings experience from regulated, high-trust enterprise environments."
-4. **Positioning claim** - "Helps enterprise teams modernize product and platform work without losing delivery discipline."
-5. **Unsupported hype** - "Transforms global enterprises through world-class innovation."
+1. **Raw fact** - "Worked with a hospital group on a patient-data platform."
+2. **Contextual fact** - "Worked in a regulated healthcare environment with clinical and IT stakeholders."
+3. **Capability claim** - "Brings experience from regulated, high-trust environments where data errors reach patients."
+4. **Positioning claim** - "Helps healthcare and insurance teams turn sensitive data into reliable decisions without compliance surprises."
+5. **Unsupported hype** - "Revolutionizes healthcare through world-class data innovation."
 
 Use levels 2-4. Avoid level 5 unless the evidence is unusually strong and specific enough to support it.
 
@@ -118,8 +118,8 @@ Default to credible, warm, and precise.
 Good German profile language:
 
 - "Ich unterstütze Unternehmen dabei, komplexe digitale Produkte verständlich, wartbar und lieferbar zu machen."
-- "Schwerpunkte: Frontend-Architektur, Product Engineering, Design-Systeme und technische Produktstrategie."
-- "Erfahrung in regulierten und enterprise-nahen Umfeldern, u. a. Banking, Telekommunikation, Baustoffe und Multi-Brand-Retail."
+- "Schwerpunkte: Datenplattformen, Datenqualität und Entscheidungsunterstützung für Fachbereiche."
+- "Erfahrung in regulierten Umfeldern, u. a. Versicherungen, Krankenhaus-IT und öffentliche Verwaltung."
 - "Ausgewählte Projekt-Highlights zeigen die Breite der Branchen und die Tiefe der technischen Verantwortung."
 
 Prefer verifiable substance over self-praise adjectives, and verbs over stacked
@@ -136,7 +136,7 @@ Good English profile language:
 
 - "I help enterprise teams turn complex product and platform work into clear, maintainable software."
 - "My work sits where frontend architecture, product strategy, and delivery discipline meet."
-- "I have worked with enterprise teams in banking, telecom, building materials, and multi-brand retail."
+- "I have worked with parcel carriers, machine builders, and energy utilities on platforms that cannot stop."
 - "Selected highlights show the environments I am trusted in and the kinds of problems I am best suited to solve."
 
 Avoid stiff translations:
@@ -227,15 +227,15 @@ Use these transformations when profiles understate strong work:
 - Neutral: "Worked on frontend development for a retail client."
   Stronger: "Designed and implemented frontend architecture patterns for a multi-brand retail environment."
 
-- Neutral: "Additional projects include work for a bank and a telecom provider."
-  Stronger: "Selected enterprise experience includes regulated banking and
-  telecommunications environments."
+- Neutral: "Additional projects include work for an insurer and a hospital group."
+  Stronger: "Selected experience includes regulated insurance and healthcare
+  data environments."
 
 - Neutral: "I built components and pages."
   Stronger: "I turn complex product requirements into usable, maintainable frontend systems."
 
 - Neutral: "Ich war in verschiedenen Branchen tätig."
-  Stronger: "Meine Projekterfahrung reicht von reguliertem Banking über Telekommunikation bis zu Multi-Brand-Retail und industriellen B2B-Umfeldern."
+  Stronger: "Meine Projekterfahrung reicht von Logistik über Maschinenbau bis zu Energieversorgern – überall dort, wo Plattformen ohne Wartungsfenster laufen müssen."
 
 - Neutral: "Weitere Projekte."
   Stronger: "Weitere ausgewählte Projekterfahrung."
@@ -244,8 +244,12 @@ Use these transformations when profiles understate strong work:
   Stronger German: "Ich spreche Zielkonflikte und Risiken klar an, wenn Fokus, Qualität oder Nutzerwert gefährdet sind."
   Stronger English: "I bring constructive dissent when focus, quality, or users are at risk."
 
-- Neutral: "Ich kann Frontend und Design."
-  Stronger: "Mein Ursprung in Design und Webdesign prägt meine Arbeit an Frontend-Architektur, UI-Qualität und der Zusammenarbeit mit Produkt- und Designteams."
+- Raw: "Feuerwehr für kaputte Releases."
+  Stronger German: "Ich stabilisiere kritische Releases unter Druck und hinterlasse Runbooks, die den nächsten Vorfall kleiner machen."
+  Stronger English: "I stabilize critical releases under pressure and leave teams with runbooks that make the next incident smaller."
+
+- Neutral: "Ich habe einen Physik-Hintergrund."
+  Stronger: "Mein Hintergrund in der experimentellen Physik prägt, wie ich Datenqualität prüfe: erst messen, dann modellieren, dann entscheiden."
 
 ## Final Language Checklist
 
