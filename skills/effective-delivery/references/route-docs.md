@@ -20,6 +20,9 @@ docs system.
    - README, setup, task, conceptual, or contributor guide: read
      [Guides and READMEs](guides-and-readmes.md). When updating a translation,
      use [Refresh an existing translation](guides-and-readmes.md#refresh-an-existing-translation).
+   - Explicitly requested creation or maintenance of repository instruction
+     files such as `AGENTS.md` or `CLAUDE.md`: read [Repository instruction
+     files](guides-and-readmes.md#repository-instruction-files).
    - API, CLI, configuration, or migration documentation: read
      [Interfaces and Migrations](interfaces-and-migrations.md).
    - JSDoc, TSDoc, rustdoc, docstrings, or explanatory comments: read
