@@ -93,6 +93,23 @@ is skipped by the local task only, with a comment in `mise.toml`.
 The [link-check decision](adr/0007-check-links-strictly-before-push.md) records
 why the two levels differ.
 
+## Claim freshness
+
+`scripts/check-claim-freshness.py` finds verification dates in skill guidance
+and instruction packs (`as of October 2026`, `Snapshot date: **2026-10-14**`,
+`Last verified 2026-07-22`) and reports every one older than 180 days. With
+`--undated` it also lists support-status claims, such as "Limited
+availability" or "Chromium-only" next to a browser name or version, that carry
+no date. Run it locally with `mise run claims:freshness`.
+
+A scheduled workflow runs the check on the first of each month and fails when a
+claim is due, so the failure reaches the maintainers. To resolve it, re-check
+each reported claim against its primary source, then update the claim and its
+date together. See [Date Volatile Claims](authoring-skills.md#date-volatile-claims)
+for the convention and the [claim-freshness decision](adr/0012-date-and-recheck-volatile-claims.md)
+for the rationale. The check reads files only; deciding whether a claim is
+still true remains review work.
+
 ## Reference audit
 
 `scripts/validate-readmes.py` checks that every local link, anchor, and quoted

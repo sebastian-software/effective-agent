@@ -1,0 +1,23 @@
+name: Claim Freshness
+
+# Volatile guidance carries an "as of <Month YYYY>" date or a snapshot header.
+# This monthly run fails when any such date is older than 180 days, so the
+# claim gets re-verified against its primary source; see
+# docs/contributor-checks.md#claim-freshness.
+on:
+  schedule:
+    - cron: "41 5 1 * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  freshness:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - name: Report dated claims due for re-verification
+        run: python3 scripts/check-claim-freshness.py --undated --strict

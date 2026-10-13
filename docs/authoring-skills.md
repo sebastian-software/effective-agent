@@ -277,6 +277,24 @@ reference above 500 lines. Review every exception when the route or its modules
 change; splitting a chapter must reduce the default load, not create copies of
 the same baseline advice.
 
+## Date Volatile Claims
+
+Facts that can change without a change to this repository carry the date they
+were last verified. This covers browser and engine support short of Baseline
+Widely available, vendor and platform behavior, crawler names, limits, prices,
+legal effective dates, and tool or package pins. Write `as of <Month YYYY>` in
+the sentence or table cell, or keep the claim in a file with a
+`Snapshot date: **YYYY-MM-DD**` header and a refresh workflow, as in the
+effective-web feature radar. Baseline Widely available features need no date,
+because that status only moves forward.
+
+Verify the claim against a primary source before writing or renewing its
+date: the web-features data behind Baseline (webstatus.dev), MDN
+browser-compat-data, browser release notes, or the vendor's own documentation.
+Update the claim, not only the date, when the source has moved on.
+[Claim freshness](contributor-checks.md#claim-freshness) reports dates that
+are due for re-verification.
+
 ## Distill, Don't Archive
 
 Ship actionable guidance, not article archives, intake logs, external snapshots,

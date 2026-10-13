@@ -4,7 +4,7 @@ Print-specific page features and element styles. See [route-print.md](route-prin
 
 ## Page Headers, Footers, and Page Numbers
 
-Chrome 131+.
+Chrome 131+ (Chromium-only as of October 2026).
 
 ```css
 @page {
@@ -206,7 +206,7 @@ Use `<picture>` with `media="print"` source for high-res print variants.
 td.numeric { text-align: "." center; }  /* align on decimal point */
 ```
 
-Not yet widely supported in browsers — works in Prince/WeasyPrint. Progressive enhancement.
+Not supported in mainstream browsers as of October 2026 (MDN BCD lists no support) — works in Prince/WeasyPrint. Progressive enhancement.
 
 ### Oblique Column Headings
 

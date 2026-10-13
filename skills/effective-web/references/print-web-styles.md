@@ -184,7 +184,7 @@ Chromium supports margin at-rules (`@top-center`, `@bottom-center`, `@bottom-rig
 }
 ```
 
-**Browser support:** `margin` and `size` work in all major browsers; `page-orientation` works in Chromium and Firefox but not Safari. Margin at-rules are Chromium-only as of early 2026; named pages (the `page` property) work cross-browser (Chrome 85+, Firefox 110+, Safari).
+**Browser support:** `margin` and `size` work in all major browsers; `page-orientation` works in Chromium and Firefox but not Safari. Margin at-rules are Chromium-only as of October 2026; named pages (the `page` property) work cross-browser (Chrome 85+, Firefox 110+, Safari).
 
 ## Page Breaks
 

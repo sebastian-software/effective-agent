@@ -556,7 +556,7 @@ The CSS Scrollbars Styling Module Level 1 provides two standard properties:
 Safari before 26.2 and older Chromium versions need the `::-webkit-scrollbar` pseudo-elements. Use `@supports` to separate the two approaches:
 
 ```css
-/* Standards-based (Firefox, Chrome 121+) */
+/* Standards-based (Firefox, Chrome 121+, Safari 26.2+) */
 .scroll-container {
   scrollbar-color: oklch(70% 0.02 250) oklch(95% 0.005 250);
   scrollbar-width: thin;
@@ -760,12 +760,12 @@ Anchor links scroll targets under the sticky header, making them invisible.
 | `scroll-padding` | 69+ | 68+ | 14.1+ | 79+ | Widely available (Apr 2021) |
 | `scroll-margin` | 69+ | 68+ | 14.1+ | 79+ | Widely available (Jul 2021) |
 | `scroll-behavior` | 61+ | 36+ | 15.4+ | 79+ | Widely available (Mar 2022) |
-| `overscroll-behavior` | 63+ | 59+ | 16+ | 18+ | Widely available (≈Mar 2025) |
+| `overscroll-behavior` | 63+ (full 144+) | 59+ (full 150+) | 16+ (partial) | 18+ | Limited availability as of October 2026 (Safari ignores it on scroll containers without scrollable overflow) |
 | `scrollbar-color` | 121+ | 64+ | 26.2+ | 121+ | Newly available (Dec 2025) |
 | `scrollbar-width` | 121+ | 64+ | 18.2+ | 121+ | Newly available (Dec 2024) |
 | `scrollbar-gutter` | 94+ | 97+ | 18.2+ | 94+ | Newly available (Dec 2024) |
-| `animation-timeline` | 115+ | -- | 26+ | 115+ | Limited availability |
-| `view()` / `scroll()` | 115+ | -- | 26+ | 115+ | Limited availability |
+| `animation-timeline` | 115+ | -- | 26+ | 115+ | Limited availability as of October 2026 |
+| `view()` / `scroll()` | 115+ | -- | 26+ | 115+ | Limited availability as of October 2026 |
 
 **Notes:**
 - Scroll snap is safe to use everywhere without fallbacks

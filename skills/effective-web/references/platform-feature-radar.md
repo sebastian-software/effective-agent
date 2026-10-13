@@ -1,7 +1,7 @@
 # Web-Platform Feature Radar
 
 This is a dated discovery aid for models whose knowledge may predate the current
-web platform. Snapshot date: **2026-07-16**. Before shipping, verify each lead
+web platform. Snapshot date: **2026-10-14**. Before shipping, verify each lead
 against current Baseline/MDN data and the project's support target; status can
 only move forward after this snapshot.
 
@@ -15,9 +15,10 @@ path when the project supports older devices, WebViews, or enterprise browsers.
   `anchor()`, `anchor-size()`, `anchor-scope`, `@position-try`) became
   interoperable in January 2026 and can replace JavaScript geometry for many
   anchored overlays. The feature family is still Limited availability overall:
-  BCD marks `position-anchor` partial in Chrome and Safari (initial value is
-  `none`/`auto` instead of the spec's `normal`) and complete only in Firefox
-  151+ — so verify current support per property, not per family. Keep trigger
+  BCD marks `position-anchor` complete in Chrome 151+, Firefox 151+, and Safari
+  27+ (earlier versions use the wrong initial value), while the
+  `position-visibility` keywords `anchor-valid`/`anchor-visible` ship only in
+  Safari 27 — so verify current support per property, not per family. Keep trigger
   semantics, top-layer behavior, dismissal, focus, and collision testing as
   separate responsibilities.
 - **`:open`:** style the open state of `details`, `dialog`, picker-bearing
@@ -47,6 +48,22 @@ path when the project supports older devices, WebViews, or enterprise browsers.
   color alone to convey state.
 - **`ToggleEvent.source`:** identify the invoker that changed a popover's state
   instead of maintaining duplicate trigger state where the native event fits.
+- **`ariaNotify()`:** became Baseline Newly available in September 2026 (Safari
+  27 was last). Prefer native semantics, state, and live content first; use it
+  only for announcements not already conveyed by the DOM, coalesce messages,
+  localize them, and retain a tested live-region fallback for older targets
+  where announcements are essential. VoiceOver can drop announcements that
+  collide with other speech events.
+- **Tree-counting functions:** [`sibling-index()`](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/sibling-index)
+  and `sibling-count()` became Baseline Newly available in August 2026
+  (Firefox 154 was last). They can simplify position-based calculations and
+  staggered effects, but keep a readable fallback for older targets and do not
+  replace semantic order or explicit application data with DOM-position
+  inference.
+- **Invoker commands (`command`/`commandfor`):** Baseline Newly available since
+  December 2025. Let a `button` open, close, or toggle a dialog or popover
+  without glue JavaScript; keep the same actions reachable through ordinary
+  controls for older targets.
 
 ## Prefer as established defaults
 
@@ -67,8 +84,8 @@ merely as "too new" when the project has no older-browser exception:
 
 Release notes are discovery feeds, not support policy. As of this snapshot:
 
-- Customizable `select` remains Limited availability despite active Chrome and
-  WebKit work. Use it as an enhancement over complete text options, not as the
+- Customizable `select` ships in Chrome 135+ and Safari 27 but not Firefox, so
+  it remains Limited availability. Use it as an enhancement over complete text options, not as the
   only usable control.
 - `sizes="auto"` can let a lazy-loaded responsive image use its computed layout
   size when selecting from `srcset`. Use `sizes="auto, <legacy sizes>"` so an
@@ -79,21 +96,12 @@ Release notes are discovery feeds, not support policy. As of this snapshot:
   limited subfeatures. Do not infer their support from base Anchor Positioning
   or from the Baseline status of `shape()`; prefer interoperable position
   fallbacks such as `flip-block` where they meet the design.
-- `ariaNotify()` remains Limited availability. Prefer native semantics, state,
-  and live content first; feature-detect it only for announcements not already
-  conveyed by the DOM, coalesce messages, localize them, and retain a tested
-  live-region fallback where announcements are essential.
 - Element-scoped View Transitions (`Element.startViewTransition()`) ship in
   Chrome 147 at this snapshot and remain single-engine. Use them only as a
   feature-detected enhancement when a subtree transition should leave the rest
   of the page interactive, preserve external top-layer ordering, or allow
   concurrent or nested transitions. Do not infer support from
   `Document.startViewTransition()`; retain a document-scoped or instant path.
-- Tree-counting functions such as [`sibling-index()`](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/sibling-index)
-  and `sibling-count()` remain Limited availability. They can simplify
-  position-based calculations and staggered effects in experiments, but keep a
-  readable fallback and do not replace semantic order or explicit application
-  data with DOM-position inference.
 - Browser-generated carousel controls and markers such as
   [`::scroll-button()`](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors/::scroll-button),
   `::scroll-marker`, and `:target-current` remain Limited availability. Keep a
@@ -101,7 +109,7 @@ Release notes are discovery feeds, not support policy. As of this snapshot:
   a feature-detected enhancement and re-test keyboard, focus, names, disabled
   states, touch, reduced motion, and screen readers instead of assuming the
   generated accessibility model is sufficient.
-- `command`/`commandfor`, `closedby`, CSS `random()`, `text-fit`, gap
+- `closedby`, CSS `random()`, `text-fit`, gap
   decorations, Grid Lanes, `corner-shape`, and other newly shipped primitives
   require a fresh feature-level support check; do not inherit the Baseline badge
   of their containing element or related feature family.

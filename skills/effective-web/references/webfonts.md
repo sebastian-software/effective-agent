@@ -24,7 +24,7 @@ Link to font files using `@font-face`, specifying weight and style for each file
 }
 ```
 
-**WOFF2 only.** With 97%+ browser support, WOFF2 is the only format you need. WOFF (without the "2") and older formats like EOT and TTF are no longer necessary — IE11, the last browser that needed them, has been discontinued.
+**WOFF2 only.** Every browser in a current support target decodes WOFF2, so it is the only format you need. WOFF (without the "2") and older formats like EOT and TTF are no longer necessary — IE11, the last browser that needed them, has been discontinued.
 
 Fonts are only downloaded when needed — if no element on the page uses a declared `@font-face`, it won't be fetched.
 

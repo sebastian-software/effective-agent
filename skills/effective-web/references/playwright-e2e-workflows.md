@@ -42,8 +42,10 @@ suites get disabled, so stability is the primary design goal, not coverage bread
 - Treat `playwright codegen` output as a rough draft only. Before committing, replace brittle
   locators with role/label queries, delete incidental waits and redundant assertions, extract
   shared steps into fixtures, and narrow scope to the behavior under test.
-- Playwright component testing exists but is still experimental; confirm the installed version's
-  status before relying on it, and prefer Storybook/Browser Mode for component-level coverage.
+- Since Playwright 1.62 (July 2026), component testing uses a stable stories-and-gallery model
+  (`fixtures.mount()` from `@playwright/test`); the old `@playwright/experimental-ct-*` packages
+  are no longer published. Confirm the installed version before relying on it, and keep the
+  project's existing Storybook or Browser Mode setup when it already covers component-level tests.
 
 ## Debugging artifacts
 

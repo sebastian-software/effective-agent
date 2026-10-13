@@ -383,7 +383,7 @@ thead th {
 ```
 
 **Gotchas:**
-- In older browser versions, `position: sticky` does not work on `<thead>` or `<tr>` -- apply it to `<th>` cells instead. Modern browsers (2024+) support sticky on `<thead>` directly.
+- In older browser versions, `position: sticky` does not work on `<thead>` or `<tr>` -- apply it to `<th>` cells instead. Current browsers support sticky on `<thead>` directly.
 - `border-collapse: collapse` causes borders to scroll away with sticky headers. Use `border-collapse: separate; border-spacing: 0;` and apply borders to individual cells instead.
 - The table must not be inside a container with `overflow: hidden` (this creates a new containing block that prevents sticky from reaching the viewport).
 - Always set `background-color` on sticky headers so content does not show through underneath.
