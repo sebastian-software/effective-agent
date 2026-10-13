@@ -48,6 +48,12 @@ class CueSheetTests(unittest.TestCase):
             "1\n00:00:00,420 --> 00:00:02,000\nOne.\n\n2\n00:00:03,000 --> 00:00:04,500\nTwo.\n\n",
         )
 
+    def test_vtt_uses_dots_and_a_header(self) -> None:
+        self.assertEqual(
+            cue_sheet.vtt([(0.42, 2.0, "One.")]),
+            "WEBVTT\n\n00:00:00.420 --> 00:00:02.000\nOne.\n\n",
+        )
+
 
 class PronunciationVerdictTests(unittest.TestCase):
     def test_sustained_high_f2_is_a_front_vowel(self) -> None:
