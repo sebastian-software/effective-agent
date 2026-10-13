@@ -119,13 +119,8 @@ Recompose:
 - media and caption relationship
 - call to action or conversational ending
 
-Do not:
-
-- paste the same text everywhere by default
-- remove qualifications merely to fit
-- split a complete thought into a thread without a sequencing need
-- append hashtags, questions, or emojis as generic distribution tactics
-- claim that a specific format, cadence, or posting time guarantees reach
+Keep qualifications intact when shortening, and never present a format,
+cadence, or posting time as a reach guarantee.
 
 ## Preserve Accessibility and Integrity
 

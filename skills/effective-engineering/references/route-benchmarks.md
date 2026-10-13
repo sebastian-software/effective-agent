@@ -4,11 +4,6 @@ Use this route to design, repair, or interpret a repository-native
 microbenchmark, comparative benchmark, or bounded end-to-end workflow
 benchmark, and before making a publishable performance claim.
 
-Ownership of benchmark methodology sits here by the collection's performance
-testing ownership decision record: the performance question, workload scenario,
-and target are agreed on the Architecture route; the measurement itself is
-designed here.
-
 ## Read
 
 [Benchmark methodology](benchmark-methodology.md) — construction, warmup,

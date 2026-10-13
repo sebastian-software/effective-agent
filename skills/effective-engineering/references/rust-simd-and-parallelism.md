@@ -35,7 +35,9 @@ Route other concerns as follows:
 ## Non-negotiable safety rules
 
 - Prove the CPU feature before calling an architecture-specific intrinsic.
-- Keep target architecture and feature checks in compile-time configuration.
+- Select the target architecture with compile-time configuration; prove CPU
+  features at compile time under a deployment contract or with runtime detection
+  (sections 5.2–5.3).
 - Encapsulate intrinsic calls in a small unsafe function with a written safety
   contract and a safe scalar fallback.
 - Treat alignment, slice length, pointer provenance, aliasing, and overlap as

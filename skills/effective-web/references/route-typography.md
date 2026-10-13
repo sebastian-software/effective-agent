@@ -1,6 +1,6 @@
 # Typography
 
-Use this skill for typography in digital interfaces. It covers type choice, hierarchy, rhythm, readable measure, webfont behavior, and the small text decisions that make UI feel professional.
+Use this route for typography in digital interfaces. It covers type choice, hierarchy, rhythm, readable measure, webfont behavior, and the small text decisions that make UI feel professional.
 
 ## Workflow
 

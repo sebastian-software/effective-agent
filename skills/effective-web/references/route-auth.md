@@ -1,6 +1,6 @@
 # Auth and Security UX
 
-Use this skill for user-facing security flows where clarity, trust, and browser constraints matter.
+Use this route for user-facing security flows where clarity, trust, and browser constraints matter.
 
 ## Workflow
 

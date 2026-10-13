@@ -1,6 +1,6 @@
 # Layout and Spacing
 
-Use this skill for the structural geometry of an interface: where things sit, how they align, how relationships are expressed through space, and how the layout adapts across containers and viewports.
+Use this route for the structural geometry of an interface: where things sit, how they align, how relationships are expressed through space, and how the layout adapts across containers and viewports.
 
 ## Workflow
 

@@ -64,8 +64,8 @@ Discover and follow the project's existing systems before writing anything:
 - Keep executable behavior and values in code, configuration, and tests.
 - Keep operational response steps in runbooks.
 
-Do not create `.improve`, `.advisor`, private ledgers, or a mandatory `plans/`
-directory. If the user asks to save a plan and the repository has no convention,
+Do not create private ledgers, hidden state directories, or a mandatory
+`plans/` directory. If the user asks to save a plan and the repository has no convention,
 use plain Markdown under `docs/plans/` and create an index only when multiple
 plans need ordering.
 

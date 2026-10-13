@@ -130,7 +130,7 @@ Google-specific status handling source: [How Google interprets the robots.txt sp
 
 ## LLM and Agent Access
 
-Search and AI crawlers now serve separate purposes, and policy should be set per purpose:
+Search and AI crawlers serve separate purposes, so set policy per purpose. User-agent names and opt-out behavior change; verify them in each provider's current crawler documentation before writing `robots.txt` rules:
 
 - Googlebot controls Google Search crawling.
 - Google-Extended can limit use in some Google AI training and grounding systems without being the same as Search indexing controls.

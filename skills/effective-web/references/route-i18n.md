@@ -1,6 +1,6 @@
 # Internationalization UX
 
-Use this skill when UI must survive translation, locale changes, longer strings, bidirectional text, or different formatting conventions.
+Use this route when UI must survive translation, locale changes, longer strings, bidirectional text, or different formatting conventions.
 
 ## Workflow
 

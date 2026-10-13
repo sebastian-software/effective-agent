@@ -144,8 +144,3 @@ mix, target environment, credential path, destructive-data policy, or k6,
 Locust, JMeter, or Autocannon stack. Ask for an approved workload and target,
 preserve any repository-local runbook, and recommend explicit specialist
 ownership for the experiment.
-
-The ownership decision behind this boundary: performance, load, soak, and
-stress execution methodology has no first-party owner in this collection. The
-benchmarks owned here are repository-native comparative measurements against a
-named performance question, not running-system traffic experiments.

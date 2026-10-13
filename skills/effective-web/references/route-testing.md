@@ -1,6 +1,6 @@
 # Frontend Testing
 
-Use this skill to choose, implement, or review frontend tests for browser-facing applications.
+Use this route to choose, implement, or review frontend tests for browser-facing applications.
 
 Test the user-facing risk, not the available state space. A new test should
 either distinguish a consequential regression, protect a supported contract, or
@@ -38,4 +38,4 @@ or unrecoverable work can justify deeper coverage.
 
 ## Boundaries
 
-Do not use this skill for backend-only tests, load tests, security testing, vendor procurement, or simply running an existing test command without changing or interpreting the test strategy.
+Do not use this route for backend-only tests, load tests, security testing, vendor procurement, or simply running an existing test command without changing or interpreting the test strategy.

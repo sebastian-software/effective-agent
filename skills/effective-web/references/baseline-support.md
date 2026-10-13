@@ -26,7 +26,7 @@ Use current browser-support evidence before turning modern web-platform features
 - Use `:focus-visible` (not `:focus`) for focus rings, and never remove a focus indicator without supplying a visible replacement.
 - Keep shared selectors at low specificity with `:where()` so downstream styles can override without specificity escalation.
 - Use cascade layers (`@layer`) to control source-order precedence instead of reaching for `!important`.
-- Guard motion behind `@media (prefers-reduced-motion: reduce)`; ship animation and View Transitions as an enhancement that a reduced-motion preference disables.
+- Author the static experience first and add motion and View Transitions inside `@media (prefers-reduced-motion: no-preference)`, so they never reach users who prefer reduced motion.
 - Improve text with `text-wrap: balance` for headings and `text-wrap: pretty` for body copy where Baseline support allows, treating both as progressive enhancements.
 - Size root and fluid type with bounded `clamp()` formulas that retain a
   root-relative contribution alongside any viewport term, so typography scales

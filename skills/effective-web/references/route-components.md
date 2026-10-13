@@ -1,6 +1,6 @@
 # Component Primitives
 
-Use this skill for reusable UI building blocks and the interaction rules attached to them.
+Use this route for reusable UI building blocks and the interaction rules attached to them.
 
 ## Workflow
 

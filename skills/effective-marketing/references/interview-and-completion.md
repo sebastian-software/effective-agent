@@ -89,7 +89,7 @@ Then produce a gap map:
 
 ## Interview Mode
 
-Ask concise, prioritized question batches. Prefer 3-7 questions at a time. Do not ask every possible question.
+Ask concise, prioritized question batches: the few questions that unblock the next profile improvement. Do not ask every possible question.
 
 Good interview behavior:
 
@@ -327,7 +327,7 @@ Return:
 2. **Project Inventory** - known projects, missing projects, duplicates, and likely high-signal gaps.
 3. **Completeness Table** - complete, incomplete, mention-only, reference-only,
    archive-only, needs confirmation.
-4. **Interview Questions** - the next 3-7 highest-value questions.
+4. **Interview Questions** - the next highest-value questions.
 5. **Reference Signal Map** - themes extracted from recommendations/references.
 6. **Recommendation Usage Map** - selected quote, supported claim, channel,
    attribution, source, translation, reuse sensitivity, and unresolved action.

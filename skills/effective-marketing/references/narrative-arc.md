@@ -107,12 +107,8 @@ Use restrained linking language:
 - "Across these projects, the common denominator is..."
 - "The through-line is..."
 
-Avoid inflated story language:
-
-- "journey", unless the user explicitly wants it
-- "destiny", "calling", "hero", "mission", "passion"
-- "from humble beginnings" tropes
-- dramatic personal biography unless the profile context calls for it
+Keep linking language factual and restrained; use story vocabulary or personal
+biography only when the user or the profile context calls for it.
 
 ## Example
 

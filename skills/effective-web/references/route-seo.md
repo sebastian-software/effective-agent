@@ -1,6 +1,6 @@
 # Frontend SEO and AI Search
 
-Use this skill for the frontend details that make public pages understandable to search engines, AI search systems, link previews, agents, and users before they click.
+Use this route for the frontend details that make public pages understandable to search engines, AI search systems, link previews, agents, and users before they click.
 
 ## Workflow
 

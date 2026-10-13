@@ -1,6 +1,6 @@
 # React Architecture
 
-Use this skill for React architecture decisions that affect rendering, server/client boundaries, data flow, hydration, streaming, or performance.
+Use this route for React architecture decisions that affect rendering, server/client boundaries, data flow, hydration, streaming, or performance.
 
 ## Workflow
 
@@ -27,6 +27,6 @@ Use this skill for React architecture decisions that affect rendering, server/cl
 
 Do not use this route for visual design or generic component APIs unless
 rendering architecture is the primary issue. Cross-reference
-[Design and Review](route-design.md), [React Components](route-react-components.md),
+[Design Review and Modernization](route-design.md), [React Components](route-react-components.md),
 [Web Performance](route-performance.md), and [Frontend Testing](route-testing.md)
 as needed.

@@ -1,6 +1,6 @@
 # Web Performance
 
-Use this skill for browser-facing performance work where implementation choices
+Use this route for browser-facing performance work where implementation choices
 affect loading, rendering, network discovery, perceived speed, Core Web Vitals,
 or sustained animation and media runtime cost.
 
@@ -26,6 +26,6 @@ or sustained animation and media runtime cost.
 
 ## Boundaries
 
-Do not use this skill as a marketing SEO audit. Cross-reference SEO only when performance affects crawlable content, Core Web Vitals, metadata delivery, or social/media assets.
+Do not use this route as a marketing SEO audit. Cross-reference SEO only when performance affects crawlable content, Core Web Vitals, metadata delivery, or social/media assets.
 
 Do not treat security headers as performance work unless transport, caching, or policy choices directly affect loading behavior.
