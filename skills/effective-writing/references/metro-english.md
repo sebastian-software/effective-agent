@@ -1,6 +1,6 @@
 # Metro English
 
-Rewrite text so it sounds like a smart teammate wrote it quickly but carefully:
+Draft or revise text so it sounds like a smart teammate wrote it quickly but carefully:
 clear, direct, warm enough, and a little loose. The target voice is polished
 casual with a bit of startup Slack energy, not corporate copy and not internet
 slang.
@@ -162,7 +162,7 @@ Output:
 
 ## Output format
 
-By default, return only the rewritten text.
+By default, return only the requested message.
 
 When the user asks only whether a short internal message sounds generated,
 return the concrete patterns and representative phrases that create that
