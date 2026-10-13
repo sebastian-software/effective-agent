@@ -20,8 +20,18 @@ Design global interfaces so language, country, currency, units, timezone, direct
 
 Read the changed source and matching target alongside the target project's
 existing locale settings and terminology. Update only the affected message.
-Validate it against the actual message format: preserve each variable and its
-meaning and all required plural or select variants, while allowing
-target-language reordering when the format supports it. Review the changed
-message in the UI for text expansion, plural forms, and direction changes that
-affect the component.
+Identify the message's syntax and how the project processes it. Text can contain
+custom placeholders, formats such as ICU, HTML markup, entities, or escape
+sequences. Separate translatable prose from syntax and functional values.
+Preserve variable identities and meaning. Where the format supports plural or
+select branches, provide the cases required by the message contract and target
+locale. Preserve HTML and other structural markup, and functional attributes or
+URLs according to the consumer. Translate human-facing text,
+including intended values in attributes such as `alt`, `title`, or
+`aria-label`. Reorder variables only when the format supports it. Preserve
+entity and escaping semantics for the consumer: equivalent entity and literal
+spellings are fine when they render the same meaning, but blindly decoding
+escaped literal markup can turn displayed text into active structure. Use
+existing tooling or inspect the rendered message when proportionate to check
+changed meaning, formatting, text expansion, plural, direction, markup, or
+attribute behavior.
