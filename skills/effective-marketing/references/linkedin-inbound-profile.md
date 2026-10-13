@@ -20,8 +20,6 @@ For end-to-end social-selling work:
    any profile audit or rewrite.
 3. Return here to prioritize proof and action for the active acquisition path.
 
-Do not maintain a second field-by-field profile formula in this reference.
-
 ## Define the visitor path
 
 Design each visible section to answer one question:

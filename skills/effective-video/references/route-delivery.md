@@ -9,10 +9,9 @@ Commit the sources: compositions, scripts, cue sheets, the line list, and the
 score generator. Do not commit renders, audio, takes, weights, or soundfonts.
 Keep them in an ignored work directory.
 
-A binary pushed to a pull-request branch and removed by a force-push never
-reaches the default branch or clones. It can stay reachable by SHA through the
-PR's force-push history. Rewrite such a branch before merging; ask the hosting
-provider's support to purge it only if the file is sensitive.
+If a binary reaches a pull-request branch, remove it before merging. A
+force-push leaves it reachable by SHA, so ask the hosting provider to purge it
+when the file is sensitive.
 
 ## Masters and Companions
 

@@ -218,12 +218,9 @@ strategy:
    history.
 6. Turn unresolved audience questions into research or content ideas, not facts.
 
-The [Alex Finn explainer](https://x.com/alexfinn/status/2087981370685735418)
-and [Sean Gearin counter-thread](https://x.com/seangearin/status/2088014792309264425)
-are useful examples. Gearin later
-[corrected his own count-equivalence claim](https://x.com/seangearin/status/2089056160884101150)
-after an upstream documentation change. That sequence is evidence for this
-update method, not a reason to discard platform research.
+Public explainers and counter-threads often correct themselves after upstream
+documentation changes. Treat such a correction as evidence for this update
+method, not as a reason to discard platform research.
 
 ## Update Workflow
 

@@ -80,9 +80,9 @@ unless they acquire distinctiveness; suggestive, arbitrary, and coined marks
 are usually stronger starting points. This is not a legal classification or
 clearance: jurisdiction, evidence, and the specific goods and services matter.
 
-## Use a transparent scorecard
+## Record evidence before ranking
 
-Score only after recording evidence. A practical scale is 1–5 for:
+Record the evidence status of each candidate (supported, weak, or unknown) for:
 
 - strategic fit
 - distinctiveness
@@ -94,8 +94,11 @@ Score only after recording evidence. A practical scale is 1–5 for:
 - preliminary legal risk
 - portfolio and future fit
 
-Show important uncertainty beside the score. Weight hard constraints explicitly
-and do not let an average hide a fatal language or conflict problem.
+Name blocking failures, such as a fatal language or conflict problem, before
+any ranking, and rank only the candidates that survive them. If the user wants
+a numeric scorecard, keep the evidence and uncertainty beside each score,
+weight hard constraints explicitly, and do not let an average hide a blocking
+failure.
 
 ## Recommend and reserve carefully
 

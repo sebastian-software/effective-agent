@@ -264,8 +264,9 @@ Check branch protection and history first: does the repo use squash or merge
 commits (`gh pr list --state merged` titles, merge strategy in settings), does
 CONTRIBUTING mandate rebasing, do PRs show "Update branch" merges?
 
-**Default-safe: merge from base.** Works everywhere, never rewrites history,
-never dismisses approvals:
+**Default-safe: merge from base.** Works everywhere and never rewrites history.
+A branch-protection rule that dismisses stale approvals on new commits can
+still apply, so check that setting before promising approvals survive:
 
 ```bash
 gh pr update-branch <N> --repo "$REPO"

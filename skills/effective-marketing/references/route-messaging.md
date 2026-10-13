@@ -15,15 +15,9 @@ adaptation, objections, calls to action, and proof gaps.
 
 ## Apply
 
-- Make every consequential outcome, comparison, speed, ease, universality, or
-  superiority claim traceable to current evidence and material constraints.
-- Match proof to the claim and the audience's risk. A feature screenshot cannot
-  establish a customer outcome; one anecdote cannot establish a universal one.
-- Preserve the qualifications that keep a claim true. Brevity is not a reason to
-  drop a limit.
+Apply the shared operating rules in [Market-facing decisions](market-facing-decisions.md). In addition:
+
 - Report proof gaps as gaps. Do not close them with plausible wording.
-- For technical products, keep approved technical terms stable and translate the
-  verified mechanism into buyer relevance without changing its conditions.
 
 ## Cross-links
 

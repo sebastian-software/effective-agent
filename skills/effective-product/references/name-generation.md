@@ -57,9 +57,9 @@ but should not be the only explanation for a general audience.
 4. Apply the hard constraints and obvious linguistic checks.
 5. Keep a varied longlist for the evidence-backed screening pass.
 
-Do not fall in love with the first fluent list. Model-generated names tend to
-cluster around familiar technology patterns; a second pass should explicitly
-seek different structures, sounds, and emotional character.
+Do not fall in love with the first fluent list. Before shortlisting, run a
+second pass that deliberately seeks structures, sounds, and emotional character
+absent from the first list.
 
 ## Fast rejection rules
 

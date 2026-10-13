@@ -44,5 +44,5 @@ owner. Concurrency must not weaken verification or authority boundaries.
 
 Lead with the outcome and decisive evidence. Name material uncertainty,
 blockers, and the next required user action when one exists. Keep commands and
-identifiers exact. Claim a controlled-language standard such as ASD-STE100 only
+identifiers exact. Claim conformance to a named standard, such as ASD-STE100, only
 when it governs the artifact and conformance has been verified.

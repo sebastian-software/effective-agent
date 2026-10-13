@@ -70,7 +70,7 @@ foreign unless the host identifies it as managed for the current task.
   through handoff and integration; never bless an arbitrary observed HEAD as a
   checkpoint.
 - Do not rewrite remote history unless the exact operation is documented by the
-  calling skill and authorized for the current unit. Revalidate review and
+  calling route and authorized for the current unit. Revalidate review and
   branch state after any push.
 
 ## Clean Up Conservatively

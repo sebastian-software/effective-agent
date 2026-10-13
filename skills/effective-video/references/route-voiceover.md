@@ -89,6 +89,6 @@ move with the take length.
   traceback ("Error processing file …/phontab"). Copy `espeak-ng-data` to a
   short path and point the phonemizer at it.
 - Chatterbox's watermarker needs `pkg_resources`. Pin `setuptools<81` in the
-  environment.
+  environment (needed as of October 2026).
 - Keep the models in an isolated, ignored environment (uv venv). Never commit
   weights or takes to the product repository.

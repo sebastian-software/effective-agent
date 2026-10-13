@@ -20,9 +20,8 @@ result honestly.
   would be brittle.
 - Report variance and the comparison's limits. Do not convert a noisy
   improvement into a headline ratio.
-- Do not claim load, soak, stress, or capacity methodology; that is a different
-  discipline of measurement and no first-party route currently claims its
-  execution.
+- Do not claim load, soak, stress, or capacity methodology; see the
+  [load, soak, stress, and capacity boundary](benchmark-methodology.md#load-soak-stress-and-capacity-boundary).
 
 ## Cross-links
 

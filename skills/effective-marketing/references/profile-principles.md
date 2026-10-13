@@ -16,7 +16,7 @@ The strongest sources converge on the same point: a consulting profile is not a 
 - PrepLounge distinguishes traditional CVs from consulting CVs: the former list responsibilities, while the latter prove fit through results, impact, strategic thinking, and value creation. It recommends making top achievements easy to see and writing bullets in a result/action/metric pattern where possible.
 - Europass represents the institutional EU baseline: CVs should be tailored to the specific opportunity, highlight matching skills and experiences, avoid a full detailed history, stay readable, use strong verbs, and usually preserve reverse chronology. Europass also treats a profile as a structured repository from which tailored CVs can be generated in many EU languages.
 - LinkedIn frames the profile as a professional landing page and personal storyboard rather than a static CV. Its own guidance emphasizes a custom headline, short About section, relevant experience, skills, recommendations, media samples, public URL, and ongoing activity.
-- LinkedIn supports profiles in multiple languages. Whether each language version is maintained manually or translated automatically changes over time; verify current behavior before planning multilingual upkeep. Viewers see the profile language matching their LinkedIn interface when that language exists.
+- LinkedIn supports profiles in multiple languages. Whether each language version is maintained manually or translated automatically changes over time; verify current behavior before planning multilingual upkeep. LinkedIn shows viewers the profile language that matches their interface when that language exists; verify current behavior in LinkedIn Help.
 - Public career-advice sources for LinkedIn converge on a similar pattern: make the headline descriptive, keep the summary concise, add external proof/media, prioritize visible skills, request recommendations, consider multilingual profiles, and post selectively to show perspective.
 - German, Austrian, and Swiss university and public-employment guidance converges on relevance, clear hierarchy, concrete language, reverse chronology for formal CVs, and evidence for claimed skills. It does not converge on one universal "DACH CV": page length, references, personal data, and photo conventions differ by country and channel.
 - The University of Cologne, ETH Zurich, and the University of Graz all treat the application as an argument for fit rather than a complete archive. Their guides support inventorying capabilities, analyzing the target opportunity, promoting relevant proof, and letting the intended reader's decision determine section order and detail.
@@ -32,7 +32,7 @@ For a full profile, select the layers that help the target reader:
 
 1. **Positioning layer** - the profile thesis, capability pillars, and strongest buyer-facing proof.
 2. **Narrative layer** - the short professional through-line that explains how projects and capabilities connect.
-3. **Signature evidence layer** - 3-5 selected projects that prove the thesis with recognizable clients, scale, complexity, and outcomes.
+3. **Signature evidence layer** - a small set of selected projects that prove the thesis with recognizable clients, scale, complexity, and outcomes.
 4. **External proof layer** - a small number of publicly given, locally attributed recommendations that verify capability, impact, trust, or working style without becoming the profile's structure.
 5. **Human-fit layer** - enough personality, motivation, working style, and boundaries that the reader understands what kind of person they may hire.
 6. **Breadth/archive layer** - additional projects grouped compactly by industry, client type, technology, or theme.
@@ -271,14 +271,14 @@ technology responsibility, and confirm that naming the client is permitted.
 For a website or PDF consultant profile:
 
 1. **Headline** - role and value proposition, not a generic title.
-2. **Executive Summary** - 3-5 lines tying together specialty, company types, industries, and outcomes.
-3. **Professional Through-Line** - 2-4 sentences connecting early work, recurring themes, and current strengths.
-4. **Capability Pillars** - 3-4 themes, each with proof language.
-5. **Selected Highlights** - 3-5 signature projects chosen by relevance and signal strength.
+2. **Executive Summary** - a short paragraph tying together specialty, company types, industries, and outcomes.
+3. **Professional Through-Line** - a few sentences connecting early work, recurring themes, and current strengths.
+4. **Capability Pillars** - a few themes, each with proof language.
+5. **Selected Highlights** - a small set of signature projects chosen by relevance and signal strength.
 6. **Industry and Organization Context** - compact client/sector map.
 7. **Additional Selected Projects** - grouped list for breadth.
 8. **Skills and Tools** - only the tools that reinforce the thesis.
-9. **Selected External Proof** - optional; usually 2-3 short, relevant recommendations with local attribution, source handling, and visibly labelled translations.
+9. **Selected External Proof** - optional; a few short, relevant recommendations with local attribution, source handling, and visibly labelled translations.
 10. **Operational Fit** - availability, location/time zone, delivery setup, travel readiness, languages, and engagement model only when the channel needs them.
 11. **Working Style / Role Fit** - concise description of how the consultant operates.
 12. **Optional Personal Motivation / Working Principles** - only when personality, values, motivation, or boundaries improve fit and are supported by evidence.
@@ -316,7 +316,7 @@ Use these layouts when chronology hides important signal:
 
 ### Selected Highlights
 
-Best for senior independent consultants. Put 3-5 projects near the top. Each gets 2-4 bullets or a short paragraph.
+Best for senior independent consultants. Put a small set of projects near the top, each with a few bullets or a short paragraph.
 
 ### Client/Industry Matrix
 
@@ -349,7 +349,7 @@ Check whether the profile:
 - uses the personality and boundaries pass from `personality-and-boundaries.md` when working style, values, background, or role-fit clarity matter
 - avoids reading like an anonymous staffing profile when direct buyer or interviewer trust matters
 - makes target clients and use cases obvious
-- includes 3-5 high-signal highlights
+- foregrounds a small set of high-signal highlights
 - avoids burying recognizable clients solely because they are older
 - uses outcome/action/scope language rather than task lists
 - makes individual contribution clear

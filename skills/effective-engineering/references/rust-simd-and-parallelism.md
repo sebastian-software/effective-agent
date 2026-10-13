@@ -592,7 +592,8 @@ Source: [Rustc Guide, compiler goals](https://rustc-dev-guide.rust-lang.org/over
 
 ### 11.7 Do not assume rustc itself is fully parallel
 
-At the documented point, code generation is parallel by default while much of
+As the rustc-dev-guide describes it (verify against the current guide), code
+generation is parallel by default while much of
 the rest of rustc is not. Parallel compiler work must handle lock contention,
 query invariants, and complexity; bootstrap.toml experiments are not ordinary
 stable project settings.

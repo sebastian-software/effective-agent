@@ -18,13 +18,10 @@ only after an option has been selected for a concrete plan.
 
 ## Apply
 
-- Treat launch as a coordinated change in market exposure and operations, not a
-  fixed ceremony or a content calendar.
+Apply the shared operating rules in [Market-facing decisions](market-facing-decisions.md). In addition:
+
 - Name readiness conditions and owners per surface. A launch date is not a
   readiness condition.
-- Equip sales to discover fit, show supported value, handle uncertainty, and
-  record objections. Never supply fabricated competitor facts, guaranteed
-  outcomes, or authority the product cannot honor.
 - Define the measurement and the reopen conditions before exposure increases.
 
 ## Cross-links

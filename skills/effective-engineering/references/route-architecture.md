@@ -110,8 +110,9 @@ system's quality scenarios, contracts, and failure consequences rather than from
 a generic pyramid ratio. Hand the agreed strategy to the Testing route for
 focused test design and implementation, and route frontend testing strategy to
 `effective-web`. Load, soak, and stress work stays split: the objectives,
-workload scenarios, and capacity decisions are owned here, while no first-party
-discipline currently claims their execution methodology.
+workload scenarios, and capacity decisions are owned here; execution
+methodology is outside this collection (see the
+[load, soak, stress, and capacity boundary](benchmark-methodology.md#load-soak-stress-and-capacity-boundary)).
 
 ## Cross-links
 

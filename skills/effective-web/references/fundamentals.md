@@ -374,32 +374,6 @@ Stick with conventional design patterns that people are already familiar with.
 - Save time on usability testing
 - Focus creativity on unique selling points
 
-## Use the 80/20 Rule (Pareto Principle)
-
-Roughly 80% of effects come from 20% of causes.
-
-**In product design:**
-- ~80% of users use 20% of features
-- ~80% of complaints come from 20% of issues
-- ~80% of attention is spent on 20% of a page
-
-**Application:**
-- Prioritise the small number of things with largest impact
-- Optimise for tasks most people will be doing
-- Don't over-invest in edge cases
-
-## Keep Costs in Mind
-
-Every minute spent costs money.
-
-**Ways to improve efficiency:**
-- Use existing design systems, templates, icon sets
-- Outsource time-intensive tasks
-- Stick with familiar UI patterns
-- Learn technical constraints of implementation
-- Talk to developers early and often
-- Simple approach is usually cheaper and easier
-
 ## Be Consistent
 
 Similar elements look and work in a similar way.
@@ -648,7 +622,7 @@ Keep interaction feedback inside the 150–250ms band (consistent with the Produ
 
 The `linear()` easing function (Baseline 2023) accepts a list of output values that the browser interpolates between, enabling easing curves that `cubic-bezier()` cannot express — including spring physics.
 
-Spring-based motion feels more natural than cubic-bezier because it models physical deceleration. Apple (iOS 17+), Framer Motion, and the animations.dev community have converged on two parameters: **duration** and **bounce** (0 = critically damped, no overshoot; positive = elastic overshoot).
+Spring-based motion feels more natural than cubic-bezier because it models physical deceleration. Apple (iOS 17+), Motion (formerly Framer Motion), and the animations.dev community have converged on two parameters: **duration** and **bounce** (0 = critically damped, no overshoot; positive = elastic overshoot).
 
 **Default to critically damped springs (bounce = 0)** — they feel responsive without being playful. Reserve bouncy springs for confirmations, celebrations, or deliberately playful interfaces.
 
@@ -656,11 +630,11 @@ Spring-based motion feels more natural than cubic-bezier because it models physi
 :root {
   /* Critically damped spring — natural deceleration, no overshoot */
   --ease-spring: linear(
-    0, 0.009, 0.035, 0.078, 0.136, 0.206, 0.286, 0.373,
-    0.464, 0.557, 0.65, 0.738, 0.819, 0.891, 0.951,
-    0.998, 1.029, 1.047, 1.051, 1.044, 1.029, 1.01,
-    0.99, 0.974, 0.965, 0.961, 0.963, 0.969, 0.978,
-    0.988, 0.997, 1.003, 1.005, 1.003, 1
+    0, 0.039, 0.127, 0.236, 0.349, 0.455, 0.551, 0.634,
+    0.705, 0.764, 0.812, 0.852, 0.883, 0.909, 0.929,
+    0.944, 0.957, 0.967, 0.974, 0.98, 0.985, 0.988,
+    0.991, 0.993, 0.995, 0.996, 0.997, 0.998, 0.998,
+    0.999, 1
   );
 
   /* Gentle bounce — for playful/confirming interactions */
@@ -683,7 +657,7 @@ Generate these values from spring parameters using tools like [linear-easing-gen
 **When CSS springs are enough:**
 - Hover effects, button presses, entry/exit transitions, layout shifts
 
-**When a JS animation library is needed (Framer Motion, React Spring, Motion One):**
+**When a JS animation library is needed (Motion, React Spring):**
 - Gesture-driven animation (drag, swipe, pinch) — the animation must respond to ongoing input
 - Interruptible animations — a new trigger mid-animation must redirect smoothly, not restart
 - Complex orchestrated sequences with stagger, layout animations, or shared element transitions

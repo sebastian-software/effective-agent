@@ -21,8 +21,9 @@ sequence; loading it would slow the rewrite down without improving it.
 
 ## Apply
 
-- Preserve intent, facts, names, constraints, and the decision. Shorten unless
-  the user asked for detail.
+- Preserve intent, facts, names, constraints, and the decision. Keep the
+  message as short as the reader needs to act; cut padding from a source draft
+  unless the user asked for detail.
 - Preserve the status of related actions. Drafting an approval does not mean it
   was submitted; a team update must not report that approval as completed.
 - Make the ask obvious: what should happen, who is blocked, what decision is

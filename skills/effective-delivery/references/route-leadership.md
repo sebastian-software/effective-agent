@@ -16,26 +16,6 @@ Keep these distinctions explicit:
 - team boundaries should follow durable interaction needs, not a fashionable
   diagram.
 
-## Working Model
-
-Before recommending a change, establish:
-
-1. **Outcome:** What product, delivery, quality, learning, or team result must
-   improve?
-2. **Evidence:** What was observed directly, reported by whom, measured, or
-   inferred? Preserve disagreement and missing voices.
-3. **System:** Which roles, decisions, dependencies, incentives, meetings,
-   queues, and constraints shape the result?
-4. **Human impact:** Who gains or loses authority, safety, focus, growth
-   opportunities, or workload?
-5. **Authority:** What may the requester change, and what needs consent,
-   executive sponsorship, People/HR ownership, or specialist review?
-6. **Feedback:** Which leading signal and review window will show whether the
-   intervention helped without creating a new harm?
-
-Do not invent employee intent, private feedback, health information, team
-sentiment, performance evidence, or organizational authority.
-
 ## Read
 
 Load only the references needed for the decision:
@@ -60,21 +40,26 @@ team-design reference only for the decisions it owns.
 
 Name the affected group, current outcome, desired outcome, decision owner,
 deadline, and non-negotiable constraints. Reframe vague requests such as "fix
-accountability" into observable behavior and consequences.
+accountability" into observable behavior and consequences. Establish what the
+requester may change and what needs consent, executive sponsorship, People/HR
+ownership, or specialist review.
 
 ### 2. Build an evidence map
 
 Separate direct observations, metrics, recurring reports, isolated anecdotes,
 commitments, and assumptions. Seek the work as experienced by contributors as
-well as managers. Protect confidentiality; report themes at the smallest
-necessary level.
+well as managers, and preserve disagreement and missing voices. Protect
+confidentiality; report themes at the smallest necessary level. Do not invent
+employee intent, private feedback, health information, team sentiment,
+performance evidence, or organizational authority.
 
 ### 3. Trace the system
 
 Map the shortest relevant chain from intent to decision to work to feedback.
 Record unclear owners, approval waits, dependency queues, duplicated decisions,
-interruptions, overloaded specialists, and missing customer or operational
-signals.
+interruptions, overloaded specialists, incentives, and missing customer or
+operational signals. Note who would gain or lose authority, safety, focus,
+growth opportunities, or workload.
 
 ### 4. Choose the smallest responsible intervention
 
@@ -93,8 +78,8 @@ public ranking, deceptive feedback collection, forced overtime, or retaliation.
 
 ### 6. Run and review
 
-Set a short enough learning window, qualitative and quantitative signals, and a
-specific review conversation. Compare the result with the prior state, include
+Set a leading signal, a short enough learning window, qualitative and
+quantitative signals, and a specific review conversation. Compare the result with the prior state, include
 unintended effects, and decide to keep, adjust, reverse, or escalate.
 
 ## Default Deliverable

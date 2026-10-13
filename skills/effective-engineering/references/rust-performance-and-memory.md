@@ -272,7 +272,7 @@ Run PGO as a reproducible four-step process:
    compiler flags.
 
 ```sh
-rustup component add llvm-tools-preview
+rustup component add llvm-tools
 rm -rf /tmp/pgo-data
 RUSTFLAGS="-Cprofile-generate=/tmp/pgo-data" \
   cargo build --release --target=x86_64-unknown-linux-gnu

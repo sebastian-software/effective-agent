@@ -19,6 +19,9 @@ contract rather than defaults to normalize:
   `noImplicitOverride` are opt-in checks a repository either has or has not
   adopted.
 
+Check the installed TypeScript major version before reading an absent option
+as its old default; defaults and deprecated options change between majors.
+
 Do not blanket-enable every strict or opt-in flag against the repository's
 convention. Turning on `noUncheckedIndexedAccess` or `exactOptionalPropertyTypes`
 across a codebase is a substantive change with real churn; propose it as its own

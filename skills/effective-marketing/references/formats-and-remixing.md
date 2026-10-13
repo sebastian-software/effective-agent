@@ -109,7 +109,7 @@ the LinkedIn posts route.
 
 ## Generate Materially Different Directions
 
-When the direction is genuinely open, select three useful approaches from the
+When the direction is genuinely open, select a few useful approaches from the
 following set:
 
 - **Closest polish:** preserve the user's thought and characteristic wording
