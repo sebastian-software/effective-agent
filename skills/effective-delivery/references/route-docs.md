@@ -25,6 +25,7 @@ docs system.
      files](guides-and-readmes.md#repository-instruction-files).
    - API, CLI, configuration, or migration documentation: read
      [Interfaces and Migrations](interfaces-and-migrations.md).
+   - Release notes: read [Release Notes](release-notes.md).
    - JSDoc, TSDoc, rustdoc, docstrings, or explanatory comments: read
      [Code Documentation](code-documentation.md).
    - ASD-STE100, Simplified Technical English, STE, controlled English,

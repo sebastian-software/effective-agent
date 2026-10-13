@@ -42,7 +42,7 @@ channel rules.
 | Discover, rank, process, reconcile, or monitor an unspecified live issue queue when the user delegates target selection | [Issue Queue Autopilot](references/route-issue-autopilot.md) |
 | Add, choose, update, or group external dependencies; assess changelog impact; create dependency PRs | [Dependency Updates](references/route-dependencies.md) |
 | Discover and run the repository's established typecheck, lint, format, test, build, benchmark, or documentation checks and report the evidence | [Repository Validation](references/route-validation.md) |
-| Write or verify READMEs, guides, API and CLI references, migration notes, JSDoc, TSDoc, rustdoc, examples, or controlled-language documentation; create or maintain requested repository instruction files such as `AGENTS.md` or `CLAUDE.md` | [Technical Documentation](references/route-docs.md) |
+| Write or verify release notes, READMEs, guides, API and CLI references, migration notes, JSDoc, TSDoc, rustdoc, examples, or controlled-language documentation; create or maintain requested repository instruction files such as `AGENTS.md` or `CLAUDE.md` | [Technical Documentation](references/route-docs.md) |
 | Resolve unclear ownership, overloaded leaders, weak one-to-ones, coordination drag, decision stalls, or a proposed reorganization | [Engineering Leadership](references/route-leadership.md) |
 
 Any route that creates, adopts, writes in, integrates from, or removes a Git
