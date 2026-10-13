@@ -1,6 +1,6 @@
 # Forms UX
 
-Use this skill for forms as task flows: helping users enter correct information quickly, recover from mistakes, and understand what happens next.
+Use this route for forms as task flows: helping users enter correct information quickly, recover from mistakes, and understand what happens next.
 
 ## Workflow
 

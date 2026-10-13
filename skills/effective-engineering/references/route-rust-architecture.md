@@ -10,10 +10,9 @@ contract; come here for the structural decision.
 ## Read
 
 [Architecture and boundaries](rust-architecture-and-boundaries.md) — the
-comprehensive Rust architecture casebook. It is a deep reference registered as a
-documented context exception: for an ordinary API or failure task, load the
-focused ownership and error references from the Rust entry route first and come
-here only for cross-cutting workspace and production-boundary work.
+comprehensive Rust architecture casebook. For an ordinary API or failure task,
+load the focused ownership and error references from the Rust entry route first;
+come here only for cross-cutting workspace and production-boundary work.
 
 ## Apply
 

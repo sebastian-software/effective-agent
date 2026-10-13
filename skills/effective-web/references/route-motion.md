@@ -1,6 +1,6 @@
 # Motion and Interaction
 
-Use this skill for motion that clarifies state, continuity, feedback, and
+Use this route for motion that clarifies state, continuity, feedback, and
 progress, or adds an earned moment of brand character without slowing users down.
 
 ## Workflow

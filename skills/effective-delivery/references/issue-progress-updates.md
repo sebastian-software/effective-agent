@@ -12,8 +12,7 @@ Why this matters now: <one concrete sentence based on impact, urgency, risk, blo
 ```
 
 Link the issue or PR in the heading when possible. Add the implementation agent,
-worktree, or branch only when it helps the user locate the work. Keep the block to
-four or five short lines.
+worktree, or branch only when it helps the user locate the work.
 
 Derive “Why this matters now” from live evidence: ranking reasons, customer/user
 impact, security or data risk, work it unblocks, a failing required check, or new

@@ -9,7 +9,8 @@ balance or loudness of a film's soundtrack.
 not the composer's melodies, chord progressions quoted bar for bar, or
 recognisable motifs. Say so when a requester names a famous piece.
 
-A minimalist modern-classical promo score that worked:
+One illustrative arc for a minimalist modern-classical promo score; derive
+instrumentation, key, and arc from the brief:
 
 - solo piano;
 - arpeggiated eighths in a minor key that brighten to the relative major at

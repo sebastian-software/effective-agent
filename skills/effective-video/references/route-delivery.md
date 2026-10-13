@@ -37,8 +37,9 @@ uploads from a written task. The task names the local files, the exact
 settings, the checks, and what to report back (IDs and URLs).
 
 - **Site playback:** use a streaming host that does not track viewers. Bunny
-  Stream worked: EU-hosted, adaptive, no ads, and its player set no cookies in
-  testing. Restrict allowed domains to the site and `localhost`, and turn off
+  Stream met this when checked in October 2026 (EU-hosted, adaptive, no ads, no
+  player cookies); re-check its cookies and storage before relying on that.
+  Restrict allowed domains to the site and `localhost`, and turn off
   heatmaps and resume-position storage.
 - **Click to load:** show a self-hosted poster and request the player iframe
   only when the visitor clicks. Remove the iframe on close so playback stops.

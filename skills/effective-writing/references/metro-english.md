@@ -142,7 +142,7 @@ Output:
 > This looks like a validation gap. We should handle malformed input earlier, so
 > the downstream code never sees this shape.
 
-### German team note
+### German note for an English-language channel
 
 Input:
 > Ich glaube, wir sollten das nicht in diesem PR machen. Das ist eigentlich ein

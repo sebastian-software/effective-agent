@@ -1,6 +1,6 @@
 # CSS Architecture
 
-Use this skill for making CSS maintainable, predictable, and compatible with the project's browser-support promise.
+Use this route for making CSS maintainable, predictable, and compatible with the project's browser-support promise.
 
 ## Workflow
 

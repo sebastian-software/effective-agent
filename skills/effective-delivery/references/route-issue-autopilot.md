@@ -12,7 +12,7 @@ true:
 
 - The user delegates target selection from a live set of issues. Repository,
   project, assignee, label, state, or priority constraints may narrow the set, but
-  more than one possible target must remain for the skill to discover or rank.
+  more than one possible target must remain for this route to discover or rank.
 - The user requests an ongoing queue or monitor for new, reopened, or changing
   issues without naming the implementation target.
 - The current request continues a queue, issue, branch, or PR that this autopilot
@@ -23,8 +23,8 @@ Treat the request as targeted, and therefore outside this route, when it identif
 the work through an issue or PR number, tracker key, URL, exact title, attached
 issue, or finite enumerated list. Phrases such as “this issue,” “fix issue #123,”
 “implement LIN-42,” “review PR #9,” and “fix #123 and #124” are targeted requests.
-The mere word “issue,” including its plural, is never sufficient to activate the
-skill.
+The mere word “issue,” including its plural, is never sufficient to activate
+this route.
 
 For a targeted request:
 
@@ -85,7 +85,7 @@ account identity.
 
 ## Write collaboration text with Metro English
 
-Load `effective-writing` and take its Metro English route before posting
+Load `effective-writing` and take its Metro English route, when available, before posting
 team-facing GitHub or Linear text.
 Use it for:
 
@@ -223,9 +223,7 @@ The implementation agent must:
    architecture/security rules.
 4. Run focused tests first, then all proportionate repository checks.
 5. Update required docs and work logs. Link the PR to the issue using native closing
-   syntax for GitHub or the authoritative Linear identifier/link. Apply
-   the Metro English route to the PR description and tracker/PR communication without
-   changing required structure or technical meaning.
+   syntax for GitHub or the authoritative Linear identifier/link.
 6. Commit with repository conventions, push, and use the repository's required
    finalization workflow.
 7. Move the PR out of draft to trigger full CI/review-bot coverage. In repositories
@@ -278,7 +276,6 @@ Never report “ready to merge” merely because code was pushed or CI once pass
 ## Routing Boundaries
 
 Use Workflow Orchestration for a newly named software change and PR Review and
-Upkeep for a standalone named PR. Use `effective-writing` for team-facing
-collaboration text after the technical substance is settled. This route owns only
+Upkeep for a standalone named PR. This route owns only
 delegated queue selection, queue-owned implementation coordination, and ongoing
 queue reconciliation; it does not merge PRs or absorb targeted work.

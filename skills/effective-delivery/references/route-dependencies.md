@@ -1,16 +1,12 @@
 # Route: Dependency Research and Updates
 
-Perform dependency updates as engineering work, not as mechanical version bumps.
-The default outcome is a portfolio of focused, review-ready dependency groups.
-Each group bundles related packages, explains what changed upstream, assesses
-local impact, runs the repository's validation suite, and adopts newly useful
-dependency capabilities when they improve the local code.
-
-Treat every update as a small migration and delivery unit. A good outcome is a set of review-ready groups
-where reviewers and automation can see why the versions belong together, what
-changed in those dependencies, what local risk was checked, which tests were
-run, and whether the project now benefits from new APIs, fixed limitations, or
-changed defaults.
+Perform dependency updates as engineering work, not as mechanical version bumps:
+treat each update as a small migration and delivery unit. The default outcome is
+a portfolio of focused, review-ready dependency groups. For each group,
+reviewers and automation can see why the versions belong together, what changed
+upstream, what local risk was checked, which validation ran, and whether newly
+useful capabilities (new APIs, fixed limitations, changed defaults) were adopted
+where they improve the local code.
 
 ## New Dependency Introduction
 
@@ -87,7 +83,7 @@ full PR bodies into chat unless the user asks for them.
    answer the same reviewer question and share the same validation surface
    (framework core plus adapters, types plus runtime, one vendor SDK surface,
    one test-runner stack, one migration guide). Keep unrelated packages
-   separate even when they are individually small, and split a package into its
+   separate even when they are individually small or all look like “tooling”, and split a package into its
    own PR when it has a major version change, migration guide, broad API
    surface, runtime behavior changes, security implications, or unclear
    compatibility. The authoritative grouping table, good grouping reasons, and
@@ -127,17 +123,6 @@ full PR bodies into chat unless the user asks for them.
      committed-pushed-published PR) before moving to the next unrelated group.
      The authoritative branch, commit, publishing, and PR-body rules live in
      [the detailed workflow](dependency-workflow.md).
-
-## Grouping and PR Shaping Rules of Thumb
-
-Default to one branch and one PR per dependency group. A group should be easy
-to name as a single reviewer question, such as "Does the Vitest coverage update
-still satisfy test and coverage checks?" Split groups with different validation
-surfaces or reviewer expertise; combine packages only when the coupling is real
-(shared peer constraints, adapter relationships, one vendor SDK surface, one
-migration guide). Do not combine packages only because they are all "tooling",
-and do not collapse unrelated groups into one PR just because they were
-discovered in the same inventory pass.
 
 ## Multi-PR Worktree Orchestration
 
@@ -221,8 +206,7 @@ beneficial adoption, validation results, and remaining risk. Write for a busy
 reviewer, translate upstream changes into local consequences, and avoid vague
 modernization claims and AI-sounding filler. The authoritative PR-body template,
 review-package checklist, and writing-quality guidance live in
-[the detailed workflow](dependency-workflow.md). Keep the chat summary short;
-report the PR URL, validation result, and any deferred groups or blockers.
+[the detailed workflow](dependency-workflow.md).
 
 ## Cross-links
 

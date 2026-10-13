@@ -1,6 +1,6 @@
 # Error and Loading States
 
-Use this skill for the states users see while work is pending, unavailable, failed, empty, partial, or complete.
+Use this route for the states users see while work is pending, unavailable, failed, empty, partial, or complete.
 
 For the words inside those states — labels, messages, button text — use
 **Interface Copy** ([route-copy.md](route-copy.md)) instead. This route owns

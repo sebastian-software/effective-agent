@@ -1,6 +1,6 @@
 # Smart Dependency Update Workflow
 
-Use this reference when executing the full dependency-update process or when the package graph is large enough that the grouping decision needs explicit reasoning. This file is the authoritative copy of the grouping table, the publishing and delivery rules, and the PR-body guidance; the [Dependencies route](route-dependencies.md) carries only the rules of thumb.
+Use this reference when executing the full dependency-update process or when the package graph is large enough that the grouping decision needs explicit reasoning. This file is the authoritative copy of the grouping table, the publishing and delivery rules, and the PR-body guidance; the [Dependencies route](route-dependencies.md) carries the operating model and delivery defaults.
 
 ## 1. Repository Orientation
 

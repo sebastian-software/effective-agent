@@ -24,5 +24,5 @@ layout, and motion rules from the related Effective Web routes.
 
 Read [React Architecture](route-react-architecture.md) for React Server
 Components, hydration, rendering boundaries, and app-level performance
-architecture. Read [Design and Review](route-design.md) for visual design and
+architecture. Read [Design Review and Modernization](route-design.md) for visual design and
 framework-agnostic quality rules.

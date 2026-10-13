@@ -95,9 +95,8 @@ If there's no linked GitHub issue **and** the repo clearly doesn't use GitHub
 issues (`gh issue list -L 5` is empty, or Issues are disabled), the source is
 probably elsewhere — look for a Linear ticket: a `https://linear.app/...` link in
 the PR body, or a Linear-style branch name (`name/abc-123-...`). Read it through a
-Linear MCP **if one is connected** — discover its tools at runtime (e.g.
-`ToolSearch "linear issue"`) and, if Linear tools come back, use them to fetch the
-ticket.
+connected Linear integration **if one is available**: discover it at runtime from
+the host's tool list or tool search, and use it to fetch the ticket.
 
 If no Linear MCP is connected and the content isn't reachable, don't stall:
 use the PR title, description, diff, and available requirements. A missing link

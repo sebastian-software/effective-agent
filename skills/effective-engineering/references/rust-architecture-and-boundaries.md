@@ -407,16 +407,16 @@ pub struct PluginHost {
 }
 ```
 
-Document object-safety, thread-safety, allocation, and dispatch costs. Do not
+Document dyn compatibility, thread-safety, allocation, and dispatch costs. Do not
 turn every internal function into a trait object just to make tests convenient.
 
 **Source:** [Rust trait-object guide](https://doc.rust-lang.org/stable/book/ch18-02-trait-objects.html) and [Rust dyn compatibility](https://doc.rust-lang.org/reference/items/traits.html#dyn-compatibility).
 
-### 5.4 Check object safety before publishing a trait
+### 5.4 Check dyn compatibility before publishing a trait
 
-If a trait is intended for `dyn Trait`, keep dispatchable methods object-safe.
+If a trait is intended for `dyn Trait`, keep dispatchable methods dyn-compatible.
 Move constructors, generic methods, or methods returning unconstrained `Self`
-behind `where Self: Sized`, or split the trait into an object-safe runtime
+behind `where Self: Sized`, or split the trait into a dyn-compatible runtime
 interface and a construction/configuration interface.
 
 ### 5.5 Use closures as lightweight policies
@@ -799,7 +799,7 @@ debug output, define TLS/session-store policies, and test the failure paths.
 - Is a trait required by demonstrated substitution or only by a test mock?
 - Is the implementation statically dispatched where that matters?
 - Is `dyn Trait` isolated to a small heterogeneous boundary?
-- Is object safety documented and tested?
+- Is dyn compatibility documented and tested?
 - Would a closure, enum, or concrete type be clearer?
 
 ### 12.4 Error and boundary review

@@ -34,9 +34,9 @@ reference directly:
 
 - Funnel-level diagnosis and conversion experiments belong to
   `effective-marketing`; whether the product itself is ready is decided here.
-- Implementation and browser verification belong to `effective-web`; test
-  design, dependency work, review, and repository validation belong to
-  `effective-delivery`.
+- Implementation and browser verification belong to `effective-web`; focused
+  non-frontend test design belongs to `effective-engineering`; dependency work,
+  review, and repository validation belong to `effective-delivery`.
 - Post-launch market and adoption evidence that changes the position is
   `effective-marketing` work; evidence that changes the product returns to the
   Discovery route.

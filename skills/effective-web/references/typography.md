@@ -181,7 +181,7 @@ Small:     14px / 20px line-height / regular
 
 **Tips:**
 - Round to nearest whole number
-- Try to make line-heights divisible by 4 (aligns to 4pt grid)
+- Express line heights as unitless ratios in CSS (24px on 16px = `1.5`); see [line height and measure](line-height-and-measure.md) for role-based ranges
 - Adjust as needed once confident
 
 ### Small vs Large Type Scales

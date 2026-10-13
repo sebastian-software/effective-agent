@@ -56,11 +56,6 @@ an efficient builder for bounded slices, deterministic evidence owned by the
 builder or integrator, and risk-based specialist review instead of assigning a
 second model to recheck every change.
 
-When a proposed workflow assigns the cheapest model to routine quick review,
-correct that assumption explicitly. Keep routine review with the builder's cold
-pass and deterministic gates; use an independent model only for a named
-semantic risk or a review class with measured benefit.
-
 ## Build the Porting System
 
 1. Map source concepts to target concepts: types, ownership, lifetimes, errors,

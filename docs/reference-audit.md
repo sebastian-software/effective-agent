@@ -45,7 +45,6 @@ A clean change is a valid result: return an empty list.
 
 ## Output
 
-Return only the JSON object the schema describes. For each finding give the
-changed `file` and `line`, the exact `quote`, the `kind`, the `confidence`, the
+For each finding give the changed `file` and `line`, the exact `quote`, the `kind`, the `confidence`, the
 other location in `related` (`file:line`, or an empty string), a short
 `explanation`, and a concrete `suggestion` for the fix.

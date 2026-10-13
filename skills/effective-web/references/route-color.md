@@ -1,6 +1,6 @@
 # Color and Theming
 
-Use this skill for color decisions that affect usability, brand expression, accessibility, and maintainability.
+Use this route for color decisions that affect usability, brand expression, accessibility, and maintainability.
 
 ## Workflow
 

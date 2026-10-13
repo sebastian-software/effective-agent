@@ -13,8 +13,7 @@ contract; come here for the low-level decision.
 - [Unsafe and FFI](rust-unsafe-and-ffi.md) — required for every unsafe block,
   unsafe trait implementation, raw pointer, foreign call, or ABI boundary.
 - [SIMD and parallelism](rust-simd-and-parallelism.md) — a deep CPU, SIMD,
-  atomics, and scheduling reference registered as a documented context
-  exception. Load it for specialist optimization work; routine profiling and
+  atomics, and scheduling reference for specialist optimization work; routine profiling and
   unsafe reviews load the focused references first.
 
 ## Apply

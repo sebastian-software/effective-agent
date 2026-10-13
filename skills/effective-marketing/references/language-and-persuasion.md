@@ -61,15 +61,11 @@ Use these editing sweeps:
 
 ### Human-Voice Cleanup
 
-Remove AI-ish and hollow marketing patterns:
-
-- "pivotal", "crucial", "robust", "seamless", "innovative", "cutting-edge", "passionate", "dynamic"
-- "showcasing", "underscoring", "serves as a testament"
-- forced rule-of-three lists
-- excessive bolding, slogans, and em dash-heavy rhythm
-- vague claims such as "driving digital transformation" without a concrete project behind them
-
-Replace them with real evidence: client context, role, deliverable, constraint, outcome, or domain.
+Replace inflated or generic wording, such as "driving digital transformation"
+without a concrete project behind it, with the evidence behind it: client
+context, role, deliverable, constraint, outcome, or domain. Judge clusters of
+formulaic phrasing, not single words or punctuation; route a requested
+prose-pattern audit to `effective-writing`.
 
 ### Natural Idiomatic English
 
@@ -126,11 +122,9 @@ Good German profile language:
 - "Erfahrung in regulierten und enterprise-nahen Umfeldern, u. a. Banking, Telekommunikation, Baustoffe und Multi-Brand-Retail."
 - "Ausgewählte Projekt-Highlights zeigen die Breite der Branchen und die Tiefe der technischen Verantwortung."
 
-Avoid:
-
-- "visionär", "bahnbrechend", "einzigartig", "leidenschaftlich", unless there is a very specific reason
-- long nominal phrases: "Durchführung der Optimierung der Implementierung"
-- purely humble lists that hide the consulting value
+Prefer verifiable substance over self-praise adjectives, and verbs over stacked
+nominal phrases ("Durchführung der Optimierung der Implementierung"). Do not let
+humble lists hide the consulting value.
 
 Warmer DACH is often better than cold DACH. The profile can sound positive and confident while staying factual.
 

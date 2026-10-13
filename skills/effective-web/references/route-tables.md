@@ -1,6 +1,6 @@
 # Data Tables
 
-Use this skill when the primary UI problem is understanding, comparing, filtering, or acting on structured data.
+Use this route when the primary UI problem is understanding, comparing, filtering, or acting on structured data.
 
 ## Workflow
 
