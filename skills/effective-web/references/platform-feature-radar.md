@@ -60,8 +60,8 @@ path when the project supports older devices, WebViews, or enterprise browsers.
   staggered effects, but keep a readable fallback for older targets and do not
   replace semantic order or explicit application data with DOM-position
   inference.
-- **Invoker commands (`command`/`commandfor`):** Baseline Newly available since
-  December 2025. Let a `button` open, close, or toggle a dialog or popover
+- **Invoker commands (`command`/`commandfor`):** Baseline 2025, Newly available
+  since December 2025 and listed here because it is still recent. Let a `button` open, close, or toggle a dialog or popover
   without glue JavaScript; keep the same actions reachable through ordinary
   controls for older targets.
 
