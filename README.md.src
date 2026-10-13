@@ -3,8 +3,8 @@
 <!-- mdtheme:badges:start -->
 <!-- mdtheme:badges:end -->
 
-**Seven practical skills for AI agents, from product decisions to software
-delivery, growth, and image workflows.**
+**Eight practical skills for AI agents, from product decisions to software
+delivery, growth, image, and video workflows.**
 
 Install the skills your work needs. Each skill combines a short entry point
 with focused references to help your agent make decisions, avoid common
@@ -24,6 +24,7 @@ Use cases, example prompts, strengths, and the full scope live on the homepage.
 | [`effective-writing`](https://effective-agent.dev/skills/effective-writing/) | Articles, essays, editing, team communication, and locale typography |
 | [`effective-marketing`](https://effective-agent.dev/skills/effective-marketing/) | Positioning, commercial copy, conversion, launches, social content, sales, and CRM |
 | [`effective-image`](https://effective-agent.dev/skills/effective-image/) | Photo editing and photoreal generation; natural business portrait retouch, cleanup and composites, and AI scenes that look like real photographs |
+| [`effective-video`](https://effective-agent.dev/skills/effective-video/) | Product films in code: Remotion picture, synthetic voiceover, original score, mix, and streaming delivery |
 
 Optional [instruction packs](https://effective-agent.dev/#instructions)
 add standing guidance for request completion and documentation accuracy. Enable

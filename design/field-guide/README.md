@@ -13,7 +13,7 @@ in the About copy and legal footer. On the Sebastian Software OSS site, place
 this mark inside the product feature and preserve the corporate masthead.
 
 The collection is intentionally open-ended. No illustration assigns a named
-volume to every current skill or depends on having exactly seven volumes.
+volume to every current skill or depends on having exactly eight volumes.
 Tiny print, code-like passages, checklists, and diagrams make the books feel
 used. These details are decorative texture, not product instructions or content
 visitors need to read. Primary content and current inventory stay in HTML.
@@ -46,10 +46,10 @@ font licensing, and repeatable favicon/social-preview rendering.
 
 - [`site/index.html`](../../site/index.html): implemented homepage.
 - [`index.html`](index.html): identity variants and an OSS feature application.
-- All seven skill detail pages and the comparison page use the same product
+- All eight skill detail pages and the comparison page use the same product
   identity, typography, light/dark palettes, and simplified navigation.
 
-The existing browser suite covers nine pages at seven widths in both color
+The existing browser suite covers ten pages at seven widths in both color
 schemes, including skill filters, keyboard-operated use-case tabs, copy
 commands, optional instruction disclosure, and skill-detail navigation.
 
