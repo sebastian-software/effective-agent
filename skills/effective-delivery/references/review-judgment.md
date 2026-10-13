@@ -35,10 +35,11 @@ Use these questions where they apply; their order is not a gate sequence:
 - Does the change deliver its stated outcome without unnecessary scope? New
   variants, themes, controls, or flows need the states required by their
   contracts, including relevant focus, loading, failure, localized, or narrow
-  states. Missing requested behavior is incomplete delivery. When a changed
-  condition handles a boundary or failure, check a supported reachable case:
-  an empty search result should not become an `items[0].id` crash after a
-  guard is removed.
+  states. Missing requested behavior is incomplete delivery.
+- Does a changed condition still handle the boundaries and failures it guards?
+  Check the supported, reachable cases it affects rather than every branch:
+  after a guard is removed, an empty search result should not become an
+  `items[0].id` crash.
 - Does a changed signature or contract affect actual consumers? Use
   [codebase context](codebase-context.md) when relationship resolution is
   needed. Resolve real call sites rather than inventing hypothetical callers.
