@@ -36,14 +36,23 @@ Use these questions where they apply; their order is not a gate sequence:
   variants, themes, controls, or flows need the states required by their
   contracts, including relevant focus, loading, failure, localized, or narrow
   states. Missing requested behavior is incomplete delivery.
+- Does a changed condition still handle the boundaries and failures it guards?
+  Check the supported, reachable cases it affects rather than every branch:
+  after a guard is removed, an empty search result should not become an
+  `items[0].id` crash.
 - Does a changed signature or contract affect actual consumers? Use
   [codebase context](codebase-context.md) when relationship resolution is
   needed. Resolve real call sites rather than inventing hypothetical callers.
+  After renaming a configuration key, follow its actual readers; a remaining
+  reader of the old key can leave the new setting ineffective even when
+  startup succeeds.
 - Are the implementation and abstractions proportionate? A little duplication
   can be cheaper than an abstraction with no demonstrated reuse.
 - Do documentation, tests, and the PR description explain or protect the
   consequential behavior? Missing docs or tests block only when their absence
-  leaves a concrete risk or makes intent impossible to assess.
+  leaves a concrete risk or makes intent impossible to assess. Compare claims
+  such as “retries reuse the same idempotency key” with the changed code; PR
+  wording cannot supply behavior the implementation does not provide.
 - Do affected accessibility, performance, operability, observability, and
   recovery boundaries remain sound? An inaccessible core flow, unbounded hot
   query, or silent data loss is consequential regardless of category.

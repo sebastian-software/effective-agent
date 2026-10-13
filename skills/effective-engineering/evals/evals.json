@@ -266,6 +266,11 @@
       "expected": "Adds a focused regression test and obtains negative proof through reproduction, targeted reversal, mutation, or equivalent evidence when practical. It keeps sound implementation work, states any limit on negative proof, and runs the narrow test before broader validation."
     },
     {
+      "name": "mock-assertion-cannot-prove-database-invariant",
+      "prompt": "A retry change claims to prevent duplicate invoice rows. Its unit test mocks the repository and asserts `insert()` is called once; the database uniqueness test is skipped because the local database is unavailable, while a schema check confirms the index is declared. What does this evidence establish, and what remains open?",
+      "expected": "Says the mock supports the one-call claim but cannot establish duplicate rejection by the database; the skipped test supplies no execution result, and checking that an index is declared does not show it rejects duplicates. Requests or records the smallest real-boundary evidence needed for the invariant, while allowing the mock and any other evidence to remain useful for the narrower claims they support."
+    },
+    {
       "name": "coverage-pressure",
       "prompt": "Management asks every service to reach 80% coverage this sprint. There is no repository policy or known risk list. What tests should we add?",
       "expected": "Uses an authoritative existing threshold if one exists; otherwise treats coverage as a signal rather than a target. It asks for or discovers concrete unprotected behaviors and prioritizes meaningful risk rather than inventing test volume, an assertion rule, or a universal framework."
