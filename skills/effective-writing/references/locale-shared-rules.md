@@ -7,6 +7,8 @@ more specific.
 
 - Change only rendered prose unless the user explicitly requests source-code
   normalization.
+- For markup or templates, use the consuming format to distinguish prose from
+  syntax and preserve the escaping semantics it requires.
 - Preserve exact quotations, legal names, trademarks, identifiers, URLs,
   commands, and machine-readable values.
 - Keep punctuation that belongs to a quotation inside it and punctuation that
