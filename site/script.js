@@ -61,74 +61,42 @@ for (const button of document.querySelectorAll("[data-copy-target]")) {
   })
 }
 
-const filterButtons = [...document.querySelectorAll("[data-filter]")]
-const skillCards = [...document.querySelectorAll("[data-skill]")]
-const filterStatus = document.querySelector("[data-filter-status]")
+// Tab groups: arrow keys, Home, and End move between tabs; one panel is visible.
+for (const group of document.querySelectorAll("[data-tabs]")) {
+  const tabs = [...group.querySelectorAll('[role="tab"]')]
 
-for (const button of filterButtons) {
-  button.addEventListener("click", () => {
-    const filter = button.dataset.filter
-    let visibleCount = 0
-
-    for (const candidate of filterButtons) {
-      candidate.setAttribute("aria-pressed", String(candidate === button))
+  const activate = (tab, moveFocus = false) => {
+    for (const candidate of tabs) {
+      const selected = candidate === tab
+      candidate.setAttribute("aria-selected", String(selected))
+      candidate.tabIndex = selected ? 0 : -1
+      const panel = document.getElementById(candidate.getAttribute("aria-controls"))
+      if (panel) panel.hidden = !selected
     }
-
-    for (const card of skillCards) {
-      const visible = filter === "all" || card.dataset.category === filter
-      card.hidden = !visible
-      if (visible) visibleCount += 1
-    }
-
-    if (filterStatus) {
-      const category = button.firstChild?.textContent?.trim() || "selected"
-      filterStatus.textContent =
-        filter === "all"
-          ? `${visibleCount} skills shown.`
-          : `${visibleCount} ${category.toLowerCase()} skills shown.`
-    }
-  })
-}
-
-const capabilityTabs = [...document.querySelectorAll("[data-capability-tab]")]
-const capabilityPanels = [...document.querySelectorAll("[data-capability-panel]")]
-
-const activateCapability = (tab, moveFocus = false) => {
-  const capability = tab.dataset.capabilityTab
-
-  for (const candidate of capabilityTabs) {
-    const selected = candidate === tab
-    candidate.setAttribute("aria-selected", String(selected))
-    candidate.tabIndex = selected ? 0 : -1
+    if (moveFocus) tab.focus()
   }
 
-  for (const panel of capabilityPanels) {
-    panel.hidden = panel.dataset.capabilityPanel !== capability
+  for (const [index, tab] of tabs.entries()) {
+    tab.addEventListener("click", () => activate(tab))
+    tab.addEventListener("keydown", (event) => {
+      let nextIndex
+
+      if (event.key === "ArrowRight" || event.key === "ArrowDown") {
+        nextIndex = (index + 1) % tabs.length
+      } else if (event.key === "ArrowLeft" || event.key === "ArrowUp") {
+        nextIndex = (index - 1 + tabs.length) % tabs.length
+      } else if (event.key === "Home") {
+        nextIndex = 0
+      } else if (event.key === "End") {
+        nextIndex = tabs.length - 1
+      } else {
+        return
+      }
+
+      event.preventDefault()
+      activate(tabs[nextIndex], true)
+    })
   }
-
-  if (moveFocus) tab.focus()
-}
-
-for (const [index, tab] of capabilityTabs.entries()) {
-  tab.addEventListener("click", () => activateCapability(tab))
-  tab.addEventListener("keydown", (event) => {
-    let nextIndex
-
-    if (event.key === "ArrowRight" || event.key === "ArrowDown") {
-      nextIndex = (index + 1) % capabilityTabs.length
-    } else if (event.key === "ArrowLeft" || event.key === "ArrowUp") {
-      nextIndex = (index - 1 + capabilityTabs.length) % capabilityTabs.length
-    } else if (event.key === "Home") {
-      nextIndex = 0
-    } else if (event.key === "End") {
-      nextIndex = capabilityTabs.length - 1
-    } else {
-      return
-    }
-
-    event.preventDefault()
-    activateCapability(capabilityTabs[nextIndex], true)
-  })
 }
 
 const revealElements = [...document.querySelectorAll(".reveal")]

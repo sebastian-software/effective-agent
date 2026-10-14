@@ -5,10 +5,10 @@
     <path id="top" d="M55 240a185 185 0 0 1 370 0"/>
     <path id="bottom" d="M41 240a199 199 0 0 0 398 0"/>
   </defs>
-  <circle cx="240" cy="240" r="238" fill="#fff"/>
-  <circle cx="240" cy="240" r="229" fill="none" stroke="#002731" stroke-width="2.5"/>
-  <path d="M20 240a220 220 0 0 1 440 0h-56a164 164 0 0 0-328 0Z" fill="#005164"/>
-  <g fill="none" stroke="#00718d" stroke-width="2">
+  <circle cx="240" cy="240" r="238" fill="#fffdf7"/>
+  <circle cx="240" cy="240" r="229" fill="none" stroke="#18372b" stroke-width="2.5"/>
+  <path d="M20 240a220 220 0 0 1 440 0h-56a164 164 0 0 0-328 0Z" fill="#18372b"/>
+  <g fill="none" stroke="#8a9586" stroke-width="2">
     <path d="M240 82v13" transform="rotate(0 240 240)"/>
     <path d="M240 82v9" transform="rotate(6 240 240)"/>
     <path d="M240 82v9" transform="rotate(12 240 240)"/>
@@ -71,9 +71,9 @@
     <path d="M240 82v9" transform="rotate(354 240 240)"/>
   </g>
   <g font-family="Arial, Helvetica, sans-serif" font-weight="700" text-anchor="middle">
-    <text fill="#fff" font-size="31" letter-spacing="4"><textPath href="#top" startOffset="50%">TUNED FOR</textPath></text>
-    <text x="240" y="321" fill="#030d11" font-size="68" letter-spacing="-2">GPT-6</text>
-    <text fill="#002731" font-size="25" letter-spacing="2.5"><textPath href="#bottom" startOffset="50%">SEBASTIAN SOFTWARE</textPath></text>
+    <text fill="#fffdf7" font-size="31" letter-spacing="4"><textPath href="#top" startOffset="50%">TUNED FOR</textPath></text>
+    <text x="240" y="321" fill="#18372b" font-size="68" letter-spacing="-2">GPT-6</text>
+    <text fill="#18372b" font-size="25" letter-spacing="2.5"><textPath href="#bottom" startOffset="50%">SEBASTIAN SOFTWARE</textPath></text>
   </g>
   <svg x="162" y="103" width="156" height="156" viewBox="0 0 721 721" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g clip-path="url(#clip0_1637_2934)">
@@ -90,5 +90,5 @@
 </clipPath>
 </defs>
 </svg>
-  <path d="m228 365 12 21 12-21Z" fill="#38afcc"/>
+  <path d="m228 365 12 21 12-21Z" fill="#a54e2c"/>
 </svg>

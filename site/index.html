@@ -3,9 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="color-scheme" content="light dark">
-    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f8f5ec">
-    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#1a211c">
+    <meta name="color-scheme" content="light">
+    <meta name="theme-color" content="#f8f5ec">
     <meta
       name="description"
       content="Eight open-source skills for AI agents across product, web, engineering, delivery, marketing, writing, image, and video workflows. Focused guidance from first idea to market."
@@ -44,13 +43,13 @@
     >
     <link rel="canonical" href="https://effective-agent.dev/">
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-    <link rel="icon" href="assets/brand/field-guide-reverse.svg" type="image/svg+xml" media="(prefers-color-scheme: dark)">
     <link rel="icon" href="assets/favicon-32.png" type="image/png" sizes="32x32">
     <link rel="icon" href="favicon.ico" sizes="any">
     <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" sizes="180x180">
     <link rel="preload" href="https://assets.sebastian-software.com/fonts/Elena/Elena-Medium-latin-f0e984d3e709.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="field-guide.css">
+    <link rel="stylesheet" href="home.css">
     <script src="script.js" defer></script>
     <title>Effective Agent — Practical skills. Better work.</title>
     <script type="application/ld+json">
@@ -96,14 +95,14 @@
             {
               "@type": "ListItem",
               "position": 5,
-              "name": "Effective Writing",
-              "url": "https://effective-agent.dev/skills/effective-writing/"
+              "name": "Effective Marketing",
+              "url": "https://effective-agent.dev/skills/effective-marketing/"
             },
             {
               "@type": "ListItem",
               "position": 6,
-              "name": "Effective Marketing",
-              "url": "https://effective-agent.dev/skills/effective-marketing/"
+              "name": "Effective Writing",
+              "url": "https://effective-agent.dev/skills/effective-writing/"
             },
             {
               "@type": "ListItem",
@@ -122,687 +121,230 @@
       }
     </script>
   </head>
-  <body>
+    <body class="home">
     <a class="skip-link" href="#main">Skip to content</a>
 
     <header class="site-header" data-header>
       <div class="shell header-inner">
         <a class="brand" href="#top" aria-label="Effective Agent, home">
-          <picture class="brand-mark">
-            <source srcset="assets/brand/field-guide-reverse.svg" media="(prefers-color-scheme: dark)">
-            <img src="assets/brand/field-guide.svg" width="40" height="40" alt="">
-          </picture>
+          <img class="brand-mark" src="assets/brand/field-guide.svg" width="40" height="40" alt="">
           <span class="brand-copy">
             <strong>Effective Agent</strong>
           </span>
         </a>
 
         <nav class="primary-nav" aria-label="Primary navigation">
-          <a href="#library">Skills</a>
-          <a href="#system">How it works</a>
+          <a href="#library">Guides</a>
+          <a href="#quality">Quality</a>
+          <a href="#install">Install</a>
           <a href="https://github.com/sebastian-software/effective-agent">GitHub <span aria-hidden="true">↗</span></a>
         </nav>
 
-        <a class="header-action" href="#install">Install a skill <span aria-hidden="true">→</span></a>
+        <a class="header-action" href="#install">Install the set <span aria-hidden="true">→</span></a>
       </div>
     </header>
 
     <main id="main">
-      <section class="hero" id="top" aria-labelledby="hero-title">
-        <div class="shell hero-grid">
-          <div class="hero-copy">
-            <p class="hero-context">Open-source skills for AI agents</p>
-            <h1 id="hero-title">Practical skills.<br>Better work.</h1>
-            <p class="hero-intro">A growing collection of open-source skills for product, software, and growth. Install the one your next task needs.</p>
-            <div class="hero-actions">
-              <a class="button button-primary" href="#install">Install a skill <span aria-hidden="true">→</span></a>
-              <a class="button button-secondary" href="#library">Explore the skills</a>
-            </div>
-            <div class="command-dock" role="group" aria-label="Quick install">
-              <div>
-                <span class="command-label">Start with Effective Web</span>
-                <code id="hero-command">npx skills add sebastian-software/effective-agent --skill effective-web</code>
-              </div>
-              <button class="copy-button" type="button" data-copy-target="hero-command" aria-label="Copy Effective Web skills CLI command">
-                <span data-copy-label>Copy</span>
-              </button>
-            </div>
-            <dl class="proof-row" aria-label="Collection facts">
-              <div>
-                <dt>independent skills</dt>
-                <dd>8</dd>
-              </div>
-              <div>
-                <dt>focused references</dt>
-                <dd>388</dd>
-              </div>
-              <div>
-                <dt>optional packs</dt>
-                <dd>3</dd>
-              </div>
-            </dl>
+      <section class="masthead" id="top" aria-labelledby="hero-title">
+        <div class="shell masthead-copy">
+          <p class="masthead-kicker">The field guides · Open source · Edition 2026</p>
+          <h1 id="hero-title">Practical skills.<br>Better work.</h1>
+          <p class="masthead-intro">
+            Eight field guides that turn your coding agent into a dependable colleague
+            — for the product decision, the code, the review, and the launch.
+          </p>
+          <div class="masthead-actions">
+            <a class="button button-primary" href="#install">Install the set <span aria-hidden="true">→</span></a>
+            <a class="button button-secondary" href="#library">Read the index</a>
           </div>
-
-          <figure class="field-guide-art">
-            <img src="assets/illustrations/field-guide-desk.png" width="1536" height="1024" fetchpriority="high" alt="An overlapping collection of illustrated field guides, an open notebook, a fountain pen, and a brass compass.">
-            <figcaption>A small library for bigger work.</figcaption>
-          </figure>
         </div>
-      </section>
 
-      <section class="signal-strip" aria-label="Collection characteristics">
-        <div class="signal-track">
-          <span>Install one discipline</span>
-          <i aria-hidden="true"></i>
-          <span>Ask in normal language</span>
-          <i aria-hidden="true"></i>
-          <span>Load only relevant guidance</span>
-          <i aria-hidden="true"></i>
-          <span>Inspect every workflow</span>
-          <i aria-hidden="true"></i>
-          <span>Verify before done</span>
-        </div>
-      </section>
+        <figure class="masthead-plate">
+          <img src="assets/illustrations/field-guide-desk.png" width="1536" height="1024" fetchpriority="high" alt="An overlapping collection of illustrated field guides, an open notebook, a fountain pen, and a brass compass.">
+        </figure>
 
-      <section class="library section" id="library" aria-labelledby="library-title">
         <div class="shell">
-          <div class="library-heading reveal">
-            <div>
-              <p class="eyebrow">The field guides</p>
-              <h2 id="library-title">Different disciplines.<br>Use what you need.</h2>
+          <div class="installer" data-tabs>
+            <div class="installer-tabs" role="tablist" aria-label="Install options">
+              <button id="install-tab-set" type="button" role="tab" aria-selected="true" aria-controls="install-panel-set" tabindex="0">Full set</button>
+              <button id="install-tab-skill" type="button" role="tab" aria-selected="false" aria-controls="install-panel-skill" tabindex="-1">One skill</button>
+              <button id="install-tab-dalo" type="button" role="tab" aria-selected="false" aria-controls="install-panel-dalo" tabindex="-1">DALO</button>
             </div>
-            <p>
-              Each skill works on its own. Follow a focused entry point to the guidance your task needs, then inspect the work and the evidence behind it.
-            </p>
+            <div class="installer-panel" id="install-panel-set" role="tabpanel" aria-labelledby="install-tab-set" tabindex="0">
+              <div class="installer-command">
+                <code id="hero-command">npx skills add sebastian-software/effective-agent --all</code>
+                <button class="copy-button" type="button" data-copy-target="hero-command" aria-label="Copy the full-set install command"><span data-copy-label>Copy</span></button>
+              </div>
+              <p class="installer-note">All eight guides. Each one loads only when a request needs it.</p>
+            </div>
+            <div class="installer-panel" id="install-panel-skill" role="tabpanel" aria-labelledby="install-tab-skill" tabindex="0" hidden>
+              <div class="installer-command">
+                <code id="hero-skill-command">npx skills add sebastian-software/effective-agent --skill effective-web</code>
+                <button class="copy-button" type="button" data-copy-target="hero-skill-command" aria-label="Copy the single-skill install command"><span data-copy-label>Copy</span></button>
+              </div>
+              <p class="installer-note">Swap <code>effective-web</code> for any guide in the <a href="#library">index</a>.</p>
+            </div>
+            <div class="installer-panel" id="install-panel-dalo" role="tabpanel" aria-labelledby="install-tab-dalo" tabindex="0" hidden>
+              <div class="installer-command">
+                <code id="hero-dalo-command">curl -fsSL https://dalo.sh/install.sh | sh
+dalo source add-catalog sebastian https://github.com/sebastian-software/effective-agent.git</code>
+                <button class="copy-button" type="button" data-copy-target="hero-dalo-command" aria-label="Copy the DALO starter commands"><span data-copy-label>Copy</span></button>
+              </div>
+              <p class="installer-note">DALO is our skill manager: pinned, reviewed versions across agents. <a href="#install">Full setup below</a>.</p>
+            </div>
           </div>
-
-          <div class="filter-bar reveal" role="group" aria-label="Filter disciplines">
-            <button type="button" aria-pressed="true" data-filter="all">All <span>8</span></button>
-            <button type="button" aria-pressed="false" data-filter="product">Product <span>1</span></button>
-            <button type="button" aria-pressed="false" data-filter="web">Web <span>1</span></button>
-            <button type="button" aria-pressed="false" data-filter="engineering">Engineering <span>2</span></button>
-            <button type="button" aria-pressed="false" data-filter="growth">Growth &amp; language <span>4</span></button>
-          </div>
-
-          <div class="skill-grid" data-skill-grid>
-            <article class="skill-card reveal" data-skill="effective-product" data-category="product">
-              <div class="card-topline"><span>Product</span><span>01</span></div>
-              <h3>Effective Product</h3>
-              <p>Turn evidence into a clear product decision: research, strategy, scope, pricing, and priorities.</p>
-              <ul>
-                <li>11 intent routes</li>
-                <li>Evidence before answers</li>
-              </ul>
-              <a href="skills/effective-product/index.html" aria-label="Explore Effective Product">Explore skill <span aria-hidden="true">→</span></a>
-            </article>
-
-            <article class="skill-card skill-card-feature reveal" data-skill="effective-web" data-category="web">
-              <div class="card-topline"><span>Web</span><span>02</span></div>
-              <h3>Effective Web</h3>
-              <p>Design, build, and improve websites. Connect the experience with accessibility, performance, and verification.</p>
-              <ul>
-                <li>27 routed workflows</li>
-                <li>Design to verification</li>
-              </ul>
-              <a href="skills/effective-web/index.html" aria-label="Explore Effective Web">Explore skill <span aria-hidden="true">→</span></a>
-            </article>
-
-            <article class="skill-card reveal" data-skill="effective-engineering" data-category="engineering">
-              <div class="card-topline"><span>Engineering</span><span>03</span></div>
-              <h3>Effective Engineering</h3>
-              <p>Build sound systems and code. Work through architecture, APIs, data, TypeScript, Rust, and focused tests.</p>
-              <ul>
-                <li>10 intent routes</li>
-                <li>Architecture through focused tests</li>
-              </ul>
-              <a href="skills/effective-engineering/index.html" aria-label="Explore Effective Engineering">Explore skill <span aria-hidden="true">→</span></a>
-            </article>
-
-            <article class="skill-card reveal" data-skill="effective-delivery" data-category="engineering">
-              <div class="card-topline"><span>Delivery</span><span>04</span></div>
-              <h3>Effective Delivery</h3>
-              <p>Move a repository forward. Audit, plan, modernize, review, and verify changes with the right evidence.</p>
-              <ul>
-                <li>10 intent routes</li>
-                <li>Authority stays explicit</li>
-              </ul>
-              <a href="skills/effective-delivery/index.html" aria-label="Explore Effective Delivery">Explore skill <span aria-hidden="true">→</span></a>
-            </article>
-
-            <article class="skill-card reveal" data-skill="effective-writing" data-category="growth">
-              <div class="card-topline"><span>Writing</span><span>05</span></div>
-              <h3>Effective Writing</h3>
-              <p>Make the thinking clear. Plan, draft, and edit useful writing while preserving the facts and your voice.</p>
-              <ul>
-                <li>7 intent routes</li>
-                <li>Preserves meaning and qualifications</li>
-              </ul>
-              <a href="skills/effective-writing/index.html" aria-label="Explore Effective Writing">Explore skill <span aria-hidden="true">→</span></a>
-            </article>
-
-            <article class="skill-card reveal" data-skill="effective-marketing" data-category="growth">
-              <div class="card-topline"><span>Marketing</span><span>06</span></div>
-              <h3>Effective Marketing</h3>
-              <p>Make the value clear. Connect positioning, content, acquisition, sales, and growth with customer evidence.</p>
-              <ul>
-                <li>18 intent routes</li>
-                <li>Claims trace to proof</li>
-              </ul>
-              <a href="skills/effective-marketing/index.html" aria-label="Explore Effective Marketing">Explore skill <span aria-hidden="true">→</span></a>
-            </article>
-            <article class="skill-card reveal" data-skill="effective-image" data-category="growth">
-              <div class="card-topline"><span>Image</span><span>07</span></div>
-              <h3>Effective Image</h3>
-              <p>Photo editing and photoreal generation: natural business portrait retouch, cleanup and composites, and AI scenes that look like real photographs.</p>
-              <ul>
-                <li>Photo Editing and Business Portrait Retouch</li>
-                <li>Photo Generation route</li>
-                <li>Shared realism review</li>
-              </ul>
-              <a href="skills/effective-image/index.html" aria-label="Explore Effective Image">Explore skill <span aria-hidden="true">→</span></a>
-            </article>
-            <article class="skill-card reveal" data-skill="effective-video" data-category="growth">
-              <div class="card-topline"><span>Video</span><span>08</span></div>
-              <h3>Effective Video</h3>
-              <p>Product films in code: Remotion picture, synthetic voiceover, original score, mix, and streaming delivery.</p>
-              <ul>
-                <li>5 intent routes</li>
-                <li>Beat sheet on a bar grid</li>
-                <li>Licenses checked before release</li>
-              </ul>
-              <a href="skills/effective-video/index.html" aria-label="Explore Effective Video">Explore skill <span aria-hidden="true">→</span></a>
-            </article>
-          </div>
-
-          <p class="filter-status sr-only" role="status" aria-live="polite" data-filter-status></p>
         </div>
       </section>
 
-      <section class="capabilities section" id="use-cases" aria-labelledby="capabilities-title">
+      <section class="seal-band" aria-labelledby="seal-band-title">
+        <div class="shell seal-band-grid">
+          <div class="seal-band-seals">
+            <img src="assets/seals/gpt-6.svg" width="132" height="132" alt="Tuned for GPT-6 — Sebastian Software">
+            <img src="assets/seals/opus-5-5.svg" width="132" height="132" alt="Tuned for Opus 5.5 — Sebastian Software">
+            <p id="seal-band-title">Tuned for GPT-6 and Opus 5.5. <a href="#quality">What this means</a></p>
+          </div>
+          <dl class="proof-row" aria-label="Collection facts">
+            <div><dt>guides that hand off to each other</dt><dd>8</dd></div>
+            <div><dt>focused references, loaded on demand</dt><dd>388</dd></div>
+            <div><dt>written behavior scenarios</dt><dd>609</dd></div>
+            <div><dt>or Apache-2.0, fully inspectable</dt><dd class="proof-text">MIT</dd></div>
+          </dl>
+        </div>
+      </section>
+
+      <section class="guide-index section" id="library" aria-labelledby="library-title">
         <div class="shell">
-          <div class="capabilities-heading reveal">
+          <div class="chapter-head">
+            <p class="eyebrow">Index</p>
             <div>
-              <p class="eyebrow">Choose by need</p>
-              <h2 id="capabilities-title">Start with the task<br>in front of you.</h2>
-            </div>
-            <p>
-              Start with a real task. Each skill brings focused guidance, concrete
-              checks, and a clear remit. These examples show where to begin and
-              what kind of work each one supports.
-            </p>
-          </div>
-
-          <div class="capability-explorer reveal">
-            <div class="capability-tabs">
-              <p>Pick the outcome</p>
-              <div class="capability-tablist" role="tablist" aria-label="Skill use cases">
-                <button id="capability-tab-product" type="button" role="tab" aria-selected="true" aria-controls="capability-panel-product" tabindex="0" data-capability-tab="product">
-                  <span class="capability-index">01</span>
-                  <span><small>Product</small><strong>Decide what to build</strong></span>
-                </button>
-                <button id="capability-tab-web" type="button" role="tab" aria-selected="false" aria-controls="capability-panel-web" tabindex="-1" data-capability-tab="web">
-                  <span class="capability-index">02</span>
-                  <span><small>Web</small><strong>Design the experience</strong></span>
-                </button>
-                <button id="capability-tab-engineering" type="button" role="tab" aria-selected="false" aria-controls="capability-panel-engineering" tabindex="-1" data-capability-tab="engineering">
-                  <span class="capability-index">03</span>
-                  <span><small>Engineering</small><strong>Build the software</strong></span>
-                </button>
-                <button id="capability-tab-software" type="button" role="tab" aria-selected="false" aria-controls="capability-panel-software" tabindex="-1" data-capability-tab="software">
-                  <span class="capability-index">04</span>
-                  <span><small>Delivery</small><strong>Move the repository forward</strong></span>
-                </button>
-                <button id="capability-tab-marketing" type="button" role="tab" aria-selected="false" aria-controls="capability-panel-marketing" tabindex="-1" data-capability-tab="marketing">
-                  <span class="capability-index">05</span>
-                  <span><small>Marketing</small><strong>Find the growth bottleneck</strong></span>
-                </button>
-                <button id="capability-tab-communication" type="button" role="tab" aria-selected="false" aria-controls="capability-panel-communication" tabindex="-1" data-capability-tab="communication">
-                  <span class="capability-index">06</span>
-                  <span><small>Writing</small><strong>Explain it in your voice</strong></span>
-                </button>
-                <button id="capability-tab-photo" type="button" role="tab" aria-selected="false" aria-controls="capability-panel-photo" tabindex="-1" data-capability-tab="photo">
-                  <span class="capability-index">07</span>
-                  <span><small>Image</small><strong>Refine the real portrait</strong></span>
-                </button>
-                <button id="capability-tab-video" type="button" role="tab" aria-selected="false" aria-controls="capability-panel-video" tabindex="-1" data-capability-tab="video">
-                  <span class="capability-index">08</span>
-                  <span><small>Video</small><strong>Produce the product film</strong></span>
-                </button>
-              </div>
-            </div>
-            <div class="capability-stage">
-              <article class="capability-panel" id="capability-panel-product" role="tabpanel" aria-labelledby="capability-tab-product" tabindex="0" data-capability-panel="product">
-                <div class="capability-panel-topline"><span>Effective Product</span><span>Start with · Research, notes, or a brief</span></div>
-                <div class="capability-panel-copy">
-                  <p class="capability-question">Choose the next product move.</p>
-                  <p class="example-label">An example request</p>
-                  <blockquote>“Compare these customer interviews with our roadmap. Which problem should we tackle next, and what would change that decision?”</blockquote>
-                </div>
-                <div class="review-snapshot">
-                  <div class="review-verdict">
-                    <span class="output-label">What the guidance adds</span>
-                    <strong>Evidence before commitment</strong>
-                    <p>Separate observations from assumptions; compare options and identify what still needs learning.</p>
-                  </div>
-                  <div class="review-register">
-                    <span class="output-label">Inside this skill</span>
-                    <ul class="coverage-list">
-                      <li>Customer research, competitive profiles &amp; discovery</li>
-                      <li>Strategy, scope, prototypes &amp; release decisions</li>
-                      <li>Product and service pricing, naming &amp; decision records</li>
-                    </ul>
-                    <a class="panel-skill-link" href="skills/effective-product/index.html">Explore Effective Product <span aria-hidden="true">→</span></a>
-                  </div>
-                </div>
-                <div class="panel-outcome"><span>Work toward</span><p>A product recommendation with evidence, tradeoffs, and a focused next step.</p></div>
-              </article>
-              <article class="capability-panel" id="capability-panel-web" role="tabpanel" aria-labelledby="capability-tab-web" tabindex="0" data-capability-panel="web" hidden>
-                <div class="capability-panel-topline"><span>Effective Web</span><span>Start with · A brief, design, or interface</span></div>
-                <div class="capability-panel-copy">
-                  <p class="capability-question">Make the interface work as a whole.</p>
-                  <p class="example-label">An example request</p>
-                  <blockquote>“Improve this checkout on mobile. Keep the brand, fix keyboard access, and verify loading and error states.”</blockquote>
-                </div>
-                <div class="review-snapshot">
-                  <div class="review-verdict">
-                    <span class="output-label">What the guidance adds</span>
-                    <strong>Design through verification</strong>
-                    <p>Connect layout and interaction with accessibility, performance, and browser evidence.</p>
-                  </div>
-                  <div class="review-register">
-                    <span class="output-label">Inside this skill</span>
-                    <ul class="coverage-list">
-                      <li>Design, CSS, React &amp; responsive layout</li>
-                      <li>Accessibility, forms, motion &amp; performance</li>
-                      <li>Reference analysis, originality, web compliance &amp; print</li>
-                    </ul>
-                    <a class="panel-skill-link" href="skills/effective-web/index.html">Explore Effective Web <span aria-hidden="true">→</span></a>
-                  </div>
-                </div>
-                <div class="panel-outcome"><span>Work toward</span><p>An implemented interface with the relevant states and browser checks accounted for.</p></div>
-              </article>
-              <article class="capability-panel" id="capability-panel-engineering" role="tabpanel" aria-labelledby="capability-tab-engineering" tabindex="0" data-capability-panel="engineering" hidden>
-                <div class="capability-panel-topline"><span>Effective Engineering</span><span>Start with · A system constraint or code boundary</span></div>
-                <div class="capability-panel-copy">
-                  <p class="capability-question">Get the underlying contract right.</p>
-                  <p class="example-label">An example request</p>
-                  <blockquote>“Make our webhook handler idempotent. Define the transaction boundary and write a test for duplicate deliveries.”</blockquote>
-                </div>
-                <div class="review-snapshot">
-                  <div class="review-verdict">
-                    <span class="output-label">What the guidance adds</span>
-                    <strong>Mechanism before patch</strong>
-                    <p>Work through ownership, failure, and compatibility before choosing an implementation.</p>
-                  </div>
-                  <div class="review-register">
-                    <span class="output-label">Inside this skill</span>
-                    <ul class="coverage-list">
-                      <li>Architecture, APIs, data &amp; transactions</li>
-                      <li>Rust and backend or shared TypeScript</li>
-                      <li>Focused non-frontend tests &amp; benchmarks</li>
-                    </ul>
-                    <a class="panel-skill-link" href="skills/effective-engineering/index.html">Explore Effective Engineering <span aria-hidden="true">→</span></a>
-                  </div>
-                </div>
-                <div class="panel-outcome"><span>Work toward</span><p>An explicit system contract, an implementation, and focused evidence for the behavior.</p></div>
-              </article>
-              <article class="capability-panel" id="capability-panel-software" role="tabpanel" aria-labelledby="capability-tab-software" tabindex="0" data-capability-panel="software" hidden>
-                <div class="capability-panel-topline"><span>Effective Delivery</span><span>Start with · A repository, issue, or pull request</span></div>
-                <div class="capability-panel-copy">
-                  <p class="capability-question">Carry the change through review.</p>
-                  <p class="example-label">An example request</p>
-                  <blockquote>“Review this PR for regressions. Use the description and diff where ticket context is missing; return the findings here.”</blockquote>
-                </div>
-                <div class="review-snapshot">
-                  <div class="review-verdict">
-                    <span class="output-label">What the guidance adds</span>
-                    <strong>Scope and authority stay clear</strong>
-                    <p>Review what the evidence supports, verify proportionately, and distinguish findings from publication.</p>
-                  </div>
-                  <div class="review-register">
-                    <span class="output-label">Inside this skill</span>
-                    <ul class="coverage-list">
-                      <li>Repository audits, plans, ports &amp; dependency updates</li>
-                      <li>PR review, upkeep, issue queues &amp; existing checks</li>
-                      <li>Technical documentation &amp; engineering leadership</li>
-                    </ul>
-                    <a class="panel-skill-link" href="skills/effective-delivery/index.html">Explore Effective Delivery <span aria-hidden="true">→</span></a>
-                  </div>
-                </div>
-                <div class="panel-outcome"><span>Work toward</span><p>Prioritized findings or a focused change, with verification status and a clear handoff.</p></div>
-              </article>
-              <article class="capability-panel" id="capability-panel-marketing" role="tabpanel" aria-labelledby="capability-tab-marketing" tabindex="0" data-capability-panel="marketing" hidden>
-                <div class="capability-panel-topline"><span>Effective Marketing</span><span>Start with · An offer, customer evidence, or a funnel</span></div>
-                <div class="capability-panel-copy">
-                  <p class="capability-question">Connect the offer to the sale.</p>
-                  <p class="example-label">An example request</p>
-                  <blockquote>“Our IT service firm has enough inquiries but few sales. Find the bottleneck from inquiry to delivery and plan next week’s work.”</blockquote>
-                </div>
-                <div class="review-snapshot">
-                  <div class="review-verdict">
-                    <span class="output-label">What the guidance adds</span>
-                    <strong>Proof behind the promise</strong>
-                    <p>Connect positioning and acquisition to qualification, conversion, delivery capacity, and market learning.</p>
-                  </div>
-                  <div class="review-register">
-                    <span class="output-label">Inside this skill</span>
-                    <ul class="coverage-list">
-                      <li>Positioning, content strategy, launches, commercial copy &amp; conversion</li>
-                      <li>Service growth, outbound, sales, paid campaigns &amp; CRM</li>
-                      <li>Social content, LinkedIn &amp; consultant profiles</li>
-                    </ul>
-                    <a class="panel-skill-link" href="skills/effective-marketing/index.html">Explore Effective Marketing <span aria-hidden="true">→</span></a>
-                  </div>
-                </div>
-                <div class="panel-outcome"><span>Work toward</span><p>A prioritized growth plan, supported messages, or a sales workflow tied to the actual constraint.</p></div>
-              </article>
-              <article class="capability-panel" id="capability-panel-communication" role="tabpanel" aria-labelledby="capability-tab-communication" tabindex="0" data-capability-panel="communication" hidden>
-                <div class="capability-panel-topline"><span>Effective Writing</span><span>Start with · Notes, a draft, or a team message</span></div>
-                <div class="capability-panel-copy">
-                  <p class="capability-question">Keep the meaning. Find the words.</p>
-                  <p class="example-label">An example request</p>
-                  <blockquote>“Turn these engineering notes into a short German article. Use short sentences, no metaphors, and keep the technical qualifications.”</blockquote>
-                </div>
-                <div class="review-snapshot">
-                  <div class="review-verdict">
-                    <span class="output-label">What the guidance adds</span>
-                    <strong>Your brief sets the style</strong>
-                    <p>Honor the requested voice from the first draft while keeping facts, terms, and qualifications intact.</p>
-                  </div>
-                  <div class="review-register">
-                    <span class="output-label">Inside this skill</span>
-                    <ul class="coverage-list">
-                      <li>Articles, essays, technical explainers &amp; revision</li>
-                      <li>Argument structure &amp; AI-pattern audits</li>
-                      <li>Natural team English &amp; locale typography</li>
-                    </ul>
-                    <a class="panel-skill-link" href="skills/effective-writing/index.html">Explore Effective Writing <span aria-hidden="true">→</span></a>
-                  </div>
-                </div>
-                <div class="panel-outcome"><span>Work toward</span><p>Clear prose in the requested register, with the technical meaning and evidence limits preserved.</p></div>
-              </article>
-              <article class="capability-panel" id="capability-panel-photo" role="tabpanel" aria-labelledby="capability-tab-photo" tabindex="0" data-capability-panel="photo" hidden>
-                <div class="capability-panel-topline"><span>Effective Image</span><span>Start with · Existing portraits and an approved look</span></div>
-                <div class="capability-panel-copy">
-                  <p class="capability-question">Keep the person. Refine the photograph.</p>
-                  <p class="example-label">An example request</p>
-                  <blockquote>“Retouch these business portraits consistently. Smooth distracting shirt creases, soften lens glare, and keep the expression and skin texture natural.”</blockquote>
-                </div>
-                <div class="review-snapshot">
-                  <div class="review-verdict">
-                    <span class="output-label">What the guidance adds</span>
-                    <strong>The original anchors every edit</strong>
-                    <p>Apply the approved portrait prompt while preserving identity, expression, framing, and the real scene.</p>
-                  </div>
-                  <div class="review-register">
-                    <span class="output-label">Inside this skill</span>
-                    <ul class="coverage-list">
-                      <li>Natural skin, eye, clothing, and lens-glare corrections</li>
-                      <li>Consistent color, contrast, and restrained subject emphasis</li>
-                      <li>Before-and-after review, prompt records, and honest output dimensions</li>
-                    </ul>
-                    <a class="panel-skill-link" href="skills/effective-image/index.html">Explore Effective Image <span aria-hidden="true">→</span></a>
-                  </div>
-                </div>
-                <div class="panel-outcome"><span>Work toward</span><p>A coherent portrait series that feels warm, open, professional, and faithful to the shoot.</p></div>
-              </article>
-              <article class="capability-panel" id="capability-panel-video" role="tabpanel" aria-labelledby="capability-tab-video" tabindex="0" data-capability-panel="video" hidden>
-                <div class="capability-panel-topline"><span>Effective Video</span><span>Start with · A product, a message, and a target length</span></div>
-                <div class="capability-panel-copy">
-                  <p class="capability-question">Render the film from code.</p>
-                  <p class="example-label">An example request</p>
-                  <blockquote>“Make a 60-second product film for our homepage with an English voiceover and calm piano music.”</blockquote>
-                </div>
-                <div class="review-snapshot">
-                  <div class="review-verdict">
-                    <span class="output-label">What the guidance adds</span>
-                    <strong>Picture, voice, and music on one grid</strong>
-                    <p>Plan beats on a musical bar grid so scenes, voiceover, and score land together, with checkpoints before each expensive render.</p>
-                  </div>
-                  <div class="review-register">
-                    <span class="output-label">Inside this skill</span>
-                    <ul class="coverage-list">
-                      <li>Film plan, Remotion scenes, camera &amp; brand theme</li>
-                      <li>License-checked synthetic voiceover, original score &amp; mix</li>
-                      <li>Captions, poster, streaming embed &amp; archived originals</li>
-                    </ul>
-                    <a class="panel-skill-link" href="skills/effective-video/index.html">Explore Effective Video <span aria-hidden="true">→</span></a>
-                  </div>
-                </div>
-                <div class="panel-outcome"><span>Work toward</span><p>A finished, captioned film with a reproducible source, delivered for streaming without video files in Git.</p></div>
-              </article>
+              <h2 id="library-title">Eight guides.<br>One way of working.</h2>
+              <p>
+                Each guide covers one discipline, routes your request to the right chapter,
+                and names the guide that takes over next. Together they cover the path from
+                the first idea to the market. Install the set, or take the one your next
+                task needs.
+              </p>
             </div>
           </div>
 
-          <ol class="review-contract reveal" aria-label="What the skills add">
-            <li><span>01</span><strong>Evidence first</strong><p>Start from the repository, research, or source material. Keep unsupported assumptions visible.</p></li>
-            <li><span>02</span><strong>Depth on demand</strong><p>Load the route and references that fit. Keep specialist detail available without making every task a deep dive.</p></li>
-            <li><span>03</span><strong>Your intent leads</strong><p>Respect the requested scope and style. Carry existing authorization forward and keep publication explicit.</p></li>
-            <li><span>04</span><strong>Proportionate rigor</strong><p>Match checks and reporting to the risk. A small question can get a direct answer; a complex change gets deeper review.</p></li>
-          </ol>
-
-          <div class="capability-cta reveal">
-            <div>
-              <p class="eyebrow">A useful first discipline</p>
-              <h3>Give your agent a real web task and the repository it belongs to.</h3>
-              <a class="text-link" href="skills/effective-web/index.html">
-                Explore Effective Web <span aria-hidden="true">→</span>
-              </a>
-            </div>
-            <div class="capability-command">
-              <code id="starter-command">npx skills add sebastian-software/effective-agent --skill effective-web</code>
-              <button class="copy-button" type="button" data-copy-target="starter-command" aria-label="Copy the Effective Web starter command">
-                <span data-copy-label>Copy</span>
-              </button>
-            </div>
-          </div>
+          <table class="guide-table">
+            <caption class="sr-only">The eight Effective Agent guides by stage of work</caption>
+            <thead>
+              <tr>
+                <th scope="col">Stage</th>
+                <th scope="col">Guide</th>
+                <th scope="col">Covers</th>
+                <th scope="col">Ask it, for example</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr data-skill="effective-product" data-stage="decide">
+                <td class="guide-stage">Decide</td>
+                <th class="guide-name" scope="row"><a href="skills/effective-product/index.html">Effective Product</a><small>11 routes · 44 references</small></th>
+                <td class="guide-covers">Research, strategy, scope, pricing, naming, and decision records</td>
+                <td class="guide-ask">“Compare these customer interviews with our roadmap. Which problem should we tackle next?”</td>
+              </tr>
+              <tr data-skill="effective-web" data-stage="build">
+                <td class="guide-stage">Build</td>
+                <th class="guide-name" scope="row"><a href="skills/effective-web/index.html">Effective Web</a><small>27 routes · 138 references</small></th>
+                <td class="guide-covers">Design, CSS, React, accessibility, performance, and browser verification</td>
+                <td class="guide-ask">“Improve this checkout on mobile. Fix keyboard access and verify the error states.”</td>
+              </tr>
+              <tr data-skill="effective-engineering" data-stage="build">
+                <td class="guide-stage">Build</td>
+                <th class="guide-name" scope="row"><a href="skills/effective-engineering/index.html">Effective Engineering</a><small>10 routes · 37 references</small></th>
+                <td class="guide-covers">Architecture, APIs, data, Rust and TypeScript, and focused tests</td>
+                <td class="guide-ask">“Make our webhook handler idempotent and test duplicate deliveries.”</td>
+              </tr>
+              <tr data-skill="effective-delivery" data-stage="ship">
+                <td class="guide-stage">Ship</td>
+                <th class="guide-name" scope="row"><a href="skills/effective-delivery/index.html">Effective Delivery</a><small>10 routes · 50 references</small></th>
+                <td class="guide-covers">Audits, plans, PR review, ports, dependency updates, and documentation</td>
+                <td class="guide-ask">“Review this PR for regressions and return the findings here.”</td>
+              </tr>
+              <tr data-skill="effective-marketing" data-stage="tell">
+                <td class="guide-stage">Tell</td>
+                <th class="guide-name" scope="row"><a href="skills/effective-marketing/index.html">Effective Marketing</a><small>18 routes · 79 references</small></th>
+                <td class="guide-covers">Positioning, copy, content, acquisition, consultative sales, and CRM</td>
+                <td class="guide-ask">“We get enough inquiries but few sales. Find the bottleneck and plan next week.”</td>
+              </tr>
+              <tr data-skill="effective-writing" data-stage="tell">
+                <td class="guide-stage">Tell</td>
+                <th class="guide-name" scope="row"><a href="skills/effective-writing/index.html">Effective Writing</a><small>7 routes · 31 references</small></th>
+                <td class="guide-covers">Articles, explainers, team messages, and locale typography</td>
+                <td class="guide-ask">“Turn these engineering notes into a short German article.”</td>
+              </tr>
+              <tr data-skill="effective-image" data-stage="show">
+                <td class="guide-stage">Show</td>
+                <th class="guide-name" scope="row"><a href="skills/effective-image/index.html">Effective Image</a><small>3 routes · 4 references</small></th>
+                <td class="guide-covers">Natural portrait retouch, cleanup and composites, and photoreal scenes</td>
+                <td class="guide-ask">“Retouch these portraits consistently and keep the skin texture natural.”</td>
+              </tr>
+              <tr data-skill="effective-video" data-stage="show">
+                <td class="guide-stage">Show</td>
+                <th class="guide-name" scope="row"><a href="skills/effective-video/index.html">Effective Video</a><small>5 routes · 5 references</small></th>
+                <td class="guide-covers">Product films in code: picture, voiceover, score, mix, and delivery</td>
+                <td class="guide-ask">“Make a 60-second product film with an English voiceover and calm piano.”</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </section>
 
-      <section class="narrative section" id="system" aria-labelledby="system-title">
+      <section class="quality section" id="quality" aria-labelledby="quality-title">
         <div class="shell">
-          <div class="section-heading reveal">
-            <p class="eyebrow">From one discipline to a workflow</p>
-            <h2 id="system-title">Connected work. Clear responsibilities.</h2>
-            <p>
-              Product owns the decision. Web and Engineering shape the experience and
-              the system. Delivery carries repository changes through review. Marketing
-              takes value to market; Writing makes the thinking clear. Use the combination
-              your task needs.
-            </p>
-          </div>
-
-          <ol class="journey" aria-label="Connected workflow">
-            <li class="journey-step reveal">
-              <span class="step-number">01</span>
-              <div>
-                <p class="step-label">Decide</p>
-                <h3>Make the right product call.</h3>
-                <p>Gather the evidence, then turn it into direction, scope, priorities, pricing, names, and durable decisions.</p>
-                <div class="step-skills">
-                  <a href="skills/effective-product/index.html">Effective Product</a>
-                </div>
-              </div>
-            </li>
-            <li class="journey-step reveal">
-              <span class="step-number">02</span>
-              <div>
-                <p class="step-label">Create</p>
-                <h3>Build it as one system.</h3>
-                <p>Connect the browser experience with the architecture, data, and code underneath it.</p>
-                <div class="step-skills">
-                  <a href="skills/effective-web/index.html">Effective Web</a>
-                  <a href="skills/effective-engineering/index.html">Effective Engineering</a>
-                </div>
-              </div>
-            </li>
-            <li class="journey-step reveal">
-              <span class="step-number">03</span>
-              <div>
-                <p class="step-label">Improve &amp; deliver</p>
-                <h3>Move repositories forward with evidence.</h3>
-                <p>Coordinate, audit, modernize, document, port, update dependencies, review, and deliver without losing correctness or context.</p>
-                <div class="step-skills">
-                  <a href="skills/effective-delivery/index.html">Effective Delivery</a>
-                </div>
-              </div>
-            </li>
-            <li class="journey-step reveal">
-              <span class="step-number">04</span>
-              <div>
-                <p class="step-label">Reach</p>
-                <h3>Reach customers. Make the value clear.</h3>
-                <p>Connect positioning and content with acquisition, consultative sales, CRM, and service growth. Keep editorial and team writing in the right voice, refine existing portraits without losing their shoot character, and render product films from code.</p>
-                <div class="step-skills">
-                  <a href="skills/effective-marketing/index.html">Effective Marketing</a>
-                  <a href="skills/effective-writing/index.html">Effective Writing</a>
-                  <a href="skills/effective-image/index.html">Effective Image</a>
-                  <a href="skills/effective-video/index.html">Effective Video</a>
-                </div>
-              </div>
-            </li>
-          </ol>
-        </div>
-      </section>
-
-      <section class="flagship section" aria-labelledby="flagship-title">
-        <div class="shell flagship-grid">
-          <div class="flagship-copy reveal">
-            <p class="eyebrow">Inside a field guide</p>
-            <h2 id="flagship-title">Small entry points.<br>Depth when it matters.</h2>
-            <p>
-              <strong>Effective Web</strong> starts with your task and routes it to the relevant guidance. Design, implementation, accessibility, and performance stay connected through verification.
-            </p>
-            <div class="flagship-stats">
-              <div><strong>27</strong><span>intent routes</span></div>
-              <div><strong>138</strong><span>focused references</span></div>
-              <div><strong>1</strong><span>coherent quality bar</span></div>
+          <div class="chapter-head">
+            <p class="eyebrow">Quality</p>
+            <div>
+              <h2 id="quality-title">Edited like a reference work.</h2>
+              <p>Every guide is written, routed, and checked the way a maintained codebase is.</p>
             </div>
-            <a class="text-link" href="skills/effective-web/index.html">
-              Explore Effective Web <span aria-hidden="true">→</span>
-            </a>
           </div>
 
-          <div class="route-cloud reveal" role="group" aria-label="Effective Web coverage">
-            <span class="route route-large">Design planning &amp; review</span>
-            <span class="route">Accessibility</span>
-            <span class="route">React architecture</span>
-            <span class="route route-accent">Forms UX</span>
-            <span class="route">Performance</span>
-            <span class="route">CSS architecture</span>
-            <span class="route">Typography</span>
-            <span class="route route-wide">Frontend SEO &amp; AI search</span>
-            <span class="route">Motion</span>
-            <span class="route">SVG</span>
-            <span class="route route-accent-2">Data tables</span>
-            <span class="route">Testing</span>
-            <span class="route">Auth UX</span>
-            <span class="route route-wide">Internationalization &amp; RTL</span>
-            <span class="route">Web-to-print</span>
-          </div>
-        </div>
-      </section>
-
-
-      <section class="principles section" id="principles" aria-labelledby="principles-title">
-        <div class="shell principles-grid">
-          <div class="principles-intro reveal">
-            <p class="eyebrow">Why these skills exist</p>
-            <h2 id="principles-title">Expertise you can inspect.</h2>
-            <p>
-              Read the guidance, see where each discipline begins and ends, and adapt
-              it to your team. The collection is open source under MIT or Apache-2.0.
-            </p>
-            <a class="text-link" href="https://github.com/sebastian-software/effective-agent/blob/main/docs/review-scenarios.md">See how we review skills <span aria-hidden="true">→</span></a>
-          </div>
-
-          <ol class="principle-list">
-            <li class="reveal">
-              <span>01</span>
-              <div><h3>Professional depth</h3><p>Guidance spans architecture and implementation, product decisions, design review, writing, and the commercial work of growing a service business.</p></div>
-            </li>
-            <li class="reveal">
-              <span>02</span>
-              <div><h3>Inspectable sources</h3><p>Read every skill and reference in the repository. Trace recommendations to the code, research, or source material behind the task.</p></div>
-            </li>
-            <li class="reveal">
-              <span>03</span>
-              <div><h3>Clear ownership</h3><p>Each discipline names its remit and the neighboring skill that owns a different decision. Engineering and delivery have distinct jobs.</p></div>
-            </li>
-            <li class="reveal">
-              <span>04</span>
-              <div><h3>Focused context</h3><p>Short entry points route into specialist references as needed. Print calibration, review voice, or an advanced Rust topic can stay out of unrelated tasks.</p></div>
-            </li>
-            <li class="reveal">
-              <span>05</span>
-              <div><h3>Reviewable guidance</h3><p>Routing cases, behavioral scenarios, and repository checks help catch drift. Results still depend on the model, tools, task, and available evidence.</p></div>
-            </li>
-          </ol>
-          <aside class="model-tuning-note reveal" id="model-tuning" aria-labelledby="model-tuning-title">
-            <h3 id="model-tuning-title">Guidance shaped for modern agents</h3>
-            <p>
-              We shape the guidance for GPT-6 and Opus 5.5: focused instructions,
-              explicit routing, and verification matched to the task.
-              Results depend on the model, tools, and task.
-            </p>
-            <a href="https://github.com/sebastian-software/effective-agent/blob/main/docs/review-scenarios.md">Read our review approach <span aria-hidden="true">↗</span></a>
-          </aside>
-        </div>
-      </section>
-
-      <section class="landscape-teaser section" id="instructions" aria-labelledby="landscape-teaser-title">
-        <div class="shell landscape-teaser-grid">
-          <div class="reveal">
-            <p class="eyebrow">Optional standing instructions</p>
-            <h2 id="landscape-teaser-title">Set the defaults. Keep the skills independent.</h2>
-          </div>
-          <div class="landscape-teaser-copy reveal">
-            <p>
-              Skills help with a particular kind of work. Three optional instruction
-              packs add conventions across tasks. Enable them separately in your agent
-              setup; every skill works without them.
-            </p>
-            <dl class="pack-list">
-              <div><dt>Request and completion</dt><dd>Honor the requested scope, preserve existing authorization, and carry the work through a truthful handoff.</dd></div>
-              <div><dt>Documentation truth</dt><dd>Keep documentation aligned with observable behavior, current implementation, and explicit uncertainty.</dd></div>
-              <div><dt>Team communication</dt><dd>Load Metro English by default for reviews, approvals, and messages to teammates, while keeping technical judgment with its owner.</dd></div>
-            </dl>
-            <a class="button button-primary" href="https://github.com/sebastian-software/effective-agent/blob/main/docs/adr/0005-first-party-instruction-packs.md">Read the collection boundary</a>
+          <div class="quality-grid">
+            <aside class="tuning-note" aria-labelledby="tuning-title">
+              <h3 id="tuning-title">What “tuned for” means</h3>
+              <p>
+                In October 2026 we audited every guide against the current prompting
+                guidance for GPT-6 and Opus 5.5: no dated scaffolds or shouting, clear
+                routing, and verification matched to the task.
+              </p>
+              <p class="tuning-fine">
+                The seals are Sebastian Software’s own labels, not an endorsement by
+                OpenAI or Anthropic. Results depend on the model, tools, and task.
+              </p>
+              <a class="text-link" href="https://github.com/sebastian-software/effective-agent/blob/main/docs/review-scenarios.md">Read our review approach <span aria-hidden="true">↗</span></a>
+            </aside>
+            <ol class="quality-list">
+              <li><h3>Focused context</h3><p>Short entry points route into specialist references. Print calibration or an advanced Rust topic stays out of unrelated tasks.</p></li>
+              <li><h3>Clear handoffs</h3><p>Eighty routing cases check that a request reaches the guide that owns it, and every guide names the neighbor that takes over.</p></li>
+              <li><h3>Defined behavior</h3><p>Written scenarios describe what a good answer does, from refusing invented evidence to keeping publication in your hands.</p></li>
+              <li><h3>Kept current</h3><p>Pushes run a reference audit, CI checks every link, and a monthly job flags browser-support and vendor facts that are due for re-verification.</p></li>
+            </ol>
           </div>
         </div>
       </section>
 
       <section class="install section" id="install" aria-labelledby="install-title">
         <div class="shell">
-          <div class="install-heading reveal">
-            <p class="eyebrow">Start with one. Grow deliberately.</p>
-            <h2 id="install-title">Start with the skill your next task needs.</h2>
-            <p>
-              Both the skills CLI and DALO support selective installation. You do not
-              need to adopt the full collection to use one skill.
-            </p>
+          <div class="chapter-head">
+            <p class="eyebrow">Install</p>
+            <div>
+              <h2 id="install-title">Shelve the set.</h2>
+              <p>Both paths work with Codex, Claude Code, and other agents that support Agent Skills. Both let you take the full set or a single guide.</p>
+            </div>
           </div>
 
-          <div class="install-grid">
-            <article class="install-card reveal">
-              <div class="install-card-heading">
-                <div><span class="method-number">01</span><h3>Quick install</h3></div>
-                <span class="method-badge">skills CLI</span>
+          <div class="install-columns">
+            <article class="install-option install-option-dalo">
+              <div class="install-option-head">
+                <img src="assets/brand/dalo-mark.svg" width="56" height="49" alt="">
+                <div>
+                  <h3>Managed with DALO</h3>
+                  <p class="install-option-kicker">Our skill manager</p>
+                </div>
               </div>
-              <p>Add one skill to an agent environment that supports Agent Skills.</p>
-              <div class="code-block">
-                <code id="skills-command">npx skills add sebastian-software/effective-agent --skill effective-web</code>
-                <button class="copy-button" type="button" data-copy-target="skills-command" aria-label="Copy skills CLI command"><span data-copy-label>Copy</span></button>
-              </div>
-              <p class="method-note">Replace <code>effective-web</code> with any skill name, or pass <code>--all</code>.</p>
-            </article>
-
-            <article class="install-card reveal">
-              <div class="install-card-heading">
-                <div><span class="method-number">02</span><h3>Managed setup</h3></div>
-                <span class="method-badge">DALO</span>
-              </div>
-              <p>Install DALO, initialize its configuration, link an agent target, and pin the reviewed selection.</p>
+              <p>Pin reviewed versions, keep several agents in sync, and add the optional standing instructions when you want them.</p>
               <div class="code-block code-block-multiline">
                 <code id="dalo-command">curl -fsSL https://dalo.sh/install.sh | sh
 dalo init
@@ -813,10 +355,13 @@ dalo approve skill sebastian:effective-web
 dalo sync</code>
                 <button class="copy-button" type="button" data-copy-target="dalo-command" aria-label="Copy DALO setup commands"><span data-copy-label>Copy</span></button>
               </div>
-              <p class="method-note">This installs Effective Web. Add standing instructions only if you want them.</p>
               <details class="optional-packs">
-                <summary>Optional: add the instruction packs</summary>
-                <p>Requires a DALO release with source-backed instruction packs.</p>
+                <summary>Optional: add the standing instructions</summary>
+                <p>
+                  Three instruction packs add conventions across tasks: request and
+                  completion, documentation truth, and team communication. Every guide works
+                  without them. <a href="https://github.com/sebastian-software/effective-agent/blob/main/docs/adr/0005-first-party-instruction-packs.md">Read the collection boundary</a>.
+                </p>
                 <div class="code-block code-block-multiline">
                   <code id="optional-instructions-command">dalo instructions enable sebastian:request-and-completion --target codex
 dalo instructions enable sebastian:documentation-truth --target codex
@@ -824,61 +369,105 @@ dalo instructions enable sebastian:team-communication --target codex --target cl
                   <button class="copy-button" type="button" data-copy-target="optional-instructions-command" aria-label="Copy optional instruction pack commands"><span data-copy-label>Copy</span></button>
                 </div>
               </details>
+              <div class="install-links">
+                <a href="https://dalo.sh">dalo.sh <span aria-hidden="true">↗</span></a>
+                <a href="https://github.com/sebastian-software/effective-agent/blob/main/docs/dalo.md">DALO setup guide <span aria-hidden="true">↗</span></a>
+              </div>
             </article>
-          </div>
 
-          <div class="install-footer reveal">
-            <p>Want to manage pinned skills and optional instructions across agents?</p>
-            <a href="https://github.com/sebastian-software/effective-agent/blob/main/docs/dalo.md">Read the DALO setup guide <span aria-hidden="true">↗</span></a>
+            <article class="install-option">
+              <div class="install-option-head">
+                <div>
+                  <h3>Quick install</h3>
+                  <p class="install-option-kicker">skills CLI</p>
+                </div>
+              </div>
+              <p>Add the guides to any agent environment that supports Agent Skills, in one command.</p>
+              <div class="code-block">
+                <code id="skills-command">npx skills add sebastian-software/effective-agent --skill effective-web</code>
+                <button class="copy-button" type="button" data-copy-target="skills-command" aria-label="Copy skills CLI command"><span data-copy-label>Copy</span></button>
+              </div>
+              <p class="method-note">Swap <code>effective-web</code> for any guide name, or pass <code>--all</code> for the full set.</p>
+            </article>
           </div>
         </div>
       </section>
 
-      <section class="about section" aria-labelledby="about-title">
-        <div class="shell about-grid">
-          <picture class="about-mark reveal">
-            <source srcset="assets/brand/software-on-dark.svg" media="(prefers-color-scheme: dark)">
-            <img src="assets/brand/software-on-light.svg" width="256" height="256" alt="" loading="lazy">
-          </picture>
-          <div class="about-copy reveal">
-            <p class="eyebrow">Built in the open</p>
-            <h2 id="about-title">Professional practice, made portable.</h2>
-            <p>
-              Sebastian Software builds and supports open-source software and helps teams
-              design, modernize, and ship ambitious software products. This collection
-              turns that practical experience into inspectable, reusable agent workflows.
-            </p>
-            <div class="about-actions">
-              <a class="button button-primary" href="https://oss.sebastian-software.com/">Explore our open-source work</a>
-              <a class="button button-secondary" href="https://sebastian-consulting.com/en">Work with us</a>
+      <section class="makers section" aria-labelledby="makers-title">
+        <div class="shell makers-grid">
+          <article class="maker">
+            <div class="maker-plate">
+              <img src="assets/brand/logo-software.svg" width="240" height="47" alt="Sebastian Software" loading="lazy">
             </div>
-          </div>
+            <p class="eyebrow">Built in the open</p>
+            <h2 id="makers-title">Professional practice, made portable.</h2>
+            <p>
+              Sebastian Software builds products, open-source projects, and agent tools for
+              everyday work. Effective Agent is that practice, written down for agents.
+            </p>
+            <div class="maker-links">
+              <a class="text-link" href="https://oss.sebastian-software.com/">More open source <span aria-hidden="true">↗</span></a>
+              <a class="text-link" href="https://sebastian-software.com/">Sebastian Software <span aria-hidden="true">↗</span></a>
+            </div>
+          </article>
+          <article class="maker" aria-labelledby="consulting-title">
+            <div class="maker-plate">
+              <img src="assets/brand/logo-consulting.svg" width="240" height="40" alt="Sebastian Consulting" loading="lazy">
+            </div>
+            <p class="eyebrow">Work with us</p>
+            <h3 id="consulting-title">Need a clearer direction for your software?</h3>
+            <p>
+              Our agency helps teams with software architecture, engineering, and technical
+              direction, including agentic software development.
+            </p>
+            <div class="maker-links">
+              <a class="text-link" href="https://sebastian-consulting.com/">Meet Sebastian Consulting <span aria-hidden="true">↗</span></a>
+            </div>
+          </article>
         </div>
       </section>
     </main>
 
     <footer class="site-footer">
-      <div class="shell footer-grid">
-        <div>
-          <a class="brand footer-brand" href="#top" aria-label="Effective Agent, home">
+      <div class="shell footer-top">
+        <div class="footer-product">
+          <a class="brand footer-brand" href="index.html#top" aria-label="Effective Agent, home">
             <img class="brand-mark" src="assets/brand/field-guide-reverse.svg" width="40" height="40" alt="" loading="lazy">
             <span class="brand-copy"><strong>Effective Agent</strong></span>
           </a>
-          <p>Practical guidance for product, software, and growth.</p>
+          <p>Practical field guides for coding agents, from the product decision to the launch.</p>
         </div>
-        <div class="footer-links" aria-label="Collection links">
-          <a href="#library">Skills</a>
-          <a href="#instructions">Instructions</a>
-          <a href="#principles">Why these skills</a>
-          <a href="#install">Installation</a>
+        <nav class="footer-column" aria-label="Effective Agent">
+          <p class="footer-heading">The set</p>
+          <a href="index.html#library">Guides</a>
+          <a href="index.html#quality">Quality</a>
+          <a href="index.html#install">Install</a>
           <a href="https://github.com/sebastian-software/effective-agent">GitHub</a>
+        </nav>
+        <nav class="footer-column" aria-label="Company">
+          <p class="footer-heading">Company</p>
+          <a href="https://sebastian-software.com/">Sebastian Software</a>
+          <a href="https://sebastian-consulting.com/">Sebastian Consulting</a>
           <a href="https://oss.sebastian-software.com/">Open source</a>
-          <a href="https://sebastian-consulting.com/en">Consulting</a>
+          <a href="https://www.linkedin.com/company/sebastian-software/" rel="me">LinkedIn</a>
+        </nav>
+        <div class="footer-column">
+          <p class="footer-heading">Sebastian Software GmbH</p>
+          <address>
+            Dalheimer Straße 12<br>
+            55128 Mainz, Germany<br>
+            <a href="mailto:info@sebastian-software.de">info@sebastian-software.de</a>
+          </address>
         </div>
+      </div>
+      <div class="shell footer-baseline">
         <p class="copyright">© <span data-year>2026</span> Sebastian Software GmbH</p>
+        <nav class="footer-legal" aria-label="Legal">
+          <a href="https://sebastian-software.com/imprint">Imprint</a>
+          <a href="https://sebastian-software.com/privacy">Privacy</a>
+        </nav>
       </div>
     </footer>
-
     <div class="sr-only" role="status" aria-live="polite" data-copy-status></div>
   </body>
 </html>

@@ -49,9 +49,16 @@ font licensing, and repeatable favicon/social-preview rendering.
 - All eight skill detail pages and the comparison page use the same product
   identity, typography, light/dark palettes, and simplified navigation.
 
+The homepage follows a reference-work structure: a centered masthead with the
+desk illustration and a tabbed installer (full set, one skill, DALO), a seal
+band with the model-tuning seals and collection facts, an index table of the
+guides, a Quality section, the install options with DALO first, and an ending
+that leads to Sebastian Software and Sebastian Consulting. It uses the light
+scheme only. Every page shares the company footer with the legal links.
+
 The existing browser suite covers ten pages at seven widths in both color
-schemes, including skill filters, keyboard-operated use-case tabs, copy
-commands, optional instruction disclosure, and skill-detail navigation.
+schemes, including the keyboard-operated install tabs, copy commands, optional
+instruction disclosure, and skill-detail navigation.
 
 ## Detail pages
 

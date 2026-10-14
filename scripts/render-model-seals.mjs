@@ -2,7 +2,7 @@ import { readFile, writeFile } from "node:fs/promises";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
-// Self-contained SVGs: opaque white substrates, system sans-serif lettering,
+// Self-contained SVGs in the Field Guide palette: opaque ivory substrates, system sans-serif lettering,
 // and unchanged provider paths. No external fonts, images, scripts, or filters.
 const assets = resolve(dirname(fileURLToPath(import.meta.url)), "../site/assets");
 const models = [
@@ -29,19 +29,19 @@ for (const model of models) {
     <path id="top" d="M55 240a185 185 0 0 1 370 0"/>
     <path id="bottom" d="M41 240a199 199 0 0 0 398 0"/>
   </defs>
-  <circle cx="240" cy="240" r="238" fill="#fff"/>
-  <circle cx="240" cy="240" r="229" fill="none" stroke="#002731" stroke-width="2.5"/>
-  <path d="M20 240a220 220 0 0 1 440 0h-56a164 164 0 0 0-328 0Z" fill="#005164"/>
-  <g fill="none" stroke="#00718d" stroke-width="2">
+  <circle cx="240" cy="240" r="238" fill="#fffdf7"/>
+  <circle cx="240" cy="240" r="229" fill="none" stroke="#18372b" stroke-width="2.5"/>
+  <path d="M20 240a220 220 0 0 1 440 0h-56a164 164 0 0 0-328 0Z" fill="#18372b"/>
+  <g fill="none" stroke="#8a9586" stroke-width="2">
 ${ticks}
   </g>
   <g font-family="Arial, Helvetica, sans-serif" font-weight="700" text-anchor="middle">
-    <text fill="#fff" font-size="31" letter-spacing="4"><textPath href="#top" startOffset="50%">TUNED FOR</textPath></text>
-    <text x="240" y="321" fill="#030d11" font-size="${model.size}" letter-spacing="-2">${model.label}</text>
-    <text fill="#002731" font-size="25" letter-spacing="2.5"><textPath href="#bottom" startOffset="50%">SEBASTIAN SOFTWARE</textPath></text>
+    <text fill="#fffdf7" font-size="31" letter-spacing="4"><textPath href="#top" startOffset="50%">TUNED FOR</textPath></text>
+    <text x="240" y="321" fill="#18372b" font-size="${model.size}" letter-spacing="-2">${model.label}</text>
+    <text fill="#18372b" font-size="25" letter-spacing="2.5"><textPath href="#bottom" startOffset="50%">SEBASTIAN SOFTWARE</textPath></text>
   </g>
   ${provider.trim()}
-  <path d="m228 365 12 21 12-21Z" fill="#38afcc"/>
+  <path d="m228 365 12 21 12-21Z" fill="#a54e2c"/>
 </svg>
 `;
   await writeFile(resolve(assets, `seals/${model.file}.svg`), svg);

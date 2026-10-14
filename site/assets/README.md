@@ -38,8 +38,8 @@ identity is a separate asset, not a recolored company icon.
 
 Headings use **Sebastian Slab Medium (500)**, the Elena webfont used by the
 Consulting site. Body text, navigation, and controls use the platform's system
-UI font. The company wordmark retains its original outlined typography, and
-the archived model seals keep their own sans-serif lettering.
+UI font. The company wordmarks retain their original outlined typography, and
+the model seals keep their own sans-serif lettering.
 
 The heading font is loaded from the official [company asset CDN](https://assets.sebastian-software.com/fonts/Elena/Elena-Medium-latin-f0e984d3e709.woff2).
 The Latin and extended Elena Medium subsets follow the definitions in the
@@ -60,13 +60,21 @@ or offset sticker shadows on interface controls.
 
 ## Model seals
 
-`seals/gpt-6.svg` and `seals/opus-5-5.svg` implement the Precision Seals design.
-They have an opaque white substrate, Software Teal upper ring, Signal accent,
-sans-serif labels, and unchanged provider artwork. They remain white in dark
-mode. They are retained as historical assets and are not used in the Field Guide
-hero or social preview. If reused, preserve the issuer and explain what
-“tuned for” means. These are our tuning labels, not
-provider certification, endorsement, benchmark scores, or test grades.
+`seals/gpt-6.svg` and `seals/opus-5-5.svg` implement the Precision Seals design
+in the Field Guide palette: an opaque ivory substrate, a forest-ink upper ring,
+a terracotta accent, sans-serif labels, and unchanged provider artwork. The
+homepage shows them in the seal band below the masthead and explains what
+“tuned for” means in its Quality section. Keep the issuer and that explanation
+whenever the seals appear. These are our tuning labels, not provider
+certification, endorsement, benchmark scores, or test grades.
+
+## Company marks
+
+`brand/logo-software.svg` and `brand/logo-consulting.svg` are the original
+Sebastian Software and Sebastian Consulting wordmarks from the company brand
+assets. They are approved for light backgrounds only: always place them on a
+light surface, also when a page offers a dark scheme, and do not recolor them.
+`brand/dalo-mark.svg` is the DALO product mark used beside the managed install.
 
 Regenerate both self-contained vectors after changing the shared layout:
 
