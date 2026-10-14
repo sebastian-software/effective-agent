@@ -144,6 +144,8 @@ class SiteParser(HTMLParser):
                     self.nested_skill_cards.append((skill, parent_skill))
                 self.skill_cards.append((skill, values.get("data-category", "") or ""))
             self.article_stack.append(skill)
+        if tag == "tr" and (row_skill := values.get("data-skill")):
+            self.skill_cards.append((row_skill, values.get("data-stage", "") or ""))
         if tag == "button" and (filter_name := values.get("data-filter")):
             self.current_filter = filter_name
             self.current_filter_text = []
@@ -310,9 +312,9 @@ def extract_json_ld(html: str) -> dict[str, object] | None:
 def visible_skill_inventory(html: str) -> list[tuple[str, str]]:
     """Return skill IDs and display names in the order visitors see them."""
     cards = re.finditer(
-        r"<article\b[^>]*\bdata-skill=(?P<quote>['\"])(?P<skill>[^'\"]+)"
+        r"<tr\b[^>]*\bdata-skill=(?P<quote>['\"])(?P<skill>[^'\"]+)"
         r"(?P=quote)[^>]*>"
-        r'.*?<h3>(?P<name>.*?)</h3>',
+        r'.*?<th\b[^>]*class="guide-name"[^>]*>\s*<a\b[^>]*>(?P<name>.*?)</a>',
         html,
         re.DOTALL | re.IGNORECASE,
     )
@@ -356,52 +358,43 @@ def proof_row_values(html: str) -> list[int]:
     return [int(value) for value in re.findall(r"<dd>(\d+)</dd>", match.group())] if match else []
 
 
-def effective_web_inventory() -> tuple[int, int]:
-    """Derive the flagship intent-route and reference counts from the repository."""
-    skill_file = ROOT / "skills" / "effective-web" / "SKILL.md"
+def skill_inventory(skill: str) -> tuple[int, int]:
+    """Derive a skill's intent-route and reference counts from the repository."""
+    skill_file = ROOT / "skills" / skill / "SKILL.md"
     intent_row = re.compile(r"\|.*\|\s*\[[^\]]+\]\(references/[^)]+\)\s*\|\s*$")
     routes = sum(
         1
         for line in skill_file.read_text(encoding="utf-8").splitlines()
         if intent_row.match(line)
     )
-    references = len(
-        list((ROOT / "skills" / "effective-web" / "references").glob("*.md"))
-    )
+    references = len(list((ROOT / "skills" / skill / "references").glob("*.md")))
     return routes, references
 
 
-def validate_effective_web_stats(
-    html: str,
-    routes: int,
-    references: int,
-    failures: list[str],
-) -> None:
-    """Validate every effective-web number on the page against the repository."""
-    stats_match = re.search(r'<div\s+class="flagship-stats">.*?</a>', html, re.DOTALL)
-    require(stats_match is not None, "site must contain the flagship stats block", failures)
-    stats_html = stats_match.group() if stats_match else ""
+def scenario_count() -> int:
+    """Count the written behavior scenarios across every skill's evals."""
+    total = 0
+    for path in sorted((ROOT / "skills").glob("*/evals/evals.json")):
+        data = json.loads(path.read_text(encoding="utf-8"))
+        total += len(data["evals"] if isinstance(data, dict) else data)
+    return total
 
-    routes_stat = re.search(r"<strong>(\d+)</strong><span>intent routes</span>", stats_html)
-    require(
-        routes_stat is not None and int(routes_stat.group(1)) == routes,
-        f"flagship intent-route stat must match the SKILL.md routing table: {routes}",
-        failures,
-    )
-    references_stat = re.search(
-        r"<strong>(\d+)</strong><span>focused references</span>", stats_html
-    )
-    require(
-        references_stat is not None and int(references_stat.group(1)) == references,
-        f"flagship reference stat must match skills/effective-web/references: {references}",
-        failures,
-    )
-    card_chip = re.search(r"<li>(\d+) routed workflows</li>", html)
-    require(
-        card_chip is not None and int(card_chip.group(1)) == routes,
-        f"effective-web card chip must match the SKILL.md routing table: {routes}",
-        failures,
-    )
+
+def validate_guide_index_stats(html: str, skills: list[str], failures: list[str]) -> None:
+    """Validate each index row's route and reference counts against the repository."""
+    for skill in skills:
+        row = re.search(
+            rf'<tr\b[^>]*data-skill="{re.escape(skill)}"[^>]*>(?P<body>.*?)</tr>',
+            html,
+            re.DOTALL,
+        )
+        stats = re.search(r"<small>(\d+) routes · (\d+) references</small>", row.group("body")) if row else None
+        routes, references = skill_inventory(skill)
+        require(
+            stats is not None and (int(stats.group(1)), int(stats.group(2))) == (routes, references),
+            f"{skill} index row must show {routes} routes · {references} references",
+            failures,
+        )
 
 
 def png_dimensions(path: Path) -> tuple[int, int] | None:
@@ -647,6 +640,11 @@ def main() -> int:
         SITE / "assets" / "brand" / "software-on-light.svg",
         SITE / "assets" / "brand" / "software-on-dark.svg",
         SITE / "assets" / "brand" / "logo-software.svg",
+        SITE / "assets" / "brand" / "logo-consulting.svg",
+        SITE / "assets" / "brand" / "dalo-mark.svg",
+        SITE / "assets" / "seals" / "gpt-6.svg",
+        SITE / "assets" / "seals" / "opus-5-5.svg",
+        SITE / "home.css",
         SITE / "assets" / "favicon-32.png",
         SITE / "assets" / "apple-touch-icon.png",
         SITE / "assets" / EXPECTED_HOME_OG_IMAGE,
@@ -686,8 +684,6 @@ def main() -> int:
     json_ld = extract_json_ld(html)
     visible_inventory = visible_skill_inventory(html)
     proof_values = proof_row_values(html)
-    journey_match = re.search(r'<ol\s+class="journey".*?</ol>', html, re.DOTALL)
-    journey_html = journey_match.group() if journey_match else ""
 
     require(
         local_path("/styles.css") == SITE / "styles.css",
@@ -811,39 +807,20 @@ def main() -> int:
     )
     validate_skill_card_structure(parser, failures)
 
-    categories = {category for _, category in parser.skill_cards}
-    filter_categories = set(parser.filter_counts) - {"all"}
+    allowed_stages = {"decide", "build", "ship", "tell", "show"}
     require(
-        all(category for _, category in parser.skill_cards),
-        "every site skill card must define a category",
+        all(stage in allowed_stages for _, stage in parser.skill_cards),
+        "every index row must name a known stage of work",
         failures,
     )
-    require(
-        categories == filter_categories,
-        "site card categories must match the available filters exactly",
-        failures,
-    )
-    require(
-        parser.filter_counts.get("all") == len(expected_skills),
-        "all-skills filter count must match the skill inventory",
-        failures,
-    )
-    for category in categories:
-        require(
-            parser.filter_counts.get(category)
-            == sum(card_category == category for _, card_category in parser.skill_cards),
-            f"{category} filter count must match its skill cards",
-            failures,
-        )
 
     require(
-        proof_values == [len(expected_skills), reference_count, instruction_count],
-        "hero skill, reference, and instruction-pack counts must match the "
+        proof_values == [len(expected_skills), reference_count, scenario_count()],
+        "seal-band skill, reference, and scenario counts must match the "
         "repository inventory",
         failures,
     )
-    routes, effective_web_references = effective_web_inventory()
-    validate_effective_web_stats(html, routes, effective_web_references, failures)
+    validate_guide_index_stats(html, expected_skills, failures)
     require(
         f"{len(expected_skills)} practice-built skills, {reference_count} focused "
         f"references, and {instruction_count} optional instruction "
@@ -924,22 +901,10 @@ def main() -> int:
         failures,
     )
 
-    require(bool(journey_html), "site must contain the connected workflow", failures)
-    for skill in expected_skills:
-        require(
-            f'"skills/{skill}/index.html"' in journey_html,
-            f"connected workflow must link skill: {skill}",
-            failures,
-        )
-    require(
-        "Improve &amp; deliver" in journey_html,
-        "connected workflow must resolve the Delivery node",
-        failures,
-    )
-
     expected_copy_buttons = {
-        ("hero-command", "Copy Effective Web skills CLI command"),
-        ("starter-command", "Copy the Effective Web starter command"),
+        ("hero-command", "Copy the full-set install command"),
+        ("hero-skill-command", "Copy the single-skill install command"),
+        ("hero-dalo-command", "Copy the DALO starter commands"),
         ("skills-command", "Copy skills CLI command"),
         ("dalo-command", "Copy DALO setup commands"),
         ("optional-instructions-command", "Copy optional instruction pack commands"),
@@ -949,16 +914,15 @@ def main() -> int:
         "copy buttons must have unique contextual accessible names",
         failures,
     )
-    for class_name in ("command-dock", "route-cloud", "filter-bar"):
-        require(
-            re.search(
-                rf'<div\s+class="[^"]*\b{class_name}\b[^"]*"[^>]*\brole="group"[^>]*\baria-label=',
-                html,
-            )
-            is not None,
-            f"named {class_name} div must expose a group role",
-            failures,
-        )
+    tablist = re.search(r'<div\b[^>]*\brole="tablist"[^>]*\baria-label="[^"]+"', html)
+    require(tablist is not None, "install options must expose a named tablist", failures)
+    for panel in re.findall(r'role="tab"[^>]*aria-controls="([^"]+)"', html):
+        require(panel in parser.ids, f"install tab controls a missing panel: {panel}", failures)
+    require(
+        "npx skills add sebastian-software/effective-agent --all" in parser.code_blocks.values(),
+        "full-set skills CLI command is missing",
+        failures,
+    )
 
     validate_skill_pages(expected_skills, parser, failures)
     for link in parser.links:
@@ -1009,7 +973,9 @@ def main() -> int:
 
     for url in (
         "https://oss.sebastian-software.com/",
-        "https://sebastian-consulting.com/en",
+        "https://sebastian-consulting.com/",
+        "https://sebastian-software.com/imprint",
+        "https://sebastian-software.com/privacy",
         "https://github.com/sebastian-software/effective-agent",
     ):
         require(url in html, f"required external link is missing: {url}", failures)

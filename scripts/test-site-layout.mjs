@@ -8,12 +8,12 @@ import { chromium } from "playwright-core";
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const pageUrl = (name) => pathToFileURL(resolve(root, "site", name)).href;
 const pages = [
-  { name: "index.html", url: pageUrl("index.html"), hasCapabilityExplorer: true },
-  { name: "comparisons.html", url: pageUrl("comparisons.html"), hasCapabilityExplorer: false },
+  { name: "index.html", url: pageUrl("index.html"), isHome: true },
+  { name: "comparisons.html", url: pageUrl("comparisons.html"), isHome: false },
   ...readdirSync(resolve(root, "site", "skills")).map((skill) => ({
     name: `skills/${skill}/index.html`,
     url: pageUrl(`skills/${skill}/index.html`),
-    hasCapabilityExplorer: false,
+    isHome: false,
     skill,
   })),
 ];
@@ -40,26 +40,20 @@ const browser = await chromium.launch({ executablePath, headless: true });
 const assertLayout = async (page, site, width, colorScheme) => {
   const layout = await page.evaluate(() => {
     const root = document.documentElement;
-    const filter = document.querySelector(".filter-bar");
-    const capabilityExplorer = document.querySelector(".capability-explorer");
+    const installer = document.querySelector(".installer");
     const codeBlocks = [...document.querySelectorAll(".code-block")];
     const breadcrumb = document.querySelector(".breadcrumbs");
     const header = document.querySelector(".site-header");
     return {
       breadcrumbBelowHeader: !breadcrumb || breadcrumb.getBoundingClientRect().top >= header.getBoundingClientRect().bottom,
-      capabilityExplorerContained: Boolean(
-        capabilityExplorer &&
-          capabilityExplorer.scrollWidth <= capabilityExplorer.clientWidth
-      ),
+      installerContained: Boolean(installer && installer.scrollWidth <= installer.clientWidth),
       clientWidth: root.clientWidth,
       codeBlocksContained: codeBlocks.every(
         (block) => block.scrollWidth <= block.clientWidth
       ),
-      hasFilter: Boolean(filter),
-      filterOverflowX: filter ? getComputedStyle(filter).overflowX : null,
       scrollWidth: root.scrollWidth,
-      visibleCapabilityPanels: document.querySelectorAll(
-        "[data-capability-panel]:not([hidden])"
+      visibleInstallPanels: document.querySelectorAll(
+        '.installer [role="tabpanel"]:not([hidden])'
       ).length,
     };
   });
@@ -71,45 +65,36 @@ const assertLayout = async (page, site, width, colorScheme) => {
     layout.scrollWidth <= layout.clientWidth,
     `${context}: document overflows: ${layout.scrollWidth}px > ${layout.clientWidth}px`
   );
-  if (layout.hasFilter && width <= mobileViewportMax) {
-    assert.ok(
-      ["auto", "scroll"].includes(layout.filterOverflowX),
-      `${context}: filter bar must remain horizontally scrollable`
-    );
-  }
   assert.ok(
     layout.codeBlocksContained,
     `${context}: installation commands must stay inside their cards`
   );
-  if (site.hasCapabilityExplorer) {
-    assert.ok(
-      layout.capabilityExplorerContained,
-      `${context}: capability explorer must stay inside its frame`
-    );
+  if (site.isHome) {
+    assert.ok(layout.installerContained, `${context}: the installer must stay inside its frame`);
     assert.equal(
-      layout.visibleCapabilityPanels,
+      layout.visibleInstallPanels,
       1,
-      `${context}: exactly one capability panel must be visible`
+      `${context}: exactly one install panel must be visible`
     );
   }
 };
 
-const assertSelectedCapability = async (page, expectedIndex, checkFocus = false) => {
+const assertSelectedInstallTab = async (page, expectedIndex, checkFocus = false) => {
   const state = await page.evaluate(() => {
-    const tabs = [...document.querySelectorAll("[data-capability-tab]")];
-    const panels = [...document.querySelectorAll("[data-capability-panel]")];
+    const tabs = [...document.querySelectorAll('.installer [role="tab"]')];
     return {
       selected: tabs.map((tab) => tab.getAttribute("aria-selected") === "true"),
       tabStops: tabs.map((tab) => tab.tabIndex),
-      visible: panels.filter((panel) => !panel.hidden).map((panel) => panel.id),
+      visible: tabs
+        .map((tab) => document.getElementById(tab.getAttribute("aria-controls")))
+        .filter((panel) => panel && !panel.hidden)
+        .map((panel) => panel.id),
       controls: tabs.map((tab) => tab.getAttribute("aria-controls")),
       relationships: tabs.map((tab) => {
         const panel = document.getElementById(tab.getAttribute("aria-controls"));
         return Boolean(
-          tab.getAttribute("role") === "tab" &&
-            panel?.getAttribute("role") === "tabpanel" &&
-            panel.getAttribute("aria-labelledby") === tab.id &&
-            panel.dataset.capabilityPanel === tab.dataset.capabilityTab
+          panel?.getAttribute("role") === "tabpanel" &&
+            panel.getAttribute("aria-labelledby") === tab.id
         );
       }),
       focusedIndex: tabs.indexOf(document.activeElement),
@@ -130,14 +115,13 @@ const assertSelectedCapability = async (page, expectedIndex, checkFocus = false)
   if (checkFocus) assert.equal(state.focusedIndex, expectedIndex);
 };
 
-const testCapabilityNavigation = async (page, site, width, colorScheme) => {
-  const tabs = page.locator("[data-capability-tab]");
+const testInstallTabs = async (page, site, width, colorScheme) => {
+  const tabs = page.locator('.installer [role="tab"]');
   const tabCount = await tabs.count();
-  assert.equal(tabCount, await page.locator("[data-skill]").count());
   assert.ok(tabCount > 1);
   for (let index = 0; index < tabCount; index += 1) {
     await tabs.nth(index).click();
-    await assertSelectedCapability(page, index);
+    await assertSelectedInstallTab(page, index);
     await assertLayout(page, site, width, colorScheme);
   }
 
@@ -150,37 +134,13 @@ const testCapabilityNavigation = async (page, site, width, colorScheme) => {
     for (let count = 0; count < tabCount; count += 1) {
       await page.keyboard.press(key);
       selected = (selected + step + tabCount) % tabCount;
-      await assertSelectedCapability(page, selected, true);
+      await assertSelectedInstallTab(page, selected, true);
     }
   }
   await page.keyboard.press("End");
-  await assertSelectedCapability(page, tabCount - 1, true);
+  await assertSelectedInstallTab(page, tabCount - 1, true);
   await page.keyboard.press("Home");
-  await assertSelectedCapability(page, 0, true);
-};
-
-const testSkillFilters = async (page) => {
-  const buttons = page.locator("[data-filter]");
-  for (let index = 0; index < await buttons.count(); index += 1) {
-    await buttons.nth(index).click();
-    const state = await page.evaluate((selectedIndex) => {
-      const filters = [...document.querySelectorAll("[data-filter]")];
-      const cards = [...document.querySelectorAll("[data-skill]")];
-      const category = filters[selectedIndex].dataset.filter;
-      return {
-        pressed: filters.map((filter) => filter.getAttribute("aria-pressed") === "true"),
-        visible: cards.filter((card) => !card.hidden).map((card) => card.dataset.skill),
-        expected: cards.filter(
-          (card) => category === "all" || card.dataset.category === category
-        ).map((card) => card.dataset.skill),
-        announcement: document.querySelector("[data-filter-status]")?.textContent,
-      };
-    }, index);
-    assert.deepEqual(state.pressed, state.pressed.map((_, candidate) => candidate === index));
-    assert.ok(state.expected.length > 0, "each filter must expose at least one skill");
-    assert.deepEqual(state.visible, state.expected);
-    assert.ok(state.announcement?.trim(), "filter changes must announce their result");
-  }
+  await assertSelectedInstallTab(page, 0, true);
 };
 
 try {
@@ -205,7 +165,7 @@ try {
         );
         await assertLayout(page, site, width, colorScheme);
 
-        if (site.hasCapabilityExplorer) {
+        if (site.isHome) {
           const optionalInstructions = page.locator("details").filter({
             has: page.locator("#optional-instructions-command"),
           });
@@ -215,8 +175,7 @@ try {
           assert.notEqual(await optionalInstructions.getAttribute("open"), null);
           await assertLayout(page, site, width, colorScheme);
           if (width === viewports[0] || width === viewports.at(-1)) {
-            await testCapabilityNavigation(page, site, width, colorScheme);
-            await testSkillFilters(page);
+            await testInstallTabs(page, site, width, colorScheme);
           }
         }
 

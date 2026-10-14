@@ -131,10 +131,11 @@ class JsonLdInventoryValidationTests(unittest.TestCase):
 
 
 class VisibleSkillInventoryTests(unittest.TestCase):
-    def test_reads_card_order_and_display_name(self) -> None:
+    def test_reads_index_row_order_and_display_name(self) -> None:
         html = (
-            '<article class="skill-card" data-skill="one"><h3>One &amp; Only</h3></article>'
-            '<article data-skill="two"><h3>Two</h3></article>'
+            '<tr data-skill="one" data-stage="decide"><td>Decide</td>'
+            '<th class="guide-name" scope="row"><a href="one/">One &amp; Only</a><small>1 routes · 2 references</small></th></tr>'
+            '<tr data-skill="two"><th class="guide-name"><a href="two/">Two</a></th></tr>'
         )
 
         self.assertEqual(
@@ -143,7 +144,7 @@ class VisibleSkillInventoryTests(unittest.TestCase):
         )
 
     def test_accepts_single_quoted_skill_attributes(self) -> None:
-        html = "<article data-skill='one'><H3>One</H3></article>"
+        html = "<tr data-skill='one'><th class=\"guide-name\"><a href='one/'>One</a></th></tr>"
 
         self.assertEqual(VALIDATOR.visible_skill_inventory(html), [("one", "One")])
 
@@ -339,53 +340,47 @@ class ProofRowValuesTests(unittest.TestCase):
         self.assertEqual(VALIDATOR.proof_row_values(html), [20, 184, 1])
 
 
-class EffectiveWebStatsValidationTests(unittest.TestCase):
+class GuideIndexStatsValidationTests(unittest.TestCase):
     @staticmethod
-    def page(routes: int, references: int, chip: int) -> str:
+    def row(routes: int, references: int) -> str:
         return (
-            '<div class="flagship-stats">'
-            f"<div><strong>{routes}</strong><span>intent routes</span></div>"
-            f"<div><strong>{references}</strong><span>focused references</span></div>"
-            "<div><strong>1</strong><span>coherent quality bar</span></div>"
-            "</div>"
-            '<a class="text-link" href="https://example.com/">Explore</a>'
-            f"<ul><li>{chip} routed workflows</li></ul>"
+            '<tr data-skill="effective-web" data-stage="build">'
+            '<th class="guide-name"><a href="skills/effective-web/index.html">Effective Web</a>'
+            f"<small>{routes} routes · {references} references</small></th></tr>"
         )
 
     def test_matching_stats_pass(self) -> None:
+        routes, references = VALIDATOR.skill_inventory("effective-web")
         failures: list[str] = []
 
-        VALIDATOR.validate_effective_web_stats(self.page(25, 93, 25), 25, 93, failures)
+        VALIDATOR.validate_guide_index_stats(self.row(routes, references), ["effective-web"], failures)
 
         self.assertEqual(failures, [])
 
-    def test_stale_stats_report_each_mismatch(self) -> None:
+    def test_stale_stats_report_the_expected_counts(self) -> None:
+        routes, references = VALIDATOR.skill_inventory("effective-web")
         failures: list[str] = []
 
-        VALIDATOR.validate_effective_web_stats(self.page(24, 90, 23), 25, 93, failures)
+        VALIDATOR.validate_guide_index_stats(self.row(routes + 1, references), ["effective-web"], failures)
 
         self.assertEqual(
             failures,
-            [
-                "flagship intent-route stat must match the SKILL.md routing table: 25",
-                "flagship reference stat must match skills/effective-web/references: 93",
-                "effective-web card chip must match the SKILL.md routing table: 25",
-            ],
+            [f"effective-web index row must show {routes} routes · {references} references"],
         )
 
-    def test_missing_stats_block_reports_a_failure(self) -> None:
+    def test_missing_row_reports_a_failure(self) -> None:
         failures: list[str] = []
 
-        VALIDATOR.validate_effective_web_stats("<main></main>", 25, 93, failures)
+        VALIDATOR.validate_guide_index_stats("<main></main>", ["effective-web"], failures)
 
-        self.assertIn("site must contain the flagship stats block", failures)
+        self.assertEqual(len(failures), 1)
 
     def test_inventory_counts_agree_with_the_repository(self) -> None:
-        routes, references = VALIDATOR.effective_web_inventory()
+        routes, references = VALIDATOR.skill_inventory("effective-web")
 
         self.assertGreater(routes, 0)
-        self.assertGreater(references, 0)
         self.assertGreaterEqual(references, routes)
+        self.assertGreater(VALIDATOR.scenario_count(), 0)
 
 
 class SitemapLastmodValidationTests(unittest.TestCase):

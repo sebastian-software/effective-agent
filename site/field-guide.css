@@ -833,3 +833,97 @@
 
   }
 }
+
+/* Shared company footer: product, local index, company, and legal baseline. */
+@layer field-guide {
+  .site-footer {
+    padding-block: 4rem 2.5rem;
+    background: var(--panel);
+    color: #e9e4d6;
+  }
+
+  .footer-top {
+    display: grid;
+    grid-template-columns: minmax(16rem, 1.4fr) repeat(3, minmax(0, 1fr));
+    gap: 2.5rem;
+  }
+
+  .footer-product > p {
+    max-width: 22rem;
+    margin-top: 1.25rem;
+    color: rgb(233 228 214 / 72%);
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+
+  .footer-column {
+    display: grid;
+    align-content: start;
+    gap: 0.6rem;
+    font-size: 0.9rem;
+  }
+
+  .footer-heading {
+    margin-bottom: 0.35rem;
+    color: #e7d4ad;
+    font-size: 0.7rem;
+    font-weight: 650;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+
+  .footer-column a,
+  .footer-legal a {
+    color: #f4f0e6;
+    text-decoration: none;
+  }
+
+  .footer-column a:hover,
+  .footer-legal a:hover {
+    text-decoration: underline;
+  }
+
+  .footer-column address {
+    color: rgb(233 228 214 / 78%);
+    font-style: normal;
+    line-height: 1.7;
+  }
+
+  .footer-baseline {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgb(255 255 255 / 16%);
+    color: rgb(233 228 214 / 62%);
+    font-size: 0.8rem;
+  }
+
+  .footer-baseline .copyright {
+    padding: 0;
+    border: 0;
+  }
+
+  .footer-legal {
+    display: flex;
+    gap: 1.5rem;
+  }
+
+  @media (max-width: 900px) {
+    .footer-top {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .footer-product {
+      grid-column: 1 / -1;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .footer-top {
+      grid-template-columns: 1fr;
+    }
+  }
+}
