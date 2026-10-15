@@ -55,6 +55,9 @@ reuse the installed library before adding another for a stylistic preference.
 - Let parts overlap in time when that communicates one response; waiting for
   every decorative stage to finish needlessly extends the sequence. Keep the
   action and result available independently of the choreography.
+  For example, combine a brief icon response, an expanding ring, and two small
+  offset particle waves. Tune ring growth, color, and fade separately instead
+  of increasing particle count to compensate for weak timing.
 - An entrance and return can use different curves. Define the transition on
   the destination state and test quick movement across neighboring controls so
   a long exit does not leave a trail of stale highlights.
@@ -65,9 +68,9 @@ reuse the installed library before adding another for a stylistic preference.
 - Retain a leaving element only as needed for its visual exit; focus,
   interaction, and accessible visibility must follow the actual dialog or menu
   state. Motion never extends an invisible control's interactive lifetime.
-- Use animation fill modes deliberately: retained keyframe values can override
-  later ordinary styles. Give a settled component an explicit rest state rather
-  than relying on indefinite animation ownership.
+- For retained keyframe values, competing transforms, or layered opacity,
+  select [animation composition](animation-composition.md) before compensating
+  with another style override.
 
 ## Coordinate optional sound
 

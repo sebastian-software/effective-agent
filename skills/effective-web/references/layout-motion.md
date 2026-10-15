@@ -58,4 +58,4 @@ integrating snapshots manually, coordinate capture with the actual DOM commit;
 scheduling a state update alone does not establish that the destination DOM is
 ready. Follow the installed framework's documented integration. For snapshot
 overlay, clipping, and hit-testing behavior, use the
-[View Transitions guidance](motion-interaction.md#view-transitions).
+[View Transition details](view-transition-details.md).

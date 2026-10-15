@@ -66,14 +66,13 @@ motion concept, and a sequence does not justify animating stable page content.
 
 ## View Transitions
 
-- Use the View Transitions API for spatial continuity across state changes: list-to-detail, filtering and reordering, and persistent UI that should appear to stay put. For same-document (SPA) transitions, wrap the DOM update in `document.startViewTransition(updateCallback)`; for cross-document (MPA) transitions, opt in with `@view-transition { navigation: auto; }` in CSS on both pages.
-- Tag elements that should animate between states with a unique `view-transition-name` (or `view-transition-class` for groups). Two elements sharing a name in the old and new state are matched and tweened as one — this is how a thumbnail expands into a hero image.
-- Always guard view transitions with reduced motion: wrap the snapshot pseudo-element animations in `@media (prefers-reduced-motion: no-preference)`, or skip `startViewTransition` and apply the DOM change directly when the user prefers reduced motion. Without a guard the default cross-fade still animates.
-- View Transitions support is uneven (same-document is Baseline 2025 across Chromium, Safari, and Firefox; cross-document remains Chromium- and Safari-only as of October 2026). Feature-detect with `if (document.startViewTransition)` and fall back to an instant, un-animated update — the content change must work without the transition.
-- Customise the snapshot animation via the `::view-transition-group()`, `::view-transition-old()`, and `::view-transition-new()` pseudo-elements rather than animating real DOM nodes. Treat the old snapshot as static and the new snapshot as a live projection, but do not equate "live" with interactive: a document-scoped transition overlay renders above the page and may intercept pointer input until the transition finishes.
-- Keep document-scoped transitions short and test controls, focus, top-layer content, and rapid repeated input while they run. A second transition on the same root skips the active one, so retain the returned `ViewTransition`; use `ready` when the pseudo-tree can be customised, `updateCallbackDone` for update completion, and `finished` for cleanup. Define whether repeated input should skip, reverse, or retarget motion while always leaving the final DOM state correct.
-- Do not assume generated View Transition keyframes are compositor-only. The browser may interpolate `width` and `height` on `::view-transition-group()`, which can compete on the main thread when snapshot sizes change. Profile the actual transition in the Animations and Performance panels under representative main-thread load; if measured frame drops justify it, simplify the effect or replace the size interpolation with measured `translate`/`scale` keyframes in a FLIP-style transform.
-- Use element-scoped transitions when a bounded component change must leave the rest of the page interactive or when concurrent or nested transitions materially improve the interaction, but only behind exact feature detection and a complete fallback because support is still single-engine (Chrome 147+) as of October 2026. For cross-document shared images, make the destination state ready through appropriate preload or prerender strategy; `blocking="render"` can wait for an element to be parsed, not for its image bytes to finish loading, so adopt render blocking only after measuring its Core Web Vitals impact.
+Use snapshots for meaningful continuity such as list-to-detail movement or
+reordering. Keep DOM updates, navigation, focus, and the result correct without
+the effect. Feature-detect the exact capability. Under reduced motion, prefer
+an instant update or an explicitly chosen brief non-spatial substitute; suppress
+generated movement rather than assuming a crossfade removes it. For capture identity,
+clipping, input interception, interruption, destination readiness, or scoped
+support, select [View Transition details](view-transition-details.md).
 
 ## Scroll-Driven and Spatial Motion
 

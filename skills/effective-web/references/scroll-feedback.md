@@ -23,5 +23,7 @@ spectacle.
   results totals, bookmarking, or returning to prior content. Infinite scroll
   is an exploratory pattern, not a default list implementation.
 
-For virtualizer library details, animation ranges, and full failure-pattern
-guidance, consult the [deep scroll appendix](scroll-patterns.md).
+For driven versus triggered motion, observer thresholds, ranges, or sticky
+header backgrounds, use [scroll animation recipes](scroll-animation-recipes.md).
+For virtualizer library details and broader scroll failure patterns, consult
+the [deep scroll appendix](scroll-patterns.md).

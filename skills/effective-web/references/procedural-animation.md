@@ -5,6 +5,9 @@ labels and controls semantic; a decorative drawing surface does not replace
 accessible content. For measured jank or leaks, use
 [animation runtime performance](animation-runtime-performance.md).
 
+For range-mapping code, ripple and noise fields, trails, responsive connectors,
+or simultaneous grid updates, select [construction recipes](procedural-animation-recipes.md).
+
 ## Choose the representation
 
 | Need | Starting point | Responsibility |

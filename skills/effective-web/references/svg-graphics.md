@@ -18,6 +18,9 @@ and motion model deliberately.
 - Use an icon component or an intentional `<symbol>`/`<use>` sprite when many
   instances share geometry. Verify styling, accessible naming, external-resource
   policy, and duplicate-ID behavior before standardizing the system.
+- Reuse one path definition for a background track and a drawn foreground
+  instead of copying long geometry. Keep clone-specific paint inheritable;
+  `<use>` is not a general merge-and-override mechanism for template geometry.
 - Do not inline large static illustrations by default. Repetition bloats HTML,
   delays parsing, and forfeits independent asset caching.
 
@@ -112,6 +115,9 @@ and motion model deliberately.
 - To move artwork through a stationary mask, mask a parent group and transform
   the child; transforming the already masked shape moves the composite. Separate
   mask, geometry, and motion ownership before attempting a complex path morph.
+- Choose luminance versus alpha masking deliberately. Opaque gray partially
+  reveals in a luminance mask but fully reveals in an alpha mask; check the
+  chosen mask mode instead of treating every opaque fill as equivalent.
 - For cursor-reactive artwork, use the coordinate and stable-measurement rules
   in [procedural animation](procedural-animation.md#keep-coordinates-and-targets-stable).
 - Optimize exported SVG deterministically, but inspect the result. Never allow an
