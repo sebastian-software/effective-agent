@@ -201,6 +201,8 @@ than the system provides.
 
 Optimistic UI shows the result of an action before the server confirms it, making the interface feel instant. The UI assumes success and rolls back only if the server returns an error.
 
+An optimistic result is not a save guarantee. Keep save and sync status truthful while the confirmation is pending; see [Saving and Synchronization](#saving-and-synchronization).
+
 ### When to Use Optimistic UI
 
 **Good candidates:**
@@ -430,9 +432,10 @@ This reserves space in the layout before the image arrives, preventing Cumulativ
 - Fix: Use `aria-busy`, `aria-live`, visually hidden loading text, and announce completion
 
 ### Mistake 10: Progress bar that stalls or jumps backward
-- An unexplained stall or changed estimate undermines confidence in the status
+- An unexplained stall, backward jump, or changed estimate undermines confidence in the status
 - Fix: Report measured work, explain a revised estimate or new stage, and use
-  indeterminate feedback when remaining work is unknown. Do not hide a stall
+  indeterminate feedback when remaining work is unknown. Do not move progress
+  backward without saying why, and do not hide a stall
   behind artificial progress or claim completion before the result is durable.
 
 ## Chapter Summary
