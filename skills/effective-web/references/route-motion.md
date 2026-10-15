@@ -44,7 +44,7 @@ not a required reading sequence.
   transform order, partial keyframes, delays, fill modes, and shared parameters.
 - [procedural-animation.md](procedural-animation.md) - pointer geometry, DOM
   particles, Canvas sizing, time-based simulation, and worker ownership.
-- [layout-motion.md](layout-motion.md) - React Motion layout identity,
+- [layout-motion.md](layout-motion.md) - Motion for React layout identity,
   measurement groups, scale correction, and preference-aware client boundaries;
   load when the project uses or needs that library capability.
 - [view-transition-details.md](view-transition-details.md) - snapshot identity,

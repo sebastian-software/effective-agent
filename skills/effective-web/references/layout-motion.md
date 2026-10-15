@@ -1,6 +1,6 @@
 # Layout Motion
 
-Use when React Motion layout or shared-layout behavior is already chosen or
+Use when Motion for React layout or shared-layout behavior is already chosen or
 needed for interruptible movement of live interface elements. Reuse the
 installed package and verify its API; this is not a requirement to adopt a
 library for ordinary CSS transitions. The following API examples were checked

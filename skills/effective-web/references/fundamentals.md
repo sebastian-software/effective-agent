@@ -887,7 +887,7 @@ Vestibular disorders affect ~35% of adults over 40. Seizure-triggering animation
 }
 ```
 
-No `!important` — this allows more specific selectors (dialogs, view transitions, popovers) to override with safe opacity fades. WCAG 2.3.3 explicitly excludes opacity changes from "motion animation", so fades do not trigger vestibular disorders.
+No `!important` — this allows more specific selectors (dialogs, view transitions, popovers) to override with brief opacity fades. WCAG 2.3.3 excludes opacity changes from "motion animation", but that does not prove every fade is comfortable; keep substitutes brief, non-spatial, and evaluate the perceived motion.
 
 Replace motion-based animations with fades where a visual signal is still needed:
 
