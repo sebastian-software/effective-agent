@@ -58,6 +58,10 @@ and motion model deliberately.
 - Normalize progress-based stroke effects with `pathLength="100"` when useful,
   then express dash lengths and offsets in that shared scale instead of measuring
   each path in JavaScript.
+- For a self-drawing line, offset a full-length dash and animate the offset to
+  zero. Growing a zero-length dash can leave a visible dot with round caps.
+  Keep dash values numeric in the normalized scale; percentage dash values are
+  not percentages of path length. See [pathLength](https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Attribute/pathLength).
 - Morph only between compatible path topologies, and verify the target browser
   set. If morphing is decorative, allow unsupported browsers to keep the static
   start or end state; add a library only when broad morphing support is required.
@@ -105,6 +109,11 @@ and motion model deliberately.
 - Set `transform-box` and `transform-origin` explicitly when SVG transforms pivot
   around the wrong box. For squash/stretch, keep the effect subtle and preserve
   perceived mass by scaling one axis inversely to the other.
+- To move artwork through a stationary mask, mask a parent group and transform
+  the child; transforming the already masked shape moves the composite. Separate
+  mask, geometry, and motion ownership before attempting a complex path morph.
+- For cursor-reactive artwork, use the coordinate and stable-measurement rules
+  in [procedural animation](procedural-animation.md#keep-coordinates-and-targets-stable).
 - Optimize exported SVG deterministically, but inspect the result. Never allow an
   optimizer to remove a required `viewBox`, accessible title/description, IDs,
   or precision that visibly changes the artwork.

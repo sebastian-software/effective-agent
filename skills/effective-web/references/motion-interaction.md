@@ -36,7 +36,11 @@ motion concept, and a sequence does not justify animating stable page content.
 - Promote an element to its own layer with `will-change: transform` only for the duration of an animation, then remove it; leaving `will-change` set permanently wastes memory.
 - Read layout values (`offsetWidth`, `getBoundingClientRect`) before writing styles within a frame, never interleaved, to avoid forced reflow. Batch reads and writes (or use `requestAnimationFrame`) when measuring for JS-driven motion.
 - Keep product UI transitions short — roughly 150–250ms for state changes and micro-interactions; reserve longer durations only for large spatial moves. Motion must never make the user wait for choreography or hide real latency.
-- Use ease-out curves for elements entering and responding to user input (fast start, gentle settle) and ease-in for elements leaving. Reserve spring or overshoot easing for playful, non-blocking accents; never apply bouncy springs to functional, frequently repeated transitions.
+- Use ease-out curves for elements entering and responding to user input (fast
+  start, gentle settle) and ease-in for elements leaving. Choose springs for a
+  justified tactile or continuously retargeted response; bound overshoot and
+  settling so frequent actions remain responsive and readable. A physical
+  response does not require making every operational control bounce.
 
 ## Transitions vs Animations
 
