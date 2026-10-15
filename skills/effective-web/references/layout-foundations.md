@@ -30,6 +30,10 @@ the unresolved constraint.
 - Choose image/text alternation for a better reading path, not automatic
   left-right variety. Short comparisons may benefit; preserve logical source
   and focus order when the layout changes.
+- Match ordered content to the reading path implied by spacing and grouping.
+  An alphabetical directory that visually reads down each column should not
+  secretly be sorted across rows. Check the sequence again when columns reflow;
+  keep visual, source, and assistive-technology reading order coherent.
 - Test empty, long, unbreakable, and translated content. A break is evidence of
   a missing constraint or wrong ownership, not an automatic reason for another
   media query.

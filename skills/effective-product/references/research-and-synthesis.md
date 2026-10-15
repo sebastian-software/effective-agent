@@ -142,6 +142,13 @@ participant is not the same as a pattern across varied participants. Note
 contradictions, negative cases, missing perspectives, and where another round
 of research would be more honest than a confident generalization.
 
+Preserve tensions as design inputs. In a journaling study, templates might
+reduce repeated setup for one participant while constraining another's creative
+ritual; tracking might support reflection or create pressure to keep logging.
+Treat these as example hypotheses until observed. Investigate which context
+explains the difference rather than averaging both into a generic preference
+for more features or faster completion.
+
 ## Use personas carefully
 
 Create a persona only when a durable behavioral pattern helps the team make

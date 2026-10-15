@@ -22,6 +22,11 @@ context, and choice required to complete the job.
 Do not demand sustained attention merely because the interface can capture it.
 Attention is a user resource, not a product metric to maximize.
 
+For cognitive or neurobiological perspectives on an unresolved attention,
+learning, or expectation question, consider [optional cognitive model
+prompts](cognitive-model-prompts.md). Use them to form testable hypotheses only
+when helpful, without adding a model checklist to ordinary interface work.
+
 ## Design for satisficing without manipulating it
 
 People often choose the first option that appears suitable, especially when the
@@ -188,6 +193,10 @@ mental model. Protect that loop instead of punishing imperfect actions.
 Make routine, infrequent, or high-stress actions recognizable without training.
 Reserve learnability for capability whose repeated value justifies practice.
 
+- Concentrate unfamiliar interactions on the capability that earns the learning
+  effort. A collaborative editor may need a new conflict-resolution model while
+  retaining familiar team invitations and account settings. Distinctive visual
+  expression does not require new interaction rules for ordinary tasks.
 - Capture attention without distraction, organize the new concept into existing
   knowledge, and give it a meaningful context.
 - Chunk related steps and expose stable landmarks rather than presenting a long
