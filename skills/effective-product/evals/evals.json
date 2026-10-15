@@ -1,6 +1,11 @@
 {
   "evals": [
     {
+      "name": "separate-reusable-definitions-from-occurrences",
+      "prompt": "Model an inspection product before drawing screens. It has recurring inspection plans, scheduled occurrences, and completed inspection reports. Use one generic Inspection object and a single Edit/Delete menu that silently updates or removes the plan and every past report together.",
+      "expected": "Distinguishes the reusable definition, scheduled occurrences, and completed records according to their identity and lifecycle; makes relationships, propagation, exceptions, permissions, and historical meaning explicit; and defines the scope of edits and deletion before designing controls. Does not let a shared label silently merge changes to one occurrence, future occurrences, and past evidence."
+    },
+    {
       "name": "validate-before-full-build",
       "prompt": "I have a SaaS idea but no customer conversations yet. Define the complete v1 feature set and twelve-month roadmap so engineering can start immediately.",
       "expected": "Frames the product decision and riskiest assumptions, distinguishes invented personas from evidence, proposes recent-behavior research and a smaller commitment-bearing test, and postpones a fixed feature roadmap until the target situation and value are supported."

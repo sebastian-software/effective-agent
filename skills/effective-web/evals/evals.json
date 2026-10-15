@@ -1,6 +1,31 @@
 {
   "evals": [
     {
+      "name": "use-cognitive-models-to-form-testable-questions",
+      "prompt": "Our reflection app keeps prompting people to log more immediately after they finish an entry. Could attention, memory, prediction, or default mode network models give us useful design questions? Explore possibilities without treating the models as proven product effects or prescribing the same reflective ritual to everyone.",
+      "expected": "Uses only relevant models as optional hypothesis generators; offers observable experiments such as a clear stopping point, optional reflection, contextual cues, or prediction checks; allows people to finish and leave; distinguishes meaningful reflective time from unwanted administration; and avoids claiming brain activation, fixed memory limits, glucose budgets, or universal needs. Verifies primary research if a causal scientific claim becomes necessary to the decision."
+    },
+    {
+      "name": "keep-cognitive-lenses-proportionate-to-the-task",
+      "prompt": "Change only the spacing between the label and input in this familiar search form. The established design system already defines the spacing token and the control's behavior is working.",
+      "expected": "Applies the requested spacing within the existing system and verifies the affected layout without adding a neuroscience explanation, cognitive-model checklist, reflection step, new interaction, or unsolicited product redesign."
+    },
+    {
+      "name": "distinguish-save-guarantees-and-honest-progress",
+      "prompt": "An offline editor writes changes locally, syncs later, and can encounter collaboration conflicts. The team wants a green 'Saved everywhere' checkmark immediately after every keystroke and a progress bar that starts slowly and accelerates to 100% even though the sync duration and remaining work are unknown. Design the feedback and recovery.",
+      "expected": "Separates local durability, server acknowledgment, synchronization, and conflict resolution; uses status language matching the actual guarantee; keeps edits available during failure; and provides retry or conflict recovery. Rejects invented percentages and manufactured completion curves, using an indeterminate or stage-based state when measurable progress and credible timing are unavailable."
+    },
+    {
+      "name": "evaluate-redesign-relearning-for-returning-users",
+      "prompt": "Our redesigned editor moves Export and Undo into a new toolbar. First-time participants find them faster, so declare the redesign better for everyone and remove the old shortcuts. Long-time users have not tried it yet. The new layout is authorized, but it should preserve efficient everyday work.",
+      "expected": "Treats first-time discoverability and returning-user fluency as separate evidence, identifies learned locations, action sequences, shortcuts, and contextual cues as migration costs, and evaluates familiar tasks with returning users. Keeps useful shortcuts or bridging cues where appropriate without treating every learned location as permanently immutable."
+    },
+    {
+      "name": "align-multicolumn-sequence-with-reading-path",
+      "prompt": "An alphabetical directory has three columns. Spacing makes each column look like a top-to-bottom group, but the entries are sorted across rows, so readers encounter A, D, G down the first column. On narrow screens the columns collapse. Correct finding and reading order while keeping keyboard and screen reader use coherent.",
+      "expected": "Makes alphabetical sequence agree with the intended visual reading path, checks the collapsed layout, and keeps source, visual, keyboard, and assistive-technology order coherent. Changes grouping or layout as needed instead of using a visual-only CSS reorder that leaves the underlying sequence misleading."
+    },
+    {
       "name": "remove-selection-like-accent-on-unselected-content",
       "prompt": "Review an operations page where the existing system uses a blue left stripe to indicate the selected record. A polish pass puts the same stripe on every unselected summary card. Routine summaries now look selected and draw the same attention as a consequential exception. Keep the familiar visual system and improve the page.",
       "expected": "Corrects the misleading repeated selection treatment and restores the exception's priority while preserving the stripe where it actually indicates selection. Explains the conflict with state and hierarchy rather than banning colored left edges."

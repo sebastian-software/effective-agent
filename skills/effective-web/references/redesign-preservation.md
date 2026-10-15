@@ -45,6 +45,9 @@ Inspect and record only what is needed to detect regressions:
   anchors, internal links, search, and content relationships.
 - **Behavior:** forms, validation, field names, state transitions, permissions,
   keyboard paths, recovery, and browser contracts.
+- **Learned orientation:** familiar control locations, action sequences,
+  shortcuts, and contextual cues in frequent workflows. Capture only the
+  patterns whose movement could impose meaningful relearning.
 - **Design system:** tokens, components, icon family, supported variants, and
   documented exceptions.
 - **Acquisition and discovery:** meaningful metadata, structured data, canonical
@@ -132,6 +135,10 @@ Compare the redesigned implementation with both the approved direction and the
 captured baseline:
 
 - Run the primary task and conversion paths in representative viewports.
+- Compare first-time discovery with returning users' ability to find and
+  perform familiar actions. An easier introduction does not prove that moving
+  a toolbar preserves repeated-use efficiency. When a move is justified, check
+  whether familiar labels, shortcuts, or contextual guidance bridge the change.
 - Verify URLs, redirects, navigation, anchors, metadata, structured data, and
   social previews affected by the change.
 - Confirm forms, analytics, consent, localization, automation, and integration

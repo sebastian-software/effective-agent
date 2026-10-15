@@ -14,13 +14,14 @@ Three response time limits govern which feedback pattern to use (Jakob Nielsen, 
 | **< 100ms** | Instantaneous, direct manipulation | None - display result immediately |
 | **100ms - 1s** | Noticeable delay, thought flow unbroken | Subtle indicator (cursor change, button state) |
 | **1s - 10s** | Conscious waiting, attention held | Real component loading state or local status indicator |
-| **> 10s** | Attention lost, user may leave | Determinate progress bar with cancel option |
+| **> 10s** | Attention lost, user may leave | Progress or stage updates; cancellation when possible |
 
 **Guidelines:**
 - Provide visual feedback the moment a user initiates an action (button state change, page transition)
 - Showing a loader for waits under 1 second harms perceived performance - delay the indicator by 300ms
 - For 2-10 second waits, combine a scoped busy state with inconspicuous progress updates
-- For waits over 10 seconds, show estimated completion time and a clear way to cancel
+- For waits over 10 seconds, show meaningful progress or stage updates, a
+  completion estimate when credible, and a clear way to cancel when possible
 
 ## Real Component Loading States
 
@@ -87,13 +88,17 @@ Use when the wait duration is unknown or between 1-10 seconds:
 
 ### Determinate Indicators (Progress Bars)
 
-Use for waits over 10 seconds or when processing measurable units:
+Use when completed and remaining work can be measured, including long waits:
 
 - Visual bar filling from 0-100%
 - Shows current progress, completion status, and remaining work
-- Start the animation slower and accelerate toward completion - exceeding expectations creates more satisfaction than disappointing early speed
-- Provide approximate timeframes: "About 3 minutes remaining"
-- Always provide a cancel option for long processes
+- Base determinate progress on measurable work. Do not invent a percentage or
+  alter the completion curve to manufacture satisfaction. When progress cannot
+  be measured, show an indeterminate state or the current stage instead.
+- Provide approximate timeframes only when there is a credible estimate; revise
+  it when conditions change instead of promising an unsupported finish time.
+- Provide cancellation for long processes when they can be stopped safely;
+  explain what is already committed when they cannot.
 
 ### Placement Guidelines
 
@@ -154,7 +159,8 @@ When a button triggers an action that takes more than 300ms, show a loading stat
 - Prevent double submission: set `aria-disabled="true"` during loading
 - Prefer `aria-disabled="true"` over `disabled` - `aria-disabled` keeps the button focusable and discoverable by screen readers, but it does not block activation: guard the click or submit handler while loading, and keep the server tolerant of duplicates
 - Set `aria-busy="true"` on the button to indicate processing
-- On success, briefly show a check icon or "Saved" before restoring the default state
+- On success, briefly show a check icon or label matching the actual guarantee
+  before restoring the default state; see [Saving and Synchronization](#saving-and-synchronization).
 
 ### `aria-disabled` vs `disabled`
 
@@ -175,9 +181,27 @@ When a button triggers an action that takes more than 300ms, show a loading stat
 
 Use `aria-disabled="true"` for loading states. Use the native `disabled` attribute only when a button is permanently unavailable (and provide an explanation why).
 
+## Saving and Synchronization
+
+Match completion feedback to the system's actual guarantee. Distinguish local
+persistence, server acknowledgment, synchronization to other devices, and
+unresolved collaboration conflicts when those differences affect the task.
+
+For an offline-capable editor, "Saved on this device" can coexist with "Waiting
+to sync." Use "Saved to server" only after acknowledgment, and claim that all
+changes are synchronized only when the synchronization contract supports it.
+A locally accepted edit is not proof that collaborators have received it.
+
+Keep edits available when a save or sync fails, explain what is durable and
+what remains pending, and offer retry or conflict resolution without silently
+discarding work. A generic success checkmark must not imply a stronger guarantee
+than the system provides.
+
 ## Optimistic UI
 
 Optimistic UI shows the result of an action before the server confirms it, making the interface feel instant. The UI assumes success and rolls back only if the server returns an error.
+
+An optimistic result is not a save guarantee. Keep save and sync status truthful while the confirmation is pending; see [Saving and Synchronization](#saving-and-synchronization).
 
 ### When to Use Optimistic UI
 
@@ -366,7 +390,7 @@ This reserves space in the layout before the image arrives, preventing Cumulativ
 | Background save | < 2s | No indicator (or subtle) | Don't interrupt workflow |
 | Search results | 1-3s | Existing results stay visible, status near filters | Avoids blanking the page during refetch |
 | Infinite scroll | 0.5-3s | Spinner at list bottom | Contextual, non-blocking |
-| Data export | 10s+ | Progress bar + cancel | Long process needs completion estimate |
+| Data export | 10s+ | Measured progress or current stage; cancel when possible | Long process needs honest status and a credible estimate when available |
 
 ## Common Loading State Mistakes
 
@@ -408,12 +432,15 @@ This reserves space in the layout before the image arrives, preventing Cumulativ
 - Fix: Use `aria-busy`, `aria-live`, visually hidden loading text, and announce completion
 
 ### Mistake 10: Progress bar that stalls or jumps backward
-- Destroys user trust in the estimated completion
-- Fix: Start slower and accelerate toward completion - never move backward
+- An unexplained stall, backward jump, or changed estimate undermines confidence in the status
+- Fix: Report measured work, explain a revised estimate or new stage, and use
+  indeterminate feedback when remaining work is unknown. Do not move progress
+  backward without saying why, and do not hide a stall
+  behind artificial progress or claim completion before the result is durable.
 
 ## Chapter Summary
 
-1. Use response time thresholds to pick the right feedback pattern: no indicator under 100ms, subtle change up to 1s, real component loading state or local status for 1-10s, progress bar over 10s
+1. Use response time thresholds to pick the right feedback pattern: no indicator under 100ms, subtle change up to 1s, real component loading state or local status for 1-10s, meaningful progress or stage updates for longer waits
 2. Avoid fake skeleton UIs by default; use real component states, empty-state-shaped loading, or neutral status blocks
 3. Delay showing spinners by 300ms to avoid flashing indicators on fast responses
 4. Button loading states belong on the button itself: inline spinner, label change ("Saving..."), `aria-busy="true"`, and `aria-disabled="true"` to prevent double submission
@@ -422,5 +449,5 @@ This reserves space in the layout before the image arrives, preventing Cumulativ
 7. Respect `prefers-reduced-motion` for spinners, progress indicators, and any optional loading animation
 8. Prevent layout shift with `aspect-ratio` on images and embeds, and ensure loading indicators do not resize their containers
 9. Optimise LCP by never lazy-loading the largest content element and setting `fetchpriority="high"`
-10. Use determinate progress bars for waits over 10 seconds - start slow, accelerate toward completion, and always provide a cancel option
+10. Use determinate progress only for measurable work; otherwise show an indeterminate state or current stage. Give credible estimates and cancellation when possible
 11. Scope loading indicators to the specific region being updated - never block the entire page when only one section is loading

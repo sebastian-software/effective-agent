@@ -78,6 +78,13 @@ without becoming six unrelated concepts. Derive navigation and components from
 the object and relationship model rather than letting the first screen sketch
 define the domain.
 
+Also distinguish a reusable definition or template from its concrete instances:
+a recurring inspection plan from a completed inspection, or an appointment
+series from one occurrence. Before designing edit and delete controls, clarify
+whether an action changes the definition, one instance, future instances, or
+existing records. Make propagation, exceptions, and historical meaning explicit
+instead of letting a shared label imply that these are the same object.
+
 Probe relationships pairwise: how could object A appear meaningfully within B,
 and how could B appear within A? Also test an object against itself, such as
 related items, versions, dependencies, or collections. Keep only relationships
