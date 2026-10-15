@@ -562,7 +562,8 @@ Rules:
   UI unless the animation communicates ongoing progress and respects reduced
   motion.
 - Use `animation-fill-mode: both` when an element must hold its before/after
-  state.
+  state. Retained values override later ordinary styles; choose retention
+  deliberately through [animation composition](animation-composition.md).
 - Do not make critical state depend on hover-triggered animations, delayed class
   toggles, or wall-clock JavaScript.
 - List animated properties explicitly. Never use `transition: all`.
@@ -886,7 +887,7 @@ Vestibular disorders affect ~35% of adults over 40. Seizure-triggering animation
 }
 ```
 
-No `!important` — this allows more specific selectors (dialogs, view transitions, popovers) to override with safe opacity fades. WCAG 2.3.3 explicitly excludes opacity changes from "motion animation", so fades do not trigger vestibular disorders.
+No `!important` — this allows more specific selectors (dialogs, view transitions, popovers) to override with brief opacity fades. WCAG 2.3.3 excludes opacity changes from "motion animation", but that does not prove every fade is comfortable; keep substitutes brief, non-spatial, and evaluate the perceived motion.
 
 Replace motion-based animations with fades where a visual signal is still needed:
 
@@ -994,7 +995,11 @@ Use `:active-view-transition-type()` for directional animations (forward vs back
 }
 ```
 
-For SPA transitions, substitute a quick cross-fade instead of disabling entirely — fades do not trigger vestibular disorders:
+For SPA transitions, prefer an instant result or an explicitly chosen brief
+non-spatial substitute. If using a fade, override generated movement as well,
+as in the example below. Opacity alone does not prove that an effect is
+comfortable; evaluate the perceived motion and preserve an instant path where
+needed.
 
 ```css
 @media (prefers-reduced-motion: reduce) {

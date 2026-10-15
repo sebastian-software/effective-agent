@@ -1,6 +1,76 @@
 {
   "evals": [
     {
+      "name": "compose-fade-twinkle-and-travel-without-property-contention",
+      "prompt": "A particle's transform centers it, a travel keyframe replaces transform, and separate fade and twinkle animations both replace opacity. After completion, animation-fill-mode: both keeps overriding its next hover style. We also want a pause between every blink, but animation-delay only pauses the first one. Preserve the intended layers and explain the ownership changes.",
+      "expected": "Separates anchoring, travel, rotation, and opacity responsibilities through wrappers or deliberate independent/composite properties; accounts for transform order and replacement semantics; uses underlying values or partial keyframes only with verified composition; restores an explicit rest state; and places recurring pauses inside the repeated timeline rather than treating delay as an inter-iteration pause."
+    },
+    {
+      "name": "preserve-snapshot-clipping-and-reachable-controls",
+      "prompt": "A rounded image and its close button are independently named in a document View Transition. The image loses ancestor clipping, custom group transforms make it jump, and pointer-events:none on the overlay doesn't restore the close button's hit area. Several images share one view-transition-name because they share a view-transition-class. Fix the snapshot design while preserving ordinary DOM access.",
+      "expected": "Separates unique per-state identity from style classes, preserves generated group placement while applying additional motion at an appropriate layer, and repairs capture-unit clipping or uses exactly detected nested grouping with fallback. Tests pointer and keyboard separately, keeps a reachable semantic control outside capture or one semantic control plus a decorative duplicate, and preserves static clipping selectors, state changes, and reduced-motion behavior."
+    },
+    {
+      "name": "choose-scroll-playhead-and-reachable-observer-threshold",
+      "prompt": "A section taller than three viewports should trigger a timed entrance after a meaningful boundary. The observer uses threshold:0.75 but starts whenever isIntersecting is true, treats its initial callback as a new scroll, and processes only the first entry. The developer instead proposes a scroll timeline while still expecting motion to continue after scrolling stops. Choose the mechanism and correct the boundary behavior.",
+      "expected": "Distinguishes time-based triggered motion from a scroll-driven playhead, defines initial delivery and replay behavior, processes relevant entries, and checks intersectionRatio when a fraction matters. Uses a reachable threshold or sentinel for the tall section, preserves visible fallback and preference changes, and keeps observer ownership and cleanup explicit rather than promising that a timeline continues without scroll progress."
+    },
+    {
+      "name": "construct-continuous-ripple-and-time-based-trails",
+      "prompt": "A requested decorative ripple uses independent random brightness every frame, mixes page pixels with local circle coordinates, flashes hidden cells on early hover exit, and fades its trail by the same overlay opacity every frame. It should have a reproducible organic field and comparable persistence at 60Hz and 120Hz.",
+      "expected": "Uses one coordinate system and a bounded radial distance band, chooses coherent spatial/time noise with a repeatable seed and checked output range, and preserves the current field during an interruptible exit. Chooses bounded explicit history or elapsed-time-based wash decay, distinguishes the two trail models, and preserves a static reduced-motion outcome without claiming performance from the chosen technique alone."
+    },
+    {
+      "name": "keep-grid-generations-and-paint-gestures-deterministic",
+      "prompt": "A Canvas cellular simulation updates each cell in place while reading neighbors from the same array. Pausing stops redraws as well as simulation, and dragging toggles a cell every time the pointer revisits it. Make the evolution and editing predictable without coupling simulation cadence to every rendered frame.",
+      "expected": "Computes a new generation from an unchanged previous state, separates simulation timing from rendering, allows editing and redraw while paused, and chooses paint or erase once at gesture start. Handles boundaries deliberately and keeps state independent of Canvas pixels instead of treating iteration order or repeated pointer visits as intended rules."
+    },
+    {
+      "name": "choose-sampled-or-live-springs-by-interruption",
+      "prompt": "A brand illustration follows a constantly moving pointer. Its sampled CSS linear() spring looks good once, but rapid reversals snap and the team starts a new animation for every pointermove. A target browser may not understand the timing function; the fallback is an earlier custom-property value overwritten unconditionally. Improve the motion without adding a second animation library by default.",
+      "expected": "Distinguishes sampled time-based easing from a continuously retargeted physical spring, tests rapid reversals, uses an owned live motion value when velocity continuity is needed, and avoids queuing per-event animations. Keeps conventional easing behind a valid feature-tested override rather than relying on custom-property token acceptance, reuses installed capabilities, and preserves a static reduced-motion result."
+    },
+    {
+      "name": "keep-tactile-control-targets-stable",
+      "prompt": "Make an existing long, labeled button feel tactile with a brief icon nudge. The prototype scales the entire control and text, moves its hit area toward the pointer, and holds the icon rotated until hover ends. It should acknowledge the event and return to neutral while remaining hovered.",
+      "expected": "Separates decorative surface and icon motion from the stable semantic target, label, and focus treatment; chooses a bounded event-driven impulse with distinct reset and settling behavior; supports keyboard activation; and verifies quick pointer exit and repeated input without a queue or disappearing meaningful state."
+    },
+    {
+      "name": "prevent-old-exit-cleanup-from-closing-new-state",
+      "prompt": "A dialog confirms by sliding away and cancels by rotating away. A timeout removes its open attribute after the exit. If reopened before that timeout, the fresh dialog closes unexpectedly and sometimes rotates during its next entrance. Keep the action-specific character and fix the interaction.",
+      "expected": "Clears action-specific pose before the next entrance, cancels or invalidates obsolete reset work, and lets current dialog state own cleanup. Keeps visual retention for an exit separate from focus, pointer, and accessible visibility, and verifies reopen-during-exit and reduced-motion behavior without removing the chosen character unnecessarily."
+    },
+    {
+      "name": "stabilize-pointer-geometry-and-clipped-triggers",
+      "prompt": "An inline SVG eye follows the pointer inside a responsive letterboxed viewBox and a transformed group. Code compares clientX with the circle's SVG center, remeasures the pupil after translating it, and listens for pointer entry on a fully clipped reveal child. Scrolling and layout changes make it jump. Correct the geometry and access paths.",
+      "expected": "Measures a stable wrapper or base geometry, maps viewport input into the relevant SVG coordinate space including transforms and letterboxing, clamps travel, and refreshes cached geometry when invalidated. Uses a stable reachable trigger outside the fully clipped child, preserves meaningful focus/tap access, and does not repeatedly measure its own transformed output as input."
+    },
+    {
+      "name": "make-particle-time-independent-of-refresh-rate",
+      "prompt": "A confetti scene moves 3 pixels, multiplies velocity by 0.97, and emits two particles each animation frame. Multiplying only position by dt fixed one symptom, but the 120Hz version still looks different from 60Hz and explodes after a background-tab pause. Explain the remaining correction.",
+      "expected": "Uses elapsed seconds consistently for motion, acceleration, drag, and particle emission; preserves fractional emission remainder; resets or caps resumed decorative time deliberately; and compares equivalent elapsed time at different frame cadences. Does not treat one demo's dt cap or particle count as a universal budget."
+    },
+    {
+      "name": "preserve-canvas-size-and-worker-ownership",
+      "prompt": "A responsive Canvas scene is sharp only on the developer's 2x display. Every render assigns canvas.width and then scales the context again; resize loses styles. The proposed fix gets a main-thread 2D context and then transfers the same canvas to a worker that tries to read the DOM. Make the architecture correct before claiming a speedup.",
+      "expected": "Separates measured CSS dimensions, effective DPR, and backing resolution; restores drawing state after bitmap resize without accumulating transforms; keeps dimensions current; and transfers control before obtaining a context when a worker is justified. Keeps one drawing owner, messages geometry and inputs from the main thread, and provides fallback, pause, and teardown without inventing a measured performance gain."
+    },
+    {
+      "name": "retire-overlapping-particle-batches",
+      "prompt": "A React favorite button emits decorative DOM particles on every click, including unfavorite. New bursts replace the old state array, opacity-zero nodes remain mounted, and a continuous emitter keeps running when reduced motion is enabled. Fix the lifecycle while preserving overlapping successful bursts.",
+      "expected": "Emits on the meaningful selected-state change, preserves live batches with functional updates and stable keys, retires records after delay plus active duration or cancellation, and stops the emitter separately. Skips nonessential generation under reduced motion, cleans up owner timers and subscriptions, and keeps particles out of layout, input handling, and the accessibility tree."
+    },
+    {
+      "name": "preserve-layout-motion-identity-and-correction",
+      "prompt": "Two independent reading-list widgets use Motion to move books between a grid and saved list. Keys are array indices, every book has layoutId='book', destination components generate unrelated prefixes, and text stretches during size changes. One widget lives in a fixed scrolling panel. Fix identity and measurement without rewriting the whole page as a Client Component.",
+      "expected": "Derives keys and shared IDs from stable book identity, namespaces independent widgets while sharing the intended connection within each, and uses grouping and fixed/scroll measurement configuration where needed. Chooses position-only motion or child scale correction, preserves ordered data and focus, and keeps preference-aware Motion configuration in a small client wrapper with separate review of unrelated CSS or custom effects."
+    },
+    {
+      "name": "make-interface-sound-optional-and-failure-tolerant",
+      "prompt": "Add a subtle click sound to a playful control. Playback currently initializes after an awaited network request, rejected play() promises stop the action, repeated clicks layer unlimited samples, and there is no site mute control. The downloaded sample's license is unknown. Keep the interaction usable silently.",
+      "expected": "Keeps the action and visual or accessible feedback independent of playback, prepares a suitably licensed asset, attempts playback with deliberate activation and handles rejection, bounds overlapping sounds, and provides an independent site mute control. Does not equate reduced motion with mute, hover with reliable playback permission, or a free download with unrestricted licensing."
+    },
+    {
       "name": "use-cognitive-models-to-form-testable-questions",
       "prompt": "Our reflection app keeps prompting people to log more immediately after they finish an entry. Could attention, memory, prediction, or default mode network models give us useful design questions? Explore possibilities without treating the models as proven product effects or prescribing the same reflective ritual to everyone.",
       "expected": "Uses only relevant models as optional hypothesis generators; offers observable experiments such as a clear stopping point, optional reflection, contextual cues, or prediction checks; allows people to finish and leave; distinguishes meaningful reflective time from unwanted administration; and avoids claiming brain activation, fixed memory limits, glucose budgets, or universal needs. Verifies primary research if a causal scientific claim becomes necessary to the decision."

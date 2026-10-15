@@ -35,6 +35,20 @@ progress, or adds an earned moment of brand character without slowing users down
 
 ## References
 
+Select the smallest module for the unresolved behavior; these are alternatives,
+not a required reading sequence.
+
+- [expressive-motion.md](expressive-motion.md) - tactile surfaces, transient
+  impulses, spring tokens, action-specific exits, and optional sound feedback.
+- [animation-composition.md](animation-composition.md) - competing properties,
+  transform order, partial keyframes, delays, fill modes, and shared parameters.
+- [procedural-animation.md](procedural-animation.md) - pointer geometry, DOM
+  particles, Canvas sizing, time-based simulation, and worker ownership.
+- [layout-motion.md](layout-motion.md) - Motion for React layout identity,
+  measurement groups, scale correction, and preference-aware client boundaries;
+  load when the project uses or needs that library capability.
+- [view-transition-details.md](view-transition-details.md) - snapshot identity,
+  generated geometry, clipping, input, interruption, and destination capture.
 - [scroll-navigation.md](scroll-navigation.md) - anchors, sticky offsets,
   horizontal sequences, and scroll snap; read [scroll-feedback.md](scroll-feedback.md)
   for back-to-top, scroll-driven feedback, and large lists.
