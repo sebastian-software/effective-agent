@@ -401,6 +401,21 @@
       "name": "embed-film-on-landing-page",
       "prompt": "Our product film is already hosted. Add it to the landing page hero as a lazy-loaded, accessible click-to-play embed that does not hurt LCP.",
       "owner": "effective-web"
+    },
+    {
+      "name": "prioritize-seo-geo-opportunities",
+      "prompt": "Prioritize SEO and GEO opportunities for our product: which audience questions, comparison pages, and citation outcomes should our marketing plan pursue?",
+      "owner": "effective-marketing"
+    },
+    {
+      "name": "fix-technical-search-delivery",
+      "prompt": "Diagnose and fix the CDN challenge, robots headers, and canonical templates that stop search crawlers from accessing our public pages.",
+      "owner": "effective-web"
+    },
+    {
+      "name": "correct-ai-product-facts",
+      "prompt": "Plan how to correct inaccurate AI answers about our product plans, using verified facts and repeatable answer checks.",
+      "owner": "effective-marketing"
     }
   ]
 }

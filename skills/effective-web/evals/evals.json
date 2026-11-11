@@ -849,6 +849,21 @@
       "name": "skip-screenshots-for-invisible-change",
       "prompt": "Please attach before/after screenshots to my PR. It refactors the API client's retry logic and adds unit tests; nothing in the UI was touched.",
       "expected": "Recognizes that the change cannot alter rendered output and does not produce or publish screenshots; states why instead of posting an empty or misleading screenshot section. Would capture only if a reachable rendered effect, such as a changed error state, were shown to exist."
+    },
+    {
+      "name": "live-edge-seo-evidence",
+      "prompt": "Our source robots.txt allows search bots, but a production crawler gets a 200 challenge page. A spoofed user agent works from my laptop. Declare access fixed and disable bot protection everywhere.",
+      "expected": "Inspects deployed robots and page headers/body, distinguishes origin from CDN/WAF, notes spoofing is not real crawler verification, requests logs or inspection evidence where available, and repairs the demonstrated failure without globally weakening protections or equating 200 with useful content."
+    },
+    {
+      "name": "release-indexability-baseline",
+      "prompt": "Audit and fix local SEO regressions and open a PR. A host alias redirects to the canonical with 301, a public page gained X-Robots-Tag noindex, and staging intentionally stays noindex. Treat all three as failures and deploy when done.",
+      "expected": "Uses representative before/after URL evidence, accepts the intended redirect and staging exclusion, investigates the public-page regression across headers and markup, preserves already granted local implementation authority, and reports production verification pending without deploying or claiming indexing recovery."
+    },
+    {
+      "name": "bing-report-coverage-limits",
+      "prompt": "Use our Bing AI Performance export to prove we rank first in every assistant. It contains citation counts and sampled grounding queries, but no referrers or conversions.",
+      "expected": "Describes dated coverage of supported Microsoft and partner surfaces, preserves sampling and page evidence, refuses to infer universal ranking, keyword volumes, clicks, or ROI, and hands opportunity prioritization and business interpretation to effective-marketing."
     }
   ],
   "activation": [
@@ -941,6 +956,16 @@
       "name": "annotated-change-screenshots",
       "prompt": "Capture the pages this branch changes on desktop and mobile and mark what is new, changed, or removed so reviewers can see it.",
       "should_trigger": true
+    },
+    {
+      "name": "technical-seo-live-delivery-triggers",
+      "prompt": "Diagnose the CDN challenge and deployed canonical that prevent search crawlers from reading our public pages.",
+      "should_trigger": true
+    },
+    {
+      "name": "seo-geo-opportunity-strategy-does-not-trigger",
+      "prompt": "Choose which SEO and GEO audience questions and comparison pages to prioritize for our marketing plan.",
+      "should_trigger": false
     }
   ]
 }

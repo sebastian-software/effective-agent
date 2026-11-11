@@ -20,6 +20,8 @@ planning, production priorities, and maintenance decisions.
 
 ## Cross-links
 
+- Use [SEO and AI Search Visibility](route-seo-geo.md) for search opportunity
+  prioritization, AI answer accuracy, citation evidence, and search outcomes.
 - Customer and market evidence collection, competitive profiles, and research
   synthesis belong to `effective-product`. Use existing evidence; return gaps
   that would change the plan instead of inventing demand or customer language.
@@ -29,9 +31,12 @@ planning, production priorities, and maintenance decisions.
   an informative article, essay, or newsletter goes to `effective-writing`.
 - Platform-specific production goes to **Social Content** or **LinkedIn Posts**
   when needed. A content portfolio need not be a social calendar.
-- Search-oriented topic selection stays here. Site architecture, internal-link
-  implementation, redirects, metadata, structured data, crawling, accessibility,
-  analytics implementation, and technical search diagnosis go to `effective-web`.
+- Search-oriented topic selection within a broader content portfolio stays
+  here; SEO/GEO opportunity prioritization uses
+  [SEO and AI Search Visibility](route-seo-geo.md). Site architecture,
+  internal-link implementation, redirects, metadata, structured data, crawling,
+  accessibility, analytics implementation, and technical search diagnosis go to
+  `effective-web`.
 
 The plan does not by itself authorize publishing, contacting partners,
 collecting personal data, or changing external systems.
