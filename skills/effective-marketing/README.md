@@ -9,6 +9,14 @@ reach that audience, and learn from the response. It connects positioning,
 proof, commercial copy, distribution, conversion, and sales without letting a
 persuasive story outrun the evidence.
 
+Use it to prioritize SEO/GEO opportunities, brief useful comparison and
+decision pages, correct inaccurate AI answers, and measure search outcomes.
+[Effective Web](../effective-web/README.md) handles technical diagnosis,
+implementation, and release verification.
+
+> Prioritize SEO and AI search opportunities for our site. Use the evidence we
+> have, identify technical dependencies, and define how we will measure results.
+
 **[Explore Effective Marketing →](https://effective-agent.dev/skills/effective-marketing/)**
 
 The website covers use cases, capabilities, example prompts, and how this skill

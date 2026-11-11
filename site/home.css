@@ -331,6 +331,41 @@
   font: italic 400 0.98rem/1.55 Georgia, "Times New Roman", serif;
 }
 
+/* Search visibility connects the marketing and web guides. */
+.search-visibility {
+  border-top: 1px solid var(--line);
+}
+
+.search-visibility-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: clamp(2rem, 5vw, 4.5rem);
+  align-items: start;
+}
+
+.search-visibility-brief h3 {
+  font-size: 1.7rem;
+}
+
+.search-visibility-brief blockquote {
+  margin: 1.3rem 0;
+  padding-inline-start: 1.2rem;
+  border-inline-start: 2px solid var(--coral);
+  font: italic 400 1.15rem/1.65 Georgia, "Times New Roman", serif;
+}
+
+.search-visibility-brief > p {
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+.search-visibility-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 1.5rem;
+  margin-top: 1.5rem;
+}
+
 /* Quality. */
 .quality {
   border-top: 1px solid var(--line);
@@ -546,6 +581,7 @@
     row-gap: 1.4rem;
   }
 
+  .search-visibility-grid,
   .quality-grid,
   .install-columns,
   .makers-grid {

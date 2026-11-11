@@ -10,8 +10,17 @@ Use this route for the frontend details that make public pages understandable to
 4. Verify crawlable rendered content, heading structure, image alt text, internal links, and entity consistency.
 5. For local or business facts, define the source of truth and sync it across website, structured data, Google Business Profile, Merchant Center, feeds, and citations.
 6. For editorial content, verify authorship, evidence, publication history, and material updates in visible content and matching structured data.
-7. Define GEO measurement across visibility, factual accuracy, acquisition, and business outcomes; use repeatable samples instead of a single tool snapshot.
-8. Check previews, indexability, business profiles, crawler behavior, and measurement instrumentation after implementation.
+7. Define GEO sampling and instrumentation across visibility, factual accuracy,
+   acquisition, and outcomes; use repeatable samples instead of a single tool snapshot.
+8. Read [Live Search and Release Verification](seo-release-verification.md) for
+   production crawler/CDN diagnosis, deployment baselines, and indexability
+   regressions. Check previews, business profiles, and instrumentation as relevant.
+
+Search opportunity selection, decision-page priorities, distribution strategy,
+AI answer-accuracy review, and interpretation of business outcomes belong to
+`effective-marketing` through **SEO and AI Search Visibility**. Return technical
+findings and measured evidence to that route; implement the authorized fixes
+without requiring a separate approval for each routine change.
 
 ## Rules
 
@@ -33,4 +42,6 @@ Use this route for the frontend details that make public pages understandable to
 ## References
 
 - [seo.md](seo.md) - frontend SEO metadata, structured data, and implementation checks.
+- [seo-release-verification.md](seo-release-verification.md) - live delivery,
+  CDN/WAF differences, redirect and indexability checks, and release comparison.
 - [ai-geo-distribution.md](ai-geo-distribution.md) - AI search/GEO, entity authority, editorial provenance, business data distribution, LLM crawler access, agent-readable content, and measurement.

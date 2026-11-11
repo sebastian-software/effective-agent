@@ -110,6 +110,10 @@ Source-of-truth model:
 
 ## Crawling, Recrawling, and Push
 
+Use [Live Search and Release Verification](seo-release-verification.md) when
+the deployed response differs from source, CDN/WAF rules may block intended
+crawlers, or a release could change indexability.
+
 - Treat `robots.txt` as an explicit crawler policy and operational endpoint,
   not as an indexing requirement or security control. For Google, `2xx` applies
   the returned policy; redirects are followed within limits; all `4xx` except
@@ -182,6 +186,18 @@ is available, use its impressions, pages, countries, devices, and dates as
 dedicated Google visibility evidence while retaining the overall performance
 view. Pair either view with analytics, logs, conversions, and periodic manual
 accuracy review; neither report proves campaign ROI.
+
+Where available, add [Bing's AI Performance report](https://blogs.bing.com/webmaster/2026/2/Introducing-AI-Performance-in-Bing-Webmaster-Tools-Public-Preview/)
+as first-party citation evidence for supported Microsoft Copilot, Bing, and
+select partner experiences. Record the date range, cited URLs, and sampled
+grounding queries. These queries describe retrieval, not complete user prompts
+or keyword demand; counts do not establish ranking, recommendation, clicks, or
+coverage across all answer engines. This reporting scope was last verified on
+November 11, 2026; check current access and coverage before promising metrics.
+
+Use `effective-marketing` for search opportunity priorities, decision-page
+briefs, commercial distribution, and answer-fact correction plans. Return the
+query-panel observations and instrumentation limits for business interpretation.
 
 ## Tactics Worth Testing
 

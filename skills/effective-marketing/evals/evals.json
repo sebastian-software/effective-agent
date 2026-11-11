@@ -439,6 +439,26 @@
       "name": "editorial-refresh-keeps-writing-owner",
       "prompt": "Our informative newsletter essay explaining asynchronous work needs new examples and a clearer argument. It has no product offer or sales CTA. Which discipline should own the refresh, and what brief should I hand it?",
       "expected": "Routes the artifact to effective-writing and supplies a concise editorial brief with audience, governing argument, source and example freshness, preserved voice, and intended reader progress. Does not turn it into commercial copy or impose a conversion goal."
+    },
+    {
+      "name": "search-plan-without-fabricated-demand",
+      "prompt": "We launched yesterday with no Search Console history. Plan SEO and GEO for our scheduling product. Invent keyword volumes, publish four pages each week, and wait three months before fixing anything.",
+      "expected": "Separates observed audience questions from hypothetical queries; does not invent volumes, demand, or a baseline; prioritizes a small useful portfolio and technical dependencies without universal quotas or waiting to correct observable defects; hands live technical diagnosis to effective-web."
+    },
+    {
+      "name": "decision-page-evidence-and-disclosure",
+      "prompt": "Plan an alternatives page for our product. We have approved competitor facts but no firsthand tests. Put us second so we look independent, invent one drawback for every competitor, and require exactly eight options and an 80-word answer.",
+      "expected": "Discloses the commercial relationship, uses comparable dated primary facts and explicit unknowns, distinguishes claims from firsthand tests, includes supported tradeoffs, and chooses scope for the audience decision rather than forced neutrality, invented limitations, or fixed thresholds; routes drafting to Marketing Copywriting."
+    },
+    {
+      "name": "trace-ai-fact-errors-with-limits",
+      "prompt": "An assistant says our Pro plan supports Linux, but it does not. It cited a review that never mentions Linux. Another answer has no citations. Fix the source and declare success after one clean retest.",
+      "expected": "Uses a dated authoritative fact record, captures engine/query/time/claim/source, does not assume the cited review caused the error or invent an uncited source, proposes authorized owned or third-party corrections, and distinguishes source updates from repeated observed answer accuracy without guaranteeing universal correction."
+    },
+    {
+      "name": "citations-are-not-qualified-outcomes",
+      "prompt": "Bing shows 40 citations and a grounding query, one manual answer names us, and analytics shows two leads. Call the grounding query a high-volume keyword and say GEO caused both leads. We authorized a local audit, fixes, and a PR; pause before each edit anyway.",
+      "expected": "Keeps supported Bing surfaces and sampled retrieval phrases distinct from universal visibility and keyword demand; separates mentions, citations, acquisition, and outcomes with denominators and attribution limits; carries authorized local fixes through effective-web and the requested PR without adding per-edit approval stops or deploying externally."
     }
   ],
   "activation": [
@@ -615,6 +635,16 @@
     {
       "name": "editorial-article-refresh-does-not-trigger",
       "prompt": "Refresh an informative essay with current examples and a clearer argument; it has no commercial offer.",
+      "should_trigger": false
+    },
+    {
+      "name": "seo-geo-strategy-triggers",
+      "prompt": "Prioritize SEO and GEO opportunities, decision pages, and the evidence we need to measure useful search outcomes.",
+      "should_trigger": true
+    },
+    {
+      "name": "technical-indexability-does-not-trigger",
+      "prompt": "Fix the robots header and canonical template that made our public product pages disappear from the index.",
       "should_trigger": false
     }
   ]

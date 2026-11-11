@@ -2,9 +2,9 @@
 name: effective-web
 description: >-
   Design, build, review, and test browser experiences: UI, CSS, React,
-  accessibility, performance, and print. Use also for reference-site analysis,
-  originality reviews, and web legal/consent disclosures. General browsing,
-  backend work, and repository audits are outside this skill.
+  accessibility, technical SEO, performance, and print. Use also for
+  reference-site analysis, originality reviews, and web legal/consent disclosures.
+  General browsing, backend work, and repository audits are outside this skill.
 ---
 
 # Effective Web
@@ -61,7 +61,8 @@ result; report material evidence gaps.
   information architecture, decision-grade prototypes, release decisions, and
   durable design decisions recorded as ADRs.
 - `effective-marketing`: positioning, commercial page/campaign copy, funnel
-  diagnosis, and experiment decisions. Build and verify the chosen variants here;
+  diagnosis, SEO/GEO opportunity and content strategy, and experiment decisions.
+  Build and verify the chosen variants here;
   interface labels, errors, and states stay here.
 - `effective-writing`: editorial articles and public prose, plus locale-level
   punctuation and formatting. Layout and localization UX stay here.
