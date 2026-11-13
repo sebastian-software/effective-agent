@@ -2,9 +2,10 @@
 name: effective-delivery
 description: >-
   Audit, diagnose, and deliver repository changes: plans, ports, PR reviews,
-  issue queues, dependencies, existing checks, technical documentation, and
-  engineering leadership. Use for repository lifecycle work; system design
-  belongs to effective-engineering, browser implementation to effective-web.
+  issue queues, dependencies, existing checks, technical documentation,
+  worktree cleanup, and engineering leadership. Use for repository lifecycle
+  work; system design belongs to effective-engineering, browser implementation
+  to effective-web.
 ---
 
 # Effective Delivery
@@ -43,6 +44,7 @@ channel rules.
 | Add, choose, update, or group external dependencies; assess changelog impact; create dependency PRs | [Dependency Updates](references/route-dependencies.md) |
 | Discover and run the repository's established typecheck, lint, format, test, build, benchmark, or documentation checks and report the evidence | [Repository Validation](references/route-validation.md) |
 | Write or verify release notes, READMEs, guides, API and CLI references, migration notes, JSDoc, TSDoc, rustdoc, examples, or controlled-language documentation; create or maintain requested repository instruction files such as `AGENTS.md` or `CLAUDE.md` | [Technical Documentation](references/route-docs.md) |
+| List, size, or remove finished Git worktrees across one or more repositories, or reclaim the space that agent and session worktrees left behind | [Worktree Cleanup](references/route-worktree-cleanup.md) |
 | Resolve unclear ownership, overloaded leaders, weak one-to-ones, coordination drag, decision stalls, or a proposed reorganization | [Engineering Leadership](references/route-leadership.md) |
 
 Any route that creates, adopts, writes in, integrates from, or removes a Git
