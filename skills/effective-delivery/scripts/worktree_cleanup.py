@@ -426,8 +426,11 @@ def human(kilobytes):
 
 
 def make_context(args):
+    # The caller's own working folder is protected even when no process list
+    # is available to detect it.
+    protect = [os.getcwd()] + list(args.protect or [])
     return {
-        "protect": [os.path.realpath(os.path.expanduser(p)) for p in (args.protect or [])],
+        "protect": sorted({os.path.realpath(os.path.expanduser(p)) for p in protect}),
         "cwds": process_cwds(),
         "ancestors": own_ancestors(),
         "own_locks_finished": args.own_locks_finished,

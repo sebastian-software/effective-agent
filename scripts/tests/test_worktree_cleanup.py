@@ -60,9 +60,10 @@ class WorktreeCleanupTests(unittest.TestCase):
         self.git("add", ".", cwd=path)
         self.git("commit", "-q", "-m", message, cwd=path)
 
-    def run_script(self, *args: str) -> subprocess.CompletedProcess[str]:
+    def run_script(self, *args: str, cwd: Path | None = None) -> subprocess.CompletedProcess[str]:
         return subprocess.run(
             [sys.executable, str(SCRIPT), *args],
+            cwd=cwd,
             env=GIT_ENV,
             capture_output=True,
             text=True,
@@ -205,6 +206,21 @@ class WorktreeCleanupTests(unittest.TestCase):
         self.assertIn("would remove", result.stdout)
         self.assertTrue(done.exists())
         self.assertIn("b-done", self.branches())
+
+    def test_worktree_the_helper_is_started_from_is_protected(self) -> None:
+        own = self.add_worktree("own")
+
+        result = self.run_script(
+            "scan", "--root", str(self.workspace), "--out", str(self.report),
+            "--no-fetch", "--no-gh", "--no-sizes",
+            cwd=own,
+        )
+
+        self.assertEqual(result.returncode, 0, result.stderr)
+        report = json.loads(self.report.read_text(encoding="utf-8"))
+        found = report["repos"][0]["worktrees"][0]
+        self.assertEqual(found["class"], "busy")
+        self.assertIn(f"protected: {own}", found["reasons"])
 
     @unittest.skipUnless(CAN_SEE_PROCESSES, "needs lsof or /proc")
     def test_worktree_with_a_process_inside_is_busy(self) -> None:

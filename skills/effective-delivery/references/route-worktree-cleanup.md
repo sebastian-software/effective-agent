@@ -31,24 +31,27 @@ The base is the repository's default branch, on `origin` and locally. A branch
 counts as contained when it is an ancestor, when `git cherry` finds the same
 patches, when merging it would not change the base (this covers squash merges),
 or when the provider reports a merged pull request whose head is exactly the
-local tip.
+local tip. A detached worktree is also `done` when another branch, remote ref,
+or tag holds its commit: nothing is lost, because that ref stays.
 
 ## Workflow
 
-1. **Protect work in progress.** The worktree the agent runs in and every
-   worktree that is some process's working directory are `busy` automatically.
-   An idle session has no process to detect: when the host can list sessions,
-   pass the working folder of each running or recently active one as
-   `--protect <path>`. When it cannot, add `--min-idle-hours <N>` to the scan
-   so a worktree with Git activity in the last N hours counts as `busy`.
-2. **Scan.** From the directory that holds this skill:
+1. **Protect work in progress.** The worktree the helper is started from and
+   every worktree that is some process's working directory are `busy`
+   automatically. An idle session has no process to detect: when the host can
+   list sessions, pass the working folder of each running or recently active
+   one as `--protect <path>`. When it cannot, or when the scan reports
+   `process check unavailable`, add `--min-idle-hours <N>` so a worktree with
+   Git activity in the last N hours counts as `busy`, and protect every session
+   folder you know of.
+2. **Scan.** Keep the current directory and call the helper by its path:
    ```sh
-   python3 scripts/worktree_cleanup.py scan --root <folder> --out <report.json>
+   python3 <skill-dir>/scripts/worktree_cleanup.py scan --root <folder> --out <report.json>
    ```
-   Use the folder the user named; the default is the current directory. The scan
-   fetches `origin` for each repository that has linked worktrees and measures
-   sizes. Offline, add `--no-fetch --no-gh`. Write the report to a scratch
-   location, not into a repository.
+   Always pass `--root`: the folder the user named, or their working folder
+   when they named none. The scan fetches `origin` for each repository that has
+   linked worktrees and measures sizes. Offline, add `--no-fetch --no-gh`.
+   Write the report to a scratch location, not into a repository.
 3. **Report.** Give the count and size per class, then each repository. Name
    every `unmerged`, `dirty`, and `busy` worktree with its reason. For
    `unmerged`, say whether the branch is pushed and how many of its commit
@@ -58,7 +61,7 @@ local tip.
 4. **Remove.** Preview with `--dry-run` when more than one repository is
    affected, then:
    ```sh
-   python3 scripts/worktree_cleanup.py remove --report <report.json> --classes done,missing
+   python3 <skill-dir>/scripts/worktree_cleanup.py remove --report <report.json> --classes done,missing
    ```
    Add `--include <path>` only for a worktree the user named or approved: an
    `unmerged` one, whose branch then stays, or a `done` one with ignored files
