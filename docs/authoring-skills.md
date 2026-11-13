@@ -448,7 +448,9 @@ Worktree mutation belongs to `effective-delivery`. Its review, issue queue,
 dependency, porting, and orchestration routes apply one standalone
 [worktree safety contract](../skills/effective-delivery/references/worktree-safety.md).
 Keep creation, adoption, staging, integration, and cleanup rules there rather
-than copying them into every router.
+than copying them into every router. User-requested cleanup of worktrees that
+other runs left behind is its own
+[worktree cleanup route](../skills/effective-delivery/references/route-worktree-cleanup.md).
 
 ## Review
 

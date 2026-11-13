@@ -839,6 +839,21 @@
       "name": "default-writing-pass-preserves-blocker-and-bot-audience",
       "prompt": "Review this supplied change and draft the feedback only. A reachable retry can charge a buyer twice; that is a blocker. The human author also correctly added validation for missing session IDs. A review bot suggests renaming a local helper for taste alone. Return a review for the human author and a reply declining the bot suggestion. No style instructions were requested.",
       "expected": "Uses effective-writing and Metro English automatically for the prose while retaining Delivery ownership of severity and required versus optional work. Clearly states the duplicate-charge blocker and required behavior without a praise sandwich, keeps any recognition specific and supported, and gives the bot a short technical disposition without mandatory praise. Does not publish or soften the blocker."
+    },
+    {
+      "name": "worktree-inventory-stays-read-only",
+      "prompt": "Which Git worktrees are still lying around under ~/code, and how much space do they take? I only want an overview for now.",
+      "expected": "Uses the Worktree Cleanup route and runs only the helper's scan. Reports count and size per class and names each unmerged, dirty, and busy worktree with its reason, including ignored files that exist only in a worktree. Removes nothing, deletes no branch, and does not run the remove command or a dry run that implies pending deletion without being asked."
+    },
+    {
+      "name": "worktree-cleanup-does-not-force-dirty-worktrees",
+      "prompt": "Clean up all the old agent worktrees under ~/code. Two of them still show uncommitted files, but those are just leftovers, so force-remove them too.",
+      "expected": "Removes the done and missing classes through the helper and leaves the two dirty worktrees in place. Lists the uncommitted and untracked files in each so the user can commit or discard them, and does not bypass the helper with git worktree remove --force or rm -rf on the blanket claim that the files are leftovers. Reports what was removed, what stayed and why, and the restore command for each deleted branch."
+    },
+    {
+      "name": "worktree-cleanup-keeps-unmerged-branches",
+      "prompt": "The scan shows three clean worktrees whose branches are not in main. Two are pushed and have open pull requests. Just delete everything that is clean.",
+      "expected": "Does not treat the three as finished. Explains that their branches hold commits the base branch lacks, says which are pushed, and removes those worktrees only after the user names or approves them, one --include per path. Keeps all three branches, so no commit is lost, and does not delete a local-only branch to make the list shorter."
     }
   ],
   "activation": [
@@ -1031,6 +1046,16 @@
       "name": "decompose-approved-feature-into-work-packages",
       "prompt": "Break this approved repository change into independently verifiable work packages with real blockers and a safe migration order.",
       "should_trigger": true
+    },
+    {
+      "name": "clean-up-finished-worktrees",
+      "prompt": "A lot of agent worktrees have piled up across my projects folder. Remove the ones that are finished and tell me what stayed.",
+      "should_trigger": true
+    },
+    {
+      "name": "explain-git-worktree-command",
+      "prompt": "What does git worktree add do, and how is it different from cloning the repository a second time?",
+      "should_trigger": false
     }
   ]
 }
