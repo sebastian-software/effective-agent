@@ -86,3 +86,7 @@ Never use force removal for automatic cleanup. Leave a dirty, moved,
 mismatched, user-created, or harness-managed worktree and its branch intact;
 report the exact path, observed state, expected state, and safest next action.
 Require separate user authority for destructive cleanup or branch deletion.
+
+When the user asks to clean up finished worktrees, including ones this run did
+not create, that authority is the [Worktree Cleanup route](route-worktree-cleanup.md).
+Its helper proves each removal and holds the only permitted force removal.

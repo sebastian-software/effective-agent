@@ -243,6 +243,11 @@
       "owner": "effective-delivery"
     },
     {
+      "name": "clean-up-leftover-worktrees",
+      "prompt": "Dozens of leftover Git worktrees from agent runs are eating disk space across my workspace folder. Remove the finished ones safely and list what has to stay.",
+      "owner": "effective-delivery"
+    },
+    {
       "name": "boundary-browser-api-versus-service-contract",
       "prompt": "Design the browser-side data contract and loading states for this React checkout page, including how the UI handles a failed request.",
       "owner": "effective-web"
