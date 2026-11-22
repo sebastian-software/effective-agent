@@ -145,6 +145,9 @@ def main(argv: list[str] | None = None) -> int:
     args = parser.parse_args(argv)
 
     paths = args.paths or [ROOT / name for name in DEFAULT_PATHS]
+    for path in paths:
+        if not path.exists():
+            parser.error(f"Input path does not exist: {path}")
     dated, undated = scan(markdown_files(paths))
     stale = [c for c in dated if c.dated and (args.today - c.dated).days > args.max_age_days]
     annotate = os.environ.get("GITHUB_ACTIONS") == "true"

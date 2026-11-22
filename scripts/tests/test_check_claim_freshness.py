@@ -1,6 +1,8 @@
 from __future__ import annotations
 
 from datetime import date
+from contextlib import redirect_stderr
+import io
 import importlib.util
 from pathlib import Path
 import sys
@@ -72,6 +74,16 @@ class ScanTests(unittest.TestCase):
     def test_skips_eval_fixtures(self) -> None:
         self.write("skill/evals/cases.md", "Chromium-only as of January 2020.\n")
         self.assertEqual(freshness.markdown_files([self.root]), [])
+
+    def test_missing_input_fails_even_alongside_a_valid_file(self) -> None:
+        empty = self.write("notes.md", "No dated claims here.\n")
+        self.assertEqual(freshness.main(["--strict", str(empty)]), 0)
+        for paths in ([self.root / "missing.md"], [empty, self.root / "missing-folder"]):
+            errors = io.StringIO()
+            with self.subTest(paths=paths), redirect_stderr(errors), self.assertRaises(SystemExit) as failure:
+                freshness.main(["--strict", *map(str, paths)])
+            self.assertNotEqual(failure.exception.code, 0)
+            self.assertIn(str(paths[-1]), errors.getvalue())
 
 
 if __name__ == "__main__":

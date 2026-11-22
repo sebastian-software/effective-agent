@@ -103,6 +103,12 @@ export function decodePng(bytes) {
     throw new Error("Only 8-bit, non-interlaced PNG files are supported");
   }
   const { width, height, colorType } = header;
+  // tRNS stores each grayscale or RGB key sample as a big-endian 16-bit value.
+  const key = transparency && Buffer.from(transparency);
+  const grayKey = colorType === 0 && key ? key.readUInt16BE(0) : undefined;
+  const rgbKey = colorType === 2 && key
+    ? [key.readUInt16BE(0), key.readUInt16BE(2), key.readUInt16BE(4)]
+    : undefined;
   const raw = unfilter(inflateSync(Buffer.concat(idat)), width, height, channels);
   const data = new Uint8Array(width * height * 4);
   for (let pixel = 0; pixel < width * height; pixel++) {
@@ -118,6 +124,10 @@ export function decodePng(bytes) {
     } else {
       data.set(raw.subarray(source, source + 3), target);
       data[target + 3] = colorType === 6 ? raw[source + 3] : 255;
+    }
+    if (raw[source] === grayKey) data[target + 3] = 0;
+    if (rgbKey && raw[source] === rgbKey[0] && raw[source + 1] === rgbKey[1] && raw[source + 2] === rgbKey[2]) {
+      data[target + 3] = 0;
     }
   }
   return { width, height, data };
