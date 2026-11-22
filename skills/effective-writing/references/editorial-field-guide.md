@@ -18,6 +18,12 @@ come from its own reporting.
 | Something you shipped that existing users must understand | [Tailwind and Vercel](editorial-product-publications.md), [Marco Arment](editorial-personal-publications.md#marco-arment) | Put the consequence for a returning user early. A rejected design or a removed feature may explain the release better than its longest feature list. |
 | A recommendation between credible options | [Wirecutter and TechCrunch](editorial-reviews-and-explanations.md) | Who would reasonably choose differently? Which part did the writer use, and which is still a promise? |
 | Several independent finds worth a reader's time | [Labnotes](editorial-personal-publications.md#labnotes-weekend-reading) | Keep the recognition of a recurring series. Give each item its own reason to click, including a reservation where useful. |
+| A number the reader understands on paper but consistently misjudges | [Wait But Why](editorial-personal-publications.md#wait-but-why) | Keep the quantity fixed and change what the reader measures it against. |
+
+For an article written in German, the [German-language readings](editorial-german-publications.md)
+compare ADAC tests, heise news, WELT opinion and criticism, and F.A.Z.
+commentary and reviews. Three German openings show how the same build log
+can support a release note, a recommendation, or a pointed column.
 
 The same writer can write an affectionate remembrance and a brisk release note.
 Choose a particular editorial move for the current piece. A contributor's own

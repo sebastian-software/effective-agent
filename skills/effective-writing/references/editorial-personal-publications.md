@@ -101,6 +101,33 @@ explain that an episode now downloads before playback starts, describe the expec
 and identify any offline or storage implications supported by the release. Do not invent
 roadmaps, motives, or personal ties.
 
+## Wait But Why
+
+Tim Urban's New Year piece works almost entirely by changing the reader's
+reference point. From January 2020, West Germany's 1974 World Cup win was
+closer to the first tournament than to the present. A few lines later the
+comparison involves the reader's own childhood. The arithmetic stays simple
+as the stakes get personal. Repeating the construction is part of the pleasure:
+the reader learns the game and still gets caught out.
+[It's 2020 and you're in the future](https://waitbutwhy.com/2020/01/its-2020-and-youre-in-the-future.html)
+
+The procrastination essay takes longer to get there. A dictionary definition
+is little comfort to someone who has put off a thesis. An embarrassing story
+gives the reader a reason to follow a cast of imaginary characters, whose
+behavior changes when a deadline looms. The long AI essay opens with a
+question about where we stand on a curve. It builds up the vocabulary needed
+to ask a much harder question by the end of Part 1. Its predictions belong
+to 2015. What travels well is the pacing: introduce a term when the reader
+has a question it can answer.
+[Why Procrastinators Procrastinate](https://waitbutwhy.com/2013/10/why-procrastinators-procrastinate.html) ·
+[The AI Revolution, Part 1](https://waitbutwhy.com/2015/01/artificial-intelligence-revolution-1.html)
+
+For an engineering explainer, try showing one quantity from two seats.
+Suppose 120 people submit a job at noon. A single worker handles one every
+30 seconds. The first person gets a result before 12:01. The last gets theirs
+at one o'clock. Now the reader has a reason to ask what the dashboard means
+by “30 seconds per job.”
+
 ## Overreacted
 
 [Goodbye, Clean Code](https://overreacted.io/goodbye-clean-code/),
