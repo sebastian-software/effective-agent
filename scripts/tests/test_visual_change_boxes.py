@@ -109,12 +109,15 @@ class VisualChangeBoxesTest(unittest.TestCase):
     def test_palette_transparency_matches_explicit_alpha(self) -> None:
         with tempfile.TemporaryDirectory() as directory:
             indexed, rgba = (Path(directory) / name for name in ("palette.png", "rgba.png"))
-            image = Image.frombytes("P", (3, 1), bytes([0, 1, 2]))
-            image.putpalette([0, 0, 0, 127, 127, 127, 255, 255, 255])
-            image.save(indexed, bits=8, transparency=bytes([0, 127]))
-            expected = image.convert("RGBA")
-            expected.putalpha(Image.frombytes("L", (3, 1), bytes([0, 127, 255])))
-            expected.save(rgba)
+            header = struct.pack(">IIBBBBB", 3, 1, 8, 3, 0, 0, 0)
+            indexed.write_bytes(
+                b"\x89PNG\r\n\x1a\n" + chunk(b"IHDR", header)
+                + chunk(b"PLTE", bytes([0, 0, 0, 127, 127, 127, 255, 255, 255]))
+                + chunk(b"tRNS", bytes([0, 127]))
+                + chunk(b"IDAT", zlib.compress(bytes([0, 0, 1, 2])))
+                + chunk(b"IEND", b"")
+            )
+            write_png(rgba, [[(0, 0, 0, 0), (127, 127, 127, 127), WHITE]])
             self.assertEqual(self.annotations(indexed, rgba), [])
 
     def run_script(self, before, after, *arguments: str, rgb: bool = False):
