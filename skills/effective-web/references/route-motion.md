@@ -38,6 +38,7 @@ progress, or adds an earned moment of brand character without slowing users down
 Select the smallest module for the unresolved behavior; these are alternatives,
 not a required reading sequence.
 
+- [Control microinteractions](control-microinteractions.md) for button feedback, selection indicators, interruptible transitions, and drag gestures.
 - [expressive-motion.md](expressive-motion.md) - tactile surfaces, transient
   impulses, spring tokens, action-specific exits, and optional sound feedback.
 - [animation-composition.md](animation-composition.md) - competing properties,
