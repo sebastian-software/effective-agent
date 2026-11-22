@@ -16,6 +16,11 @@
       "expected": "Returns the edited paragraph. Keeps the personal verdict grounded in the train example, allows the repeated wording to convey the experience, and removes the generic closing claim. A word's appearance in another article alone does not justify a substitution. Preserves the limits of the observation and adds no invented attitude or product claim."
     },
     {
+      "name": "german-explainer-from-plain-technical-notes",
+      "prompt": "Write an opening in German for our engineering blog. Use these release-test notes: We moved spellcheck into a worker. Checking the test document still takes four seconds. Before the change, letters typed in those four seconds appeared together at the end. Now they appear as you type. Our readers build editors. The notes are all you have.",
+      "expected": "Returns German article prose with a reason to read on grounded in the visible difference at the keyboard. Distinguishes typing responsiveness from spellcheck speed. Leaves the reader room to notice the change. Does not borrow a scene, quote, joke, or personal reaction from the craft readings or require a witty narrator to make the material interesting."
+    },
+    {
       "name": "develop-article-angles-from-local-readings",
       "prompt": "Use the bundled editorial references offline. Give me two different titles and opening paragraphs for my blog based on these notes. We moved image decoding off the UI thread. The total decode time stayed the same, but now I can scroll past the photo while it loads. I care more about that than a faster benchmark. Give me one short note on where each version would go next.",
       "expected": "Offers two distinct reader questions grounded in the supplied facts, such as a firsthand judgment about scrolling and a mechanism explaining how UI responsiveness can change at the same decode time. Each title makes a promise its opening begins to fulfill. The next paragraphs would take different paths. Uses local examples without outside research, borrowed anecdotes, or invented performance results."

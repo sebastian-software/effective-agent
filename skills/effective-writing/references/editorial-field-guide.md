@@ -21,9 +21,14 @@ come from its own reporting.
 | A number the reader understands on paper but consistently misjudges | [Wait But Why](editorial-personal-publications.md#wait-but-why) | Keep the quantity fixed and change what the reader measures it against. |
 
 For an article written in German, the [German-language readings](editorial-german-publications.md)
-compare ADAC tests, heise news, WELT opinion and criticism, and F.A.Z.
-commentary and reviews. Three German openings show how the same build log
-can support a release note, a recommendation, or a pointed column.
+work through a clock change, a misleading measurement, and a dry aside
+using German journalism handbooks. The same shelf compares ADAC tests,
+heise news, WELT criticism, and F.A.Z. commentary.
+
+For a reported feature, essay, or review, the
+[American nonfiction readings](editorial-american-nonfiction.md) offer ways
+to find a narrative in the reporting, make a technical discovery land at the
+end of a sentence, and recognize a joke already present in the material.
 
 The same writer can write an affectionate remembrance and a brisk release note.
 Choose a particular editorial move for the current piece. A contributor's own

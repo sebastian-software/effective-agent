@@ -9,6 +9,9 @@ action — persuasion carried by editorial prose rather than by a commercial pag
 [Persuasive nonfiction](persuasive-nonfiction.md) covers argument, proof,
 case studies, and proportionate calls to action.
 
+For a signed column whose argument needs a scene, a sharper judgment, or
+the author's humor, consult the [editorial field guide](editorial-field-guide.md).
+
 Use [Assignment and evidence](nonfiction-assignment.md) only when a substantial
 piece needs briefing or source planning.
 

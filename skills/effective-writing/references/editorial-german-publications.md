@@ -1,8 +1,82 @@
-# German-language technology articles
+# German-language readings for technology authors
 
 When writing for readers in Germany, choose a German lead from the material
 at hand. An impatient observation, a buying decision, and a piece of news
 about an unverified claim each give the opening sentence a different job.
+
+## From a log entry to a story
+
+Peter Linden's *Handbuch Stilsicher schreiben* takes the writer's position
+seriously. Someone reporting a fault, someone explaining it, and someone who
+designed the faulty system each have a different claim on the reader's
+attention. Decide what the reader has come for before choosing the opening.
+Linden also attends to the sound of the language. A narrator can change pace
+without changing the difficulty of the subject.
+[Duden on Linden's handbook](https://www.duden.de/presse/Wie-wirkt-Sprache-und-wie-setzt-man-sie-ein-%E2%80%9EHandbuch-stilsicher-schreiben%E2%80%9C-neu-bei-Duden)
+
+Take a fictional service that runs a job whenever the Berlin clock reads
+02:15. On the autumn clock change, its log shows two runs with different UTC
+offsets, an hour apart. Here is an opening for readers who like a puzzle:
+
+> Der Auftrag lief am Sonntag um 2.15 Uhr. Eine Stunde später lief er wieder.
+> Es war immer noch 2.15 Uhr.
+
+Give readers a moment with the two times. The next paragraph can put the two
+offsets side by side. The scheduling condition now answers a question the
+reader already has. For an operator who opened the page to decide what to
+check, lead with the consequence instead: „Beim Zurückstellen der Uhr lief
+unser Sonntagsjob zweimal. Im Protokoll unterscheiden sich die beiden Starts
+nur am UTC-Offset.“ Both openings can carry the same evidence.
+
+The Reporterfabrik workshop *Fesselnde Stories aus Akten* asks how to find
+the people inside a pile of documents. In a reconstruction, a commit can
+establish when the schedule changed. A ticket can show when someone noticed.
+Only a comment or an interview might tell you why the author chose local
+time. If all you have are two timestamps, they already make a good explainer.
+If the author also recalls the moment they realized both log entries were
+right, that realization could carry a personal essay. Let the account
+determine how much of the story belongs to a person.
+[Tina Kaiser and Marc Neller's workshop outline](https://akademie.reporterfabrik.org/courses/course-v1%3AReporterfabrik%2B379%2B2025/about)
+
+## Give technical language some range
+
+The NaWik's *ABC der guten Sprache* enlarges a speck of soot and a human hair
+by the same factor until the reader can picture their proportions. A
+comparison earns its space when the reader can use it to reason. For
+instance, at one sample per minute, a monitor can miss a ten-second outage
+entirely. Give it a clock: the service answers at 12:00, fails from 12:00:20
+to 12:00:30, and answers again at 12:01. „Zwei grüne Punkte. Dazwischen war
+der Dienst zehn Sekunden weg.“ For an operations audience the times do the
+work. A broad audience may also need a sentence about what a sample is.
+[NaWik's ABC](https://www.nawik.de/know-how-news/know-how-tipps/abc-der-guten-sprache/)
+
+Use Wolf Schneider's *Deutsch für junge Profis* as a companion for the
+sentence edit. Try the verbs at the point where the system promises
+something. „Der Server hat den Auftrag angenommen“ and „Der Server hat den
+Auftrag erledigt“ leave the customer in very different positions. In a
+review, an adjective can be just as precise. A configuration dialog might
+deserve *kapriziös* if changing the language also clears the saved printer.
+Show the reader the vanishing printer. They can decide whether the word fits.
+[Schneider's book and sample at Rowohlt](https://www.rowohlt.de/buch/wolf-schneider-deutsch-fuer-junge-profis-9783499626296)
+
+## Leave room for the laugh
+
+The Deutsche Journalisten-Akademie builds a *Glosse* from a missing paving
+stone. Each imagined consequence takes the reader a little farther, until a
+local nuisance has become a matter for the federal finance minister. For a
+technical column, a real detail can sustain a much shorter excursion.
+Suppose a team allows faults into production any day and ships fixes on
+Fridays. An author who finds that arrangement absurd might write:
+
+> Der Fehler hatte gegenüber seiner Korrektur einen organisatorischen
+> Vorsprung. Er durfte jederzeit in Produktion.
+
+The stiff *organisatorischen Vorsprung* briefly gives the bug the dignity of
+an officeholder. Read the next sentence aloud. A gloss about the importance
+of flexible release policies would explain the pleasure out of the line.
+If the account calls for a sober judgment, „Der Fix lag seit Dienstag fertig
+da. Freitags war Release.“ gives a reader plenty to think about, too.
+[Deutsche Journalisten-Akademie on the Glosse](https://deutschejournalistenakademie.de/journalismus-lexikon/glosse/)
 
 ## ADAC
 
