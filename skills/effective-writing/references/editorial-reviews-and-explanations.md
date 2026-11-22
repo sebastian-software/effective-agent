@@ -6,6 +6,23 @@ who wants to study them. The observations and examples here work offline.
 
 ## Wirecutter
 
+The infant car seat guide opens on the first drive home with a newborn. Within
+two pages it names four picks. Someone who often takes taxis can see why the
+runner-up deserves a closer look: the tester struggled to secure the top pick
+without its base. The methods section further down lets a curious reader trace
+that judgment to its source. The writer installed each of the initial eight
+seats three ways and carried each one the 25 feet from garage to house. That
+last detail gives “easy to carry” a distance the reader can picture.
+[The Best Infant Car Seats](https://www.nytimes.com/wirecutter/reviews/best-infant-car-seat/)
+
+There is room for mischief even here. Halfway through the guide, a diaper
+blowout explains exactly which piece of upholstery a parent will be grateful
+to toss in the wash. The detail does two jobs in a sentence. Try that move in
+a tool review when the author's notes contain an irritation just as specific.
+Suppose a build tool advertises resumable uploads. A reviewer who actually
+lost a connection might write, “My Wi-Fi gave up on file 99. Mercifully, the
+next run started at 99.” The file number earns the adverb.
+
 A reader choosing between two tools needs a verdict early enough to use and a
 reason to trust the comparison. In three Wirecutter articles published in
 partnership with Engadget, the category guides advertise a clear pick in their
