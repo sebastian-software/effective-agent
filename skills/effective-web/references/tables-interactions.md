@@ -23,6 +23,8 @@ interaction density.
   changes.
 - Keep bulk and row actions near their scope, explain destructive effects, and
   prefer undo when a reversible operation can avoid a confirmation dialog.
+- For checkbox range selection, use the [direct manipulation studies](control-microinteractions.md#direct-manipulation)
+  to define how dragging, backtracking, and cancellation affect existing selections.
 
 ## Verify
 

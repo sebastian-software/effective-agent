@@ -24,6 +24,8 @@ Use this route for reusable UI building blocks and the interaction rules attache
 ## References
 
 - [buttons.md](buttons.md) - button hierarchy, labels, and states.
+- [Control microinteractions](control-microinteractions.md) for label swaps,
+  hold confirmation, moving selection indicators, and resizable controls.
 - [navigation-structure.md](navigation-structure.md) - select and mark up the
   navigation pattern; it routes responsive behavior when that is the concern.
 - [dialog-foundation.md](dialog-foundation.md) - select the native surface and

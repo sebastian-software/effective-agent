@@ -251,6 +251,11 @@
       "expected": "Evaluates the actual fallback, product browser distribution, partial-implementation risk, and high harm of a blocked essential task; requires a usable fallback and representative-browser testing rather than approving it from the percentage or @supports result alone."
     },
     {
+      "name": "preserve-mixed-range-selection",
+      "prompt": "Our bulk-edit table toggles checkboxes as the pointer enters each row. A fast drag misses some rows, and dragging back changes boxes that were already checked. How should selection work on release and on Escape?",
+      "expected": "Captures the original selection, derives the gesture's target state from the anchor, and recomputes the inclusive range on each move. Backtracking restores rows outside the range. Release commits the final range and Escape or pointer cancellation restores the snapshot, including the count and header checkbox. Individual checkbox activation and keyboard range selection remain available."
+    },
+    {
       "name": "design-earned-motion",
       "prompt": "Add a playful arrow micro-interaction to a branded onboarding completion link without making the workflow slower or excluding keyboard and reduced-motion users.",
       "expected": "Allows restrained earned delight, prefers a brief event-driven impulse when persistence is unnecessary, supports focus or activation as well as hover, preserves native link semantics, and keeps the reduced-motion path static and complete."
