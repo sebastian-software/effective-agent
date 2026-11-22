@@ -124,16 +124,42 @@ Write for competent readers who may lack this specific context. Do not confuse
 accessibility with condescension or remove the qualification that makes an
 expert statement true.
 
-## Preserve editorial movement
+## Draft from the material
 
-Technical editorial prose may use:
+For a bylined blog post, start with the piece brief, the author's notes or
+interview, and the evidence behind the claim. A neighboring article for the
+same audience can help you hear how the author explains a difficult point.
+Use the publication's source language even when the interview took place in
+another language.
 
-- a governing argument or narrative arc
-- varied sentence and paragraph length
-- first person, judgment, and professional experience when sourced
-- examples, comparisons, restrained humor, and accurate metaphors
-- tension, curiosity, and a point of view that the body repays
-- a conclusion or call to action appropriate to the reader relationship
+Find the detail that made the subject worth writing about. It might be a
+choice the author used to make differently, a result that upset an assumption,
+or something a reader can try with a few lines of code. Put enough of it in
+the opening for the reader to see the point. In an explainer, the behavior
+itself can supply all the interest.
+
+Suppose a bug report shows a white code sample after the preview switches to
+dark mode, and the fix adds the theme to the cache key. You can open with the
+symptom and go straight to the explanation. “Switch the preview to dark mode
+and the code sample stays white. The highlighter has already rendered that
+snippet once, and its cache key says nothing about the theme.” Now the change
+to the cache key answers a question the reader already has.
+
+Keep going where the example leads. Show the old behavior, a plausible
+alternative, or the part of the implementation that explains the surprise,
+whichever the reader needs next. In a signed review, let readers see what
+the author values. Suppose their notes say, “I admire the optimism of a
+backup tool that prints ‘Success’ before it writes the file.” That line gives
+the reader both the behavior and the author's verdict. Check when the message
+appears and keep the joke if the sequence holds. If the author calls a change
+groundbreaking, show what they can do now that used to be out of reach.
+An opinion can be emphatic while its factual basis stays precise.
+
+Read the piece on its own. A new reader should have enough context to
+understand the observation and enough room to reach a different verdict.
+
+An unsigned explainer or project page has room for humor, varied sentence
+length, and a firsthand observation when its source is clear.
 
 Do not add one action per sentence, one sentence per paragraph, an approved-word
 dictionary, imperative syntax, or other controlled-language constraints merely
@@ -170,7 +196,10 @@ surrounding article to retain its voice.
 - Use the Metro English route for internal team communication about the work, not as
   the default voice for a public technical article or project page.
 
-## Review in passes
+## Review an article
+
+Use these checks where the draft needs attention. For an article request,
+deliver the article itself in the publication's format.
 
 1. **Technical integrity** - Verify behavior, conditions, limits, examples, and
    comparisons against their owning sources.

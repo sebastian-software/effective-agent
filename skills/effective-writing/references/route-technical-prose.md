@@ -7,17 +7,24 @@ correctness of the technical claim is part of the editorial job.
 ## Guidance
 
 [Technical subject-matter writing](technical-subject-matter.md) covers source
-ownership, technical propositions, terminology, and editorial movement.
+ownership, technical propositions, terminology, and drafting a bylined article
+from the author's material.
+
+When a blog post needs a sharper angle, a more engaging explanation, or an
+ending, consult the relevant section of the [editorial field guide](editorial-field-guide.md).
+Its local readings and worked examples can be used offline.
 
 Use [Assignment and evidence](nonfiction-assignment.md) only when a substantial
 piece needs briefing or source planning.
 
 ## Apply
 
-- Establish what the reader already knows before choosing the depth of the
-  explanation. Most failed technical writing misjudges this, not the topic.
+- For a new blog post, read the publication's brief and voice guidance when
+  available. Draft in its source language for the reader it names. Use the
+  [article drafting guidance](technical-subject-matter.md#draft-from-the-material)
+  to carry the author's perspective into the first draft.
 - Keep the technical claim inside what the supplied evidence supports.
-  Benchmarks, incident timelines, and version behavior are facts, not colour.
+  Check measurements, incident timelines, and version behavior at the source.
 - Prefer a worked example to an abstraction when both would fit.
 - Honor explicit style and controlled-language requests on the first pass.
   Explain a material tradeoff briefly without requiring reconfirmation or

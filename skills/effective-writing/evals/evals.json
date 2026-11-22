@@ -11,6 +11,21 @@
       "expected": "Clarifies the governing idea and reading path, preserves intentional humor, fragments, cadence, and uncertainty, distinguishes correction from stylistic preference, removes only accidental clutter, and does not manufacture confidence or a generic polished voice."
     },
     {
+      "name": "keep-a-bylined-reviewers-verdict",
+      "prompt": "Tighten this paragraph for my engineering blog. I used the word groundbreaking in my last article too, and I stand by it here. Draft: For me, offline replay was groundbreaking. On the train I could step through yesterday's failed job with the network switched off. I could replay the failure, replay it again, and watch the same record disappear each time. This functionality facilitates a more streamlined debugging experience.",
+      "expected": "Returns the edited paragraph. Keeps the personal verdict grounded in the train example, allows the repeated wording to convey the experience, and removes the generic closing claim. A word's appearance in another article alone does not justify a substitution. Preserves the limits of the observation and adds no invented attitude or product claim."
+    },
+    {
+      "name": "german-explainer-from-plain-technical-notes",
+      "prompt": "Write an opening in German for our engineering blog. Use these release-test notes: We moved spellcheck into a worker. Checking the test document still takes four seconds. Before the change, letters typed in those four seconds appeared together at the end. Now they appear as you type. Our readers build editors. The notes are all you have.",
+      "expected": "Returns German article prose with a reason to read on grounded in the visible difference at the keyboard. Distinguishes typing responsiveness from spellcheck speed. Leaves the reader room to notice the change. Does not borrow a scene, quote, joke, or personal reaction from the craft readings or require a witty narrator to make the material interesting."
+    },
+    {
+      "name": "develop-article-angles-from-local-readings",
+      "prompt": "Use the bundled editorial references offline. Give me two different titles and opening paragraphs for my blog based on these notes. We moved image decoding off the UI thread. The total decode time stayed the same, but now I can scroll past the photo while it loads. I care more about that than a faster benchmark. Give me one short note on where each version would go next.",
+      "expected": "Offers two distinct reader questions grounded in the supplied facts, such as a firsthand judgment about scrolling and a mechanism explaining how UI responsiveness can change at the same decode time. Each title makes a promise its opening begins to fulfill. The next paragraphs would take different paths. Uses local examples without outside research, borrowed anecdotes, or invented performance results."
+    },
+    {
       "name": "minto-logic-audit-with-qualified-answer",
       "prompt": "Minto this proposal before rewriting it. Our current recommendation is: Based on two pilots, extend the onboarding trial for one quarter while measuring retention. The notes cover adoption, support cost, implementation risk, and the fact that the sample is too small for a permanent rollout decision. Extract the pyramid, pressure-test the logic, and tell me how to restructure it.",
       "expected": "Identifies the reader's decision question and preserves the recommendation's material qualification; makes each parent summarize logically alike, ordered children; distinguishes inductive reasons from any deductive chain; tests MECE relative to the decision and scope; keeps uncertainty and evidence gaps attached to the relevant branches; and returns an actionable pyramid and restructuring plan without fabricating proof, forcing exactly three branches, or rewriting the full proposal."

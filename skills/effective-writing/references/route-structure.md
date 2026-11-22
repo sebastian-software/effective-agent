@@ -11,6 +11,9 @@ or [Minto Pyramid analysis](minto-pyramid.md) for an explicit pyramid, MECE,
 answer-first, or logic pressure-test request. Combine them only when the
 assignment needs both.
 
+For article titles, leads, and alternative ways to develop the same material,
+consult the [editorial field guide](editorial-field-guide.md).
+
 Use [Assignment and evidence](nonfiction-assignment.md) only when a substantial
 piece needs briefing or source planning.
 

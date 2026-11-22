@@ -23,6 +23,12 @@ voice. Ask for missing source material only when it blocks the requested work;
 never invent statistics, quotations, testimonials, experience, or product facts.
 Remove words that do no work without flattening cadence or meaning.
 
+When drafting or editing an article under the writer's own name, give their
+judgment room on the page. Keep the observation that made them laugh, changed
+their mind, or explains why they care. A dry aside, a sharp verdict, or an
+enthusiastic superlative can be the clearest expression of that judgment.
+Draw the strength of feeling from the writer's material.
+
 Return the requested artifact. An audit-only request ends with findings; when
 the user also asks for revision, complete that revision. Report observable
 patterns in prose without claiming or estimating AI authorship.
