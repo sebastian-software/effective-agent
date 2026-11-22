@@ -11,6 +11,11 @@
       "expected": "Clarifies the governing idea and reading path, preserves intentional humor, fragments, cadence, and uncertainty, distinguishes correction from stylistic preference, removes only accidental clutter, and does not manufacture confidence or a generic polished voice."
     },
     {
+      "name": "keep-a-bylined-reviewers-verdict",
+      "prompt": "Tighten this paragraph for my engineering blog. I used the word groundbreaking in my last article too. Draft: For me, offline replay was groundbreaking. On the train I could step through yesterday's failed job with the network switched off. I could replay the failure, replay it again, and watch the same record disappear each time. This functionality facilitates a more streamlined debugging experience.",
+      "expected": "Returns the edited paragraph. Keeps the personal verdict grounded in the train example, allows the repeated wording to convey the experience, and removes the generic closing claim. A word's appearance in another article alone does not justify a substitution. Preserves the limits of the observation and adds no invented attitude or product claim."
+    },
+    {
       "name": "minto-logic-audit-with-qualified-answer",
       "prompt": "Minto this proposal before rewriting it. Our current recommendation is: Based on two pilots, extend the onboarding trial for one quarter while measuring retention. The notes cover adoption, support cost, implementation risk, and the fact that the sample is too small for a permanent rollout decision. Extract the pyramid, pressure-test the logic, and tell me how to restructure it.",
       "expected": "Identifies the reader's decision question and preserves the recommendation's material qualification; makes each parent summarize logically alike, ordered children; distinguishes inductive reasons from any deductive chain; tests MECE relative to the decision and scope; keeps uncertainty and evidence gaps attached to the relevant branches; and returns an actionable pyramid and restructuring plan without fabricating proof, forcing exactly three branches, or rewriting the full proposal."

@@ -36,10 +36,17 @@ rough but recognizable voice into generic professional prose.
 Apply a minimum-effective-edit rule:
 
 1. Preserve the point, evidence, claim limits, and intended reader action.
-2. Fix formulaic framing, unsupported importance, repetition, and genuinely
+2. Fix formulaic framing, unsupported importance, needless repetition, and genuinely
    tangled sentences.
 3. Leave strong sentences alone.
 4. Re-read the result for voice drift and accidental over-compression.
+
+In a signed article, ask what a reader would lose if you softened a strong
+word or cut a repeated phrase. Keep it when it conveys the writer's taste,
+makes a joke land, or brings an earlier observation back with new meaning.
+Words like `innovative` and `groundbreaking` deserve the same question as
+any other adjective. Flag a passage when you can name what it obscures for
+someone reading this piece on its own.
 
 ## Inspect pattern families
 
