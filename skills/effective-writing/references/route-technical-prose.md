@@ -7,7 +7,8 @@ correctness of the technical claim is part of the editorial job.
 ## Guidance
 
 [Technical subject-matter writing](technical-subject-matter.md) covers source
-ownership, technical propositions, terminology, and editorial movement.
+ownership, technical propositions, terminology, and drafting a bylined article
+from the author's material.
 
 Use [Assignment and evidence](nonfiction-assignment.md) only when a substantial
 piece needs briefing or source planning.
