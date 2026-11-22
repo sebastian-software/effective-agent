@@ -54,6 +54,8 @@ For an article about deployment checks, take one change through a unit
 test and an integration test. How long before the failure appears? How
 much work does it take to find its cause? A small model becomes useful at
 the moment it gives two competent engineers a reason to choose differently.
+If a contract requires an end-to-end check before release, that decision
+is already made. The team can still choose which checks to run locally.
 
 ## Piccalilli
 
