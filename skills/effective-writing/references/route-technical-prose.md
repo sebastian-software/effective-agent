@@ -10,6 +10,11 @@ correctness of the technical claim is part of the editorial job.
 ownership, technical propositions, terminology, and drafting a bylined article
 from the author's material.
 
+For a blog assignment, use the [editorial field guide](editorial-field-guide.md)
+to find an approach that suits the author's material. Its local readings compare
+headlines, openings, evidence, pacing, and endings across publications. Consult
+the relevant section as you draft. The source articles are optional reading.
+
 Use [Assignment and evidence](nonfiction-assignment.md) only when a substantial
 piece needs briefing or source planning.
 
