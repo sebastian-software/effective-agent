@@ -129,10 +129,6 @@ measurements, or certainty to reproduce a publication's effect.
 
 ## Reading notes
 
-The linked pages were read as publicly accessible article text. Embedded images and
-interactive examples contribute evidence that a text-only offline reference cannot
-reproduce. Captions and descriptions do not replace visual inspection. The iA seed
-returned differing live and indexed versions, including different availability wording, so
-the analysis relies on the shared product and interaction narrative rather than current
-availability. This sample is small and selected for relevance, not representative of every
-author's or publication's work.
+These notes draw on the article text. In iA's “It Takes Two to Duo,” the live
+and indexed versions differed on availability. Both described the same change
+to the interface. That interaction is the example used here.
