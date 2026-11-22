@@ -11,19 +11,18 @@ set -eu
 VOICE=$1 MUSIC=$2 OUT=$3 TOTAL=$4 IR=${5:-}
 TMP=$(mktemp -d)
 trap 'rm -rf "$TMP"' EXIT
-FADE=$(awk "BEGIN { print $TOTAL - 1.2 }")
+FADE=$(LC_ALL=C awk -v total="$TOTAL" 'BEGIN { print total - 1.2 }')
 
 VOICE_CHAIN="highpass=f=85,equalizer=f=3200:t=q:w=1.2:g=2.5,acompressor=threshold=-22dB:ratio=3:attack=8:release=120:makeup=2"
+set -- -i "$VOICE" -i "$MUSIC"
 if [ -n "$IR" ]; then
-  INPUTS="-i $VOICE -i $MUSIC -i $IR"
+  set -- "$@" -i "$IR"
   VOICE_GRAPH="[0:a]$VOICE_CHAIN,asplit=3[v1][v2][vk];[v2][2:a]afir=dry=0:wet=1,volume=0.07[vr];[v1][vr]amix=inputs=2:normalize=0[voice]"
 else
-  INPUTS="-i $VOICE -i $MUSIC"
   VOICE_GRAPH="[0:a]$VOICE_CHAIN,asplit=2[voice][vk]"
 fi
 
-# shellcheck disable=SC2086
-ffmpeg -v error -y $INPUTS -filter_complex "
+ffmpeg -v error -y "$@" -filter_complex "
 $VOICE_GRAPH;
 [1:a]apad,atrim=0:$TOTAL,volume=${MUSIC_GAIN:-0.55}[m];
 [m][vk]sidechaincompress=threshold=0.02:ratio=8:attack=35:release=500[duck];

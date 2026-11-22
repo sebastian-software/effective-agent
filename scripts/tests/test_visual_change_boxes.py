@@ -9,6 +9,7 @@ import unittest
 import zlib
 from pathlib import Path
 
+from PIL import Image
 
 ROOT = Path(__file__).resolve().parents[2]
 SCRIPT = ROOT / "skills" / "effective-web" / "scripts" / "visual-change-boxes.mjs"
@@ -86,6 +87,39 @@ def page(lines: list[int | None]) -> list[list[tuple[int, int, int, int]]]:
 
 @unittest.skipIf(NODE is None, "node is not installed")
 class VisualChangeBoxesTest(unittest.TestCase):
+    def annotations(self, left: Path, right: Path) -> list[dict]:
+        return json.loads(subprocess.check_output([NODE, SCRIPT, left, right]))["annotations"]
+
+    def test_transparency_keys_change_only_matching_pixels(self) -> None:
+        for mode, key, other in (("L", 42, 43), ("RGB", (9, 42, 80), (9, 42, 81))):
+            with self.subTest(mode=mode), tempfile.TemporaryDirectory() as directory:
+                before, after, expected = (Path(directory) / name for name in ("a.png", "b.png", "rgba.png"))
+                image = Image.new(mode, (2, 1))
+                image.putdata([key, other])
+                image.save(before, transparency=key)
+                image.save(after, transparency=0 if mode == "L" else (0, 0, 0))
+                rgba = image.convert("RGBA")
+                rgba.putalpha(Image.frombytes("L", (2, 1), bytes([0, 255])))
+                rgba.save(expected)
+
+                self.assertEqual(self.annotations(before, expected), [])
+                [box] = self.annotations(before, after)
+                self.assertEqual((box["label"], box["x"], box["width"]), ("CHANGED 1", 0, 1))
+
+    def test_palette_transparency_matches_explicit_alpha(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            indexed, rgba = (Path(directory) / name for name in ("palette.png", "rgba.png"))
+            header = struct.pack(">IIBBBBB", 3, 1, 8, 3, 0, 0, 0)
+            indexed.write_bytes(
+                b"\x89PNG\r\n\x1a\n" + chunk(b"IHDR", header)
+                + chunk(b"PLTE", bytes([0, 0, 0, 127, 127, 127, 255, 255, 255]))
+                + chunk(b"tRNS", bytes([0, 127]))
+                + chunk(b"IDAT", zlib.compress(bytes([0, 0, 1, 2])))
+                + chunk(b"IEND", b"")
+            )
+            write_png(rgba, [[(0, 0, 0, 0), (127, 127, 127, 127), WHITE]])
+            self.assertEqual(self.annotations(indexed, rgba), [])
+
     def run_script(self, before, after, *arguments: str, rgb: bool = False):
         with tempfile.TemporaryDirectory() as directory:
             before_path = Path(directory) / "before.png"

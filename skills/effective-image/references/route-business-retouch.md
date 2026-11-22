@@ -94,7 +94,9 @@ default image model (`--model` overrides it) at the largest size the script
 computes for the aspect ratio, using the limits documented for `gpt-image-2`
 (about 8.3 megapixels, partly experimental), and saves each result as
 `<source>-retouched.png` with a `.prompt.json` record of the prompt, size,
-and color reference. Existing outputs are skipped unless `--force` is passed.
+and color reference. Rerun the same command after an interruption. It retries
+incomplete image and record pairs and skips completed photos. Use `--force`
+to redo completed photos as well.
 Before any API call, the script rejects colliding image or prompt-record paths
 and destinations that would overwrite originals, color references, or notes,
 including path aliases. `--force` only replaces outputs; it never bypasses

@@ -14,6 +14,7 @@ from __future__ import annotations
 
 import argparse
 import base64
+import hashlib
 import io
 import json
 import os
@@ -21,6 +22,7 @@ import re
 import sys
 from dataclasses import dataclass
 from pathlib import Path
+from tempfile import TemporaryDirectory
 
 from PIL import Image, ImageOps
 
@@ -194,6 +196,37 @@ def validate_destinations(jobs: list[Job], extra_inputs: list[Path]) -> None:
             destinations.update((key, output) for key in keys)
 
 
+def png_size(data: bytes) -> tuple[int, int]:
+    # Pillow verifies data chunks but stops at the IEND header, before its CRC.
+    if not data.endswith(bytes.fromhex("00000000 49454e44 ae426082")):
+        raise ValueError("PNG is missing its complete end marker")
+    with Image.open(io.BytesIO(data), formats=("PNG",)) as image:
+        image.verify()
+    with Image.open(io.BytesIO(data), formats=("PNG",)) as image:
+        image.load()
+        return image.size
+
+
+def is_complete(job: Job) -> bool:
+    try:
+        record = json.loads(job.output.with_suffix(".prompt.json").read_text(encoding="utf-8"))
+        if not isinstance(record, dict) or record.get("source") != job.source.name:
+            return False
+        required = ("prompt", "model", "size", "quality")
+        if not all(isinstance(record.get(key), str) and record[key] for key in required):
+            return False
+        if "color_reference" not in record or not isinstance(record["color_reference"], (str, type(None))):
+            return False
+        data = job.output.read_bytes()
+        if "image_sha256" in record:
+            return hashlib.sha256(data).hexdigest() == record["image_sha256"]
+        # Earlier releases wrote the same prompt record without a digest.
+        png_size(data)
+        return True
+    except (OSError, ValueError, SyntaxError, EOFError):
+        return False
+
+
 def run(job: Job, args: argparse.Namespace, client: object) -> str:
     image, _ = oriented_upload(job.source)
     images = [image]
@@ -207,8 +240,8 @@ def run(job: Job, args: argparse.Namespace, client: object) -> str:
         quality=args.quality,
         output_format="png",
     )
-    job.output.parent.mkdir(parents=True, exist_ok=True)
-    job.output.write_bytes(base64.b64decode(result.data[0].b64_json))
+    data = base64.b64decode(result.data[0].b64_json, validate=True)
+    width, height = png_size(data)
     record = {
         "source": job.source.name,
         "color_reference": job.reference.name if job.reference else None,
@@ -216,18 +249,26 @@ def run(job: Job, args: argparse.Namespace, client: object) -> str:
         "quality": args.quality,
         "size": job.size,
         "prompt": job.prompt,
+        "image_sha256": hashlib.sha256(data).hexdigest(),
     }
-    job.output.with_suffix(".prompt.json").write_text(json.dumps(record, indent=2) + "\n", encoding="utf-8")
-    with Image.open(job.output) as output:
-        return f"{output.width}x{output.height}"
+    job.output.parent.mkdir(parents=True, exist_ok=True)
+    with TemporaryDirectory(dir=job.output.parent) as staging:
+        png = Path(staging) / "image.png"
+        prompt = Path(staging) / "prompt.json"
+        png.write_bytes(data)
+        prompt.write_text(json.dumps(record, indent=2) + "\n", encoding="utf-8")
+        # Publish the digest first so an interruption leaves a detectable mismatch.
+        prompt.replace(job.output.with_suffix(".prompt.json"))
+        png.replace(job.output)
+    return f"{width}x{height}"
 
 
 def main(argv: list[str]) -> int:
     args = parse_args(argv)
     jobs = plan(args)
-    pending = [job for job in jobs if args.force or not job.output.exists()]
+    pending = [job for job in jobs if args.force or not is_complete(job)]
     for job in jobs:
-        state = "todo" if job in pending else "skip (exists)"
+        state = "todo" if job in pending else "skip (complete)"
         reference = f" + {job.reference.name}" if job.reference else ""
         print(f"{state:14} {job.source.name}{reference} -> {job.output.name} @ {job.size}")
     if args.dry_run:

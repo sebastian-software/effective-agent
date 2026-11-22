@@ -2,8 +2,12 @@ from __future__ import annotations
 
 import importlib.util
 from pathlib import Path
+import shutil
+import subprocess
 import sys
+import tempfile
 import unittest
+import wave
 
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -20,6 +24,27 @@ def load(name: str):
 
 cue_sheet = load("cue_sheet")
 pronunciation = load("pronunciation_check")
+
+
+@unittest.skipUnless(shutil.which("ffmpeg"), "ffmpeg is not installed")
+class SoundtrackTests(unittest.TestCase):
+    def test_mix_paths_with_spaces_with_and_without_reverb(self) -> None:
+        with tempfile.TemporaryDirectory(prefix="Launch Film ") as directory:
+            root = Path(directory)
+            voice, music, impulse = (root / name for name in ("voice take.wav", "music bed.wav", "room impulse.wav"))
+            for path, frequency, duration in ((voice, 440, 4), (music, 220, 4), (impulse, 110, 0.04)):
+                subprocess.run(["ffmpeg", "-v", "error", "-f", "lavfi", "-i",
+                                f"sine=frequency={frequency}:duration={duration}", str(path)], check=True)
+            for reverb in (False, True):
+                with self.subTest(reverb=reverb):
+                    output = root / f"mix {reverb}.wav"
+                    command = ["sh", SCRIPTS / "mix.sh", voice, music, output, "4"]
+                    if reverb:
+                        command.append(impulse)
+                    subprocess.run(command, check=True, stdout=subprocess.PIPE)
+                    with wave.open(str(output)) as wav:
+                        self.assertEqual(wav.getframerate(), 48000)
+                        self.assertGreater(wav.getnframes(), 0)
 
 
 class CueSheetTests(unittest.TestCase):

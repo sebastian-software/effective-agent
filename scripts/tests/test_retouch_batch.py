@@ -4,6 +4,7 @@ import base64
 import contextlib
 import importlib.util
 import io
+import json
 import os
 from pathlib import Path
 import sys
@@ -130,9 +131,13 @@ class RetouchBatchTests(unittest.TestCase):
             self.assertEqual(output.read_bytes(), self.result_bytes)
             self.assertTrue(output.with_suffix(".prompt.json").is_file())
 
-    def test_existing_output_is_skipped_and_force_can_replace_it(self) -> None:
+    def test_complete_legacy_pair_is_skipped_and_force_can_replace_it(self) -> None:
         source = self.image("portrait.jpg")
         output = self.image("retouched/portrait-retouched.png")
+        output.with_suffix(".prompt.json").write_text(json.dumps({
+            "source": source.name, "color_reference": None, "model": "previous",
+            "size": "auto", "quality": "high", "prompt": "Keep the expression.",
+        }))
         previous = output.read_bytes()
         self.assertEqual(self.run_batch([str(source)]), 0)
         self.factory.assert_not_called()
@@ -140,6 +145,57 @@ class RetouchBatchTests(unittest.TestCase):
         self.assertEqual(self.run_batch([str(source), "--force"]), 0)
         self.client.images.edit.assert_called_once()
         self.assertEqual(output.read_bytes(), self.result_bytes)
+
+    def test_restart_repairs_only_the_incomplete_pair(self) -> None:
+        source = self.image("portrait.jpg")
+        self.image("second.jpg")
+        argv = [str(source.parent)]
+        self.assertEqual(self.run_batch(argv), 0)
+        output = self.root / "retouched/portrait-retouched.png"
+        prompt = output.with_suffix(".prompt.json")
+        for damage in ("missing prompt", "invalid prompt", "truncated PNG", "wrong PNG"):
+            with self.subTest(damage=damage):
+                if damage == "missing prompt":
+                    prompt.unlink()
+                elif damage == "invalid prompt":
+                    prompt.write_text("{")
+                elif damage == "truncated PNG":
+                    output.write_bytes(self.result_bytes[:40])
+                else:
+                    self.image("retouched/portrait-retouched.png")
+                self.client.images.edit.reset_mock()
+                self.assertEqual(self.run_batch(argv), 0)
+                self.client.images.edit.assert_called_once()
+                self.assertEqual(output.read_bytes(), self.result_bytes)
+                self.assertEqual(json.loads(prompt.read_text())["source"], source.name)
+
+    def test_invalid_api_image_preserves_the_previous_pair(self) -> None:
+        source = self.image("portrait.jpg")
+        self.assertEqual(self.run_batch([str(source)]), 0)
+        output = self.root / "retouched/portrait-retouched.png"
+        record = output.with_suffix(".prompt.json")
+        previous = record.read_bytes()
+        self.client.images.edit.return_value.data[0].b64_json = base64.b64encode(self.result_bytes[:-1]).decode()
+        with contextlib.redirect_stderr(io.StringIO()):
+            self.assertEqual(self.run_batch([str(source), "--force"]), 1)
+        self.assertEqual(output.read_bytes(), self.result_bytes)
+        self.assertEqual(record.read_bytes(), previous)
+
+    def test_interrupted_publish_is_retried_without_force(self) -> None:
+        source = self.image("portrait.jpg")
+        argv = [str(source)]
+        original_replace = Path.replace
+
+        def interrupt_png(path, destination):
+            if destination.suffix == ".png":
+                raise OSError("simulated publication failure")
+            return original_replace(path, destination)
+
+        with mock.patch.object(Path, "replace", interrupt_png), contextlib.redirect_stderr(io.StringIO()):
+            self.assertEqual(self.run_batch(argv), 1)
+        self.assertEqual(self.run_batch(argv), 0)
+        self.assertEqual(self.run_batch(argv), 0)
+        self.assertEqual(self.client.images.edit.call_count, 2)
 
 
 if __name__ == "__main__":
