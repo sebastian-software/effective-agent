@@ -12,7 +12,7 @@
     },
     {
       "name": "keep-a-bylined-reviewers-verdict",
-      "prompt": "Tighten this paragraph for my engineering blog. I used the word groundbreaking in my last article too. Draft: For me, offline replay was groundbreaking. On the train I could step through yesterday's failed job with the network switched off. I could replay the failure, replay it again, and watch the same record disappear each time. This functionality facilitates a more streamlined debugging experience.",
+      "prompt": "Tighten this paragraph for my engineering blog. I used the word groundbreaking in my last article too, and I stand by it here. Draft: For me, offline replay was groundbreaking. On the train I could step through yesterday's failed job with the network switched off. I could replay the failure, replay it again, and watch the same record disappear each time. This functionality facilitates a more streamlined debugging experience.",
       "expected": "Returns the edited paragraph. Keeps the personal verdict grounded in the train example, allows the repeated wording to convey the experience, and removes the generic closing claim. A word's appearance in another article alone does not justify a substitution. Preserves the limits of the observation and adds no invented attitude or product claim."
     },
     {

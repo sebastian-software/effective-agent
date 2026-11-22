@@ -25,17 +25,12 @@ design, a customer question, or a trace from the old implementation.
   two app icons show decisions over time. This longer design narrative can dwell on
   uncertainty and the team's own attachment because the process itself is the story.
 
-Across these examples, iA moves between a brisk launch and a detailed design account.
-Titles range from wordplay to a plain task. Subtitles often make the topic legible. The
-transferable move is to connect a design choice to a visible action, then show the
-artifact or rejected option that makes the choice intelligible. Do not substitute a clever
-title, lifestyle vignette, or assertion of simplicity for evidence. Screenshots can
-illustrate behavior but cannot alone establish usability or performance.
-
-In a design story, let a short sentence direct the eye before you explain
-the geometry. An original example for a screenshot pair: “Try closing the
-drawer with your thumb. In the first version the button is on the far side
-of the phone.” The second image can now do some of the talking.
+A control moving within reach of a thumb says what a small screen changes
+for the person holding it. In a design story, let a short sentence direct
+the eye before explaining the geometry. For a hypothetical screenshot
+pair: “Try closing the drawer with your thumb. In the first version the
+button is on the far side of the phone.” Now the second image gets a chance
+to answer. A rejected layout can do the same job in a longer design essay.
 
 ## Tailwind CSS
 
@@ -58,19 +53,14 @@ of the phone.” The second image can now do some of the talking.
   platform primitives and polyfills, and closes with links to try the components. The
   named authors and conversational enthusiasm are part of a maker's release note.
 
-The titles identify the changed product or capability more directly than iA's design
-title. The articles alternate informal personal remarks with precise reader consequences,
-examples, and links. They differ in scale: a rebrand answers license questions. A major
-release catalogs and benchmarks. A feature announcement demonstrates integration. Transfer
-the habit of answering the reader's immediate question before explaining implementation,
-not the profanity, enthusiasm, promise of future work, or a list-heavy structure.
-Benchmark figures need a workload and comparison. Preserve differences between shipped
-features and ideas.
+The rebrand has an unusually satisfying first question. Does someone who
+already paid have to pay again? For a fictional product with a new name
+and the same lifetime license, a single sentence would do: “If you already
+own the old edition, you own this one too.” The brand history can wait.
 
-In a release for existing customers, an unexpected word of relief can be
-the whole lead. Suppose the facts are a new name and the same lifetime
-license. “If you already own the old edition, you own this one too.” The
-brand history can wait until the reader knows where they stand.
+The version announcement earns a longer middle. A full build and a rebuild
+that generates no new CSS ask different things of the tool. Keep the
+workload beside the time so the reader can find the case they run daily.
 
 ## Vercel
 
@@ -79,9 +69,9 @@ brand history can wait until the reader knows where they stand.
   account of the changes. Task-oriented sections explain the agent harness, collaboration,
   tracing, performance, and setup. It mixes customer examples and testimonials with code,
   a benchmark table, workload assumptions, an upgrade guide, and first-run commands. Its
-  ending offers several concrete ways to start. This is a broad launch and product pitch,
-  not a neutral comparison. Its latency graphic text and table give inconsistent 1.0
-  values. Do not repeat either number without resolving the discrepancy.
+  ending offers several concrete ways to start. The mock model replies
+  immediately in the turn-latency test. That detail explains which part
+  of the wait the benchmark can measure.
 - Matthew Stanciu and Tim Caswell's
   [How we made global routing faster with Bloom filters](https://vercel.com/blog/how-we-made-global-routing-faster-with-bloom-filters)
   titles the mechanism and outcome, then leads with memory and tail-latency improvements.
@@ -97,28 +87,23 @@ brand history can wait until the reader knows where they stand.
   bounded shards changes lookup behavior. It builds on the prior Bloom-filter work rather
   than treating the new optimization as an isolated trick.
 
-Vercel's launch title announces availability. The engineering titles foreground a result
-and, sometimes, the mechanism. The launch moves among capabilities, proof, and next steps.
-The routing articles spend more time on the old system, failure mode, and design. Transfer
-the causal chain and measured scope, not the promotional framing or headline metric alone.
-A customer testimonial is attributed experience, not controlled proof. A microbenchmark
-describes its specified workload, not every production deployment.
-
-In a performance story, verbs can do much of the explanatory work. Trace
-one request: which process opens a file, which lookup waits, which step
-the new index can skip. A small diagram or one line of traced output can
-take over when the prose begins carrying too many names.
+Trace one request in a performance story. Which process opens the file,
+which lookup waits, and what can the new index skip? Once a reader can
+follow the request, the result in the headline has a mechanism behind it.
+A customer describing the wait supplies another kind of evidence. The two
+can sit happily in the same article when readers know which is which.
 
 ## Apply this to an engineering blog
 
-For a hypothetical article about reducing a build cache's repeated downloads, begin with
-the actual developer symptom: a rebuild downloads unchanged dependencies after a branch
-switch. Explain the previous cache key with one small example, show why the branch name
-invalidated otherwise reusable entries, then show the revised key and its correctness
-boundary. Include a before-and-after trace and a measured workload if available. State
-what was measured, the comparison, and any regressions. Close with what readers can do, or
-with the unresolved tradeoff if this is an investigation rather than a release. The
-example is illustrative, not a claim about an existing system.
+For a hypothetical article about reducing a build cache's repeated downloads,
+begin with the actual developer symptom: a rebuild downloads unchanged
+dependencies after a branch switch. Explain the previous cache key with one
+small example, show why the branch name invalidated otherwise reusable
+entries, then show the revised key and its correctness boundary. Include a
+before-and-after trace and a measured workload if available. State what was
+measured, the comparison, and any regressions. Close with what readers can
+do, or with the unresolved tradeoff if this is an investigation rather than a
+release. The example is illustrative, not a claim about an existing system.
 
 Choose the title to match the evidence: a plain change announcement for a release, a
 mechanism-and-result title for a verified engineering result, or a question for an
@@ -126,9 +111,3 @@ unresolved investigation. Give the reader a concrete action or decision early, l
 amount of explanation follow the difficulty, and distinguish observation, attribution,
 inference, and future intent. Do not manufacture usage numbers, quotes, screenshots,
 measurements, or certainty to reproduce a publication's effect.
-
-## Reading notes
-
-These notes draw on the article text. In iA's “It Takes Two to Duo,” the live
-and indexed versions differed on availability. Both described the same change
-to the interface. That interaction is the example used here.

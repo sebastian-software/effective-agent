@@ -44,9 +44,8 @@ Apply a minimum-effective-edit rule:
 In a signed article, ask what a reader would lose if you softened a strong
 word or cut a repeated phrase. Keep it when it conveys the writer's taste,
 makes a joke land, or brings an earlier observation back with new meaning.
-Words like `innovative` and `groundbreaking` deserve the same question as
-any other adjective. Flag a passage when you can name what it obscures for
-someone reading this piece on its own.
+Flag a passage when you can name what it obscures for someone reading
+this piece on its own.
 
 ## Inspect pattern families
 

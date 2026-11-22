@@ -158,6 +158,9 @@ An opinion can be emphatic while its factual basis stays precise.
 Read the piece on its own. A new reader should have enough context to
 understand the observation and enough room to reach a different verdict.
 
+An unsigned explainer or project page has room for humor, varied sentence
+length, and a firsthand observation when its source is clear.
+
 Do not add one action per sentence, one sentence per paragraph, an approved-word
 dictionary, imperative syntax, or other controlled-language constraints merely
 because the subject is technical. Apply the stylistic constraints the user

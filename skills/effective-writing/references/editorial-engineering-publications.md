@@ -1,10 +1,8 @@
 # Editorial approaches from engineering publications
 
-Use this reference when planning or revising a technical article. It describes observed
-editorial choices, not a recipe for copying a writer's voice. Choose a structure for the
-reader's problem and use evidence from the actual work. The sources below were read in
-November 2026. Product capabilities, browser support, and specifications may have changed
-since publication.
+A tutorial can turn on one button. A migration report may need the whole
+maintenance window. These readings follow the technical detail that makes
+each story worth the reader's time.
 
 ## Josh W. Comeau
 
@@ -25,21 +23,15 @@ it assembles a reusable starting point and explains individual rules through exa
 including box-model arithmetic and an interactive editor. Its changelog records
 corrections and changes over time.
 
-Titles in this small sample range from a named decision framework to an enthusiastic
-feature claim and a practical reusable artifact. They signal the reader's payoff without
-requiring one fixed title pattern. Interactive examples, diagrams, and accessible
-fallbacks are part of the explanation where available. Prose should still explain the
-outcome if a demo is unavailable.
+Comeau gives readers something they can decide before giving them the
+vocabulary to defend the decision. Try that with a cache. Show two stale
+values of exactly the same age: a decorative badge and an account balance.
+Which one would the reader ship? Having chosen, they now have a reason to
+care how the application invalidates a value.
 
-For a caching article, start with two concrete failures: an outdated decorative badge and
-an outdated account balance. Explain why the same cache age has different consequences,
-then give readers a way to choose an invalidation strategy. If the numbers are estimates,
-say how they were obtained and where they may mislead.
-
-A useful change of pace in a tutorial is to let the reader make a choice
-before supplying the vocabulary. For example, ask which of two buttons
-a keyboard user would reach next, then show what receives focus. The
-answer gives the term in the next paragraph a job.
+In a keyboard tutorial, ask which button the reader expects to reach next.
+Show which button actually receives focus. The outcome gives the term in
+the next paragraph a job even if the reader cannot run the demo.
 
 ## Kent C. Dodds
 
@@ -58,16 +50,10 @@ cost with examples. It supplies text for a visual model for readers using assist
 technology or missing the image. The launch's problem-to-invitation arc differs from the
 testing articles' explanation and comparison.
 
-The titles include a product introduction, a named conceptual model, and a direct
-comparison. The byline and site establish a personal teaching perspective. The product
-announcement also carries a direct commercial interest. A model can organize a discussion
-without making its categories universal or its recommendations automatically right for
-every project.
-
-In an article about deployment checks, introduce a small model with three costs: time to
-detect a problem, cost to run the check, and cost to investigate a failure. Walk one
-change through each option. Explain where the model stops helping, such as when a
-regulatory requirement determines the check.
+For an article about deployment checks, take one change through a unit
+test and an integration test. How long before the failure appears? How
+much work does it take to find its cause? A small model becomes useful at
+the moment it gives two competent engineers a reason to choose differently.
 
 ## Piccalilli
 
@@ -89,22 +75,11 @@ preference while allowing for different team needs. Saleh Mubashar's
 instead gives standards history, compares proposals, explains the layout algorithm with
 examples, and discusses accessibility and evolving support.
 
-These titles range from an explanatory feature name to a building task and a position. The
-publication's shared subject does not imply a single authorial voice, level of formality,
-or narrative length. New CSS features and standards histories are time-sensitive: date
-claims and recheck current specifications before reuse.
-
-Explain a log viewer's layout by showing the actual constraint first: a long request ID
-must remain readable beside a narrow filter panel. Show a minimal layout, explain the rule
-that controls overflow, then show what happens when the panel is resized. An opinion piece
-about layout philosophy would need a different structure and explicit reasons for its
-recommendation.
-
-A feature explainer and an opinion column can use the same CSS declaration
-in different ways. The explainer can pause and ask the reader to change
-one value. The columnist can show the one layout that made a once-favorite
-rule hard to defend. In both, spend a sentence on what someone actually
-sees when the viewport shrinks.
+Give a layout article a request ID long enough to push the filter panel
+off screen. A feature explainer can invite the reader to resize the panel
+and watch the point where the rule gives way. A columnist can use that
+same screenshot to explain why a once-favorite rule has lost its appeal.
+The visible consequence earns either piece its claim.
 
 ## Evil Martians
 
@@ -127,28 +102,9 @@ by Yaroslav Kurbatov and Travis Turner, starts with a specific hidden assumption
 why physical row order can change, and describes experiments and a tool for exposing
 dependencies.
 
-The titles use a consequential decision, a measured outcome, or a technical risk and
-action. Case studies and tool articles have different evidence and endings. The firm's
-service promotion is part of the publication context. A reported result belongs to its
-workload and measurement method, not every reader's system.
-
-For a migration post, state the scheduled decision and the constraint first. Show a small
-table of test runs, environment, data size, and duration. Explain what was measured and
-what remained uncertain. End with the decision, the conditions that would change it, and
-the operational consequences. Do not invent measurements to make the story more dramatic.
-
-## Apply the craft
-
-- Choose an opening that earns the reader's attention: a decision, an observed failure, a
-  real constraint, or a question the article can answer.
-- Develop the argument with a sequence of examples that changes one relevant variable at a
-  time. Explain why the result matters before adding more detail.
-- Make judgments attributable and proportionate: separate a measurement, a person's
-  observation, a vendor claim, and the author's recommendation. Include the cases where
-  the recommendation changes.
-- End according to the assignment: a decision and its conditions, a usable technique and
-  limits, an open question, or a product invitation. A launch's call to action is not a
-  requirement for a tutorial.
-- Use original examples and the contributor's own experience. Do not copy signature
-  phrases, humor, personal anecdotes, sentence rhythms, or a publication's branding. Test
-  code and technical claims against current primary documentation.
+The interesting number in the migration is the distance between two runs.
+The team needed to schedule a window. A reader can grant both that the
+faster machine was fast and that booking the maintenance window would
+have been a poor bet. Carry the comparison that far in your own story.
+Supply the workload and the machines, then name the decision that depended
+on the spread. A team choosing to stay put has a perfectly good ending.

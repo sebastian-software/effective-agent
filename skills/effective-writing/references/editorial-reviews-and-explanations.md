@@ -23,13 +23,9 @@ Suppose a build tool advertises resumable uploads. A reviewer who actually
 lost a connection might write, “My Wi-Fi gave up on file 99. Mercifully, the
 next run started at 99.” The file number earns the adverb.
 
-A reader choosing between two tools needs a verdict early enough to use and a
-reason to trust the comparison. In three Wirecutter articles published in
-partnership with Engadget, the category guides advertise a clear pick in their
-titles. The collection of learning toys promises a selection. The podless
-coffee maker headline takes a third approach: it names the two contenders and
-asks which is better. Only the headline of that last piece was available for
-this comparison. [Podless coffee maker comparison](https://www.nytimes.com/wirecutter/reviews/keurig-lavazza-podless-coffee-makers/)
+Three Wirecutter partner editions show how much a title can promise. Two
+category guides advertise a pick. A collection of learning toys promises
+a selection organized around what a child might want to do.
 
 The grinder guide moves from lab extraction tests to how a grinder feels in a
 kitchen. The glove guide changes its recommendation with the weather and how
