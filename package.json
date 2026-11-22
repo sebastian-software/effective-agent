@@ -5,6 +5,6 @@
     "test:site-layout": "node scripts/test-site-layout.mjs"
   },
   "devDependencies": {
-    "playwright-core": "1.63.0"
+    "playwright-core": "1.65.1"
   }
 }
