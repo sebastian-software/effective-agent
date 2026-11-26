@@ -30,7 +30,8 @@ piece needs briefing or source planning.
   [Structure and story](route-structure.md).
 - A request to make prose sound less generated is a
   [voice audit](route-voice-audit.md), not a line edit.
-- When the text is a technical concept or technical article, also apply the
+- When the text is a technical concept, a design proposal, or an article that
+  describes one, also apply the
   [precision pass](technical-subject-matter.md#run-a-precision-pass-on-concepts).
 - Short internal team messages belong to [Metro English](route-metro-english.md).
 - Quotation marks, spacing, dashes, and number or date formatting belong to
