@@ -5,9 +5,9 @@
 **Make the thinking clear. Keep the voice yours.**
 
 Effective Writing turns supplied ideas and evidence into prose a particular
-reader can use. It works at article length, at team-message length, and down to
-the punctuation a locale expects. Structure, facts, qualifications, and the
-author’s voice stay connected through the edit.
+reader can use. It works on articles and technical concepts, on team messages,
+and down to the punctuation a locale expects. Structure, facts, qualifications,
+and the author’s voice stay connected through the edit.
 
 **[Explore Effective Writing →](https://effective-agent.dev/skills/effective-writing/)**
 

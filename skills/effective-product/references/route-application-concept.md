@@ -21,7 +21,9 @@ Product route. Do not turn a concept into an implementation plan.
 Load only the links needed for the current concept. Bring in
 `effective-engineering` for consequential system or data feasibility and
 `effective-web` for browser experience or browser-specific obligations; keep
-their detailed designs out of the concept.
+their detailed designs out of the concept. Hand the wording of the concept text,
+including how clearly it names who acts and who decides, to `effective-writing`;
+the product content and its evidence stay here.
 
 ## Develop the first concept
 

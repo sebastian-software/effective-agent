@@ -421,6 +421,26 @@
       "name": "correct-ai-product-facts",
       "prompt": "Plan how to correct inaccurate AI answers about our product plans, using verified facts and repeatable answer checks.",
       "owner": "effective-marketing"
+    },
+    {
+      "name": "word-integration-concept",
+      "prompt": "Draft the text of an integration concept for the Tidewater billing portal from these settled design notes, making clear which service calls which API and who approves access.",
+      "owner": "effective-writing"
+    },
+    {
+      "name": "tighten-technical-concept-wording",
+      "prompt": "Tighten the wording of this technical concept for the Alder sync service. It reads smoothly but hides who triggers the export and who decides how long files are kept.",
+      "owner": "effective-writing"
+    },
+    {
+      "name": "review-concept-before-planning",
+      "prompt": "Before we plan implementation, review this concept for the Shiftwell volunteer-scheduling app: does the first version hang together, and which open questions block it?",
+      "owner": "effective-product"
+    },
+    {
+      "name": "review-architecture-proposal-against-system",
+      "prompt": "Review this architecture proposal to split the Quillmark search indexer into its own service. Test it against our current load, operations, and delivery path.",
+      "owner": "effective-engineering"
     }
   ]
 }

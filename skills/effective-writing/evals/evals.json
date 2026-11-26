@@ -184,6 +184,16 @@
       "name": "draft-approval-does-not-complete-related-status",
       "prompt": "Draft a GitHub approval and a Slack update about the same PR. The substantive review found no blockers and CI passes, but no approval has been submitted, the browser check is pending, and nothing has deployed. Keep all publication with me.",
       "expected": "Uses Metro English for both drafts while preserving action state. The approval body can express the intended approval, but the Slack update describes the completed review and pending approval rather than claiming approval was submitted. Preserves the pending browser check and absence of a deploy, and performs no publication."
+    },
+    {
+      "name": "clarify-actors-in-german-integration-concept",
+      "prompt": "Überarbeite diesen Abschnitt unseres Integrationskonzepts, damit beim ersten Lesen klar ist, wer was tut und wer entscheidet. Belegte Fakten aus dem Konzept: Der Chat-Agent der fiktiven Lindgrün Handel GmbH nutzt den MCP-Dienst der fiktiven Aktenwerk-Plattform. Der MCP-Dienst ruft nur die lesenden Endpunkte der Backend-API auf. Das Backend gleicht hochgeladene AVV-Anlagen mit der hinterlegten Vorlage ab; das Chat-Modell bewertet die Anlagen nicht. Der DSB der Lindgrün Handel GmbH gibt das Ergebnis in der Aktenwerk-Oberfläche frei. Laut Team ist noch nicht entschieden, ob Freigaben protokolliert werden. Zu Exportdateien steht im Konzept nur: „Exporte werden bereinigt.“ Abschnitt: „Der Agent kommt mit Leserechten durch die Hintertür. Die Prüfung erledigt die Plattform. Die Freigabe läuft über den DSB. Freigaben werden protokolliert. Exporte verschwinden nach einer Weile.“",
+      "expected": "Returns the revised German section. Names the MCP service and its read-only access to the backend API, the backend as the component that compares the AVV attachments, and the DSB as the person who approves in the Aktenwerk interface, so the actor and decision owner are clear on first read. Keeps the negative scope that the chat model does not assess the attachments, and keeps AVV, MCP, and DSB unchanged. Words approval logging as open because the source says it is undecided, and drops the unsupported claim that approvals are logged. Keeps the export statement within the source's wording and flags to the author whether a deletion period exists, rather than declaring it open. Adds no retention period, mechanism, or other legal or technical claim."
+    },
+    {
+      "name": "clarify-plan-section-in-bylined-post",
+      "prompt": "Clarify who does what in the plan section of my blog post. No full line edit; leave the rest alone. Notes: the fictional Fernhill ledger service takes over nightly invoice sync through its event API, our finance lead approves the cutover date, and old CSV exports stay in the archive bucket for 90 days. Intro: I have migrated three billing systems, and every one of them promised to be the last. Plan: Next quarter the sync magic moves out of the monolith. Invoices get handled by the new pipeline, and the cutover happens when everyone feels good about it. Old exports stick around for a while, just in case. Frankly, this is the most sensible plan we have had in years.",
+      "expected": "Returns the post with changes limited to the plan section. Names the Fernhill ledger service and its event API as taking over nightly invoice sync, the finance lead as the person who approves the cutover date, and the archive bucket and 90-day period for old CSV exports. Keeps the author's first-person voice, the intro's joke about the last migration, and the closing verdict. Leaves the intro and other sentences without a scope, path, decision, or lifecycle claim unchanged, and adds no fact beyond the supplied notes."
     }
   ],
   "activation": [
@@ -285,6 +295,26 @@
     {
       "name": "private-technical-diagnosis-without-message",
       "prompt": "Explain to me why this parser returns null for an empty input. Do not draft a review, issue comment, or team message.",
+      "should_trigger": false
+    },
+    {
+      "name": "revise-technical-concept-for-actors",
+      "prompt": "Revise the wording of this technical concept for the Harbor Notes integration so each section makes clear which component acts, through which interface, and who approves access.",
+      "should_trigger": true
+    },
+    {
+      "name": "write-code-derived-conceptual-guide",
+      "prompt": "Write the Concepts page of our README from the current source code so it explains how the scheduler, queue, and worker modules actually interact.",
+      "should_trigger": false
+    },
+    {
+      "name": "review-application-concept-before-planning",
+      "prompt": "Review this application concept for the Fieldmate service app before implementation planning: do the audience, use cases, first-version scope, and risks describe the same product?",
+      "should_trigger": false
+    },
+    {
+      "name": "review-architecture-proposal",
+      "prompt": "Review this architecture proposal for moving the Larkspur order service to event sourcing, tested against our current system, operations, and delivery path.",
       "should_trigger": false
     }
   ]

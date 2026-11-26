@@ -16,6 +16,10 @@ patterns, diagrams, or distributed components without a clear driver.
 - **Evolve:** define an incremental migration, compatibility period, rollback
   conditions, and evidence gates for an approved direction.
 
+Hand the wording of a design or proposal document, including how clearly it
+names who acts and who decides, to `effective-writing`; the design decision
+stays here.
+
 Respect the user's authority. Do not change source, infrastructure, cloud
 resources, secrets, deployments, or decision records during an assessment or
 design request unless explicitly asked.
