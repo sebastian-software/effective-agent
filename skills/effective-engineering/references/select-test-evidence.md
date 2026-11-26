@@ -64,6 +64,19 @@ can both be useful when they protect different failure modes. Do not retain a
 slower layer just because it resembles a pyramid, and do not erase a real
 boundary behind a mock only because a unit test is easier to write.
 
+## Name What a Boundary Check Proves
+
+For a new entry point or runtime hop, name the caller, hop, and identity of each
+check, and claim only that rung:
+
+- **Availability:** a health check proves the component runs, with no identity.
+- **Protocol:** a client call through the new entry point proves the protocol.
+- **Connectivity:** a round trip with the component's own credential proves that
+  hop and credential, not user authorization.
+- **Business boundary:** a denial at a real protected operation of the owning
+  component proves that an identity cannot cross there. Without such an
+  operation the denial is unproven; a missing tool is no proof.
+
 ## Techniques That Change the Evidence
 
 ### Properties

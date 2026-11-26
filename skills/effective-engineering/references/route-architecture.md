@@ -24,7 +24,8 @@ design request unless explicitly asked.
 
 - [Architecture foundations](architecture-foundations.md) to map
   responsibilities, boundaries, interfaces, data ownership, quality scenarios,
-  and viable options.
+  and viable options, including the runtime and call path of an additional
+  entry point.
 - [Operability and Twelve-Factor practices](operability-and-twelve-factor.md)
   when the system is a service, API, worker, scheduled process, or deployment
   change. Treat the factors as operational design prompts, not a checklist that

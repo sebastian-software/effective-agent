@@ -34,6 +34,9 @@ do not manufacture a number when none is known.
 Describe only the boundaries that affect the decision:
 
 - **Responsibility:** name the capability or business rule the boundary owns.
+- **Runtime:** state whether the parts share a process, run separately, or are
+  not decided yet. Record this separately from repository layout and
+  deployment; a shared repository does not imply a shared process.
 - **Data ownership:** name the authoritative writer and the replication,
   projection, or synchronization method used by others.
 - **Interface:** define inputs, outputs, errors, versioning, and whether the
@@ -51,6 +54,27 @@ Describe only the boundaries that affect the decision:
 Avoid a database shared directly by multiple independently deployed services.
 If a temporary exception is necessary, state its owner, permitted access,
 replacement path, and removal gate.
+
+### Additional Entry Points
+
+When a concept gives the same business rules or data a second entry point (for
+example a browser product and an agent channel) or adds a runtime component
+that shares them, record the items above for the new path: runtime, call path
+through which existing contract, failure behavior, and the component that
+enforces authorization and audit. Concepts with one component and one channel
+need nothing extra.
+
+- Two channels do not imply two copies of business rules. Name any constraint
+  that exists only in one channel and decide whether the shared contract
+  enforces it instead of copying it into the new path.
+- “Not decided” is valid when the concept records its consequence and the
+  decision needed before implementation. Do not invent an identity protocol or
+  permission model to fill the gap; an API description such as OpenAPI does not
+  settle how a request acts for an authorized user.
+- Choose between an in-process adapter and a separate service with
+  [Compare Options](#compare-options); neither is the default.
+- Name what each first-increment check proves; see
+  [Select Test Evidence](select-test-evidence.md#name-what-a-boundary-check-proves).
 
 ## Evaluate Module Depth
 

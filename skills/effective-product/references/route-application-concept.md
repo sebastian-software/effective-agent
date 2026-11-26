@@ -40,7 +40,10 @@ questions that could change the direction. Keep observations, stakeholder
 claims, and assumptions visibly apart; an honest open question beats a
 fabricated answer. The technical direction stays at the level of platform,
 integration, data, and constraints; interfaces, schemas, and sequencing belong
-to later planning. Use the project's concept format if one exists.
+to later planning. Bring in `effective-engineering` as well when the concept
+adds a second entry point or runtime component that shares business rules or
+data; record its runtime and ownership as decided or open. Use the project's
+concept format if one exists.
 
 ## Review the concept in depth
 
