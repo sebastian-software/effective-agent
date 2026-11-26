@@ -7,6 +7,7 @@ or a named pattern as proof of a good design.
 
 - [Establish the Decision Frame](#establish-the-decision-frame)
 - [Map Boundaries and Contracts](#map-boundaries-and-contracts)
+- [Make a New Entry Point Explicit](#make-a-new-entry-point-explicit)
 - [Evaluate Module Depth](#evaluate-module-depth)
 - [Compare Options](#compare-options)
 - [Plan Evolution](#plan-evolution)
@@ -51,6 +52,68 @@ Describe only the boundaries that affect the decision:
 Avoid a database shared directly by multiple independently deployed services.
 If a temporary exception is necessary, state its owner, permitted access,
 replacement path, and removal gate.
+
+## Make a New Entry Point Explicit
+
+Use this when a concept gives the same business rules or data more than one
+entry point (for example a browser product and an agent channel), or adds a
+runtime component beside existing ones that shares them. A single-component
+concept, or a single-channel one that adds no runtime component, needs none of
+it. Record, reusing the boundary list above:
+
+- **Runtime:** same process, separate process, or not decided, recorded
+  separately from repository layout and deployment.
+- **Call path, contract, and failure:** who calls whom, through which interface
+  and existing contract, and how the path fails.
+- **Owning component:** which component owns the Responsibility, Data ownership,
+  and Trust boundary items above, including authorization and audit.
+- **First-increment evidence:** what each planned check actually proves.
+
+“Not decided” is valid when the concept records the consequence and the
+decision needed before implementation; never invent an identity protocol or
+permission model to fill the gap.
+
+Example: a browser product with a backend HTTP API adds a Model Context Protocol
+(MCP) entry point. A customer agent uploads a data processing agreement (DPA),
+starts a preliminary review, and reads the result; a human approves in the UI.
+
+| Variant | Runtime | Call path | Owner and enforcement point | Failure | Tradeoff |
+| --- | --- | --- | --- | --- | --- |
+| In-process adapter | API process | Agent calls the API process over MCP; the MCP module calls application services | Services own rules; same authorization and audit point as the HTTP API | Shares failure and load with the API process | No extra process or hop; tighter coupling to backend internals |
+| Separate service, same repository | Own process | Agent calls the service over MCP; service and browser call the HTTP API; no backend imports or database access | Backend owns rules and enforces authorization and audit at the API | Must handle an unavailable backend | Clear API boundary; another service to operate, identity across a network hop, a service credential |
+
+If authorization and audit sit only in the HTTP layer, the adapter does not
+inherit them; moving that enforcement is a recorded decision. In both variants,
+mapping the MCP caller to an authorized user is open until decided. A shared
+repository does not imply a shared process, and two channels do not imply two
+copies of business rules. Call out a constraint that exists only in the browser
+and decide whether the shared API contract enforces it; do not copy it into the
+new entry point. See [Compare Options](#compare-options) for general tradeoffs.
+
+A model concept for the separate service: it translates tool calls into backend
+API requests; the backend owns business rules, tenant isolation, authorization,
+audit, and storage and retention of DPA content; whether the service may log or
+cache that content is decided or open. The service's health check needs no
+identity; a check with a technical integration identity proves backend
+connectivity, but that identity cannot access DPA data; business calls act for
+an authorized user, and how the user's identity reaches the API is open. Until
+that identity propagation is decided, the first increment proves availability,
+the MCP protocol, backend connectivity, and that the integration identity is
+denied at an existing DPA endpoint, while business tools stay unavailable, and
+it must be decided before business tools are built. An API description such as
+OpenAPI does not settle identity on its own.
+
+Keep evidence rungs separate, naming caller and hop: an availability check of
+the new component needs no identity; a protocol call from the agent through the
+new entry point proves only the protocol; a round trip by the new component,
+with its credential, to the owning component proves connectivity and the
+credential, not user authorization; a call denied to an identity that must not
+reach business data, at a real protected operation of the owning component,
+proves that this identity cannot cross the business boundary there. Without such
+an operation, record that denial as unproven; a missing tool is not proof. In
+the example, deny the technical integration identity at an existing backend DPA
+endpoint; inbound agent authentication belongs to the open identity handoff. See
+[Select Test Evidence](select-test-evidence.md) for what must stay real.
 
 ## Evaluate Module Depth
 
