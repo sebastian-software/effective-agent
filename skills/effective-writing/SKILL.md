@@ -6,9 +6,10 @@ description: >-
   within technical workflows. The Metro English route (formerly metro-english)
   owns natural team communication; the domain workflow retains technical
   judgment and publication authority. Also write, structure, revise, or audit
-  nonfiction and technical articles for argument, clarity, voice, and observable
-  AI-writing patterns without inferring authorship, and correct locale
-  typography. Commercial copy belongs to effective-marketing;
+  nonfiction, technical articles, and the text of technical concepts or design
+  proposals for argument, clarity, voice, and observable AI-writing patterns
+  without inferring authorship, and correct locale typography. Commercial copy
+  belongs to effective-marketing; design decisions to effective-engineering;
   repository documentation to effective-delivery.
 ---
 
@@ -37,7 +38,9 @@ For communication addressed to teammates, use the [Metro English
 route](references/route-metro-english.md) by default, including first drafts
 created inside another workflow. An explicit rewrite or style request is not
 needed. Read the route once per conversation and reuse it. A workflow using
-the former name "metro-english" selects this route.
+the former name "metro-english" selects this route. A long-form technical
+concept addressed to teammates is not a short team message; it takes the
+technical route.
 
 ## Route by Intent
 
@@ -47,7 +50,7 @@ the former name "metro-english" selects this route.
 | Improve clarity, clutter, syntax, verbs, rhythm, or voice; run a multi-pass line edit | [Prose and Revision](references/route-prose.md) |
 | Make prose sound less generated, or report observable AI-writing patterns without an authorship guess | [Human Voice Editing](references/route-voice-audit.md) |
 | Write thought leadership, content marketing, editorial case studies, objections, proof, or a call to action | [Persuasive Nonfiction](references/route-persuasion.md) |
-| Write engineering blog posts, technical articles, explainers, or public technical project pages | [Technical Subject Matter](references/route-technical-prose.md) |
+| Write or revise technical prose such as engineering blog posts, technical articles, explainers, technical case studies, public technical project pages, technical concepts, design proposals, or comparable technical writing | [Technical Subject Matter](references/route-technical-prose.md) |
 | Draft or revise a review, approval, PR or issue comment, Slack message, async update, or German team note, including within another workflow | [Metro English](references/route-metro-english.md) |
 | Fix quotation marks, punctuation spacing, dashes, apostrophes, numbers, dates, currency, or hyphenation for a locale | [Locale Typography](references/route-locale-typography.md) |
 
@@ -62,8 +65,11 @@ the former name "metro-english" selects this route.
   and explainers stay here.
 - `effective-web`: interface copy, page hierarchy, accessibility, localization
   UX, and browser implementation. Locale language conventions stay here.
-- `effective-product`: discovery, strategy, and durable communication decisions
-  recorded as ADRs.
+- `effective-product`: discovery, strategy, application-concept content and
+  review, and durable communication decisions recorded as ADRs. The wording of
+  the concept text stays here.
+- `effective-engineering`: design decisions and architecture-proposal reviews.
+  The wording of a design or proposal document stays here.
 
 Correct language without silently changing the underlying technical, legal,
 product, or documentation contract. Use controlled language only when the

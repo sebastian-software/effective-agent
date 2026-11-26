@@ -1,8 +1,9 @@
 # Technical Subject-Matter Writing
 
-Use this reference for engineering blog posts, technical articles, explainers,
-technical case studies, and public technical project pages. Preserve technical
-integrity without making editorial prose sound like a manual.
+Use this reference for technical writing such as engineering blog posts,
+technical articles, explainers, technical case studies, public technical project
+pages, technical concepts, design proposals, and comparable texts. Preserve
+technical integrity without making editorial prose sound like a manual.
 
 ## Select the writing contract
 
@@ -10,7 +11,7 @@ Choose the narrowest contract that fits the artifact:
 
 | Contract | Use |
 | --- | --- |
-| Technical editorial prose | Explain, argue, teach, or demonstrate through an article, blog post, case study, or public project page. |
+| Technical editorial prose | Explain, argue, teach, propose, or demonstrate through an article, blog post, case study, public project page, technical concept, design proposal, or comparable text. |
 | Technical marketing prose | Explain a verified capability, mechanism, constraint, or differentiator through `effective-marketing`. |
 | Technical documentation | Help a user operate, configure, integrate, migrate, or troubleshoot a product through `effective-delivery`. |
 | Controlled technical language | Apply ASD-STE100, a tekom-based project profile, or another named standard through `effective-delivery` only when it governs the artifact. |
@@ -71,6 +72,8 @@ Extract the proposition before revising its language:
 - actor or owning system
 - action or mechanism
 - object or affected surface
+- decision owner or authority
+- data object, location, and retention
 - prerequisites and conditions
 - limits, versions, scale, or environment
 - result, side effect, and likely failure
@@ -83,6 +86,41 @@ promise for a cleaner sentence or stronger hook.
 Preserve literal code, commands, API names, configuration keys, UI labels,
 protocol names, identifiers, and quoted output. Route uncertain implementation
 details back to their technical source instead of smoothing over them.
+
+## Run a precision pass on concepts
+
+A technical concept can read fluently while hiding who acts, through which
+interface, and who decides. In a concept, a design proposal, or an article that
+describes one, mark each sentence that states a scope boundary, a request path,
+a decision, or a data lifecycle. Ask of it only the questions that matter:
+
+- Who does what, through which interface, and who decides?
+- For a storage claim: which data, where, for how long?
+
+A sentence without such content gets no precision edit.
+
+- Name the component, interface, or role that the source states but the
+  sentence hides, and keep a stated exclusion, such as what a component does
+  not assess, as explicit as the claim it limits.
+- Replace a metaphor, a vague noun, or a literal translation only when it hides
+  an actor, interface, decision, or data lifecycle. A joke, verdict, or image
+  that hides nothing stays, and so does an accurate
+  [analogy](#explain-for-the-selected-audience).
+- Keep established domain terms and abbreviations under the
+  [terminology rules](#control-terminology-without-flattening-the-prose). For
+  English calques, see [German](#german) for text written from scratch and
+  [Revise translated prose](locale-shared-rules.md#revise-translated-prose) for
+  translations.
+- Keep each claim at the evidence level its source or owning discipline
+  assigned: observed, proposed, or open. Call a point open only when the source
+  does. When the source leaves unclear whether something was decided, keep the
+  claim as written and flag a question to the author. Never supply a missing
+  mechanism, owner, or period.
+
+The pass has no fixed template and bans no metaphor. It checks wording, not the
+product, design, or architecture behind it. See
+[Technical concept precision](technical-concept-precision.md) for German
+examples.
 
 ## Control terminology without flattening the prose
 
@@ -181,6 +219,9 @@ surrounding article to retain its voice.
 - Reduce heavy nominal constructions, ambiguous references, and unnecessary
   internal jargon.
 - Keep established Fachbegriffe when they are accurate and useful.
+- In German written from scratch, replace an avoidable English calque, such as
+  „ein Problem adressieren“, with natural German. Keep an English term that is
+  the established Fachbegriff.
 - Treat tekom-derived clarity rules as an editorial influence unless a
   project-specific rule set explicitly governs the artifact.
 - Do not default to Einfache Sprache or Leichte Sprache.
@@ -199,7 +240,10 @@ surrounding article to retain its voice.
 ## Review an article
 
 Use these checks where the draft needs attention. For an article request,
-deliver the article itself in the publication's format.
+deliver the article itself in the publication's format. For a technical concept
+or design proposal, use steps 1-5 together with the
+[precision pass](#run-a-precision-pass-on-concepts), and apply step 6 only to
+its title and heading hierarchy.
 
 1. **Technical integrity** - Verify behavior, conditions, limits, examples, and
    comparisons against their owning sources.
