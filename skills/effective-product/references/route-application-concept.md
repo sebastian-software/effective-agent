@@ -21,11 +21,10 @@ Product route. Do not turn a concept into an implementation plan.
 Load only the links needed for the current concept. Bring in
 `effective-engineering` for consequential system or data feasibility and
 `effective-web` for browser experience or browser-specific obligations; keep
-their detailed designs out of the concept. When a concept gives the same
-business rules or data more than one entry point (for example a browser product
-and an agent channel), or adds a runtime component beside existing ones that
-shares them, record at concept level the runtime, the call path, and the
-ownership, each as decided or open, and bring in `effective-engineering`.
+their detailed designs out of the concept. Bring in `effective-engineering`
+as well when the concept adds a second entry point or runtime component that
+shares business rules or data; record its runtime and ownership as decided or
+open.
 
 ## Develop the first concept
 

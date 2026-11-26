@@ -7,7 +7,6 @@ or a named pattern as proof of a good design.
 
 - [Establish the Decision Frame](#establish-the-decision-frame)
 - [Map Boundaries and Contracts](#map-boundaries-and-contracts)
-- [Make a New Entry Point Explicit](#make-a-new-entry-point-explicit)
 - [Evaluate Module Depth](#evaluate-module-depth)
 - [Compare Options](#compare-options)
 - [Plan Evolution](#plan-evolution)
@@ -35,6 +34,9 @@ do not manufacture a number when none is known.
 Describe only the boundaries that affect the decision:
 
 - **Responsibility:** name the capability or business rule the boundary owns.
+- **Runtime:** state whether the parts share a process, run separately, or are
+  not decided yet. Record this separately from repository layout and
+  deployment; a shared repository does not imply a shared process.
 - **Data ownership:** name the authoritative writer and the replication,
   projection, or synchronization method used by others.
 - **Interface:** define inputs, outputs, errors, versioning, and whether the
@@ -53,54 +55,26 @@ Avoid a database shared directly by multiple independently deployed services.
 If a temporary exception is necessary, state its owner, permitted access,
 replacement path, and removal gate.
 
-## Make a New Entry Point Explicit
+### Additional Entry Points
 
-Use this when a concept gives the same business rules or data more than one
-entry point (for example a browser product and an agent channel), or adds a
-runtime component beside existing ones that shares them. A single-component
-concept, or a single-channel one that adds no runtime component, needs none of
-it. Record, reusing the boundary list above:
+When a concept gives the same business rules or data a second entry point (for
+example a browser product and an agent channel) or adds a runtime component
+that shares them, record the items above for the new path: runtime, call path
+through which existing contract, failure behavior, and the component that
+enforces authorization and audit. Concepts with one component and one channel
+need nothing extra.
 
-- **Runtime:** same process, separate process, or not decided, recorded
-  separately from repository layout and deployment.
-- **Call path, contract, and failure:** who calls whom, through which interface
-  and existing contract, and how the path fails.
-- **Owning component:** which component owns the Responsibility, Data ownership,
-  and Trust boundary items above, including authorization and audit.
-- **First-increment evidence:** what each planned check actually proves.
-
-“Not decided” is valid when the concept records the consequence and the
-decision needed before implementation; never invent an identity protocol or
-permission model to fill the gap. A shared repository does not imply a shared
-process, and two channels do not imply two copies of business rules. Call out a
-constraint that exists only in one channel and decide whether the shared
-contract enforces it; do not copy it into the new entry point.
-
-Example: a browser product with a backend HTTP API adds a Model Context Protocol
-(MCP) entry point so that a customer agent can start a document review.
-
-| Variant | Runtime and call path | Owner and enforcement | Tradeoff |
-| --- | --- | --- | --- |
-| In-process adapter | API process; the MCP module calls application services | Services own rules; authorization and audit apply only where enforced below the HTTP layer | No extra hop; shares failure and load with the API and couples to its internals |
-| Separate service | Own process, even in the same repository; calls the HTTP API, with no backend imports or database access | Backend API, as for the browser | Clear contract; another service to operate, an unavailable backend to handle, identity across a network hop |
-
-Neither variant is the default; see [Compare Options](#compare-options). In
-both, how an agent request acts for an authorized user is open until decided,
-and an API description such as OpenAPI does not settle it. Until then, the first
-increment can prove the lower evidence rungs below while business tools stay
-unavailable.
-
-Keep evidence rungs separate, naming caller and hop for each:
-
-- **Availability:** a health check proves the component runs, with no identity.
-- **Protocol:** a client call through the new entry point proves the protocol.
-- **Connectivity:** a round trip with the component's own credential proves
-  that hop and credential, not user authorization.
-- **Business boundary:** a denial at a real protected operation of the owning
-  component proves that an identity cannot cross there; without such an
-  operation the denial is unproven, and a missing tool is no proof.
-
-See [Select Test Evidence](select-test-evidence.md) for what must stay real.
+- Two channels do not imply two copies of business rules. Name any constraint
+  that exists only in one channel and decide whether the shared contract
+  enforces it instead of copying it into the new path.
+- “Not decided” is valid when the concept records its consequence and the
+  decision needed before implementation. Do not invent an identity protocol or
+  permission model to fill the gap; an API description such as OpenAPI does not
+  settle how a request acts for an authorized user.
+- Choose between an in-process adapter and a separate service with
+  [Compare Options](#compare-options); neither is the default.
+- Name what each first-increment check proves; see
+  [Select Test Evidence](select-test-evidence.md#name-what-a-boundary-check-proves).
 
 ## Evaluate Module Depth
 
