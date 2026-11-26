@@ -73,7 +73,7 @@ Extract the proposition before revising its language:
 - action or mechanism
 - object or affected surface
 - decision owner or authority
-- data object, location, and retention
+- for a storage claim: data object, location, and retention
 - prerequisites and conditions
 - limits, versions, scale, or environment
 - result, side effect, and likely failure
@@ -118,8 +118,8 @@ A sentence without such content gets no precision edit.
   mechanism, owner, or period.
 
 The pass has no fixed template and bans no metaphor. It checks wording, not the
-product, design, or architecture behind it. See
-[Technical concept precision](technical-concept-precision.md) for German
+product, design, or architecture behind it, and it applies in any language.
+See [Technical concept precision](technical-concept-precision.md) for German
 examples.
 
 ## Control terminology without flattening the prose
