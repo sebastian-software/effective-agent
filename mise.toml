@@ -1,5 +1,5 @@
 [tools]
-lefthook = "2.1.17"
+lefthook = "2.2.4"
 lychee = "0.24.2"
 
 [tools."github:sebastian-software/mdtheme"]
