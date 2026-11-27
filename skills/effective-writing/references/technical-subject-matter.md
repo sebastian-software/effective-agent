@@ -158,6 +158,12 @@ An opinion can be emphatic while its factual basis stays precise.
 Read the piece on its own. A new reader should have enough context to
 understand the observation and enough room to reach a different verdict.
 
+Weave source links into the sentence that uses them instead of appending
+research-note citations (`[Source](url) · [Source](url)`) after the closing
+period. Reserve inline bold for deliberate lead-ins that help readers scan
+parallel items; do not bold a product or company name mid-paragraph after it
+has already appeared in plain text.
+
 An unsigned explainer or project page has room for humor, varied sentence
 length, and a firsthand observation when its source is clear.
 
@@ -181,6 +187,16 @@ surrounding article to retain its voice.
 - Reduce heavy nominal constructions, ambiguous references, and unnecessary
   internal jargon.
 - Keep established Fachbegriffe when they are accurate and useful.
+- Rewrite English word order and trailing prepositional clauses instead of
+  copying them literally. Check false friends (such as *Geschäft* vs.
+  *Geschäftsmodell* for "business", or *bauen* vs. *aufbauen* for building a
+  company) and preserve exact technical nouns rather than collapsing a tool into
+  its data artifact.
+- Check German pronoun and gender chains (*sie*, *es*, *sein*, *jede davon*)
+  whenever a sentence mixes plural people with feminine or neuter nouns, or when
+  a partial edit shifts the earlier subject.
+- Keep one form of address (*du* or *Sie*) consistent across the article and its
+  localized catalog entries.
 - Treat tekom-derived clarity rules as an editorial influence unless a
   project-specific rule set explicitly governs the artifact.
 - Do not default to Einfache Sprache or Leichte Sprache.
@@ -191,6 +207,10 @@ surrounding article to retain its voice.
   author.
 - Keep technical terms stable while allowing contractions, narrative rhythm,
   and personality when the channel supports them.
+- When drafting English from German notes or interviews, replace literal calques
+  (such as "written together with", "make your content its own", or countable
+  "a lock-in") with idiomatic English while preserving the author's stance and
+  technical claims.
 - Do not claim ASD-STE100 conformance or apply its dictionary and rule set
   unless the artifact is explicitly governed by it.
 - Use the Metro English route for internal team communication about the work, not as
@@ -213,6 +233,10 @@ deliver the article itself in the publication's format.
    transitions where precision editing made the prose mechanical.
 6. **Channel fit** - Check the title, lead, editorial hierarchy, call to action,
    and handoffs without changing the technical proposition.
+7. **Consistency and publication mechanics** - Verify that incremental edits did
+   not mix straight and typographic quotation marks or apostrophes, break
+   house-style list punctuation (such as serial commas), leave trailing
+   note-style link clusters, or let paired language versions drift apart.
 
 Report a controlled-language conformance level only through the governing
 technical-documentation workflow. For editorial prose, describe the result as

@@ -41,3 +41,5 @@ piece needs briefing or source planning.
   artifact remains an article or long-form page.
 - Page hierarchy, interface copy, accessibility, and browser implementation of
   the published page belong to `effective-web`.
+- Quotation marks, apostrophes, dashes, and localized catalog typography belong
+  to [Locale typography](route-locale-typography.md).

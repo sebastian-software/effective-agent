@@ -3,9 +3,10 @@
 Use this shelf when a blog assignment would benefit from a sharper angle,
 a better headline, or more room for the author's judgment. The notes compare
 several pieces from each source and explain the choices in place. For routine
-drafting, read the local section that fits the material. The article links are
-for attribution and deeper reading. Technical claims in a new piece still
-come from its own reporting.
+drafting, read the local section that fits the material. The trailing article
+links in these notes are for attribution and deeper reading, not a formatting
+model for published prose. Technical claims in a new piece still come from its
+own reporting.
 
 ## Find a useful neighbor
 

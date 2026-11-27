@@ -141,6 +141,9 @@ Remove correspondence that leaked into content:
   `while specific details are limited`
 - speculative gap-filling around missing sources: `maintains a low profile`,
   `likely grew up`, `it is believed that`
+- research-note formatting: trailing citation clusters
+  (`[Source](url) · [Source](url)`) appended after a paragraph's closing period
+  instead of linked naturally inside the sentence
 
 State what the supplied evidence supports; name what is unknown or cut the
 sentence. Never dress a guess up as a sourced fact.
@@ -170,7 +173,9 @@ next step; do not delete closure the reader still needs.
 ### Decorative structure
 
 Inspect whether headings, bold emphasis, bullets, emoji, punctuation, and very
-short sections express real hierarchy or merely decorate thin content.
+short sections express real hierarchy or merely decorate thin content. Avoid
+bolding product or company names mid-paragraph after they have already appeared
+in plain text.
 
 Turn a list into prose when sequence, comparison, or scanning does not justify
 it. Combine tiny sections when the headings interrupt the reading path. Apply

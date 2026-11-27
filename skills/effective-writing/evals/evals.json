@@ -184,6 +184,16 @@
       "name": "draft-approval-does-not-complete-related-status",
       "prompt": "Draft a GitHub approval and a Slack update about the same PR. The substantive review found no blockers and CI passes, but no approval has been submitted, the browser check is pending, and nothing has deployed. Keep all publication with me.",
       "expected": "Uses Metro English for both drafts while preserving action state. The approval body can express the intended approval, but the Slack update describes the completed review and pending approval rather than claiming approval was submitted. Preserves the pending browser check and absence of a deploy, and performs no publication."
+    },
+    {
+      "name": "adapt-bilingual-article-without-calques-or-note-links",
+      "prompt": "Adapt this English engineering blog paragraph into natural German for our tech blog (address readers with \"du\"), and fix the source link formatting: \"We built our catalog tool Ferrocat in Rust. Every time the team can test an idea themselves, they save the work of writing it up and handing it over before they know whether it works. The next product we build on the same catalog tools benefits from what we learned. [Ferrocat](https://example.com/ferrocat) · [Benchmarks](https://example.com/bench)\"",
+      "expected": "Produces natural German technical prose in the \"du\" register without copying English clause order or creating ambiguous German \"sie\" pronoun chains across the team and the idea. Keeps the technical distinction between the catalog tools and an individual catalog intact, weaves the links into the prose instead of leaving trailing note-style link clusters after a period, and applies consistent de-DE typography."
+    },
+    {
+      "name": "keep-editorial-prose-free-of-research-note-formatting",
+      "prompt": "Proofread this English blog draft derived from German interview notes for style and consistency without softening the author's voice or changing technical facts: \"About 365 commits were written together with an AI agent. I don't see a lock-in in that, because **AcmeDocs** doesn’t make your content its own. Version 3.10 still builds with webpack, and it has grown into a large ecosystem. [Release notes](https://example.com/releases)\"",
+      "expected": "Replaces German-to-English calques (such as \"written together with\", countable \"a lock-in\", and \"doesn't make your content its own\") with idiomatic US English, resolves the shifted \"it\" antecedent after \"Version 3.10\", normalizes mixed straight and curly apostrophes to one consistent system, integrates the trailing reference link inline, and removes decorative mid-paragraph bolding while preserving the commit count, technical claim, and direct first-person voice."
     }
   ],
   "activation": [
