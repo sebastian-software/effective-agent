@@ -180,6 +180,38 @@ surrounding article to retain its voice.
 
 ## Adapt without losing the contract
 
+The rules below apply to any language pair when drafting from notes in another
+language or adapting an article across languages. Named language examples
+illustrate recurring failure modes rather than an exhaustive list.
+
+- **Native syntax over source calques:** Rewrite clause order, trailing
+  prepositional phrases, and idioms natively instead of mirroring the source
+  language — for example, idiomatic English “written with” rather than
+  German-derived “written together with”, or reshaping English word order when
+  adapting into German, French, Spanish, or Italian.
+- **False friends and register drift:** Watch for cognates whose meaning shifts
+  across languages — such as English *actually* / *eventually* versus French
+  *actuellement* / *éventuellement* or Spanish *actualmente* / *eventualmente*,
+  Italian *realizzare* (“implement”) versus *rendersi conto* (“realize”), or
+  German *Geschäft* versus *Geschäftsmodell* for “business”.
+- **Pronoun, gender, and dropped-subject chains:** Recheck antecedents where
+  target-language grammar makes a reference ambiguous — such as German *sie*
+  spanning plural people and feminine nouns, French *il*/*elle* or *son*/*sa*
+  across mixed antecedents, or Spanish and Italian pro-drop clauses where an
+  implied subject shifts mid-paragraph.
+- **Consistent form of address:** Keep one reader-address register across the
+  article and its localized catalog entries (for example, German *du* vs.
+  *Sie*, French *tu* vs. *vous*, Spanish *tú*/*vos* vs. *usted*, or Italian
+  *tu* vs. *Lei*).
+- **Technical noun precision:** Preserve exact technical distinctions during
+  adaptation rather than collapsing a tool into its data artifact (for example,
+  keeping “catalog tools” distinct from “a single catalog”) or replacing an
+  established domain term with a loose everyday near-synonym.
+
+For typography, quotation marks, dashes, and number or date formatting in any
+supported language, apply the matching profile in
+[Locale typography](route-locale-typography.md).
+
 ### German
 
 - Prefer natural, precise technical German with useful subordinate clauses and
@@ -187,16 +219,6 @@ surrounding article to retain its voice.
 - Reduce heavy nominal constructions, ambiguous references, and unnecessary
   internal jargon.
 - Keep established Fachbegriffe when they are accurate and useful.
-- Rewrite English word order and trailing prepositional clauses instead of
-  copying them literally. Check false friends (such as *Geschäft* vs.
-  *Geschäftsmodell* for "business", or *bauen* vs. *aufbauen* for building a
-  company) and preserve exact technical nouns rather than collapsing a tool into
-  its data artifact.
-- Check German pronoun and gender chains (*sie*, *es*, *sein*, *jede davon*)
-  whenever a sentence mixes plural people with feminine or neuter nouns, or when
-  a partial edit shifts the earlier subject.
-- Keep one form of address (*du* or *Sie*) consistent across the article and its
-  localized catalog entries.
 - Treat tekom-derived clarity rules as an editorial influence unless a
   project-specific rule set explicitly governs the artifact.
 - Do not default to Einfache Sprache or Leichte Sprache.
@@ -207,10 +229,6 @@ surrounding article to retain its voice.
   author.
 - Keep technical terms stable while allowing contractions, narrative rhythm,
   and personality when the channel supports them.
-- When drafting English from German notes or interviews, replace literal calques
-  (such as "written together with", "make your content its own", or countable
-  "a lock-in") with idiomatic English while preserving the author's stance and
-  technical claims.
 - Do not claim ASD-STE100 conformance or apply its dictionary and rule set
   unless the artifact is explicitly governed by it.
 - Use the Metro English route for internal team communication about the work, not as

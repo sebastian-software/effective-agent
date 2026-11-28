@@ -187,8 +187,8 @@
     },
     {
       "name": "adapt-bilingual-article-without-calques-or-note-links",
-      "prompt": "Adapt this English engineering blog paragraph into natural German for our tech blog (address readers with \"du\"), and fix the source link formatting: \"We built our catalog tool Ferrocat in Rust. Every time the team can test an idea themselves, they save the work of writing it up and handing it over before they know whether it works. The next product we build on the same catalog tools benefits from what we learned. [Ferrocat](https://example.com/ferrocat) · [Benchmarks](https://example.com/bench)\"",
-      "expected": "Produces natural German technical prose in the \"du\" register without copying English clause order or creating ambiguous German \"sie\" pronoun chains across the team and the idea. Keeps the technical distinction between the catalog tools and an individual catalog intact, weaves the links into the prose instead of leaving trailing note-style link clusters after a period, and applies consistent de-DE typography."
+      "prompt": "Adapt this English engineering blog paragraph into natural French for our tech blog (fr-FR, address readers with \"tu\"), and fix the source link formatting: \"We actually built our catalog tool Ferrocat in Rust, and eventually every product we build on those catalog tools benefits from what we learned. Whenever a team can test an idea themselves, they skip handing it off before knowing whether it works. [Ferrocat](https://example.com/ferrocat) · [Benchmarks](https://example.com/bench)\"",
+      "expected": "Produces natural French technical prose in the \"tu\" register without false-friend calques (does not translate \"actually\" as \"actuellement\" or \"eventually\" as \"éventuellement\"), avoids ambiguous pronoun chains, keeps the distinction between the catalog tools and a single catalog intact, weaves the links into the prose instead of leaving trailing note-style link clusters after a period, and applies consistent fr-FR typography."
     },
     {
       "name": "keep-editorial-prose-free-of-research-note-formatting",

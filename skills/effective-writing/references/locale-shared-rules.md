@@ -17,8 +17,9 @@ more specific.
 - Preserve a coherent existing house style. Do not create mixed quote or dash
   systems inside one document: when an incremental edit introduces a different
   quote or apostrophe system, align the edit with the document's established
-  style, or standardize an already mixed prose file onto one system rather than
-  leaving straight and typographic punctuation side by side.
+  style, or standardize the prose you are editing onto one system (leaving
+  verbatim quotations and passages outside the task's scope unchanged unless
+  the user asks for a file-wide pass).
 
 ## Revise translated prose
 
