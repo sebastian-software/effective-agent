@@ -119,6 +119,11 @@ focused sentence edit or rhythm pass does not.
   reading?
 - Can clutter be removed without losing meaning or cadence?
 - Are pronouns, comparisons, and modifiers unambiguous?
+- After partial edits, recheck subject-verb agreement, pronoun antecedents, and
+  definite references ("the three people", "the two sentences") so nothing
+  points to a removed, shifted, or not-yet-introduced referent.
+- Catch unintended word echoes across adjacent clauses or sentences while
+  keeping deliberate rhetorical repetition intact.
 
 ### 6. Rhythm and mechanics
 

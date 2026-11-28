@@ -158,6 +158,12 @@ An opinion can be emphatic while its factual basis stays precise.
 Read the piece on its own. A new reader should have enough context to
 understand the observation and enough room to reach a different verdict.
 
+Weave source links into the sentence that uses them instead of appending
+research-note citations (`[Source](url) · [Source](url)`) after the closing
+period. Reserve inline bold for deliberate lead-ins that help readers scan
+parallel items; do not bold a product or company name mid-paragraph after it
+has already appeared in plain text.
+
 An unsigned explainer or project page has room for humor, varied sentence
 length, and a firsthand observation when its source is clear.
 
@@ -173,6 +179,38 @@ prerequisites, steps, expected results, and recovery while allowing the
 surrounding article to retain its voice.
 
 ## Adapt without losing the contract
+
+The rules below apply to any language pair when drafting from notes in another
+language or adapting an article across languages. Named language examples
+illustrate recurring failure modes rather than an exhaustive list.
+
+- **Native syntax over source calques:** Rewrite clause order, trailing
+  prepositional phrases, and idioms natively instead of mirroring the source
+  language — for example, idiomatic English “written with” rather than
+  German-derived “written together with”, or reshaping English word order when
+  adapting into German, French, Spanish, or Italian.
+- **False friends and register drift:** Watch for cognates whose meaning shifts
+  across languages — such as English *actually* / *eventually* versus French
+  *actuellement* / *éventuellement* or Spanish *actualmente* / *eventualmente*,
+  Italian *realizzare* (“implement”) versus *rendersi conto* (“realize”), or
+  German *Geschäft* versus *Geschäftsmodell* for “business”.
+- **Pronoun, gender, and dropped-subject chains:** Recheck antecedents where
+  target-language grammar makes a reference ambiguous — such as German *sie*
+  spanning plural people and feminine nouns, French *il*/*elle* or *son*/*sa*
+  across mixed antecedents, or Spanish and Italian pro-drop clauses where an
+  implied subject shifts mid-paragraph.
+- **Consistent form of address:** Keep one reader-address register across the
+  article and its localized catalog entries (for example, German *du* vs.
+  *Sie*, French *tu* vs. *vous*, Spanish *tú*/*vos* vs. *usted*, or Italian
+  *tu* vs. *Lei*).
+- **Technical noun precision:** Preserve exact technical distinctions during
+  adaptation rather than collapsing a tool into its data artifact (for example,
+  keeping “catalog tools” distinct from “a single catalog”) or replacing an
+  established domain term with a loose everyday near-synonym.
+
+For typography, quotation marks, dashes, and number or date formatting in any
+supported language, apply the matching profile in
+[Locale typography](route-locale-typography.md).
 
 ### German
 
@@ -213,6 +251,10 @@ deliver the article itself in the publication's format.
    transitions where precision editing made the prose mechanical.
 6. **Channel fit** - Check the title, lead, editorial hierarchy, call to action,
    and handoffs without changing the technical proposition.
+7. **Consistency and publication mechanics** - Verify that incremental edits did
+   not mix straight and typographic quotation marks or apostrophes, break
+   house-style list punctuation (such as serial commas), leave trailing
+   note-style link clusters, or let paired language versions drift apart.
 
 Report a controlled-language conformance level only through the governing
 technical-documentation workflow. For editorial prose, describe the result as

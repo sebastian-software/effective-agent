@@ -15,15 +15,23 @@ more specific.
   belongs to the surrounding sentence outside it unless the language profile
   or house style uses a conventional exception.
 - Preserve a coherent existing house style. Do not create mixed quote or dash
-  systems inside one document.
+  systems inside one document: when an incremental edit introduces a different
+  quote or apostrophe system, align the edit with the document's established
+  style, or, when the file is already mixed with no established style,
+  standardize the prose you are editing onto the dominant system (leaving
+  verbatim quotations and passages outside the task's scope unchanged unless
+  the user asks for a file-wide pass).
 
 ## Revise translated prose
 
 Use the target project's existing locale settings, house style, and terminology.
 Preserve intent and register without copying source word order; keep unrelated
-target passages unchanged. If the source and local context leave a material
-language choice unresolved, surface the uncertainty rather than inventing an
-approved term or parallel glossary.
+target passages unchanged. In catalog-backed localization files (such as `.po`
+catalogs), preserve inline markup placeholders (such as `<0>…</0>`) while
+keeping punctuation and form of address consistent between source and target
+entries. If the source and local context leave a material language choice
+unresolved, surface the uncertainty rather than inventing an approved term or
+parallel glossary.
 
 ## Use the right character
 
